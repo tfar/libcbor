@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Usage &amp; preliminaries &mdash; libcbor 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="libcbor 0.3.1 documentation" href="index.html"/>
+        <link rel="next" title="API" href="api.html"/>
+        <link rel="prev" title="Getting started" href="getting_started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> libcbor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#building-installing-libcbor">Building &amp; installing libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#linking-with-libcbor">Linking with libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#mingw-build-instructions">MinGW build instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Usage &amp; preliminaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-information">Version information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#headers-to-include">Headers to include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-libcbor">Using libcbor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/item_types.html">Types of items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/item_types.html#binary-queries">Binary queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/item_types.html#logical-queries">Logical queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/item_reference_counting.html">Memory management and reference counting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/item_reference_counting.html#using-custom-allocator">Using custom allocator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/item_reference_counting.html#reference-counting">Reference counting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/decoding.html#associated-data-structures">Associated data structures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/encoding.html">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/encoding.html#type-specific-serializers">Type-specific serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_0_1.html">Types 0 &amp; 1 – Positive and negative integers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#type-0-positive-integers">Type 0 - positive integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#type-1-negative-integers">Type 1 - negative integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#type-0-1">Type 0 &amp; 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#building-new-items">Building new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#retrieving-values">Retrieving values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#dealing-with-width">Dealing with width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#dealing-with-signedness">Dealing with signedness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#creating-new-items">Creating new items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_2.html">Type 2 – Byte strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#streaming-indefinite-byte-strings">Streaming indefinite byte strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_3.html">Type 3 – UTF-8 strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#streaming-indefinite-strings">Streaming indefinite strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#utf-8-encoding-validation">UTF-8 encoding validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_4.html">Type 4 – Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#streaming-indefinite-arrays">Streaming indefinite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_5.html">Type 5 – Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#streaming-maps">Streaming maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_6.html">Type 6 – Semantic tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_7.html">Type 7 – Floats &amp; control tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="streaming.html">Streaming &amp; indefinite items</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="streaming/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="streaming/decoding.html#related-structures">Related structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="streaming/decoding.html#callback-types-definition">Callback types definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="streaming/encoding.html">Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#testing-for-memory-leaks">Testing for memory leaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#code-coverage">Code coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#fuzz-testing">Fuzz testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rfc_conformance.html">RFC conformance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rfc_conformance.html#bytestring-length">Bytestring length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rfc_conformance.html#half-precision-ieee-754-floats">&#8220;Half-precision&#8221; IEEE 754 floats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internal.html">Internal mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#inspiration-related-projects">Inspiration &amp; related projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#general-notes-on-the-api-design">General notes on the API design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#coding-style">Coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#memory-layout">Memory layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#decoding">Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#next">Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 (2015-05-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.2.0 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.1.0 (2015-05-06)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#development-dependencies">Development dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="development.html#building-cmocka">Building <em>cmocka</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#installing-sphinx">Installing <em>sphinx</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#live-preview-of-docs">Live preview of docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#testing-and-code-coverage">Testing and code coverage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">libcbor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Usage &amp; preliminaries</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/using.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="usage-preliminaries">
+<h1>Usage &amp; preliminaries<a class="headerlink" href="#usage-preliminaries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-information">
+<h2>Version information<a class="headerlink" href="#version-information" title="Permalink to this headline">¶</a></h2>
+<p>libcbor exports its version using three self-explanatory macros:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">CBOR_MAJOR_VERSION</span></code></li>
+<li><code class="docutils literal"><span class="pre">CBOR_MINOR_VERSION</span></code></li>
+<li><code class="docutils literal"><span class="pre">CBOR_PATCH_VERSION</span></code></li>
+</ul>
+</div></blockquote>
+<p>The <code class="docutils literal"><span class="pre">CBOR_VERSION</span></code> is a string concatenating these three identifiers into one (e.g. <code class="docutils literal"><span class="pre">0.2.0</span></code>).</p>
+<p>In order to simplify version comparisons, the version is also exported as</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#define CBOR_HEX_VERSION ((CBOR_MAJOR_VERSION &lt;&lt; 16) | (CBOR_MINOR_VERSION &lt;&lt; 8) | CBOR_PATCH_VERSION)</span>
+</pre></div>
+</div>
+<p>Since macros are difficult to work with through FFIs, the same information is also available through three <code class="docutils literal"><span class="pre">uint8_t</span></code> constants,
+namely</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">cbor_major_version</span></code></li>
+<li><code class="docutils literal"><span class="pre">cbor_minor_version</span></code></li>
+<li><code class="docutils literal"><span class="pre">cbor_patch_version</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="headers-to-include">
+<h2>Headers to include<a class="headerlink" href="#headers-to-include" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">cbor.h</span></code> header includes all the symbols. If, for any reason, you don&#8217;t want to include all the exported symbols,
+feel free to use just some of the <code class="docutils literal"><span class="pre">cbor/*.h</span></code> headers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">cbor/arrays.h</span></code> - <a class="reference internal" href="api/type_4.html"><em>Type 4 – Arrays</em></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/bytestrings.h</span></code> - <a class="reference internal" href="api/type_2.html"><em>Type 2 – Byte strings</em></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/callbacks.h</span></code> - Callbacks used for <a class="reference internal" href="streaming/decoding.html"><em>Decoding</em></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/common.h</span></code> - Common utilities - always transitively included</li>
+<li><code class="docutils literal"><span class="pre">cbor/data.h</span></code> - Data types definitions - always transitively included</li>
+<li><code class="docutils literal"><span class="pre">cbor/encoding.h</span></code> - Streaming encoders for <a class="reference internal" href="streaming/encoding.html"><em>Encoding</em></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/floats_ctrls.h</span></code> - <a class="reference internal" href="api/type_7.html"><em>Type 7 – Floats &amp; control tokens</em></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/ints.h</span></code> - <a class="reference internal" href="api/type_0_1.html"><em>Types 0 &amp; 1 – Positive and negative integers</em></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/maps.h</span></code> - <a class="reference internal" href="api/type_5.html"><em>Type 5 – Maps</em></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/serialization.h</span></code> - High level serialization such as <a class="reference internal" href="api/encoding.html#_CPPv214cbor_serializePK11cbor_item_t17cbor_mutable_data6size_t" title="cbor_serialize"><code class="xref cpp cpp-func docutils literal"><span class="pre">cbor_serialize()</span></code></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/streaming.h</span></code> - Home of <a class="reference internal" href="streaming/decoding.html#_CPPv218cbor_stream_decode9cbor_data6size_tPK14cbor_callbacksPv" title="cbor_stream_decode"><code class="xref cpp cpp-func docutils literal"><span class="pre">cbor_stream_decode()</span></code></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/strings.h</span></code> - <a class="reference internal" href="api/type_3.html"><em>Type 3 – UTF-8 strings</em></a></li>
+<li><code class="docutils literal"><span class="pre">cbor/tags.h</span></code> - <a class="reference internal" href="api/type_6.html"><em>Type 6 – Semantic tags</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="using-libcbor">
+<h2>Using libcbor<a class="headerlink" href="#using-libcbor" title="Permalink to this headline">¶</a></h2>
+<p>If you want to get more familiar with CBOR, we recommend the <a class="reference external" href="http://cbor.io/">cbor.io</a> website. Once you get the grasp
+of what is it CBOR does, the examples (located in the <code class="docutils literal"><span class="pre">examples</span></code> directory) should give you a good feel of the API. The
+<a class="reference internal" href="api.html"><em>API documentation</em></a> should then provide with all the information you may need.</p>
+<p><strong>Creating and serializing items</strong></p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &quot;cbor.h&quot;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="cm">/* Preallocate the map structure */</span>
+    <span class="kt">cbor_item_t</span> <span class="o">*</span> <span class="n">root</span> <span class="o">=</span> <span class="n">cbor_new_definite_map</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="cm">/* Add the content */</span>
+    <span class="n">cbor_map_add</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">cbor_pair</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">cbor_move</span><span class="p">(</span><span class="n">cbor_build_string</span><span class="p">(</span><span class="s">&quot;Is CBOR awesome?&quot;</span><span class="p">)),</span>
+        <span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">cbor_move</span><span class="p">(</span><span class="n">cbor_build_bool</span><span class="p">(</span><span class="nb">true</span><span class="p">))</span>
+    <span class="p">});</span>
+    <span class="n">cbor_map_add</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">cbor_pair</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">cbor_move</span><span class="p">(</span><span class="n">cbor_build_uint8</span><span class="p">(</span><span class="mi">42</span><span class="p">)),</span>
+        <span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">cbor_move</span><span class="p">(</span><span class="n">cbor_build_string</span><span class="p">(</span><span class="s">&quot;Is the answer&quot;</span><span class="p">))</span>
+    <span class="p">});</span>
+    <span class="cm">/* Output: `length` bytes of data in the `buffer` */</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">buffer</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">buffer_size</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="n">cbor_serialize_alloc</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buffer_size</span><span class="p">);</span>
+
+    <span class="n">fwrite</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">stdout</span><span class="p">);</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+
+    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+    <span class="n">cbor_decref</span><span class="p">(</span><span class="o">&amp;</span><span class="n">root</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Reading serialized data</strong></p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &quot;cbor.h&quot;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Reads data from a file. Example usage:</span>
+<span class="cm"> * $ ./examples/readfile examples/data/nested_array.cbor</span>
+<span class="cm"> */</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&quot;rb&quot;</span><span class="p">);</span>
+    <span class="n">fseek</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SEEK_END</span><span class="p">);</span>
+    <span class="kt">size_t</span> <span class="n">length</span> <span class="o">=</span> <span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="n">ftell</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+    <span class="n">fseek</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">);</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">length</span><span class="p">);</span>
+    <span class="n">fread</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+
+    <span class="cm">/* Assuming `buffer` contains `info.st_size` bytes of input data */</span>
+    <span class="k">struct</span> <span class="n">cbor_load_result</span> <span class="n">result</span><span class="p">;</span>
+    <span class="kt">cbor_item_t</span> <span class="o">*</span> <span class="n">item</span> <span class="o">=</span> <span class="n">cbor_load</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">result</span><span class="p">);</span>
+    <span class="cm">/* Pretty-print the result */</span>
+    <span class="n">cbor_describe</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">stdout</span><span class="p">);</span>
+    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+    <span class="cm">/* Deallocate the result */</span>
+    <span class="n">cbor_decref</span><span class="p">(</span><span class="o">&amp;</span><span class="n">item</span><span class="p">);</span>
+
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Using the streaming parser</strong></p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &quot;cbor.h&quot;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;string.h&gt;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Illustrates how one might skim through a map (which is assumed to have</span>
+<span class="cm"> * string keys and values only), looking for the value of a specific key</span>
+<span class="cm"> *</span>
+<span class="cm"> * Use the examples/data/map.cbor input to test this.</span>
+<span class="cm"> */</span>
+
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">key</span> <span class="o">=</span> <span class="s">&quot;a secret key&quot;</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">key_found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">find_string</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">_ctx</span><span class="p">,</span> <span class="n">cbor_data</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">key_found</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Found the value: %*s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+        <span class="n">key_found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">len</span> <span class="o">==</span> <span class="n">strlen</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">key_found</span> <span class="o">=</span> <span class="p">(</span><span class="n">memcmp</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&quot;rb&quot;</span><span class="p">);</span>
+    <span class="n">fseek</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SEEK_END</span><span class="p">);</span>
+    <span class="kt">size_t</span> <span class="n">length</span> <span class="o">=</span> <span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="n">ftell</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+    <span class="n">fseek</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">);</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">length</span><span class="p">);</span>
+    <span class="n">fread</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+
+    <span class="k">struct</span> <span class="n">cbor_callbacks</span> <span class="n">callbacks</span> <span class="o">=</span> <span class="n">cbor_empty_callbacks</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">cbor_decoder_result</span> <span class="n">decode_result</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">bytes_read</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">callbacks</span><span class="p">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">find_string</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">bytes_read</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">decode_result</span> <span class="o">=</span> <span class="n">cbor_stream_decode</span><span class="p">(</span><span class="n">buffer</span> <span class="o">+</span> <span class="n">bytes_read</span><span class="p">,</span>
+                                           <span class="n">length</span> <span class="o">-</span> <span class="n">bytes_read</span><span class="p">,</span>
+                                           <span class="o">&amp;</span><span class="n">callbacks</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+        <span class="n">bytes_read</span> <span class="o">+=</span> <span class="n">decode_result</span><span class="p">.</span><span class="n">read</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral" title="Getting started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, 2015, Pavel Kalvoda.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+\hypertarget{encoding_8h}{\section{src/cbor/encoding.h File Reference}
+\label{encoding_8h}\index{src/cbor/encoding.\-h@{src/cbor/encoding.\-h}}
+}
+{\ttfamily \#include \char`\"{}common.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{encoding_8h_afea0835d5129909ae6ccb4cbfc015970}{cbor\-\_\-encode\-\_\-uint8} (uint8\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Primitive encoder. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{encoding_8h_a56bfab261e1beaee3d41faf6463b04bf}{cbor\-\_\-encode\-\_\-uint16} (uint16\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a90ad4b026bc13f3807e4b89409773f0b}{cbor\-\_\-encode\-\_\-uint32} (uint32\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a4a235fd97a2a4d13ba6d3c4306c6a643}{cbor\-\_\-encode\-\_\-uint64} (uint64\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a7863aaacf5c10dbc7770010250525ed3}{cbor\-\_\-encode\-\_\-uint} (uint64\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_aa850f2be3940fbc309fc9f611ac2989b}{cbor\-\_\-encode\-\_\-negint8} (uint8\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a0df96946a16ed6ab94d45adb7b1a14d9}{cbor\-\_\-encode\-\_\-negint16} (uint16\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_ac1854fff9cbe4be7fa08fd311d851922}{cbor\-\_\-encode\-\_\-negint32} (uint32\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a1d803ca867e14739665283bee5b66b58}{cbor\-\_\-encode\-\_\-negint64} (uint64\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a1cc1e5a1b1ee934291abcfef75626616}{cbor\-\_\-encode\-\_\-negint} (uint64\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a2105cee299618a9598bc39f5ae215c0b}{cbor\-\_\-encode\-\_\-bytestring\-\_\-start} (size\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a180ccc6318bf86af67bfbdd0955548df}{cbor\-\_\-encode\-\_\-indef\-\_\-bytestring\-\_\-start} (unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a58f3f82978563d732a03d4b585a1a9ea}{cbor\-\_\-encode\-\_\-string\-\_\-start} (size\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a743eaba2ad48bc23acbf567e1eb75eac}{cbor\-\_\-encode\-\_\-indef\-\_\-string\-\_\-start} (unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a7cf3eb01b259b2e4ea9fddd4b1a37d9a}{cbor\-\_\-encode\-\_\-array\-\_\-start} (size\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a12630f19ed6040b193ac79b66b3082a4}{cbor\-\_\-encode\-\_\-indef\-\_\-array\-\_\-start} (unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a89ca7a5834e479190406de4fa886a975}{cbor\-\_\-encode\-\_\-map\-\_\-start} (size\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a7c73f8226b908bc2e917e7d0fa3125c7}{cbor\-\_\-encode\-\_\-indef\-\_\-map\-\_\-start} (unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a153f903a2763439d0be4dc13d8e01b81}{cbor\-\_\-encode\-\_\-tag} (uint64\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a9c298069fd256fe98007f8ebb2c3b7e4}{cbor\-\_\-encode\-\_\-bool} (bool, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a01795a392b9945c416ee82f66ff5d50f}{cbor\-\_\-encode\-\_\-null} (unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_ace6e55205c8e7fb624cb1f39d46f1479}{cbor\-\_\-encode\-\_\-undef} (unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a570e080b214be14a3263494b3d5d19f2}{cbor\-\_\-encode\-\_\-half} (float, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a7ea12535f26f24032ea9e0975cac3cec}{cbor\-\_\-encode\-\_\-single} (float, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a63da011839918fac84a7bdef9f0f24f2}{cbor\-\_\-encode\-\_\-double} (double, unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_aaefd57d48643806d1b5bc7ba304f9060}{cbor\-\_\-encode\-\_\-break} (unsigned char $\ast$, size\-\_\-t)
+\item 
+size\-\_\-t \hyperlink{encoding_8h_a9cfc3c3ca85e6acb7258cf0fb33b3543}{cbor\-\_\-encode\-\_\-ctrl} (uint8\-\_\-t, unsigned char $\ast$, size\-\_\-t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{encoding_8h_a7cf3eb01b259b2e4ea9fddd4b1a37d9a}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-array\-\_\-start@{cbor\-\_\-encode\-\_\-array\-\_\-start}}
+\index{cbor\-\_\-encode\-\_\-array\-\_\-start@{cbor\-\_\-encode\-\_\-array\-\_\-start}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-array\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-array\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a7cf3eb01b259b2e4ea9fddd4b1a37d9a}
+
+
+Definition at line 91 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a9c298069fd256fe98007f8ebb2c3b7e4}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-bool@{cbor\-\_\-encode\-\_\-bool}}
+\index{cbor\-\_\-encode\-\_\-bool@{cbor\-\_\-encode\-\_\-bool}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-bool}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-bool (
+\begin{DoxyParamCaption}
+\item[{bool}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a9c298069fd256fe98007f8ebb2c3b7e4}
+
+
+Definition at line 116 of file encoding.\-c.
+
+\hypertarget{encoding_8h_aaefd57d48643806d1b5bc7ba304f9060}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-break@{cbor\-\_\-encode\-\_\-break}}
+\index{cbor\-\_\-encode\-\_\-break@{cbor\-\_\-encode\-\_\-break}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-break}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-break (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_aaefd57d48643806d1b5bc7ba304f9060}
+
+
+Definition at line 166 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a2105cee299618a9598bc39f5ae215c0b}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-bytestring\-\_\-start@{cbor\-\_\-encode\-\_\-bytestring\-\_\-start}}
+\index{cbor\-\_\-encode\-\_\-bytestring\-\_\-start@{cbor\-\_\-encode\-\_\-bytestring\-\_\-start}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-bytestring\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-bytestring\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a2105cee299618a9598bc39f5ae215c0b}
+
+
+Definition at line 62 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a9cfc3c3ca85e6acb7258cf0fb33b3543}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-ctrl@{cbor\-\_\-encode\-\_\-ctrl}}
+\index{cbor\-\_\-encode\-\_\-ctrl@{cbor\-\_\-encode\-\_\-ctrl}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-ctrl}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-ctrl (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a9cfc3c3ca85e6acb7258cf0fb33b3543}
+
+
+Definition at line 171 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a63da011839918fac84a7bdef9f0f24f2}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-double@{cbor\-\_\-encode\-\_\-double}}
+\index{cbor\-\_\-encode\-\_\-double@{cbor\-\_\-encode\-\_\-double}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-double (
+\begin{DoxyParamCaption}
+\item[{double}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a63da011839918fac84a7bdef9f0f24f2}
+
+
+Definition at line 161 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a570e080b214be14a3263494b3d5d19f2}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-half@{cbor\-\_\-encode\-\_\-half}}
+\index{cbor\-\_\-encode\-\_\-half@{cbor\-\_\-encode\-\_\-half}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-half}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-half (
+\begin{DoxyParamCaption}
+\item[{float}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a570e080b214be14a3263494b3d5d19f2}
+
+
+Definition at line 131 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a12630f19ed6040b193ac79b66b3082a4}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-indef\-\_\-array\-\_\-start@{cbor\-\_\-encode\-\_\-indef\-\_\-array\-\_\-start}}
+\index{cbor\-\_\-encode\-\_\-indef\-\_\-array\-\_\-start@{cbor\-\_\-encode\-\_\-indef\-\_\-array\-\_\-start}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-indef\-\_\-array\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-indef\-\_\-array\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a12630f19ed6040b193ac79b66b3082a4}
+
+
+Definition at line 96 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a180ccc6318bf86af67bfbdd0955548df}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-indef\-\_\-bytestring\-\_\-start@{cbor\-\_\-encode\-\_\-indef\-\_\-bytestring\-\_\-start}}
+\index{cbor\-\_\-encode\-\_\-indef\-\_\-bytestring\-\_\-start@{cbor\-\_\-encode\-\_\-indef\-\_\-bytestring\-\_\-start}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-indef\-\_\-bytestring\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-indef\-\_\-bytestring\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a180ccc6318bf86af67bfbdd0955548df}
+
+
+Definition at line 76 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a7c73f8226b908bc2e917e7d0fa3125c7}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-indef\-\_\-map\-\_\-start@{cbor\-\_\-encode\-\_\-indef\-\_\-map\-\_\-start}}
+\index{cbor\-\_\-encode\-\_\-indef\-\_\-map\-\_\-start@{cbor\-\_\-encode\-\_\-indef\-\_\-map\-\_\-start}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-indef\-\_\-map\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-indef\-\_\-map\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a7c73f8226b908bc2e917e7d0fa3125c7}
+
+
+Definition at line 106 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a743eaba2ad48bc23acbf567e1eb75eac}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-indef\-\_\-string\-\_\-start@{cbor\-\_\-encode\-\_\-indef\-\_\-string\-\_\-start}}
+\index{cbor\-\_\-encode\-\_\-indef\-\_\-string\-\_\-start@{cbor\-\_\-encode\-\_\-indef\-\_\-string\-\_\-start}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-indef\-\_\-string\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-indef\-\_\-string\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a743eaba2ad48bc23acbf567e1eb75eac}
+
+
+Definition at line 86 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a89ca7a5834e479190406de4fa886a975}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-map\-\_\-start@{cbor\-\_\-encode\-\_\-map\-\_\-start}}
+\index{cbor\-\_\-encode\-\_\-map\-\_\-start@{cbor\-\_\-encode\-\_\-map\-\_\-start}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-map\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-map\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a89ca7a5834e479190406de4fa886a975}
+
+
+Definition at line 101 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a1cc1e5a1b1ee934291abcfef75626616}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-negint@{cbor\-\_\-encode\-\_\-negint}}
+\index{cbor\-\_\-encode\-\_\-negint@{cbor\-\_\-encode\-\_\-negint}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-negint}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-negint (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a1cc1e5a1b1ee934291abcfef75626616}
+
+
+Definition at line 57 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a0df96946a16ed6ab94d45adb7b1a14d9}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-negint16@{cbor\-\_\-encode\-\_\-negint16}}
+\index{cbor\-\_\-encode\-\_\-negint16@{cbor\-\_\-encode\-\_\-negint16}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-negint16}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-negint16 (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a0df96946a16ed6ab94d45adb7b1a14d9}
+
+
+Definition at line 42 of file encoding.\-c.
+
+\hypertarget{encoding_8h_ac1854fff9cbe4be7fa08fd311d851922}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-negint32@{cbor\-\_\-encode\-\_\-negint32}}
+\index{cbor\-\_\-encode\-\_\-negint32@{cbor\-\_\-encode\-\_\-negint32}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-negint32}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-negint32 (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_ac1854fff9cbe4be7fa08fd311d851922}
+
+
+Definition at line 47 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a1d803ca867e14739665283bee5b66b58}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-negint64@{cbor\-\_\-encode\-\_\-negint64}}
+\index{cbor\-\_\-encode\-\_\-negint64@{cbor\-\_\-encode\-\_\-negint64}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-negint64}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-negint64 (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a1d803ca867e14739665283bee5b66b58}
+
+
+Definition at line 52 of file encoding.\-c.
+
+\hypertarget{encoding_8h_aa850f2be3940fbc309fc9f611ac2989b}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-negint8@{cbor\-\_\-encode\-\_\-negint8}}
+\index{cbor\-\_\-encode\-\_\-negint8@{cbor\-\_\-encode\-\_\-negint8}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-negint8}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-negint8 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_aa850f2be3940fbc309fc9f611ac2989b}
+
+
+Definition at line 37 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a01795a392b9945c416ee82f66ff5d50f}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-null@{cbor\-\_\-encode\-\_\-null}}
+\index{cbor\-\_\-encode\-\_\-null@{cbor\-\_\-encode\-\_\-null}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-null}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-null (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a01795a392b9945c416ee82f66ff5d50f}
+
+
+Definition at line 121 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a7ea12535f26f24032ea9e0975cac3cec}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-single@{cbor\-\_\-encode\-\_\-single}}
+\index{cbor\-\_\-encode\-\_\-single@{cbor\-\_\-encode\-\_\-single}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-single}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-single (
+\begin{DoxyParamCaption}
+\item[{float}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a7ea12535f26f24032ea9e0975cac3cec}
+
+
+Definition at line 155 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a58f3f82978563d732a03d4b585a1a9ea}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-string\-\_\-start@{cbor\-\_\-encode\-\_\-string\-\_\-start}}
+\index{cbor\-\_\-encode\-\_\-string\-\_\-start@{cbor\-\_\-encode\-\_\-string\-\_\-start}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-string\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-string\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a58f3f82978563d732a03d4b585a1a9ea}
+
+
+Definition at line 81 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a153f903a2763439d0be4dc13d8e01b81}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-tag@{cbor\-\_\-encode\-\_\-tag}}
+\index{cbor\-\_\-encode\-\_\-tag@{cbor\-\_\-encode\-\_\-tag}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-tag (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a153f903a2763439d0be4dc13d8e01b81}
+
+
+Definition at line 111 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a7863aaacf5c10dbc7770010250525ed3}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-uint@{cbor\-\_\-encode\-\_\-uint}}
+\index{cbor\-\_\-encode\-\_\-uint@{cbor\-\_\-encode\-\_\-uint}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-uint}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-uint (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a7863aaacf5c10dbc7770010250525ed3}
+
+
+Definition at line 31 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a56bfab261e1beaee3d41faf6463b04bf}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-uint16@{cbor\-\_\-encode\-\_\-uint16}}
+\index{cbor\-\_\-encode\-\_\-uint16@{cbor\-\_\-encode\-\_\-uint16}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-uint16}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-uint16 (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a56bfab261e1beaee3d41faf6463b04bf}
+
+
+Definition at line 16 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a90ad4b026bc13f3807e4b89409773f0b}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-uint32@{cbor\-\_\-encode\-\_\-uint32}}
+\index{cbor\-\_\-encode\-\_\-uint32@{cbor\-\_\-encode\-\_\-uint32}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-uint32}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-uint32 (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a90ad4b026bc13f3807e4b89409773f0b}
+
+
+Definition at line 21 of file encoding.\-c.
+
+\hypertarget{encoding_8h_a4a235fd97a2a4d13ba6d3c4306c6a643}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-uint64@{cbor\-\_\-encode\-\_\-uint64}}
+\index{cbor\-\_\-encode\-\_\-uint64@{cbor\-\_\-encode\-\_\-uint64}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-uint64}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-uint64 (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_a4a235fd97a2a4d13ba6d3c4306c6a643}
+
+
+Definition at line 26 of file encoding.\-c.
+
+\hypertarget{encoding_8h_afea0835d5129909ae6ccb4cbfc015970}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-uint8@{cbor\-\_\-encode\-\_\-uint8}}
+\index{cbor\-\_\-encode\-\_\-uint8@{cbor\-\_\-encode\-\_\-uint8}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-uint8}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-uint8 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{, }
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_afea0835d5129909ae6ccb4cbfc015970}
+
+
+Primitive encoder. 
+
+
+
+Definition at line 11 of file encoding.\-c.
+
+\hypertarget{encoding_8h_ace6e55205c8e7fb624cb1f39d46f1479}{\index{encoding.\-h@{encoding.\-h}!cbor\-\_\-encode\-\_\-undef@{cbor\-\_\-encode\-\_\-undef}}
+\index{cbor\-\_\-encode\-\_\-undef@{cbor\-\_\-encode\-\_\-undef}!encoding.h@{encoding.\-h}}
+\subsubsection[{cbor\-\_\-encode\-\_\-undef}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-encode\-\_\-undef (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{encoding_8h_ace6e55205c8e7fb624cb1f39d46f1479}
+
+
+Definition at line 126 of file encoding.\-c.
+

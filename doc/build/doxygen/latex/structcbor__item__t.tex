@@ -1,0 +1,82 @@
+\hypertarget{structcbor__item__t}{\section{cbor\-\_\-item\-\_\-t Struct Reference}
+\label{structcbor__item__t}\index{cbor\-\_\-item\-\_\-t@{cbor\-\_\-item\-\_\-t}}
+}
+
+
+The item handle.  
+
+
+
+
+{\ttfamily \#include $<$data.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unioncbor__item__metadata}{cbor\-\_\-item\-\_\-metadata} \hyperlink{structcbor__item__t_a7d97fa5cdf027ca0499c37ec19acf843}{metadata}
+\begin{DoxyCompactList}\small\item\em Discriminated by type. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{structcbor__item__t_a6bb24fe655f086c6aa9a66d427e09cca}{refcount}
+\begin{DoxyCompactList}\small\item\em Reference count -\/ initialize to 0. \end{DoxyCompactList}\item 
+\hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6}{cbor\-\_\-type} \hyperlink{structcbor__item__t_a6743a75cf89e1b455ddf3198ff98842a}{type}
+\begin{DoxyCompactList}\small\item\em Major type discriminator. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{structcbor__item__t_a5c6dde1dbef5aad748c49786352eef44}{data}
+\begin{DoxyCompactList}\small\item\em Raw data block -\/ interpretation depends on metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The item handle. 
+
+Definition at line 149 of file data.\-h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structcbor__item__t_a5c6dde1dbef5aad748c49786352eef44}{\index{cbor\-\_\-item\-\_\-t@{cbor\-\_\-item\-\_\-t}!data@{data}}
+\index{data@{data}!cbor_item_t@{cbor\-\_\-item\-\_\-t}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ cbor\-\_\-item\-\_\-t\-::data}}\label{structcbor__item__t_a5c6dde1dbef5aad748c49786352eef44}
+
+
+Raw data block -\/ interpretation depends on metadata. 
+
+
+
+Definition at line 157 of file data.\-h.
+
+\hypertarget{structcbor__item__t_a7d97fa5cdf027ca0499c37ec19acf843}{\index{cbor\-\_\-item\-\_\-t@{cbor\-\_\-item\-\_\-t}!metadata@{metadata}}
+\index{metadata@{metadata}!cbor_item_t@{cbor\-\_\-item\-\_\-t}}
+\subsubsection[{metadata}]{\setlength{\rightskip}{0pt plus 5cm}union {\bf cbor\-\_\-item\-\_\-metadata} cbor\-\_\-item\-\_\-t\-::metadata}}\label{structcbor__item__t_a7d97fa5cdf027ca0499c37ec19acf843}
+
+
+Discriminated by type. 
+
+
+
+Definition at line 151 of file data.\-h.
+
+\hypertarget{structcbor__item__t_a6bb24fe655f086c6aa9a66d427e09cca}{\index{cbor\-\_\-item\-\_\-t@{cbor\-\_\-item\-\_\-t}!refcount@{refcount}}
+\index{refcount@{refcount}!cbor_item_t@{cbor\-\_\-item\-\_\-t}}
+\subsubsection[{refcount}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-item\-\_\-t\-::refcount}}\label{structcbor__item__t_a6bb24fe655f086c6aa9a66d427e09cca}
+
+
+Reference count -\/ initialize to 0. 
+
+
+
+Definition at line 153 of file data.\-h.
+
+\hypertarget{structcbor__item__t_a6743a75cf89e1b455ddf3198ff98842a}{\index{cbor\-\_\-item\-\_\-t@{cbor\-\_\-item\-\_\-t}!type@{type}}
+\index{type@{type}!cbor_item_t@{cbor\-\_\-item\-\_\-t}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-type} cbor\-\_\-item\-\_\-t\-::type}}\label{structcbor__item__t_a6743a75cf89e1b455ddf3198ff98842a}
+
+
+Major type discriminator. 
+
+
+
+Definition at line 155 of file data.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/cbor/\hyperlink{data_8h}{data.\-h}\end{DoxyCompactItemize}

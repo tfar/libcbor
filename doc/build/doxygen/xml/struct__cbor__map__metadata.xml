@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="struct__cbor__map__metadata" kind="struct" prot="public">
+    <compoundname>_cbor_map_metadata</compoundname>
+    <includes refid="data_8h" local="no">data.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cbor__map__metadata_1a6eb16c3f11be5cecbbf8ab8bae689527" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t _cbor_map_metadata::allocated</definition>
+        <argsstring></argsstring>
+        <name>allocated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="103" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cbor__map__metadata_1a38136af91105ba320f1d95a4a4ceb4de" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t _cbor_map_metadata::end_ptr</definition>
+        <argsstring></argsstring>
+        <name>end_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="104" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cbor__map__metadata_1aace4f7da19acf93e56eeb8ccf0fae7b5" prot="public" static="no" mutable="no">
+        <type><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589" kindref="member">_cbor_dst_metadata</ref></type>
+        <definition>_cbor_dst_metadata _cbor_map_metadata::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="105" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Maps specific metadata. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="102" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="102" bodyend="106"/>
+    <listofallmembers>
+      <member refid="struct__cbor__map__metadata_1a6eb16c3f11be5cecbbf8ab8bae689527" prot="public" virt="non-virtual"><scope>_cbor_map_metadata</scope><name>allocated</name></member>
+      <member refid="struct__cbor__map__metadata_1a38136af91105ba320f1d95a4a4ceb4de" prot="public" virt="non-virtual"><scope>_cbor_map_metadata</scope><name>end_ptr</name></member>
+      <member refid="struct__cbor__map__metadata_1aace4f7da19acf93e56eeb8ccf0fae7b5" prot="public" virt="non-virtual"><scope>_cbor_map_metadata</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

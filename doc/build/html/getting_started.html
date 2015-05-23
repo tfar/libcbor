@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting started &mdash; libcbor 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="libcbor 0.3.1 documentation" href="index.html"/>
+        <link rel="next" title="Usage &amp; preliminaries" href="using.html"/>
+        <link rel="prev" title="libcbor" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> libcbor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-installing-libcbor">Building &amp; installing libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linking-with-libcbor">Linking with libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mingw-build-instructions">MinGW build instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using.html">Usage &amp; preliminaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using.html#version-information">Version information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using.html#headers-to-include">Headers to include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using.html#using-libcbor">Using libcbor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/item_types.html">Types of items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/item_types.html#binary-queries">Binary queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/item_types.html#logical-queries">Logical queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/item_reference_counting.html">Memory management and reference counting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/item_reference_counting.html#using-custom-allocator">Using custom allocator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/item_reference_counting.html#reference-counting">Reference counting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/decoding.html#associated-data-structures">Associated data structures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/encoding.html">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/encoding.html#type-specific-serializers">Type-specific serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_0_1.html">Types 0 &amp; 1 – Positive and negative integers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#type-0-positive-integers">Type 0 - positive integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#type-1-negative-integers">Type 1 - negative integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#type-0-1">Type 0 &amp; 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#building-new-items">Building new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#retrieving-values">Retrieving values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#dealing-with-width">Dealing with width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#dealing-with-signedness">Dealing with signedness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_0_1.html#creating-new-items">Creating new items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_2.html">Type 2 – Byte strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#streaming-indefinite-byte-strings">Streaming indefinite byte strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_2.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_3.html">Type 3 – UTF-8 strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#streaming-indefinite-strings">Streaming indefinite strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#utf-8-encoding-validation">UTF-8 encoding validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_3.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_4.html">Type 4 – Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#streaming-indefinite-arrays">Streaming indefinite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_4.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_5.html">Type 5 – Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#streaming-maps">Streaming maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_5.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_6.html">Type 6 – Semantic tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/type_7.html">Type 7 – Floats &amp; control tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/type_7.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="streaming.html">Streaming &amp; indefinite items</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="streaming/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="streaming/decoding.html#related-structures">Related structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="streaming/decoding.html#callback-types-definition">Callback types definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="streaming/encoding.html">Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#testing-for-memory-leaks">Testing for memory leaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#code-coverage">Code coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#fuzz-testing">Fuzz testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rfc_conformance.html">RFC conformance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rfc_conformance.html#bytestring-length">Bytestring length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rfc_conformance.html#half-precision-ieee-754-floats">&#8220;Half-precision&#8221; IEEE 754 floats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internal.html">Internal mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#inspiration-related-projects">Inspiration &amp; related projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#general-notes-on-the-api-design">General notes on the API design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#coding-style">Coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#memory-layout">Memory layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internal.html#decoding">Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#next">Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 (2015-05-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.2.0 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.1.0 (2015-05-06)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#development-dependencies">Development dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="development.html#building-cmocka">Building <em>cmocka</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#installing-sphinx">Installing <em>sphinx</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#live-preview-of-docs">Live preview of docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#testing-and-code-coverage">Testing and code coverage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">libcbor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/getting_started.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Pre-built Linux packages are distributed from <a class="reference external" href="http://libcbor.org/">the libcbor website</a>. For other platforms, you will need to compile it from source.</p>
+<div class="section" id="building-installing-libcbor">
+<h2>Building &amp; installing libcbor<a class="headerlink" href="#building-installing-libcbor" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Prerequisites:</dt>
+<dd><ul class="first last simple">
+<li>C99 compiler</li>
+<li><a class="reference external" href="http://cmake.org/">CMake</a> 2.8 or newer (might also be called <code class="docutils literal"><span class="pre">cmakesetup</span></code>, <code class="docutils literal"><span class="pre">cmake-gui</span></code> or <code class="docutils literal"><span class="pre">ccmake</span></code> depending on the installed version and system)</li>
+<li>C build system CMake can target (make, Apple Xcode, MinGW, ...)</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As of May 2015, not even the 2015 release candidate of Visual Studio supports C99. While CMake will be happy to generate a VS solution that you can play with, libcbor currently cannot be compiled using the MSVC toolchain. <a class="reference external" href="https://software.intel.com/en-us/c-compilers">ICC</a>, GCC under <a class="reference external" href="https://www.cygwin.com/">Cygwin</a>, and <a class="reference external" href="http://www.mingw.org/">MinGW&#8217;s</a> GCC will all work. The MinGW build process is described below.</p>
+</div>
+<p><strong>Configuration options</strong></p>
+<p>A handful of configuration flags can be passed to <cite>cmake</cite>. The following table lists libcbor compile-time directives and several important generic flags.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="25%" />
+<col width="10%" />
+<col width="54%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Option</td>
+<td>Meaning</td>
+<td>Default</td>
+<td>Possible values</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">CMAKE_C_COMPILER</span></code></td>
+<td>C compiler to use</td>
+<td><code class="docutils literal"><span class="pre">cc</span></code></td>
+<td><code class="docutils literal"><span class="pre">gcc</span></code>, <code class="docutils literal"><span class="pre">clang</span></code>, <code class="docutils literal"><span class="pre">clang-3.5</span></code>, ...</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">CMAKE_INSTALL_PREFIX</span></code></td>
+<td>Installation prefix</td>
+<td>System-dependent</td>
+<td><code class="docutils literal"><span class="pre">/usr/local/lib</span></code>, ...</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">CUSTOM_ALLOC</span></code></td>
+<td>Allow custom <code class="docutils literal"><span class="pre">malloc</span></code>?</td>
+<td><code class="docutils literal"><span class="pre">ON</span></code></td>
+<td><code class="docutils literal"><span class="pre">ON</span></code>, <code class="docutils literal"><span class="pre">OFF</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">HUGE_FUZZ</span></code></td>
+<td><a class="reference internal" href="tests.html"><em>Fuzz test</em></a> with 8GB of data</td>
+<td><code class="docutils literal"><span class="pre">OFF</span></code></td>
+<td><code class="docutils literal"><span class="pre">ON</span></code>, <code class="docutils literal"><span class="pre">OFF</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">SANE_MALLOC</span></code></td>
+<td>Assume <code class="docutils literal"><span class="pre">malloc</span></code> will refuse unreasonable allocations</td>
+<td><code class="docutils literal"><span class="pre">OFF</span></code></td>
+<td><code class="docutils literal"><span class="pre">ON</span></code>, <code class="docutils literal"><span class="pre">OFF</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">COVERAGE</span></code></td>
+<td>Generate test coverage instrumentation</td>
+<td><code class="docutils literal"><span class="pre">OFF</span></code></td>
+<td><code class="docutils literal"><span class="pre">ON</span></code>, <code class="docutils literal"><span class="pre">OFF</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PRETTY_PRINTER</span></code></td>
+<td>Include a pretty-printer implementation</td>
+<td><code class="docutils literal"><span class="pre">ON</span></code></td>
+<td><code class="docutils literal"><span class="pre">ON</span></code>, <code class="docutils literal"><span class="pre">OFF</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">BUFFER_GROWTH</span></code></td>
+<td>Buffer growth factor</td>
+<td><code class="docutils literal"><span class="pre">2</span></code></td>
+<td><code class="docutils literal"><span class="pre">&gt;1</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>If you want to pass other custom configuration options, please refer to <a class="reference external" href="http://www.cmake.org/Wiki/CMake_Useful_Variables">http://www.cmake.org/Wiki/CMake_Useful_Variables</a>.</p>
+<p><strong>Building using make</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Assuming you are in the directory where you want to build</span>
+cmake -DCMAKE_BUILD_TYPE<span class="o">=</span>Release path_to_libcbor_dir
+make cbor
+</pre></div>
+</div>
+<p>Both the shared (<code class="docutils literal"><span class="pre">libcbor.so</span></code>) and the static (<code class="docutils literal"><span class="pre">libcbor.a</span></code>) libraries should now be in the <code class="docutils literal"><span class="pre">src</span></code> subdirectory.</p>
+<p>In order to install the libcbor headers and libraries, the usual</p>
+<div class="highlight-bash"><div class="highlight"><pre>make install
+</pre></div>
+</div>
+<p>is what your&#8217;re looking for. Root permissions are required on most systems.</p>
+<p><strong>Portability</strong></p>
+<p>libcbor is highly portable and works on both little- and big-endian systems regardless of the operating system. After building
+on an exotic platform, you might wish to verify the result by running the <a class="reference internal" href="tests.html"><em>test suite</em></a>. If you encounter any problems, please
+report them to the <a class="reference external" href="https://github.com/PJK/libcbor/issues">issue tracker</a>.</p>
+<p>libcbor is known to successfully work on ARM Android devices. Cross-compilation is possible with <code class="docutils literal"><span class="pre">arm-linux-gnueabi-gcc</span></code>.</p>
+</div>
+<div class="section" id="linking-with-libcbor">
+<h2>Linking with libcbor<a class="headerlink" href="#linking-with-libcbor" title="Permalink to this headline">¶</a></h2>
+<p>If you include and linker paths include the directories to which libcbor has been installed, compiling programs that uses libcbor requires
+no extra considerations.</p>
+<p>You can verify that everything has been set up properly by creating a file with the following contents</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &lt;cbor.h&gt;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello from libcbor %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">CBOR_VERSION</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and compiling it</p>
+<div class="highlight-bash"><div class="highlight"><pre>cc hello_cbor.c -lcbor -o hello_cbor
+</pre></div>
+</div>
+</div>
+<div class="section" id="mingw-build-instructions">
+<h2>MinGW build instructions<a class="headerlink" href="#mingw-build-instructions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Prerequisites:</dt>
+<dd><ul class="first last simple">
+<li>MinGW</li>
+<li>CMake GUI</li>
+</ul>
+</dd>
+</dl>
+<p>First of all, create a folder that will be used for the output. For this demonstration, we will use <code class="docutils literal"><span class="pre">cbor_out</span></code>. Start CMake and select the source path and the destination folder.</p>
+<img alt="_images/win_1.png" src="_images/win_1.png" />
+<p>Then hit the &#8216;Configure&#8217; button. You will be prompted to select the build system:</p>
+<img alt="_images/win_2.png" src="_images/win_2.png" />
+<p>Choose MinGW and confirm.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you select Visual Studio at this point, a MSVC project will be generated for you. This is useful if you just want to browse through the source code.</p>
+</div>
+<p>You can then adjust the build options. The defaults will work just fine. Hit &#8216;Generate&#8217; when you are done.</p>
+<img alt="_images/win_3.png" src="_images/win_3.png" />
+<p>You can then adjust the build options. The defaults will work just fine. Hit &#8216;Generate&#8217; when you are done.</p>
+<p>Open the shell, navigate to the output directory, and run <code class="docutils literal"><span class="pre">mingw32-make</span> <span class="pre">cbor</span></code>.</p>
+<img alt="_images/win_4.png" src="_images/win_4.png" />
+<p><em>libcbor</em> will be built and your <code class="docutils literal"><span class="pre">.dll</span></code> should be ready at this point</p>
+<img alt="_images/win_5.png" src="_images/win_5.png" />
+<p>Feel free to also try building and running some of the examples, e.g. <code class="docutils literal"><span class="pre">mingw32-make</span> <span class="pre">sort</span></code></p>
+<img alt="_images/win_6.png" src="_images/win_6.png" />
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p><strong>cbor.h not found</strong>: The headers directory is probably not in your include path. First, verify the installation
+location by checking the installation log. If you used make, it will look something like</p>
+<div class="highlight-text"><div class="highlight"><pre>...
+-- Installing: /usr/local/include/cbor
+-- Installing: /usr/local/include/cbor/callbacks.h
+-- Installing: /usr/local/include/cbor/encoding.h
+...
+</pre></div>
+</div>
+<p>Make sure that <code class="docutils literal"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> (if you provided it) was correct. Including the path path during compilation should suffice, e.g.:</p>
+<div class="highlight-bash"><div class="highlight"><pre>cc -I/usr/local/include hello_cbor.c -lcbor -o hello_cbor
+</pre></div>
+</div>
+<p><strong>cannot find -lcbor during linking</strong>: Most likely the same problem as before. Include the installation directory in the
+linker shared path using <code class="docutils literal"><span class="pre">-R</span></code>, e.g.:</p>
+<div class="highlight-bash"><div class="highlight"><pre>cc -Wl,-rpath,/usr/local/lib -lcbor -o hello_cbor
+</pre></div>
+</div>
+<p><strong>shared library missing during execution</strong>: Verify the linkage using <code class="docutils literal"><span class="pre">ldd</span></code>, <code class="docutils literal"><span class="pre">otool</span></code>, or similar and adjust the compilation directives accordingly:</p>
+<div class="highlight-text"><div class="highlight"><pre>⇒  ldd hello_cbor
+    linux-vdso.so.1 =&gt;  (0x00007ffe85585000)
+    libcbor.so =&gt; /usr/local/lib/libcbor.so (0x00007f9af69da000)
+    libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007f9af65eb000)
+    /lib64/ld-linux-x86-64.so.2 (0x00007f9af6be9000)
+</pre></div>
+</div>
+<p><strong>compilation failed</strong>: If your compiler supports C99 yet the compilation has failed, please report the issue to the <a class="reference external" href="https://github.com/PJK/libcbor/issues">issue tracker</a>.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="using.html" class="btn btn-neutral float-right" title="Usage &amp; preliminaries" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="libcbor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, 2015, Pavel Kalvoda.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

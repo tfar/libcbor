@@ -1,0 +1,379 @@
+\hypertarget{builder__callbacks_8c}{\section{src/cbor/internal/builder\-\_\-callbacks.c File Reference}
+\label{builder__callbacks_8c}\index{src/cbor/internal/builder\-\_\-callbacks.\-c@{src/cbor/internal/builder\-\_\-callbacks.\-c}}
+}
+{\ttfamily \#include \char`\"{}builder\-\_\-callbacks.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}unicode.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}../arrays.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../bytestrings.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../floats\-\_\-ctrls.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../ints.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../maps.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../strings.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../tags.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{builder__callbacks_8c_ac5a5fe93758a82606342a6f5513d1102}{C\-H\-E\-C\-K\-\_\-\-R\-E\-S}~do \{ if (res == N\-U\-L\-L) \{ ctx-\/$>$creation\-\_\-failed = true; return; \} \} while (0)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{builder__callbacks_8c_abfd1332f0df578631a3702a2c193287c}{\-\_\-cbor\-\_\-builder\-\_\-append} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, struct \hyperlink{struct__cbor__decoder__context}{\-\_\-cbor\-\_\-decoder\-\_\-context} $\ast$ctx)
+\item 
+void \hyperlink{builder__callbacks_8c_aa3cd19f25b7f29ddcd153e30b2e09824}{cbor\-\_\-builder\-\_\-uint8\-\_\-callback} (void $\ast$context, uint8\-\_\-t value)
+\item 
+void \hyperlink{builder__callbacks_8c_a8cac42a8aeaf19f532ccc5c21e851e8c}{cbor\-\_\-builder\-\_\-uint16\-\_\-callback} (void $\ast$context, uint16\-\_\-t value)
+\item 
+void \hyperlink{builder__callbacks_8c_a69e152b1c2523502456301f878b07c49}{cbor\-\_\-builder\-\_\-uint32\-\_\-callback} (void $\ast$context, uint32\-\_\-t value)
+\item 
+void \hyperlink{builder__callbacks_8c_a119060abe3c5b1d936514063ca4db22e}{cbor\-\_\-builder\-\_\-uint64\-\_\-callback} (void $\ast$context, uint64\-\_\-t value)
+\item 
+void \hyperlink{builder__callbacks_8c_a9b1fada71e0c9cbc90ed6089ffc45958}{cbor\-\_\-builder\-\_\-negint8\-\_\-callback} (void $\ast$context, uint8\-\_\-t value)
+\item 
+void \hyperlink{builder__callbacks_8c_a355c63dd0e941d9f3bc18b95876d7b39}{cbor\-\_\-builder\-\_\-negint16\-\_\-callback} (void $\ast$context, uint16\-\_\-t value)
+\item 
+void \hyperlink{builder__callbacks_8c_a4b0a2d222bc823bb88f9b8ba38e00f05}{cbor\-\_\-builder\-\_\-negint32\-\_\-callback} (void $\ast$context, uint32\-\_\-t value)
+\item 
+void \hyperlink{builder__callbacks_8c_ab99cc7da548fd54ed22a6c988be037ae}{cbor\-\_\-builder\-\_\-negint64\-\_\-callback} (void $\ast$context, uint64\-\_\-t value)
+\item 
+void \hyperlink{builder__callbacks_8c_a41f2a1f66f9cb53dd0075e88f0b640fb}{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-callback} (void $\ast$context, \hyperlink{data_8h_a121c5944682215e742475f12f07c0a72}{cbor\-\_\-data} data, size\-\_\-t length)
+\item 
+void \hyperlink{builder__callbacks_8c_a1c0c98b6c27ac737123ecb014cb6e9c7}{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-start\-\_\-callback} (void $\ast$context)
+\item 
+void \hyperlink{builder__callbacks_8c_aa10a165cd945c03ad09ae0866287f6bd}{cbor\-\_\-builder\-\_\-string\-\_\-callback} (void $\ast$context, \hyperlink{data_8h_a121c5944682215e742475f12f07c0a72}{cbor\-\_\-data} data, size\-\_\-t length)
+\item 
+void \hyperlink{builder__callbacks_8c_a269aa36265c6fb1b18cad2a14cf355a0}{cbor\-\_\-builder\-\_\-string\-\_\-start\-\_\-callback} (void $\ast$context)
+\item 
+void \hyperlink{builder__callbacks_8c_a2dd24b9dcda84915c4fc0229a6e52df6}{cbor\-\_\-builder\-\_\-array\-\_\-start\-\_\-callback} (void $\ast$context, size\-\_\-t size)
+\item 
+void \hyperlink{builder__callbacks_8c_a7bcc936cb1cc653551de3d5b49fbe3f0}{cbor\-\_\-builder\-\_\-indef\-\_\-array\-\_\-start\-\_\-callback} (void $\ast$context)
+\item 
+void \hyperlink{builder__callbacks_8c_a28b2dc3b7b96debc8763407308c365ea}{cbor\-\_\-builder\-\_\-indef\-\_\-map\-\_\-start\-\_\-callback} (void $\ast$context)
+\item 
+void \hyperlink{builder__callbacks_8c_a95d00fb404804d93ebffdaf607f48a62}{cbor\-\_\-builder\-\_\-map\-\_\-start\-\_\-callback} (void $\ast$context, size\-\_\-t size)
+\item 
+void \hyperlink{builder__callbacks_8c_ae386e2194dd97053acca4c26d6039ff6}{cbor\-\_\-builder\-\_\-indef\-\_\-break\-\_\-callback} (void $\ast$context)
+\item 
+void \hyperlink{builder__callbacks_8c_ae1509582103b87cc5824c30f101f9d76}{cbor\-\_\-builder\-\_\-float2\-\_\-callback} (void $\ast$context, float value)
+\item 
+void \hyperlink{builder__callbacks_8c_aa86c973a7feebd7d4f12cd3014a36293}{cbor\-\_\-builder\-\_\-float4\-\_\-callback} (void $\ast$context, float value)
+\item 
+void \hyperlink{builder__callbacks_8c_ac78462da492c7d57dfb90f7aadcadc5e}{cbor\-\_\-builder\-\_\-float8\-\_\-callback} (void $\ast$context, double value)
+\item 
+void \hyperlink{builder__callbacks_8c_a54852cd4c120b368d9b9b5cffb622303}{cbor\-\_\-builder\-\_\-null\-\_\-callback} (void $\ast$context)
+\item 
+void \hyperlink{builder__callbacks_8c_a452f42c05cdf422e6526bc0d7cc135dc}{cbor\-\_\-builder\-\_\-undefined\-\_\-callback} (void $\ast$context)
+\item 
+void \hyperlink{builder__callbacks_8c_a1898083345b031539becf70203361860}{cbor\-\_\-builder\-\_\-boolean\-\_\-callback} (void $\ast$context, bool value)
+\item 
+void \hyperlink{builder__callbacks_8c_aa2b3ea257a52e3f002c79ca2740ef6a2}{cbor\-\_\-builder\-\_\-tag\-\_\-callback} (void $\ast$context, uint64\-\_\-t value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{builder__callbacks_8c_ac5a5fe93758a82606342a6f5513d1102}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!C\-H\-E\-C\-K\-\_\-\-R\-E\-S@{C\-H\-E\-C\-K\-\_\-\-R\-E\-S}}
+\index{C\-H\-E\-C\-K\-\_\-\-R\-E\-S@{C\-H\-E\-C\-K\-\_\-\-R\-E\-S}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-R\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-R\-E\-S~do \{ if (res == N\-U\-L\-L) \{ ctx-\/$>$creation\-\_\-failed = true; return; \} \} while (0)}}\label{builder__callbacks_8c_ac5a5fe93758a82606342a6f5513d1102}
+
+
+Definition at line 84 of file builder\-\_\-callbacks.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{builder__callbacks_8c_abfd1332f0df578631a3702a2c193287c}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!\-\_\-cbor\-\_\-builder\-\_\-append@{\-\_\-cbor\-\_\-builder\-\_\-append}}
+\index{\-\_\-cbor\-\_\-builder\-\_\-append@{\-\_\-cbor\-\_\-builder\-\_\-append}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-builder\-\_\-append}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-cbor\-\_\-builder\-\_\-append (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{struct {\bf \-\_\-cbor\-\_\-decoder\-\_\-context} $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_abfd1332f0df578631a3702a2c193287c}
+
+
+Definition at line 19 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a2dd24b9dcda84915c4fc0229a6e52df6}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-array\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-array\-\_\-start\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-array\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-array\-\_\-start\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-array\-\_\-start\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-array\-\_\-start\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a2dd24b9dcda84915c4fc0229a6e52df6}
+
+
+Definition at line 251 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a1898083345b031539becf70203361860}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-boolean\-\_\-callback@{cbor\-\_\-builder\-\_\-boolean\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-boolean\-\_\-callback@{cbor\-\_\-builder\-\_\-boolean\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-boolean\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-boolean\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a1898083345b031539becf70203361860}
+
+
+Definition at line 345 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a41f2a1f66f9cb53dd0075e88f0b640fb}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-callback@{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-callback@{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{{\bf cbor\-\_\-data}}]{data, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a41f2a1f66f9cb53dd0075e88f0b640fb}
+
+
+Definition at line 165 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a1c0c98b6c27ac737123ecb014cb6e9c7}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-start\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-start\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-start\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-byte\-\_\-string\-\_\-start\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a1c0c98b6c27ac737123ecb014cb6e9c7}
+
+
+Definition at line 197 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_ae1509582103b87cc5824c30f101f9d76}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-float2\-\_\-callback@{cbor\-\_\-builder\-\_\-float2\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-float2\-\_\-callback@{cbor\-\_\-builder\-\_\-float2\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-float2\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-float2\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_ae1509582103b87cc5824c30f101f9d76}
+
+
+Definition at line 303 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_aa86c973a7feebd7d4f12cd3014a36293}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-float4\-\_\-callback@{cbor\-\_\-builder\-\_\-float4\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-float4\-\_\-callback@{cbor\-\_\-builder\-\_\-float4\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-float4\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-float4\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_aa86c973a7feebd7d4f12cd3014a36293}
+
+
+Definition at line 311 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_ac78462da492c7d57dfb90f7aadcadc5e}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-float8\-\_\-callback@{cbor\-\_\-builder\-\_\-float8\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-float8\-\_\-callback@{cbor\-\_\-builder\-\_\-float8\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-float8\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-float8\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_ac78462da492c7d57dfb90f7aadcadc5e}
+
+
+Definition at line 320 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a7bcc936cb1cc653551de3d5b49fbe3f0}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-indef\-\_\-array\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-indef\-\_\-array\-\_\-start\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-indef\-\_\-array\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-indef\-\_\-array\-\_\-start\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-indef\-\_\-array\-\_\-start\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-indef\-\_\-array\-\_\-start\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a7bcc936cb1cc653551de3d5b49fbe3f0}
+
+
+Definition at line 263 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_ae386e2194dd97053acca4c26d6039ff6}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-indef\-\_\-break\-\_\-callback@{cbor\-\_\-builder\-\_\-indef\-\_\-break\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-indef\-\_\-break\-\_\-callback@{cbor\-\_\-builder\-\_\-indef\-\_\-break\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-indef\-\_\-break\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-indef\-\_\-break\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_ae386e2194dd97053acca4c26d6039ff6}
+
+
+Definition at line 291 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a28b2dc3b7b96debc8763407308c365ea}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-indef\-\_\-map\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-indef\-\_\-map\-\_\-start\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-indef\-\_\-map\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-indef\-\_\-map\-\_\-start\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-indef\-\_\-map\-\_\-start\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-indef\-\_\-map\-\_\-start\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a28b2dc3b7b96debc8763407308c365ea}
+
+
+Definition at line 271 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a95d00fb404804d93ebffdaf607f48a62}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-map\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-map\-\_\-start\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-map\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-map\-\_\-start\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-map\-\_\-start\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-map\-\_\-start\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a95d00fb404804d93ebffdaf607f48a62}
+
+
+Definition at line 279 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a355c63dd0e941d9f3bc18b95876d7b39}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-negint16\-\_\-callback@{cbor\-\_\-builder\-\_\-negint16\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-negint16\-\_\-callback@{cbor\-\_\-builder\-\_\-negint16\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-negint16\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-negint16\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint16\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a355c63dd0e941d9f3bc18b95876d7b39}
+
+
+Definition at line 136 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a4b0a2d222bc823bb88f9b8ba38e00f05}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-negint32\-\_\-callback@{cbor\-\_\-builder\-\_\-negint32\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-negint32\-\_\-callback@{cbor\-\_\-builder\-\_\-negint32\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-negint32\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-negint32\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint32\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a4b0a2d222bc823bb88f9b8ba38e00f05}
+
+
+Definition at line 145 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_ab99cc7da548fd54ed22a6c988be037ae}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-negint64\-\_\-callback@{cbor\-\_\-builder\-\_\-negint64\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-negint64\-\_\-callback@{cbor\-\_\-builder\-\_\-negint64\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-negint64\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-negint64\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_ab99cc7da548fd54ed22a6c988be037ae}
+
+
+Definition at line 155 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a9b1fada71e0c9cbc90ed6089ffc45958}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-negint8\-\_\-callback@{cbor\-\_\-builder\-\_\-negint8\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-negint8\-\_\-callback@{cbor\-\_\-builder\-\_\-negint8\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-negint8\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-negint8\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint8\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a9b1fada71e0c9cbc90ed6089ffc45958}
+
+
+Definition at line 126 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a54852cd4c120b368d9b9b5cffb622303}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-null\-\_\-callback@{cbor\-\_\-builder\-\_\-null\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-null\-\_\-callback@{cbor\-\_\-builder\-\_\-null\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-null\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-null\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a54852cd4c120b368d9b9b5cffb622303}
+
+
+Definition at line 329 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_aa10a165cd945c03ad09ae0866287f6bd}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-string\-\_\-callback@{cbor\-\_\-builder\-\_\-string\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-string\-\_\-callback@{cbor\-\_\-builder\-\_\-string\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-string\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-string\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{{\bf cbor\-\_\-data}}]{data, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_aa10a165cd945c03ad09ae0866287f6bd}
+
+
+Definition at line 206 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a269aa36265c6fb1b18cad2a14cf355a0}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-string\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-string\-\_\-start\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-string\-\_\-start\-\_\-callback@{cbor\-\_\-builder\-\_\-string\-\_\-start\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-string\-\_\-start\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-string\-\_\-start\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a269aa36265c6fb1b18cad2a14cf355a0}
+
+
+Definition at line 243 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_aa2b3ea257a52e3f002c79ca2740ef6a2}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-tag\-\_\-callback@{cbor\-\_\-builder\-\_\-tag\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-tag\-\_\-callback@{cbor\-\_\-builder\-\_\-tag\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-tag\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-tag\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_aa2b3ea257a52e3f002c79ca2740ef6a2}
+
+
+Definition at line 353 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a8cac42a8aeaf19f532ccc5c21e851e8c}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-uint16\-\_\-callback@{cbor\-\_\-builder\-\_\-uint16\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-uint16\-\_\-callback@{cbor\-\_\-builder\-\_\-uint16\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-uint16\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-uint16\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint16\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a8cac42a8aeaf19f532ccc5c21e851e8c}
+
+
+Definition at line 96 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a69e152b1c2523502456301f878b07c49}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-uint32\-\_\-callback@{cbor\-\_\-builder\-\_\-uint32\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-uint32\-\_\-callback@{cbor\-\_\-builder\-\_\-uint32\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-uint32\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-uint32\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint32\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a69e152b1c2523502456301f878b07c49}
+
+
+Definition at line 106 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a119060abe3c5b1d936514063ca4db22e}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-uint64\-\_\-callback@{cbor\-\_\-builder\-\_\-uint64\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-uint64\-\_\-callback@{cbor\-\_\-builder\-\_\-uint64\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-uint64\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-uint64\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a119060abe3c5b1d936514063ca4db22e}
+
+
+Definition at line 116 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_aa3cd19f25b7f29ddcd153e30b2e09824}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-uint8\-\_\-callback@{cbor\-\_\-builder\-\_\-uint8\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-uint8\-\_\-callback@{cbor\-\_\-builder\-\_\-uint8\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-uint8\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-uint8\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{uint8\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_aa3cd19f25b7f29ddcd153e30b2e09824}
+
+
+Definition at line 86 of file builder\-\_\-callbacks.\-c.
+
+\hypertarget{builder__callbacks_8c_a452f42c05cdf422e6526bc0d7cc135dc}{\index{builder\-\_\-callbacks.\-c@{builder\-\_\-callbacks.\-c}!cbor\-\_\-builder\-\_\-undefined\-\_\-callback@{cbor\-\_\-builder\-\_\-undefined\-\_\-callback}}
+\index{cbor\-\_\-builder\-\_\-undefined\-\_\-callback@{cbor\-\_\-builder\-\_\-undefined\-\_\-callback}!builder_callbacks.c@{builder\-\_\-callbacks.\-c}}
+\subsubsection[{cbor\-\_\-builder\-\_\-undefined\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-builder\-\_\-undefined\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)}}\label{builder__callbacks_8c_a452f42c05cdf422e6526bc0d7cc135dc}
+
+
+Definition at line 337 of file builder\-\_\-callbacks.\-c.
+

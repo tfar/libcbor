@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Type 7 – Floats &amp; control tokens &mdash; libcbor 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="libcbor 0.3.1 documentation" href="../index.html"/>
+        <link rel="up" title="API" href="../api.html"/>
+        <link rel="next" title="Streaming &amp; indefinite items" href="../streaming.html"/>
+        <link rel="prev" title="Type 6 – Semantic tags" href="type_6.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> libcbor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#building-installing-libcbor">Building &amp; installing libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#linking-with-libcbor">Linking with libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#mingw-build-instructions">MinGW build instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using.html">Usage &amp; preliminaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#version-information">Version information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#headers-to-include">Headers to include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#using-libcbor">Using libcbor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="item_types.html">Types of items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#binary-queries">Binary queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#logical-queries">Logical queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="item_reference_counting.html">Memory management and reference counting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#using-custom-allocator">Using custom allocator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#reference-counting">Reference counting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="decoding.html#associated-data-structures">Associated data structures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="encoding.html#type-specific-serializers">Type-specific serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_0_1.html">Types 0 &amp; 1 – Positive and negative integers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-0-positive-integers">Type 0 - positive integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-1-negative-integers">Type 1 - negative integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-0-1">Type 0 &amp; 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#building-new-items">Building new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#retrieving-values">Retrieving values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#dealing-with-width">Dealing with width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#dealing-with-signedness">Dealing with signedness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#creating-new-items">Creating new items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_2.html">Type 2 – Byte strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#streaming-indefinite-byte-strings">Streaming indefinite byte strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_3.html">Type 3 – UTF-8 strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#streaming-indefinite-strings">Streaming indefinite strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#utf-8-encoding-validation">UTF-8 encoding validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_4.html">Type 4 – Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#streaming-indefinite-arrays">Streaming indefinite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_5.html">Type 5 – Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#streaming-maps">Streaming maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_6.html">Type 6 – Semantic tags</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Type 7 – Floats &amp; control tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../streaming.html">Streaming &amp; indefinite items</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#related-structures">Related structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#callback-types-definition">Callback types definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/encoding.html">Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#testing-for-memory-leaks">Testing for memory leaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#code-coverage">Code coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#fuzz-testing">Fuzz testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc_conformance.html">RFC conformance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#bytestring-length">Bytestring length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#half-precision-ieee-754-floats">&#8220;Half-precision&#8221; IEEE 754 floats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../internal.html">Internal mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#inspiration-related-projects">Inspiration &amp; related projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#general-notes-on-the-api-design">General notes on the API design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#coding-style">Coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#memory-layout">Memory layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#decoding">Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#next">Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id1">0.3.0 (2015-05-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">0.2.1 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">0.2.0 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">0.1.0 (2015-05-06)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development.html#development-dependencies">Development dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#building-cmocka">Building <em>cmocka</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#installing-sphinx">Installing <em>sphinx</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#live-preview-of-docs">Live preview of docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#testing-and-code-coverage">Testing and code coverage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libcbor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../api.html">API</a> &raquo;</li>
+      
+    <li>Type 7 – Floats &amp; control tokens</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/type_7.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="type-7-floats-control-tokens">
+<h1>Type 7 – Floats &amp; control tokens<a class="headerlink" href="#type-7-floats-control-tokens" title="Permalink to this headline">¶</a></h1>
+<p>This type combines two completely unrelated types of items &#8211; floating point numbers and special values such as true, false, null, etc. We refer to these special values as &#8216;control values&#8217; or &#8216;ctrls&#8217; for short throughout the code.</p>
+<p>Just like integers, they have different possible width (resulting in different value ranges and precisions).</p>
+<dl class="type">
+<dt id="_CPPv216cbor_float_width">
+<span id="cbor_float_width"></span><span class="target" id="project0data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">cbor_float_width</code><a class="headerlink" href="#_CPPv216cbor_float_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possible widths of <a class="reference internal" href="item_types.html#project0data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6a1276dcc4ac56df5fd7e0270344a6e57d"><span>CBOR_TYPE_FLOAT_CTRL</span></a> items. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv212CBOR_FLOAT_0">
+<span id="CBOR_FLOAT_0"></span><span class="target" id="project0data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7ac3c49d03756f116648957c5d996f48b4"></span><code class="descname">CBOR_FLOAT_0</code><a class="headerlink" href="#_CPPv212CBOR_FLOAT_0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal use - ctrl and special values. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv213CBOR_FLOAT_16">
+<span id="CBOR_FLOAT_16"></span><span class="target" id="project0data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7a6a044cc40003cef84432fe92780514e5"></span><code class="descname">CBOR_FLOAT_16</code><a class="headerlink" href="#_CPPv213CBOR_FLOAT_16" title="Permalink to this definition">¶</a></dt>
+<dd><p>Half float. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv213CBOR_FLOAT_32">
+<span id="CBOR_FLOAT_32"></span><span class="target" id="project0data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7a0b2ba87d2508e98e5f6fee7bf8beedd4"></span><code class="descname">CBOR_FLOAT_32</code><a class="headerlink" href="#_CPPv213CBOR_FLOAT_32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single float. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv213CBOR_FLOAT_64">
+<span id="CBOR_FLOAT_64"></span><span class="target" id="project0data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7a792f18e66a6da153eb4f40a8f894c653"></span><code class="descname">CBOR_FLOAT_64</code><a class="headerlink" href="#_CPPv213CBOR_FLOAT_64" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double. </p>
+</dd></dl>
+
+</dd></dl>
+
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Corresponding <a class="reference internal" href="item_types.html#_CPPv29cbor_type" title="cbor_type"><code class="xref cpp cpp-type docutils literal"><span class="pre">cbor_type</span></code></a></td>
+<td><code class="docutils literal"><span class="pre">CBOR_TYPE_FLOAT_CTRL</span></code></td>
+</tr>
+<tr class="row-even"><td>Number of allocations</td>
+<td>One per lifetime</td>
+</tr>
+<tr class="row-odd"><td>Storage requirements</td>
+<td><code class="docutils literal"><span class="pre">sizeof(cbor_item_t)</span> <span class="pre">+</span> <span class="pre">1/4/8</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="getting-metadata">
+<h2>Getting metadata<a class="headerlink" href="#getting-metadata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv223cbor_float_ctrl_is_ctrlPK11cbor_item_t">
+<span id="cbor_float_ctrl_is_ctrl__cbor_item_tCP"></span><span class="target" id="project0floats__ctrls_8h_1a2b304df65e44de17064bc3de154522fa"></span>bool <code class="descclassname"></code><code class="descname">cbor_float_ctrl_is_ctrl</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv223cbor_float_ctrl_is_ctrlPK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this a ctrl value? </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Is this a ctrl value? </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A float or ctrl item </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv220cbor_float_get_widthPK11cbor_item_t">
+<span id="cbor_float_get_width__cbor_item_tCP"></span><span class="target" id="project0floats__ctrls_8h_1a05778dc7349be636d47440f758ec96a6"></span><a class="reference internal" href="#_CPPv216cbor_float_width" title="cbor_float_width">cbor_float_width</a> <code class="descclassname"></code><code class="descname">cbor_float_get_width</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220cbor_float_get_widthPK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the float width. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The width. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A float or ctrl item </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217cbor_ctrl_is_boolPK11cbor_item_t">
+<span id="cbor_ctrl_is_bool__cbor_item_tCP"></span><span class="target" id="project0floats__ctrls_8h_1ac0c984ec79209ad710dd960ca9566f16"></span>bool <code class="descclassname"></code><code class="descname">cbor_ctrl_is_bool</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217cbor_ctrl_is_boolPK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this ctrl item a boolean? </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Is this ctrl item a boolean? </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A ctrl item </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="reading-data">
+<h2>Reading data<a class="headerlink" href="#reading-data" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv221cbor_float_get_float2PK11cbor_item_t">
+<span id="cbor_float_get_float2__cbor_item_tCP"></span><span class="target" id="project0floats__ctrls_8h_1aa85d79e0f060173a9dccdada2e551cf9"></span>float <code class="descclassname"></code><code class="descname">cbor_float_get_float2</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221cbor_float_get_float2PK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a half precision float. </p>
+<p>The item must have the corresponding width</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>half precision value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">borrow]</span></code> - <p>A half precision float </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv221cbor_float_get_float4PK11cbor_item_t">
+<span id="cbor_float_get_float4__cbor_item_tCP"></span><span class="target" id="project0floats__ctrls_8h_1ad504d3d291810b0c39fc498be0bd2639"></span>float <code class="descclassname"></code><code class="descname">cbor_float_get_float4</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221cbor_float_get_float4PK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a single precision float. </p>
+<p>The item must have the corresponding width</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>single precision value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">borrow]</span></code> - <p>A signle precision float </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv221cbor_float_get_float8PK11cbor_item_t">
+<span id="cbor_float_get_float8__cbor_item_tCP"></span><span class="target" id="project0floats__ctrls_8h_1a2f215940998d05730b23b7e0e7ad8ebe"></span>double <code class="descclassname"></code><code class="descname">cbor_float_get_float8</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221cbor_float_get_float8PK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a double precision float. </p>
+<p>The item must have the corresponding width</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>double precision value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">borrow]</span></code> - <p>A double precision float </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv220cbor_float_get_floatPK11cbor_item_t">
+<span id="cbor_float_get_float__cbor_item_tCP"></span><span class="target" id="project0floats__ctrls_8h_1ad8316cf8b830431ef9ce9562ae679563"></span>double <code class="descclassname"></code><code class="descname">cbor_float_get_float</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220cbor_float_get_floatPK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the float value represented as double. </p>
+<p>Can be used regardless of the width.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>double precision value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">borrow]</span></code> - <p>Any float </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_ctrl_valuePK11cbor_item_t">
+<span id="cbor_ctrl_value__cbor_item_tCP"></span><span class="target" id="project0floats__ctrls_8h_1a9d15faa0a33797ce0b8a1a66d5773d88"></span>uint8_t <code class="descclassname"></code><code class="descname">cbor_ctrl_value</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_ctrl_valuePK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the control value. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the simple value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A ctrl item </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="creating-new-items">
+<h2>Creating new items<a class="headerlink" href="#creating-new-items" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv213cbor_new_ctrlv">
+<span id="cbor_new_ctrl"></span><span class="target" id="project0floats__ctrls_8h_1a6154cefb44f9df7685a5f80d0a1e7379"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_ctrl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213cbor_new_ctrlv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new ctrl item. </p>
+<p>The width cannot be changed once the item is created</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> 1B ctrl </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_new_float2v">
+<span id="cbor_new_float2"></span><span class="target" id="project0floats__ctrls_8h_1a1b332d66de1b49f202b257dc1d245c30"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_float2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_new_float2v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new float item. </p>
+<p>The width cannot be changed once the item is created</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> 2B float </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_new_float4v">
+<span id="cbor_new_float4"></span><span class="target" id="project0floats__ctrls_8h_1af5b06827916da81a32a1d68dd0727bb1"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_float4</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_new_float4v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new float item. </p>
+<p>The width cannot be changed once the item is created</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> 4B float </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_new_float8v">
+<span id="cbor_new_float8"></span><span class="target" id="project0floats__ctrls_8h_1a128574918683dbe68c7dd5256e4f6bf3"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_float8</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_new_float8v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new float item. </p>
+<p>The width cannot be changed once the item is created</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> 8B float </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv213cbor_new_nullv">
+<span id="cbor_new_null"></span><span class="target" id="project0floats__ctrls_8h_1a480b38bd08feb75b1bc705850595b4ee"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213cbor_new_nullv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs new null ctrl item. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> null ctrl item </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv214cbor_new_undefv">
+<span id="cbor_new_undef"></span><span class="target" id="project0floats__ctrls_8h_1a7d40d18664a72a266ce98030d30a7377"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_undef</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214cbor_new_undefv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs new under ctrl item. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> under ctrl item </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="building-items">
+<h2>Building items<a class="headerlink" href="#building-items" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv215cbor_build_boolb">
+<span id="cbor_build_bool__b"></span><span class="target" id="project0floats__ctrls_8h_1a5218f8557e64441e9085f6b9478bfd06"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_bool</code><span class="sig-paren">(</span>bool <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_build_boolb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs new boolean ctrl item. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> boolen ctrl item </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>The value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_build_ctrl7uint8_t">
+<span id="cbor_build_ctrl__uint8_t"></span><span class="target" id="project0floats__ctrls_8h_1af31b0a42b2dd7f29efe42385bd4a58f1"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_ctrl</code><span class="sig-paren">(</span>uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_build_ctrl7uint8_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a ctrl item. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> ctrl item </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217cbor_build_float2f">
+<span id="cbor_build_float2__float"></span><span class="target" id="project0floats__ctrls_8h_1a9884b85abd0c0637a4377168d034260f"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_float2</code><span class="sig-paren">(</span>float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217cbor_build_float2f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new float. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> float </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217cbor_build_float4f">
+<span id="cbor_build_float4__float"></span><span class="target" id="project0floats__ctrls_8h_1a1e3e9757ac809b6df56f1095a87bfdad"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_float4</code><span class="sig-paren">(</span>float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217cbor_build_float4f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new float. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> float </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217cbor_build_float8d">
+<span id="cbor_build_float8__double"></span><span class="target" id="project0floats__ctrls_8h_1aad0e4103cf703b5c3e856956f5a2fb96"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_float8</code><span class="sig-paren">(</span>double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217cbor_build_float8d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new float. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> float </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="manipulating-existing-items">
+<h2>Manipulating existing items<a class="headerlink" href="#manipulating-existing-items" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv213cbor_set_ctrlP11cbor_item_t7uint8_t">
+<span id="cbor_set_ctrl__cbor_item_tP.uint8_t"></span><span class="target" id="project0floats__ctrls_8h_1a5f5d397684bc2118f36d720c61318e7d"></span>void <code class="descclassname"></code><code class="descname">cbor_set_ctrl</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213cbor_set_ctrlP11cbor_item_t7uint8_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign a control value. </p>
+<p><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is possible to produce an invalid CBOR value by assigning a invalid value using this mechanism. Please consult the standard before use.</p>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A ctrl item </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>The simple value to assign. Please consult the standard for allowed values </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_set_float2P11cbor_item_tf">
+<span id="cbor_set_float2__cbor_item_tP.float"></span><span class="target" id="project0floats__ctrls_8h_1aa3d3e746446ef643037a4f8838aa5753"></span>void <code class="descclassname"></code><code class="descname">cbor_set_float2</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_set_float2P11cbor_item_tf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns a float value. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A half precision float </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>The value to assign </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_set_float4P11cbor_item_tf">
+<span id="cbor_set_float4__cbor_item_tP.float"></span><span class="target" id="project0floats__ctrls_8h_1a5fe450a0edad9c7f1a888000f74a1085"></span>void <code class="descclassname"></code><code class="descname">cbor_set_float4</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, float <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_set_float4P11cbor_item_tf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns a float value. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A single precision float </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>The value to assign </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_set_float8P11cbor_item_td">
+<span id="cbor_set_float8__cbor_item_tP.double"></span><span class="target" id="project0floats__ctrls_8h_1a62a2ed2815d844fd54474f30ebbd0f6f"></span>void <code class="descclassname"></code><code class="descname">cbor_set_float8</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, double <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_set_float8P11cbor_item_td" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns a float value. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A double precision float </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>The value to assign </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../streaming.html" class="btn btn-neutral float-right" title="Streaming &amp; indefinite items" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="type_6.html" class="btn btn-neutral" title="Type 6 – Semantic tags" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, 2015, Pavel Kalvoda.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

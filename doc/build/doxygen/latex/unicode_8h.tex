@@ -1,0 +1,56 @@
+\hypertarget{unicode_8h}{\section{src/cbor/internal/unicode.h File Reference}
+\label{unicode_8h}\index{src/cbor/internal/unicode.\-h@{src/cbor/internal/unicode.\-h}}
+}
+{\ttfamily \#include \char`\"{}../common.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__cbor__unicode__status}{\-\_\-cbor\-\_\-unicode\-\_\-status}
+\begin{DoxyCompactList}\small\item\em Signals unicode validation error and possibly its location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{unicode_8h_a5f58283b505b6cc8a5646516ae20831f}{\-\_\-cbor\-\_\-unicode\-\_\-status\-\_\-error} \{ \hyperlink{unicode_8h_a5f58283b505b6cc8a5646516ae20831faf42cbfe1ac853288773814920e16318c}{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-O\-K}, 
+\hyperlink{unicode_8h_a5f58283b505b6cc8a5646516ae20831fa7ddb42c4f16ebd6d46fe1e331c643c8b}{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-B\-A\-D\-C\-P}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{unicode_8h_ade9ebfe3d9b9bfad4c9fd5c158d519a8}{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count} (\hyperlink{data_8h_a121c5944682215e742475f12f07c0a72}{cbor\-\_\-data} source, size\-\_\-t source\-\_\-length, struct \hyperlink{struct__cbor__unicode__status}{\-\_\-cbor\-\_\-unicode\-\_\-status} $\ast$status)
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{unicode_8h_a5f58283b505b6cc8a5646516ae20831f}{\index{unicode.\-h@{unicode.\-h}!\-\_\-cbor\-\_\-unicode\-\_\-status\-\_\-error@{\-\_\-cbor\-\_\-unicode\-\_\-status\-\_\-error}}
+\index{\-\_\-cbor\-\_\-unicode\-\_\-status\-\_\-error@{\-\_\-cbor\-\_\-unicode\-\_\-status\-\_\-error}!unicode.h@{unicode.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-unicode\-\_\-status\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-\_\-cbor\-\_\-unicode\-\_\-status\-\_\-error}}}\label{unicode_8h_a5f58283b505b6cc8a5646516ae20831f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-O\-K@{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-O\-K}!unicode.\-h@{unicode.\-h}}\index{unicode.\-h@{unicode.\-h}!\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-O\-K@{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-O\-K}}\item[{\em 
+\hypertarget{unicode_8h_a5f58283b505b6cc8a5646516ae20831faf42cbfe1ac853288773814920e16318c}{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-O\-K}\label{unicode_8h_a5f58283b505b6cc8a5646516ae20831faf42cbfe1ac853288773814920e16318c}
+}]\index{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-B\-A\-D\-C\-P@{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-B\-A\-D\-C\-P}!unicode.\-h@{unicode.\-h}}\index{unicode.\-h@{unicode.\-h}!\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-B\-A\-D\-C\-P@{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-B\-A\-D\-C\-P}}\item[{\em 
+\hypertarget{unicode_8h_a5f58283b505b6cc8a5646516ae20831fa7ddb42c4f16ebd6d46fe1e331c643c8b}{\-\_\-\-C\-B\-O\-R\-\_\-\-U\-N\-I\-C\-O\-D\-E\-\_\-\-B\-A\-D\-C\-P}\label{unicode_8h_a5f58283b505b6cc8a5646516ae20831fa7ddb42c4f16ebd6d46fe1e331c643c8b}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 17 of file unicode.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{unicode_8h_ade9ebfe3d9b9bfad4c9fd5c158d519a8}{\index{unicode.\-h@{unicode.\-h}!\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count@{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count}}
+\index{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count@{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count}!unicode.h@{unicode.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t \-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-data}}]{source, }
+\item[{size\-\_\-t}]{source\-\_\-length, }
+\item[{struct {\bf \-\_\-cbor\-\_\-unicode\-\_\-status} $\ast$}]{status}
+\end{DoxyParamCaption}
+)}}\label{unicode_8h_ade9ebfe3d9b9bfad4c9fd5c158d519a8}
+
+
+Definition at line 43 of file unicode.\-c.
+

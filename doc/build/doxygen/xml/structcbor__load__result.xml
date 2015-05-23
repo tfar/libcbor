@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="structcbor__load__result" kind="struct" prot="public">
+    <compoundname>cbor_load_result</compoundname>
+    <includes refid="data_8h" local="no">data.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcbor__load__result_1af23777116487150fb1b06842fc57724f" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structcbor__error" kindref="compound">cbor_error</ref></type>
+        <definition>struct cbor_error cbor_load_result::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <briefdescription>
+<para>Error indicator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="180" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__load__result_1ac5d6290cac5893bd060f6759beef2b28" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t cbor_load_result::read</definition>
+        <argsstring></argsstring>
+        <name>read</name>
+        <briefdescription>
+<para>Number of bytes read. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="188" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>High-level decoding result. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="102">
+        <label>cbor_load_result</label>
+        <link refid="structcbor__load__result"/>
+        <childnode refid="103" relation="usage">
+          <edgelabel>error</edgelabel>
+        </childnode>
+      </node>
+      <node id="103">
+        <label>cbor_error</label>
+        <link refid="structcbor__error"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="184" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="184" bodyend="189"/>
+    <listofallmembers>
+      <member refid="structcbor__load__result_1af23777116487150fb1b06842fc57724f" prot="public" virt="non-virtual"><scope>cbor_load_result</scope><name>error</name></member>
+      <member refid="structcbor__load__result_1ac5d6290cac5893bd060f6759beef2b28" prot="public" virt="non-virtual"><scope>cbor_load_result</scope><name>read</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

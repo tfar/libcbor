@@ -1,0 +1,358 @@
+\hypertarget{strings_8c}{\section{src/cbor/strings.c File Reference}
+\label{strings_8c}\index{src/cbor/strings.\-c@{src/cbor/strings.\-c}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}strings.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{strings_8c_a6e2516983e412b9d22fd1fccbeded632}{cbor\-\_\-new\-\_\-definite\-\_\-string} ()
+\begin{DoxyCompactList}\small\item\em Creates a new definite string. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{strings_8c_a226f91c7bfd6be9b0a52cdc6f0b17741}{cbor\-\_\-new\-\_\-indefinite\-\_\-string} ()
+\begin{DoxyCompactList}\small\item\em Creates a new indefinite string. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{strings_8c_a61a9388aca4fc7ee5355eb92a6d56536}{cbor\-\_\-build\-\_\-string} (const char $\ast$val)
+\begin{DoxyCompactList}\small\item\em Creates a new string and initializes it. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{strings_8c_a26f8c53bb33641408921c388bf539b0c}{cbor\-\_\-build\-\_\-stringn} (const char $\ast$val, size\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em Creates a new string and initializes it. \end{DoxyCompactList}\item 
+void \hyperlink{strings_8c_a13a1bf6b6fe2dcfc1baf81fd868d0561}{cbor\-\_\-string\-\_\-set\-\_\-handle} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, unsigned char $\ast$restrict data, size\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em Set the handle to the underlying string. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$$\ast$ \hyperlink{strings_8c_a81d1160eed81b2a29b6c5e9ff6b9e02a}{cbor\-\_\-string\-\_\-chunks\-\_\-handle} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the handle to the array of chunks. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{strings_8c_ad8062db21711a51ae520cc1e4f5fe5ab}{cbor\-\_\-string\-\_\-chunk\-\_\-count} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the number of chunks this string consist of. \end{DoxyCompactList}\item 
+bool \hyperlink{strings_8c_a634462c7237298a196413cd62d7d1877}{cbor\-\_\-string\-\_\-add\-\_\-chunk} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$chunk)
+\begin{DoxyCompactList}\small\item\em Appends a chunk to the string. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{strings_8c_aa0c17825f920ebf122bd7b9abede919f}{cbor\-\_\-string\-\_\-length} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Returns the length of the underlying string. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{strings_8c_ae9e5da7bdf2a79fab7965caeff49d5bb}{cbor\-\_\-string\-\_\-handle} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the handle to the underlying string. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{strings_8c_a90c1cf7781f7ef1f3549f497abd259ef}{cbor\-\_\-string\-\_\-codepoint\-\_\-count} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em The number of codepoints in this string. \end{DoxyCompactList}\item 
+bool \hyperlink{strings_8c_aa2778891e70dec4cd59c9a969294d4aa}{cbor\-\_\-string\-\_\-is\-\_\-definite} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the string definite? \end{DoxyCompactList}\item 
+bool \hyperlink{strings_8c_aa1a92438a04ae77beea9a17910805530}{cbor\-\_\-string\-\_\-is\-\_\-indefinite} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the string indefinite? \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{strings_8c_a61a9388aca4fc7ee5355eb92a6d56536}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-build\-\_\-string@{cbor\-\_\-build\-\_\-string}}
+\index{cbor\-\_\-build\-\_\-string@{cbor\-\_\-build\-\_\-string}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-build\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-build\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{val}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_a61a9388aca4fc7ee5355eb92a6d56536}
+
+
+Creates a new string and initializes it. 
+
+The {\ttfamily val} will be copied to a newly allocated block
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & A null-\/terminated U\-T\-F-\/8 string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\bfseries new} string with content {\ttfamily handle}. {\ttfamily N\-U\-L\-L} on malloc failure. 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file strings.\-c.
+
+\hypertarget{strings_8c_a26f8c53bb33641408921c388bf539b0c}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-build\-\_\-stringn@{cbor\-\_\-build\-\_\-stringn}}
+\index{cbor\-\_\-build\-\_\-stringn@{cbor\-\_\-build\-\_\-stringn}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-build\-\_\-stringn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-build\-\_\-stringn (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{val, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_a26f8c53bb33641408921c388bf539b0c}
+
+
+Creates a new string and initializes it. 
+
+The {\ttfamily handle} will be copied to a newly allocated block
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & A U\-T\-F-\/8 string, at least {\ttfamily length} long (excluding the null byte) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\bfseries new} string with content {\ttfamily handle}. {\ttfamily N\-U\-L\-L} on malloc failure. 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file strings.\-c.
+
+\hypertarget{strings_8c_a6e2516983e412b9d22fd1fccbeded632}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-new\-\_\-definite\-\_\-string@{cbor\-\_\-new\-\_\-definite\-\_\-string}}
+\index{cbor\-\_\-new\-\_\-definite\-\_\-string@{cbor\-\_\-new\-\_\-definite\-\_\-string}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-new\-\_\-definite\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-new\-\_\-definite\-\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_a6e2516983e412b9d22fd1fccbeded632}
+
+
+Creates a new definite string. 
+
+The handle is initialized to {\ttfamily N\-U\-L\-L} and length to 0
+
+\begin{DoxyReturn}{Returns}
+{\bfseries new} definite string. {\ttfamily N\-U\-L\-L} on malloc failure. 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file strings.\-c.
+
+\hypertarget{strings_8c_a226f91c7bfd6be9b0a52cdc6f0b17741}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-new\-\_\-indefinite\-\_\-string@{cbor\-\_\-new\-\_\-indefinite\-\_\-string}}
+\index{cbor\-\_\-new\-\_\-indefinite\-\_\-string@{cbor\-\_\-new\-\_\-indefinite\-\_\-string}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-new\-\_\-indefinite\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-new\-\_\-indefinite\-\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_a226f91c7bfd6be9b0a52cdc6f0b17741}
+
+
+Creates a new indefinite string. 
+
+The chunks array is initialized to {\ttfamily N\-U\-L\-L} and chunkcount to 0
+
+\begin{DoxyReturn}{Returns}
+{\bfseries new} indefinite string. {\ttfamily N\-U\-L\-L} on malloc failure. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file strings.\-c.
+
+\hypertarget{strings_8c_a634462c7237298a196413cd62d7d1877}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-add\-\_\-chunk@{cbor\-\_\-string\-\_\-add\-\_\-chunk}}
+\index{cbor\-\_\-string\-\_\-add\-\_\-chunk@{cbor\-\_\-string\-\_\-add\-\_\-chunk}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-add\-\_\-chunk}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-string\-\_\-add\-\_\-chunk (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{chunk}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_a634462c7237298a196413cd62d7d1877}
+
+
+Appends a chunk to the string. 
+
+Indefinite strings only.
+
+May realloc the chunk storage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An indefinite string \\
+\hline
+{\em item\mbox{[}incref\mbox{]}} & A definite string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success. false on realloc failure. In that case, the refcount of {\ttfamily chunk} is not increased and the {\ttfamily item} is left intact. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file strings.\-c.
+
+\hypertarget{strings_8c_ad8062db21711a51ae520cc1e4f5fe5ab}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-chunk\-\_\-count@{cbor\-\_\-string\-\_\-chunk\-\_\-count}}
+\index{cbor\-\_\-string\-\_\-chunk\-\_\-count@{cbor\-\_\-string\-\_\-chunk\-\_\-count}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-chunk\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-string\-\_\-chunk\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_ad8062db21711a51ae520cc1e4f5fe5ab}
+
+
+Get the number of chunks this string consist of. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A indefinite string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The chunk count. 0 for freshly created items. 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file strings.\-c.
+
+\hypertarget{strings_8c_a81d1160eed81b2a29b6c5e9ff6b9e02a}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-chunks\-\_\-handle@{cbor\-\_\-string\-\_\-chunks\-\_\-handle}}
+\index{cbor\-\_\-string\-\_\-chunks\-\_\-handle@{cbor\-\_\-string\-\_\-chunks\-\_\-handle}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-chunks\-\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$$\ast$ cbor\-\_\-string\-\_\-chunks\-\_\-handle (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_a81d1160eed81b2a29b6c5e9ff6b9e02a}
+
+
+Get the handle to the array of chunks. 
+
+Manipulations with the memory block (e.\-g. sorting it) are allowed, but the validity and the number of chunks must be retained.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A indefinite string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array of \hyperlink{strings_8h_ad8062db21711a51ae520cc1e4f5fe5ab}{cbor\-\_\-string\-\_\-chunk\-\_\-count} definite strings 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file strings.\-c.
+
+\hypertarget{strings_8c_a90c1cf7781f7ef1f3549f497abd259ef}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-codepoint\-\_\-count@{cbor\-\_\-string\-\_\-codepoint\-\_\-count}}
+\index{cbor\-\_\-string\-\_\-codepoint\-\_\-count@{cbor\-\_\-string\-\_\-codepoint\-\_\-count}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-codepoint\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-string\-\_\-codepoint\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_a90c1cf7781f7ef1f3549f497abd259ef}
+
+
+The number of codepoints in this string. 
+
+Might differ from length if there are multibyte ones
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of codepoints in this string 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file strings.\-c.
+
+\hypertarget{strings_8c_ae9e5da7bdf2a79fab7965caeff49d5bb}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-handle@{cbor\-\_\-string\-\_\-handle}}
+\index{cbor\-\_\-string\-\_\-handle@{cbor\-\_\-string\-\_\-handle}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ cbor\-\_\-string\-\_\-handle (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_ae9e5da7bdf2a79fab7965caeff49d5bb}
+
+
+Get the handle to the underlying string. 
+
+Definite items only. Modifying the data is allowed. In that case, the caller takes responsibility for the effect on items this item might be a part of
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A definite string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The address of the underlying string. {\ttfamily N\-U\-L\-L} if no data have been assigned yet. 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file strings.\-c.
+
+\hypertarget{strings_8c_aa2778891e70dec4cd59c9a969294d4aa}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-is\-\_\-definite@{cbor\-\_\-string\-\_\-is\-\_\-definite}}
+\index{cbor\-\_\-string\-\_\-is\-\_\-definite@{cbor\-\_\-string\-\_\-is\-\_\-definite}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-is\-\_\-definite}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-string\-\_\-is\-\_\-definite (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_aa2778891e70dec4cd59c9a969294d4aa}
+
+
+Is the string definite? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the string definite? 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file strings.\-c.
+
+\hypertarget{strings_8c_aa1a92438a04ae77beea9a17910805530}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-is\-\_\-indefinite@{cbor\-\_\-string\-\_\-is\-\_\-indefinite}}
+\index{cbor\-\_\-string\-\_\-is\-\_\-indefinite@{cbor\-\_\-string\-\_\-is\-\_\-indefinite}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-is\-\_\-indefinite}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-string\-\_\-is\-\_\-indefinite (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_aa1a92438a04ae77beea9a17910805530}
+
+
+Is the string indefinite? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the string indefinite? 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file strings.\-c.
+
+\hypertarget{strings_8c_aa0c17825f920ebf122bd7b9abede919f}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-length@{cbor\-\_\-string\-\_\-length}}
+\index{cbor\-\_\-string\-\_\-length@{cbor\-\_\-string\-\_\-length}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-string\-\_\-length (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_aa0c17825f920ebf122bd7b9abede919f}
+
+
+Returns the length of the underlying string. 
+
+For definite strings only
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & a definite string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of the string. Zero if no chunk has been attached yet 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file strings.\-c.
+
+\hypertarget{strings_8c_a13a1bf6b6fe2dcfc1baf81fd868d0561}{\index{strings.\-c@{strings.\-c}!cbor\-\_\-string\-\_\-set\-\_\-handle@{cbor\-\_\-string\-\_\-set\-\_\-handle}}
+\index{cbor\-\_\-string\-\_\-set\-\_\-handle@{cbor\-\_\-string\-\_\-set\-\_\-handle}!strings.c@{strings.\-c}}
+\subsubsection[{cbor\-\_\-string\-\_\-set\-\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-string\-\_\-set\-\_\-handle (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data} restrict}]{data, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{strings_8c_a13a1bf6b6fe2dcfc1baf81fd868d0561}
+
+
+Set the handle to the underlying string. 
+
+\begin{DoxyVerb}embed:rst:leading-asterisk
+* .. warning:: Using a pointer to a stack allocated constant is a common mistake. Lifetime of the string will expire when it goes out of scope and the CBOR item will be left inconsistent.
+* \end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A definite string \\
+\hline
+{\em data} & The memory block. The caller gives up the ownership of the block. libcbor will deallocate it when appropriate using its free function \\
+\hline
+{\em length} & Length of the data block \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file strings.\-c.
+

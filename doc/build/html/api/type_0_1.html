@@ -1,0 +1,731 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Types 0 &amp; 1 – Positive and negative integers &mdash; libcbor 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="libcbor 0.3.1 documentation" href="../index.html"/>
+        <link rel="up" title="API" href="../api.html"/>
+        <link rel="next" title="Type 2 – Byte strings" href="type_2.html"/>
+        <link rel="prev" title="Encoding" href="encoding.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> libcbor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#building-installing-libcbor">Building &amp; installing libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#linking-with-libcbor">Linking with libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#mingw-build-instructions">MinGW build instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using.html">Usage &amp; preliminaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#version-information">Version information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#headers-to-include">Headers to include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#using-libcbor">Using libcbor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="item_types.html">Types of items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#binary-queries">Binary queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#logical-queries">Logical queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="item_reference_counting.html">Memory management and reference counting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#using-custom-allocator">Using custom allocator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#reference-counting">Reference counting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="decoding.html#associated-data-structures">Associated data structures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="encoding.html#type-specific-serializers">Type-specific serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Types 0 &amp; 1 – Positive and negative integers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#type-0-positive-integers">Type 0 - positive integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#type-1-negative-integers">Type 1 - negative integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#type-0-1">Type 0 &amp; 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-new-items">Building new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieving-values">Retrieving values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dealing-with-width">Dealing with width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dealing-with-signedness">Dealing with signedness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-new-items">Creating new items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_2.html">Type 2 – Byte strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#streaming-indefinite-byte-strings">Streaming indefinite byte strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_3.html">Type 3 – UTF-8 strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#streaming-indefinite-strings">Streaming indefinite strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#utf-8-encoding-validation">UTF-8 encoding validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_4.html">Type 4 – Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#streaming-indefinite-arrays">Streaming indefinite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_5.html">Type 5 – Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#streaming-maps">Streaming maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_6.html">Type 6 – Semantic tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_7.html">Type 7 – Floats &amp; control tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../streaming.html">Streaming &amp; indefinite items</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#related-structures">Related structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#callback-types-definition">Callback types definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/encoding.html">Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#testing-for-memory-leaks">Testing for memory leaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#code-coverage">Code coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#fuzz-testing">Fuzz testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc_conformance.html">RFC conformance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#bytestring-length">Bytestring length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#half-precision-ieee-754-floats">&#8220;Half-precision&#8221; IEEE 754 floats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../internal.html">Internal mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#inspiration-related-projects">Inspiration &amp; related projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#general-notes-on-the-api-design">General notes on the API design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#coding-style">Coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#memory-layout">Memory layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#decoding">Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#next">Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id1">0.3.0 (2015-05-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">0.2.1 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">0.2.0 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">0.1.0 (2015-05-06)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development.html#development-dependencies">Development dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#building-cmocka">Building <em>cmocka</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#installing-sphinx">Installing <em>sphinx</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#live-preview-of-docs">Live preview of docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#testing-and-code-coverage">Testing and code coverage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libcbor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../api.html">API</a> &raquo;</li>
+      
+    <li>Types 0 &amp; 1 – Positive and negative integers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/type_0_1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="types-0-1-positive-and-negative-integers">
+<h1>Types 0 &amp; 1 – Positive and negative integers<a class="headerlink" href="#types-0-1-positive-and-negative-integers" title="Permalink to this headline">¶</a></h1>
+<p><em>CBOR</em> has two types of integers – positive (which may be effectively regarded as unsigned), and negative. There are four possible widths for an integer – 1, 2, 4, or 8 bytes. These are represented by</p>
+<dl class="type">
+<dt id="_CPPv214cbor_int_width">
+<span id="cbor_int_width"></span><span class="target" id="project0data_8h_1ae0fc9740f108f0f0078b93712b061e57"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">cbor_int_width</code><a class="headerlink" href="#_CPPv214cbor_int_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possible widths of <a class="reference internal" href="item_types.html#project0data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6a2137d55d8028e37ff4319a633ef0634f"><span>CBOR_TYPE_UINT</span></a> items. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv210CBOR_INT_8">
+<span id="CBOR_INT_8"></span><span class="target" id="project0data_8h_1ae0fc9740f108f0f0078b93712b061e57aaa167d7a4fac34f2bae123761b4b6fc8"></span><code class="descname">CBOR_INT_8</code><a class="headerlink" href="#_CPPv210CBOR_INT_8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv211CBOR_INT_16">
+<span id="CBOR_INT_16"></span><span class="target" id="project0data_8h_1ae0fc9740f108f0f0078b93712b061e57a3a9caf604c45ce423b332e91f7370822"></span><code class="descname">CBOR_INT_16</code><a class="headerlink" href="#_CPPv211CBOR_INT_16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv211CBOR_INT_32">
+<span id="CBOR_INT_32"></span><span class="target" id="project0data_8h_1ae0fc9740f108f0f0078b93712b061e57ad429fc90ccfb94ec85996920fe115b51"></span><code class="descname">CBOR_INT_32</code><a class="headerlink" href="#_CPPv211CBOR_INT_32" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv211CBOR_INT_64">
+<span id="CBOR_INT_64"></span><span class="target" id="project0data_8h_1ae0fc9740f108f0f0078b93712b061e57aafaef7945451a7f4d12298f12f8acb2d"></span><code class="descname">CBOR_INT_64</code><a class="headerlink" href="#_CPPv211CBOR_INT_64" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="type-0-positive-integers">
+<h2>Type 0 - positive integers<a class="headerlink" href="#type-0-positive-integers" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Corresponding <a class="reference internal" href="item_types.html#_CPPv29cbor_type" title="cbor_type"><code class="xref cpp cpp-type docutils literal"><span class="pre">cbor_type</span></code></a></td>
+<td><code class="docutils literal"><span class="pre">CBOR_TYPE_UINT</span></code></td>
+</tr>
+<tr class="row-even"><td>Number of allocations</td>
+<td>One per lifetime</td>
+</tr>
+<tr class="row-odd"><td>Storage requirements</td>
+<td><code class="docutils literal"><span class="pre">sizeof(cbor_item_t)</span> <span class="pre">+</span> <span class="pre">sizeof(uint*_t)</span></code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> once a positive integer has been created, its width <em>cannot</em> be changed.</p>
+</div>
+<div class="section" id="type-1-negative-integers">
+<h2>Type 1 - negative integers<a class="headerlink" href="#type-1-negative-integers" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Corresponding <a class="reference internal" href="item_types.html#_CPPv29cbor_type" title="cbor_type"><code class="xref cpp cpp-type docutils literal"><span class="pre">cbor_type</span></code></a></td>
+<td><code class="docutils literal"><span class="pre">CBOR_TYPE_NEGINT</span></code></td>
+</tr>
+<tr class="row-even"><td>Number of allocations</td>
+<td>One per lifetime</td>
+</tr>
+<tr class="row-odd"><td>Storage requirements</td>
+<td><code class="docutils literal"><span class="pre">sizeof(cbor_item_t)</span> <span class="pre">+</span> <span class="pre">sizeof(uint*_t)</span></code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> once a positive integer has been created, its width <em>cannot</em> be changed.</p>
+</div>
+<div class="section" id="type-0-1">
+<h2>Type 0 &amp; 1<a class="headerlink" href="#type-0-1" title="Permalink to this headline">¶</a></h2>
+<p>Due to their largely similar semantics, the following functions can be used for both Type 0 and Type 1 items. One can convert between them freely using <a class="reference external" href="#dealing-with-signedness">the conversion functions</a>.</p>
+<p>Actual Type of the integer can be checked using <span class="xref std std-ref">item types API</span>.</p>
+<p>An integer item is created with one of the four widths. Because integers&#8217; <a class="reference external" href="/internal#c.cbor_item_t.data">storage is bundled together with the handle</a>, the width cannot be changed over its lifetime.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Due to the fact that CBOR negative integers represent integers in the range <span class="math">\([-1, -2^N]\)</span>, <code class="docutils literal"><span class="pre">cbor_set_uint</span></code> API is somewhat counter-intuitive as the resulting logical value is 1 less. This behavior is necessary in order to permit uniform manipulation with the full range of permitted values. For example, the following snippet</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">cbor_item_t</span> <span class="o">*</span> <span class="n">item</span> <span class="o">=</span> <span class="n">cbor_new_int8</span><span class="p">();</span>
+<span class="n">cbor_mark_negint</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="n">cbor_set_uint8</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p class="last">will produce an item with the logical value of <span class="math">\(-1\)</span>. There is, however, an upside to this as well: There is only one representation of zero.</p>
+</div>
+</div>
+<div class="section" id="building-new-items">
+<h2>Building new items<a class="headerlink" href="#building-new-items" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv216cbor_build_uint87uint8_t">
+<span id="cbor_build_uint8__uint8_t"></span><span class="target" id="project0ints_8h_1ad4d9f92f14c640544386e6655283052d"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_uint8</code><span class="sig-paren">(</span>uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216cbor_build_uint87uint8_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new positive integer. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> positive integer </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217cbor_build_uint168uint16_t">
+<span id="cbor_build_uint16__uint16_t"></span><span class="target" id="project0ints_8h_1a88f05c625ad9fa182bc95c9c97f87dda"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_uint16</code><span class="sig-paren">(</span>uint16_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217cbor_build_uint168uint16_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new positive integer. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> positive integer </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217cbor_build_uint328uint32_t">
+<span id="cbor_build_uint32__uint32_t"></span><span class="target" id="project0ints_8h_1afcefa3190eeeff1e5ed0b5217761ad5a"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_uint32</code><span class="sig-paren">(</span>uint32_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217cbor_build_uint328uint32_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new positive integer. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> positive integer </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217cbor_build_uint648uint64_t">
+<span id="cbor_build_uint64__uint64_t"></span><span class="target" id="project0ints_8h_1adff4351ebc5bb6f69d8a2ea0c9439fc5"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_uint64</code><span class="sig-paren">(</span>uint64_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217cbor_build_uint648uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new positive integer. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> positive integer </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to use </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="retrieving-values">
+<h2>Retrieving values<a class="headerlink" href="#retrieving-values" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv214cbor_get_uint8PK11cbor_item_t">
+<span id="cbor_get_uint8__cbor_item_tCP"></span><span class="target" id="project0ints_8h_1a2379bf36318e8e4faa7434c74d8553fb"></span>uint8_t <code class="descclassname"></code><code class="descname">cbor_get_uint8</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214cbor_get_uint8PK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the integer value. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_get_uint16PK11cbor_item_t">
+<span id="cbor_get_uint16__cbor_item_tCP"></span><span class="target" id="project0ints_8h_1a06a0997aed16fe6aa540f57bf40ce400"></span>uint16_t <code class="descclassname"></code><code class="descname">cbor_get_uint16</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_get_uint16PK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the integer value. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_get_uint32PK11cbor_item_t">
+<span id="cbor_get_uint32__cbor_item_tCP"></span><span class="target" id="project0ints_8h_1a0480e5b5849b757aa9416a4c1d51b36d"></span>uint32_t <code class="descclassname"></code><code class="descname">cbor_get_uint32</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_get_uint32PK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the integer value. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_get_uint64PK11cbor_item_t">
+<span id="cbor_get_uint64__cbor_item_tCP"></span><span class="target" id="project0ints_8h_1a839ec2dc97dda1db54657cec50387a12"></span>uint64_t <code class="descclassname"></code><code class="descname">cbor_get_uint64</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_get_uint64PK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts the integer value. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the value </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setting-values">
+<h2>Setting values<a class="headerlink" href="#setting-values" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv214cbor_set_uint8P11cbor_item_t7uint8_t">
+<span id="cbor_set_uint8__cbor_item_tP.uint8_t"></span><span class="target" id="project0ints_8h_1a62e9cd557438c1a5b8cf9a29c1f64baa"></span>void <code class="descclassname"></code><code class="descname">cbor_set_uint8</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, uint8_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214cbor_set_uint8P11cbor_item_t7uint8_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns the integer value. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer item </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to assign. For negative integer, the logical value is <code class="docutils literal"><span class="pre">-value</span> <span class="pre">-</span> <span class="pre">1</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_set_uint16P11cbor_item_t8uint16_t">
+<span id="cbor_set_uint16__cbor_item_tP.uint16_t"></span><span class="target" id="project0ints_8h_1a13b3dff419830b59c77ee18d4c03f6eb"></span>void <code class="descclassname"></code><code class="descname">cbor_set_uint16</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, uint16_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_set_uint16P11cbor_item_t8uint16_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns the integer value. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer item </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to assign. For negative integer, the logical value is <code class="docutils literal"><span class="pre">-value</span> <span class="pre">-</span> <span class="pre">1</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_set_uint32P11cbor_item_t8uint32_t">
+<span id="cbor_set_uint32__cbor_item_tP.uint32_t"></span><span class="target" id="project0ints_8h_1a2db697fb733dcbdbbef8714fd182a185"></span>void <code class="descclassname"></code><code class="descname">cbor_set_uint32</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, uint32_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_set_uint32P11cbor_item_t8uint32_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns the integer value. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer item </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to assign. For negative integer, the logical value is <code class="docutils literal"><span class="pre">-value</span> <span class="pre">-</span> <span class="pre">1</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv215cbor_set_uint64P11cbor_item_t8uint64_t">
+<span id="cbor_set_uint64__cbor_item_tP.uint64_t"></span><span class="target" id="project0ints_8h_1af82a3961109f2a36324157e218680016"></span>void <code class="descclassname"></code><code class="descname">cbor_set_uint64</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, uint64_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215cbor_set_uint64P11cbor_item_t8uint64_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns the integer value. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer item </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">value</span></code> - <p>the value to assign. For negative integer, the logical value is <code class="docutils literal"><span class="pre">-value</span> <span class="pre">-</span> <span class="pre">1</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="dealing-with-width">
+<h2>Dealing with width<a class="headerlink" href="#dealing-with-width" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv218cbor_int_get_widthPK11cbor_item_t">
+<span id="cbor_int_get_width__cbor_item_tCP"></span><span class="target" id="project0ints_8h_1a30bcfb58aa41d4c44bc2d5d6b7de105d"></span><a class="reference internal" href="#_CPPv214cbor_int_width" title="cbor_int_width">cbor_int_width</a> <code class="descclassname"></code><code class="descname">cbor_int_get_width</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218cbor_int_get_widthPK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries the integer width. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>the width </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer item </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="dealing-with-signedness">
+<h2>Dealing with signedness<a class="headerlink" href="#dealing-with-signedness" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv214cbor_mark_uintP11cbor_item_t">
+<span id="cbor_mark_uint__cbor_item_tP"></span><span class="target" id="project0ints_8h_1aed6a5a44245b8447a768c95e351c2c0c"></span>void <code class="descclassname"></code><code class="descname">cbor_mark_uint</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214cbor_mark_uintP11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Marks the integer item as a positive integer. </p>
+<p>The data value is not changed</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer item </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv216cbor_mark_negintP11cbor_item_t">
+<span id="cbor_mark_negint__cbor_item_tP"></span><span class="target" id="project0ints_8h_1a6ef24d3e2636c02de092fdfc337276b1"></span>void <code class="descclassname"></code><code class="descname">cbor_mark_negint</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216cbor_mark_negintP11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Marks the integer item as a negative integer. </p>
+<p>The data value is not changed</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>positive or negative integer item </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="creating-new-items">
+<h2>Creating new items<a class="headerlink" href="#creating-new-items" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv213cbor_new_int8v">
+<span id="cbor_new_int8"></span><span class="target" id="project0ints_8h_1ae4562e1314b122ae89712dbf0c48c14c"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_int8</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213cbor_new_int8v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocates new integer with 1B width. </p>
+<p>The width cannot be changed once allocated</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> positive integer. The value is not initialized. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv214cbor_new_int16v">
+<span id="cbor_new_int16"></span><span class="target" id="project0ints_8h_1a68f71f9574e0085f02a27bd0f58d4b55"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_int16</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214cbor_new_int16v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocates new integer with 2B width. </p>
+<p>The width cannot be changed once allocated</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> positive integer. The value is not initialized. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv214cbor_new_int32v">
+<span id="cbor_new_int32"></span><span class="target" id="project0ints_8h_1a9cf9db24315a0e622746a546cc112467"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_int32</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214cbor_new_int32v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocates new integer with 4B width. </p>
+<p>The width cannot be changed once allocated</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> positive integer. The value is not initialized. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv214cbor_new_int64v">
+<span id="cbor_new_int64"></span><span class="target" id="project0ints_8h_1ab863f47b9de930c5d014e0dbb5523d9d"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_int64</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214cbor_new_int64v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allocates new integer with 8B width. </p>
+<p>The width cannot be changed once allocated</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> positive integer. The value is not initialized. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="type_2.html" class="btn btn-neutral float-right" title="Type 2 – Byte strings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="encoding.html" class="btn btn-neutral" title="Encoding" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, 2015, Pavel Kalvoda.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

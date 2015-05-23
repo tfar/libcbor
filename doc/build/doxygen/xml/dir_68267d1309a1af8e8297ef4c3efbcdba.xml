@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_cb565ba51d82ea933604984cbab6233d">src/cbor</innerdir>
+    <innerfile refid="allocators_8c">allocators.c</innerfile>
+    <innerfile refid="cbor_8c">cbor.c</innerfile>
+    <innerfile refid="cbor_8h">cbor.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pjk/project/libcbor/src/"/>
+  </compounddef>
+</doxygen>

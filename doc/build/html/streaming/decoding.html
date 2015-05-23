@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Decoding &mdash; libcbor 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="libcbor 0.3.1 documentation" href="../index.html"/>
+        <link rel="up" title="Streaming &amp; indefinite items" href="../streaming.html"/>
+        <link rel="next" title="Encoding" href="encoding.html"/>
+        <link rel="prev" title="Streaming &amp; indefinite items" href="../streaming.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> libcbor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#building-installing-libcbor">Building &amp; installing libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#linking-with-libcbor">Linking with libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#mingw-build-instructions">MinGW build instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using.html">Usage &amp; preliminaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#version-information">Version information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#headers-to-include">Headers to include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#using-libcbor">Using libcbor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/item_types.html">Types of items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/item_types.html#binary-queries">Binary queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/item_types.html#logical-queries">Logical queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/item_reference_counting.html">Memory management and reference counting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/item_reference_counting.html#using-custom-allocator">Using custom allocator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/item_reference_counting.html#reference-counting">Reference counting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/decoding.html#associated-data-structures">Associated data structures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/encoding.html">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/encoding.html#type-specific-serializers">Type-specific serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/type_0_1.html">Types 0 &amp; 1 – Positive and negative integers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#type-0-positive-integers">Type 0 - positive integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#type-1-negative-integers">Type 1 - negative integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#type-0-1">Type 0 &amp; 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#building-new-items">Building new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#retrieving-values">Retrieving values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#dealing-with-width">Dealing with width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#dealing-with-signedness">Dealing with signedness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_0_1.html#creating-new-items">Creating new items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/type_2.html">Type 2 – Byte strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_2.html#streaming-indefinite-byte-strings">Streaming indefinite byte strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_2.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_2.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_2.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_2.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_2.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/type_3.html">Type 3 – UTF-8 strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_3.html#streaming-indefinite-strings">Streaming indefinite strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_3.html#utf-8-encoding-validation">UTF-8 encoding validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_3.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_3.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_3.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_3.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_3.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/type_4.html">Type 4 – Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_4.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_4.html#streaming-indefinite-arrays">Streaming indefinite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_4.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_4.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_4.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_4.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/type_5.html">Type 5 – Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_5.html#streaming-maps">Streaming maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_5.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_5.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_5.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_5.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/type_6.html">Type 6 – Semantic tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/type_7.html">Type 7 – Floats &amp; control tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_7.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_7.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_7.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_7.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/type_7.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../streaming.html">Streaming &amp; indefinite items</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#related-structures">Related structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#callback-types-definition">Callback types definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html">Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#testing-for-memory-leaks">Testing for memory leaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#code-coverage">Code coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#fuzz-testing">Fuzz testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc_conformance.html">RFC conformance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#bytestring-length">Bytestring length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#half-precision-ieee-754-floats">&#8220;Half-precision&#8221; IEEE 754 floats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../internal.html">Internal mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#inspiration-related-projects">Inspiration &amp; related projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#general-notes-on-the-api-design">General notes on the API design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#coding-style">Coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#memory-layout">Memory layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#decoding">Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#next">Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id1">0.3.0 (2015-05-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">0.2.1 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">0.2.0 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">0.1.0 (2015-05-06)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development.html#development-dependencies">Development dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#building-cmocka">Building <em>cmocka</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#installing-sphinx">Installing <em>sphinx</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#live-preview-of-docs">Live preview of docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#testing-and-code-coverage">Testing and code coverage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libcbor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../streaming.html">Streaming &amp; indefinite items</a> &raquo;</li>
+      
+    <li>Decoding</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/streaming/decoding.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="decoding">
+<h1>Decoding<a class="headerlink" href="#decoding" title="Permalink to this headline">¶</a></h1>
+<p>Another way to decode data using libcbor is to specify a callbacks that will be invoked when upon finding certain items in the input. This service is provided by</p>
+<dl class="function">
+<dt id="_CPPv218cbor_stream_decode9cbor_data6size_tPK14cbor_callbacksPv">
+<span id="cbor_stream_decode__cbor_data.s.cbor_callbacksCP.voidP"></span><span class="target" id="project0streaming_8h_1aadf8db8555f22bbd5a2acfd77170b2be"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv219cbor_decoder_result" title="cbor_decoder_result">cbor_decoder_result</a> <code class="descclassname"></code><code class="descname">cbor_stream_decode</code><span class="sig-paren">(</span>cbor_data <em>buffer</em>, size_t <em>buffer_size</em>, <em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv214cbor_callbacks" title="cbor_callbacks">cbor_callbacks</a> *<em>callbacks</em>, void *<em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218cbor_stream_decode9cbor_data6size_tPK14cbor_callbacksPv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stateless decoder. </p>
+<p>Will try parsing the <code class="docutils literal"><span class="pre">buffer</span></code> and will invoke the appropriate callback on success. Decodes one item at a time. No memory allocations occur.</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Input buffer </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Length of the buffer </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">callbacks</span></code> - <p>The callback bundle </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">context</span></code> - <p>An arbitrary pointer to allow for maintaining context. </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<p>To get started, you might want to have a look at the simple streaming example:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#include &quot;cbor.h&quot;</span>
+<span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="cp">#include &lt;string.h&gt;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Illustrates how one might skim through a map (which is assumed to have</span>
+<span class="cm"> * string keys and values only), looking for the value of a specific key</span>
+<span class="cm"> *</span>
+<span class="cm"> * Use the examples/data/map.cbor input to test this.</span>
+<span class="cm"> */</span>
+
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">key</span> <span class="o">=</span> <span class="s">&quot;a secret key&quot;</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">key_found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">find_string</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">_ctx</span><span class="p">,</span> <span class="n">cbor_data</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">len</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">key_found</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Found the value: %*s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+        <span class="n">key_found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">len</span> <span class="o">==</span> <span class="n">strlen</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">key_found</span> <span class="o">=</span> <span class="p">(</span><span class="n">memcmp</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&quot;rb&quot;</span><span class="p">);</span>
+    <span class="n">fseek</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SEEK_END</span><span class="p">);</span>
+    <span class="kt">size_t</span> <span class="n">length</span> <span class="o">=</span> <span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="n">ftell</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+    <span class="n">fseek</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">);</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">length</span><span class="p">);</span>
+    <span class="n">fread</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+
+    <span class="k">struct</span> <span class="n">cbor_callbacks</span> <span class="n">callbacks</span> <span class="o">=</span> <span class="n">cbor_empty_callbacks</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">cbor_decoder_result</span> <span class="n">decode_result</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">bytes_read</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">callbacks</span><span class="p">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">find_string</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">bytes_read</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">decode_result</span> <span class="o">=</span> <span class="n">cbor_stream_decode</span><span class="p">(</span><span class="n">buffer</span> <span class="o">+</span> <span class="n">bytes_read</span><span class="p">,</span>
+                                           <span class="n">length</span> <span class="o">-</span> <span class="n">bytes_read</span><span class="p">,</span>
+                                           <span class="o">&amp;</span><span class="n">callbacks</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+        <span class="n">bytes_read</span> <span class="o">+=</span> <span class="n">decode_result</span><span class="p">.</span><span class="n">read</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The callbacks are defined by</p>
+<dl class="class">
+<dt id="_CPPv214cbor_callbacks">
+<span id="cbor_callbacks"></span><span class="target" id="project0structcbor__callbacks"></span><em class="property">struct </em><code class="descclassname"></code><code class="descname">cbor_callbacks</code><a class="headerlink" href="#_CPPv214cbor_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback bundle  passed to the decoder. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks5uint8E">
+<span id="cbor_callbacks::uint8__cbor_int8_callback"></span><span class="target" id="project0structcbor__callbacks_1af2d69429c9bc71edf55b6f4f1dbb76d1"></span><a class="reference internal" href="#_CPPv218cbor_int8_callback" title="cbor_int8_callback">cbor_int8_callback</a> <code class="descname">uint8</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks5uint8E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned int. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks6uint16E">
+<span id="cbor_callbacks::uint16__cbor_int16_callback"></span><span class="target" id="project0structcbor__callbacks_1a3eb2039fa03bd534d6be0ed10d0c98be"></span><a class="reference internal" href="#_CPPv219cbor_int16_callback" title="cbor_int16_callback">cbor_int16_callback</a> <code class="descname">uint16</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks6uint16E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned int. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks6uint32E">
+<span id="cbor_callbacks::uint32__cbor_int32_callback"></span><span class="target" id="project0structcbor__callbacks_1af2501b53c0150c4d3244a039b3232bf1"></span><a class="reference internal" href="#_CPPv219cbor_int32_callback" title="cbor_int32_callback">cbor_int32_callback</a> <code class="descname">uint32</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks6uint32E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned int. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks6uint64E">
+<span id="cbor_callbacks::uint64__cbor_int64_callback"></span><span class="target" id="project0structcbor__callbacks_1a2b0328261726fba55f663f55f954d56b"></span><a class="reference internal" href="#_CPPv219cbor_int64_callback" title="cbor_int64_callback">cbor_int64_callback</a> <code class="descname">uint64</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks6uint64E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsigned int. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks8negint64E">
+<span id="cbor_callbacks::negint64__cbor_int64_callback"></span><span class="target" id="project0structcbor__callbacks_1ac0a4f4915ecb9924132c60c7fe7d93fe"></span><a class="reference internal" href="#_CPPv219cbor_int64_callback" title="cbor_int64_callback">cbor_int64_callback</a> <code class="descname">negint64</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks8negint64E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative int. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks8negint32E">
+<span id="cbor_callbacks::negint32__cbor_int32_callback"></span><span class="target" id="project0structcbor__callbacks_1a26e8c4f53af47eaaf8928b86fb92a44f"></span><a class="reference internal" href="#_CPPv219cbor_int32_callback" title="cbor_int32_callback">cbor_int32_callback</a> <code class="descname">negint32</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks8negint32E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative int. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks8negint16E">
+<span id="cbor_callbacks::negint16__cbor_int16_callback"></span><span class="target" id="project0structcbor__callbacks_1a0e47df73a7ecf894ab75e04a1cc83dc7"></span><a class="reference internal" href="#_CPPv219cbor_int16_callback" title="cbor_int16_callback">cbor_int16_callback</a> <code class="descname">negint16</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks8negint16E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative int. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks7negint8E">
+<span id="cbor_callbacks::negint8__cbor_int8_callback"></span><span class="target" id="project0structcbor__callbacks_1aae703108db340c2df1af0154b23b9631"></span><a class="reference internal" href="#_CPPv218cbor_int8_callback" title="cbor_int8_callback">cbor_int8_callback</a> <code class="descname">negint8</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks7negint8E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Negative int. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks17byte_string_startE">
+<span id="cbor_callbacks::byte_string_start__cbor_simple_callback"></span><span class="target" id="project0structcbor__callbacks_1adf65a04d2423dcdd73cec4a261ccb6aa"></span><a class="reference internal" href="#_CPPv220cbor_simple_callback" title="cbor_simple_callback">cbor_simple_callback</a> <code class="descname">byte_string_start</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks17byte_string_startE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definite byte string. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks11byte_stringE">
+<span id="cbor_callbacks::byte_string__cbor_string_callback"></span><span class="target" id="project0structcbor__callbacks_1a0c2528e2b1d6df97053168d24e53e278"></span><a class="reference internal" href="#_CPPv220cbor_string_callback" title="cbor_string_callback">cbor_string_callback</a> <code class="descname">byte_string</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks11byte_stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indefinite byte string start. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks6stringE">
+<span id="cbor_callbacks::string__cbor_string_callback"></span><span class="target" id="project0structcbor__callbacks_1a18144e8cc29b3562f071188c3d9086eb"></span><a class="reference internal" href="#_CPPv220cbor_string_callback" title="cbor_string_callback">cbor_string_callback</a> <code class="descname">string</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks6stringE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definite string. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks12string_startE">
+<span id="cbor_callbacks::string_start__cbor_simple_callback"></span><span class="target" id="project0structcbor__callbacks_1ac5a3ff3cd57f469460c13598d14eb2eb"></span><a class="reference internal" href="#_CPPv220cbor_simple_callback" title="cbor_simple_callback">cbor_simple_callback</a> <code class="descname">string_start</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks12string_startE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indefinite string start. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks17indef_array_startE">
+<span id="cbor_callbacks::indef_array_start__cbor_simple_callback"></span><span class="target" id="project0structcbor__callbacks_1a5831fd6bd9372b04a8f65db1e1967713"></span><a class="reference internal" href="#_CPPv220cbor_simple_callback" title="cbor_simple_callback">cbor_simple_callback</a> <code class="descname">indef_array_start</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks17indef_array_startE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definite array. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks11array_startE">
+<span id="cbor_callbacks::array_start__cbor_collection_callback"></span><span class="target" id="project0structcbor__callbacks_1affebd3296749cdc0d564a3b9cae7a4e4"></span><a class="reference internal" href="#_CPPv224cbor_collection_callback" title="cbor_collection_callback">cbor_collection_callback</a> <code class="descname">array_start</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks11array_startE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indefinite array. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks15indef_map_startE">
+<span id="cbor_callbacks::indef_map_start__cbor_simple_callback"></span><span class="target" id="project0structcbor__callbacks_1ab989b168f43559f404d87508bdd0ddc8"></span><a class="reference internal" href="#_CPPv220cbor_simple_callback" title="cbor_simple_callback">cbor_simple_callback</a> <code class="descname">indef_map_start</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks15indef_map_startE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definite map. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks9map_startE">
+<span id="cbor_callbacks::map_start__cbor_collection_callback"></span><span class="target" id="project0structcbor__callbacks_1ac833a2232c624936d7444612e47e8a20"></span><a class="reference internal" href="#_CPPv224cbor_collection_callback" title="cbor_collection_callback">cbor_collection_callback</a> <code class="descname">map_start</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks9map_startE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indefinite map. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks3tagE">
+<span id="cbor_callbacks::tag__cbor_int64_callback"></span><span class="target" id="project0structcbor__callbacks_1ab5a727d5b11a7f2558cf811908f92e70"></span><a class="reference internal" href="#_CPPv219cbor_int64_callback" title="cbor_int64_callback">cbor_int64_callback</a> <code class="descname">tag</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks3tagE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tags. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks6float2E">
+<span id="cbor_callbacks::float2__cbor_float_callback"></span><span class="target" id="project0structcbor__callbacks_1ab1f4ab3a5bf0cf2a6418b8cb28877652"></span><a class="reference internal" href="#_CPPv219cbor_float_callback" title="cbor_float_callback">cbor_float_callback</a> <code class="descname">float2</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks6float2E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Half float. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks6float8E">
+<span id="cbor_callbacks::float8__cbor_double_callback"></span><span class="target" id="project0structcbor__callbacks_1a5a80bae7d106e7cf61d27cd710251e4a"></span><a class="reference internal" href="#_CPPv220cbor_double_callback" title="cbor_double_callback">cbor_double_callback</a> <code class="descname">float8</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks6float8E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single float. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks6float4E">
+<span id="cbor_callbacks::float4__cbor_float_callback"></span><span class="target" id="project0structcbor__callbacks_1a3e0e5094fdfbc527f9a2ca300d65b7df"></span><a class="reference internal" href="#_CPPv219cbor_float_callback" title="cbor_float_callback">cbor_float_callback</a> <code class="descname">float4</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks6float4E" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double float. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks9undefinedE">
+<span id="cbor_callbacks::undefined__cbor_simple_callback"></span><span class="target" id="project0structcbor__callbacks_1af9b30de5bef7bf76e8e34bdd95434f98"></span><a class="reference internal" href="#_CPPv220cbor_simple_callback" title="cbor_simple_callback">cbor_simple_callback</a> <code class="descname">undefined</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks9undefinedE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Undef. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks4nullE">
+<span id="cbor_callbacks::null__cbor_simple_callback"></span><span class="target" id="project0structcbor__callbacks_1a7483f952b13db66abd893082a204859d"></span><a class="reference internal" href="#_CPPv220cbor_simple_callback" title="cbor_simple_callback">cbor_simple_callback</a> <code class="descname">null</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks4nullE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Null. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks7booleanE">
+<span id="cbor_callbacks::boolean__cbor_bool_callback"></span><span class="target" id="project0structcbor__callbacks_1a458321ece8c64be2c37b96f78bbdfb8c"></span><a class="reference internal" href="#_CPPv218cbor_bool_callback" title="cbor_bool_callback">cbor_bool_callback</a> <code class="descname">boolean</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks7booleanE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N14cbor_callbacks11indef_breakE">
+<span id="cbor_callbacks::indef_break__cbor_simple_callback"></span><span class="target" id="project0structcbor__callbacks_1abc0516d80611473d2527bf5faea393d8"></span><a class="reference internal" href="#_CPPv220cbor_simple_callback" title="cbor_simple_callback">cbor_simple_callback</a> <code class="descname">indef_break</code><a class="headerlink" href="#_CPPv2N14cbor_callbacks11indef_breakE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indefinite item break. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>When building custom sets of callbacks, feel free to start from</p>
+<dl class="member">
+<dt id="_CPPv220cbor_empty_callbacks">
+<span id="cbor_empty_callbacks__cbor_callbacksC"></span><span class="target" id="project0callbacks_8h_1a3500c93f246a6c53816e52c70fe8d640"></span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv214cbor_callbacks" title="cbor_callbacks">cbor_callbacks</a> <code class="descclassname"></code><code class="descname">cbor_empty_callbacks</code><a class="headerlink" href="#_CPPv220cbor_empty_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dummy callback bundle - does nothing. </p>
+</dd></dl>
+
+<div class="section" id="related-structures">
+<h2>Related structures<a class="headerlink" href="#related-structures" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv219cbor_decoder_status">
+<span id="cbor_decoder_status"></span><span class="target" id="project0data_8h_1abfc88122444f085a1a3fee01687329fd"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">cbor_decoder_status</code><a class="headerlink" href="#_CPPv219cbor_decoder_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Streaming decoder result - status. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv221CBOR_DECODER_FINISHED">
+<span id="CBOR_DECODER_FINISHED"></span><span class="target" id="project0data_8h_1abfc88122444f085a1a3fee01687329fda2ebc9567c96c353e07f9d9025054c31a"></span><code class="descname">CBOR_DECODER_FINISHED</code><a class="headerlink" href="#_CPPv221CBOR_DECODER_FINISHED" title="Permalink to this definition">¶</a></dt>
+<dd><p>OK, finished. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv219CBOR_DECODER_NEDATA">
+<span id="CBOR_DECODER_NEDATA"></span><span class="target" id="project0data_8h_1abfc88122444f085a1a3fee01687329fda178d826b0e7dd7571d1f2c3be335528d"></span><code class="descname">CBOR_DECODER_NEDATA</code><a class="headerlink" href="#_CPPv219CBOR_DECODER_NEDATA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not enough data - mismatch with MTB. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv220CBOR_DECODER_EBUFFER">
+<span id="CBOR_DECODER_EBUFFER"></span><span class="target" id="project0data_8h_1abfc88122444f085a1a3fee01687329fdace2bb1bc04e3f906bd02708e991289b8"></span><code class="descname">CBOR_DECODER_EBUFFER</code><a class="headerlink" href="#_CPPv220CBOR_DECODER_EBUFFER" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffer manipulation problem. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv218CBOR_DECODER_ERROR">
+<span id="CBOR_DECODER_ERROR"></span><span class="target" id="project0data_8h_1abfc88122444f085a1a3fee01687329fda410c07e9ff710573d28db2794e008cb4"></span><code class="descname">CBOR_DECODER_ERROR</code><a class="headerlink" href="#_CPPv218CBOR_DECODER_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Malformed or reserved MTB/value. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv219cbor_decoder_result">
+<span id="cbor_decoder_result"></span><span class="target" id="project0structcbor__decoder__result"></span><em class="property">struct </em><code class="descclassname"></code><code class="descname">cbor_decoder_result</code><a class="headerlink" href="#_CPPv219cbor_decoder_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Streaming decoder result. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N19cbor_decoder_result4readE">
+<span id="cbor_decoder_result::read__s"></span><span class="target" id="project0structcbor__decoder__result_1a39828fd8d825610cda67d9738d2d5c23"></span>size_t <code class="descname">read</code><a class="headerlink" href="#_CPPv2N19cbor_decoder_result4readE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bytes read. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N19cbor_decoder_result6statusE">
+<span id="cbor_decoder_result::status__cbor_decoder_status"></span><span class="target" id="project0structcbor__decoder__result_1a1b775085d3696356c9ca284ffd9a264d"></span><a class="reference internal" href="#_CPPv219cbor_decoder_status" title="cbor_decoder_status">cbor_decoder_status</a> <code class="descname">status</code><a class="headerlink" href="#_CPPv2N19cbor_decoder_result6statusE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The result. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="callback-types-definition">
+<h2>Callback types definition<a class="headerlink" href="#callback-types-definition" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv218cbor_int8_callback">
+<span id="cbor_int8_callback"></span><span class="target" id="project0callbacks_8h_1a2b9b84ad36e0fc4d1498413d8497899e"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_int8_callback</code>)<span class="sig-paren">(</span>void *, uint8_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218cbor_int8_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv219cbor_int16_callback">
+<span id="cbor_int16_callback"></span><span class="target" id="project0callbacks_8h_1a663bfb4b82d31d5eeeffc6db48b487c6"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_int16_callback</code>)<span class="sig-paren">(</span>void *, uint16_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219cbor_int16_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv219cbor_int32_callback">
+<span id="cbor_int32_callback"></span><span class="target" id="project0callbacks_8h_1a3c9d3bfd7f55faa430ba58ce9ebf9cfe"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_int32_callback</code>)<span class="sig-paren">(</span>void *, uint32_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219cbor_int32_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv219cbor_int64_callback">
+<span id="cbor_int64_callback"></span><span class="target" id="project0callbacks_8h_1a1ba7b7117064e3b6d13c1a1414b325b1"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_int64_callback</code>)<span class="sig-paren">(</span>void *, uint64_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219cbor_int64_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv220cbor_simple_callback">
+<span id="cbor_simple_callback"></span><span class="target" id="project0callbacks_8h_1a414becb6eeb6a2c4fcb4d657b17d3113"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_simple_callback</code>)<span class="sig-paren">(</span>void *<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220cbor_simple_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv220cbor_string_callback">
+<span id="cbor_string_callback"></span><span class="target" id="project0callbacks_8h_1a39ac73691a2cbc95aac02b088851ff88"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_string_callback</code>)<span class="sig-paren">(</span>void *, cbor_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220cbor_string_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv224cbor_collection_callback">
+<span id="cbor_collection_callback"></span><span class="target" id="project0callbacks_8h_1a1760fbd902567c34cb788b6d891ec8df"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_collection_callback</code>)<span class="sig-paren">(</span>void *, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv224cbor_collection_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv219cbor_float_callback">
+<span id="cbor_float_callback"></span><span class="target" id="project0callbacks_8h_1a70c40374bfa3cc289a975e8d3d31eb74"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_float_callback</code>)<span class="sig-paren">(</span>void *, float<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219cbor_float_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv220cbor_double_callback">
+<span id="cbor_double_callback"></span><span class="target" id="project0callbacks_8h_1af46757188a6212506a8fc73a1d098ae7"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_double_callback</code>)<span class="sig-paren">(</span>void *, double<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220cbor_double_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+<dl class="type">
+<dt id="_CPPv218cbor_bool_callback">
+<span id="cbor_bool_callback"></span><span class="target" id="project0callbacks_8h_1a86190658d37fb499ff8e30f0a85a19bc"></span><em class="property">typedef </em>void (*<code class="descclassname"></code><code class="descname">cbor_bool_callback</code>)<span class="sig-paren">(</span>void *, bool<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218cbor_bool_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback prototype. </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="encoding.html" class="btn btn-neutral float-right" title="Encoding" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../streaming.html" class="btn btn-neutral" title="Streaming &amp; indefinite items" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, 2015, Pavel Kalvoda.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

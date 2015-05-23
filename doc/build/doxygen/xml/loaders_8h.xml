@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="loaders_8h" kind="file">
+    <compoundname>loaders.h</compoundname>
+    <includes refid="common_8h" local="yes">../common.h</includes>
+    <includedby refid="loaders_8c" local="yes">src/cbor/internal/loaders.c</includedby>
+    <includedby refid="streaming_8c" local="yes">src/cbor/streaming.c</includedby>
+    <includedby refid="cbor_8c" local="yes">src/cbor.c</includedby>
+    <incdepgraph>
+      <node id="358">
+        <label>stdbool.h</label>
+      </node>
+      <node id="359">
+        <label>assert.h</label>
+      </node>
+      <node id="357">
+        <label>stdint.h</label>
+      </node>
+      <node id="355">
+        <label>stdlib.h</label>
+      </node>
+      <node id="354">
+        <label>../common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="355" relation="include">
+        </childnode>
+        <childnode refid="356" relation="include">
+        </childnode>
+        <childnode refid="357" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+        <childnode refid="359" relation="include">
+        </childnode>
+        <childnode refid="360" relation="include">
+        </childnode>
+      </node>
+      <node id="356">
+        <label>stddef.h</label>
+      </node>
+      <node id="353">
+        <label>src/cbor/internal/loaders.h</label>
+        <link refid="loaders.h"/>
+        <childnode refid="354" relation="include">
+        </childnode>
+      </node>
+      <node id="360">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="355" relation="include">
+        </childnode>
+        <childnode refid="356" relation="include">
+        </childnode>
+        <childnode refid="357" relation="include">
+        </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="363">
+        <label>src/cbor/streaming.c</label>
+        <link refid="streaming_8c"/>
+      </node>
+      <node id="364">
+        <label>src/cbor.c</label>
+        <link refid="cbor_8c"/>
+      </node>
+      <node id="362">
+        <label>src/cbor/internal/loaders.c</label>
+        <link refid="loaders_8c"/>
+      </node>
+      <node id="361">
+        <label>src/cbor/internal/loaders.h</label>
+        <link refid="loaders.h"/>
+        <childnode refid="362" relation="include">
+        </childnode>
+        <childnode refid="363" relation="include">
+        </childnode>
+        <childnode refid="364" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="loaders_8h_1a04bc096a04750b219adf060c4fa9496a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t _cbor_load_uint8</definition>
+        <argsstring>(const unsigned char *source)</argsstring>
+        <name>_cbor_load_uint8</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.h" line="18" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8h_1a82cc3a9e9028cc2ea560d1538804acc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t _cbor_load_uint16</definition>
+        <argsstring>(const unsigned char *source)</argsstring>
+        <name>_cbor_load_uint16</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.h" line="20" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="23" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8h_1a356f0cc63df1addf4a3b1d6ee92ea3f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t _cbor_load_uint32</definition>
+        <argsstring>(const unsigned char *source)</argsstring>
+        <name>_cbor_load_uint32</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.h" line="22" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="37" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8h_1ad1fd77b3d9b7c9369095012ae2ed9b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t _cbor_load_uint64</definition>
+        <argsstring>(const unsigned char *source)</argsstring>
+        <name>_cbor_load_uint64</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.h" line="24" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="53" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8h_1a771bf852840eee864b888ca85d99dfad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double _cbor_load_half</definition>
+        <argsstring>(cbor_data source)</argsstring>
+        <name>_cbor_load_half</name>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.h" line="26" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8h_1aa812443c86ee5c127379009f0a760030" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float _cbor_load_float</definition>
+        <argsstring>(cbor_data source)</argsstring>
+        <name>_cbor_load_float</name>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.h" line="28" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8h_1a552b4d5d5cc7c3753d48325fb6889f1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double _cbor_load_double</definition>
+        <argsstring>(cbor_data source)</argsstring>
+        <name>_cbor_load_double</name>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.h" line="30" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="98" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LIBCBOR_LOADERS_H</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>LIBCBOR_LOADERS_H</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../common.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Read<sp/>the<sp/>given<sp/>uint<sp/>from<sp/>the<sp/>given<sp/>location,<sp/>no<sp/>questions<sp/>asked<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">uint8_t<sp/><ref refid="loaders_8h_1a04bc096a04750b219adf060c4fa9496a" kindref="member">_cbor_load_uint8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">uint16_t<sp/><ref refid="loaders_8h_1a82cc3a9e9028cc2ea560d1538804acc7" kindref="member">_cbor_load_uint16</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">uint32_t<sp/><ref refid="loaders_8h_1a356f0cc63df1addf4a3b1d6ee92ea3f6" kindref="member">_cbor_load_uint32</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">uint64_t<sp/><ref refid="loaders_8h_1ad1fd77b3d9b7c9369095012ae2ed9b33" kindref="member">_cbor_load_uint64</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="loaders_8h_1a771bf852840eee864b888ca85d99dfad" kindref="member">_cbor_load_half</ref>(<ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/>source);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="loaders_8h_1aa812443c86ee5c127379009f0a760030" kindref="member">_cbor_load_float</ref>(<ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/>source);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="loaders_8h_1a552b4d5d5cc7c3753d48325fb6889f1d" kindref="member">_cbor_load_double</ref>(<ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/>source);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//LIBCBOR_LOADERS_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.h"/>
+  </compounddef>
+</doxygen>

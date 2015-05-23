@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="struct__cbor__array__metadata" kind="struct" prot="public">
+    <compoundname>_cbor_array_metadata</compoundname>
+    <includes refid="data_8h" local="no">data.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cbor__array__metadata_1ad59631add7d960a0777686c8cc0fd46a" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t _cbor_array_metadata::allocated</definition>
+        <argsstring></argsstring>
+        <name>allocated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="96" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t _cbor_array_metadata::end_ptr</definition>
+        <argsstring></argsstring>
+        <name>end_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="97" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cbor__array__metadata_1a0c376239d3aafcfe64ee7c74fd422f37" prot="public" static="no" mutable="no">
+        <type><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589" kindref="member">_cbor_dst_metadata</ref></type>
+        <definition>_cbor_dst_metadata _cbor_array_metadata::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="98" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Arrays specific metadata. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="95" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="95" bodyend="99"/>
+    <listofallmembers>
+      <member refid="struct__cbor__array__metadata_1ad59631add7d960a0777686c8cc0fd46a" prot="public" virt="non-virtual"><scope>_cbor_array_metadata</scope><name>allocated</name></member>
+      <member refid="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" prot="public" virt="non-virtual"><scope>_cbor_array_metadata</scope><name>end_ptr</name></member>
+      <member refid="struct__cbor__array__metadata_1a0c376239d3aafcfe64ee7c74fd422f37" prot="public" virt="non-virtual"><scope>_cbor_array_metadata</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,911 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="serialization_8c" kind="file">
+    <compoundname>serialization.c</compoundname>
+    <includes refid="serialization_8h" local="yes">serialization.h</includes>
+    <includes refid="encoding_8h" local="yes">encoding.h</includes>
+    <includes refid="arrays_8h" local="yes">cbor/arrays.h</includes>
+    <includes refid="bytestrings_8h" local="yes">cbor/bytestrings.h</includes>
+    <includes refid="floats__ctrls_8h" local="yes">cbor/floats_ctrls.h</includes>
+    <includes refid="ints_8h" local="yes">cbor/ints.h</includes>
+    <includes refid="maps_8h" local="yes">cbor/maps.h</includes>
+    <includes refid="strings_8h" local="yes">cbor/strings.h</includes>
+    <includes refid="tags_8h" local="yes">cbor/tags.h</includes>
+    <includes local="no">string.h</includes>
+    <incdepgraph>
+      <node id="465">
+        <label>stdbool.h</label>
+      </node>
+      <node id="466">
+        <label>assert.h</label>
+      </node>
+      <node id="464">
+        <label>stdint.h</label>
+      </node>
+      <node id="462">
+        <label>stdlib.h</label>
+      </node>
+      <node id="472">
+        <label>cbor/ints.h</label>
+        <link refid="ints_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+      <node id="475">
+        <label>cbor/tags.h</label>
+        <link refid="tags_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+      <node id="461">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="462" relation="include">
+        </childnode>
+        <childnode refid="463" relation="include">
+        </childnode>
+        <childnode refid="464" relation="include">
+        </childnode>
+        <childnode refid="465" relation="include">
+        </childnode>
+        <childnode refid="466" relation="include">
+        </childnode>
+        <childnode refid="467" relation="include">
+        </childnode>
+      </node>
+      <node id="474">
+        <label>cbor/strings.h</label>
+        <link refid="strings_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+      <node id="463">
+        <label>stddef.h</label>
+      </node>
+      <node id="476">
+        <label>string.h</label>
+      </node>
+      <node id="469">
+        <label>cbor/arrays.h</label>
+        <link refid="arrays_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+      <node id="468">
+        <label>encoding.h</label>
+        <link refid="encoding_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+      <node id="473">
+        <label>cbor/maps.h</label>
+        <link refid="maps_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+      <node id="467">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="462" relation="include">
+        </childnode>
+        <childnode refid="463" relation="include">
+        </childnode>
+        <childnode refid="464" relation="include">
+        </childnode>
+        <childnode refid="465" relation="include">
+        </childnode>
+      </node>
+      <node id="470">
+        <label>cbor/bytestrings.h</label>
+        <link refid="bytestrings_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+      <node id="459">
+        <label>src/cbor/serialization.c</label>
+        <link refid="serialization.c"/>
+        <childnode refid="460" relation="include">
+        </childnode>
+        <childnode refid="468" relation="include">
+        </childnode>
+        <childnode refid="469" relation="include">
+        </childnode>
+        <childnode refid="470" relation="include">
+        </childnode>
+        <childnode refid="471" relation="include">
+        </childnode>
+        <childnode refid="472" relation="include">
+        </childnode>
+        <childnode refid="473" relation="include">
+        </childnode>
+        <childnode refid="474" relation="include">
+        </childnode>
+        <childnode refid="475" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+      </node>
+      <node id="460">
+        <label>serialization.h</label>
+        <link refid="serialization_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+      <node id="471">
+        <label>cbor/floats_ctrls.h</label>
+        <link refid="floats__ctrls_8h"/>
+        <childnode refid="461" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="serialization_8c_1a56d372b02323e8df3a37eba69acafd31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>buffer_size</declname>
+        </param>
+        <briefdescription>
+<para>Serialize the given item. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A data item </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="19" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="19" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1ae995c0fac946cf851f4b37899a2e59e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_alloc</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char **buffer, size_t *buffer_size)</argsstring>
+        <name>cbor_serialize_alloc</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref> *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>buffer_size</declname>
+        </param>
+        <briefdescription>
+<para>Serialize the given item, allocating buffers as needed. </para>        </briefdescription>
+        <detaileddescription>
+<para><verbatim>embed:rst:leading-asterisk
+* .. warning:: It is your responsibility to free the buffer using an appropriate ``free`` implementation.
+* </verbatim></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A data item </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer[out]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer containing the result </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size[out]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure, in which case <computeroutput>buffer</computeroutput> is <computeroutput>NULL</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="43" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="43" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1ad0411e741dcb5352b9bc4198f0f18fbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_uint</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize_uint</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <defname>buffer_size</defname>
+        </param>
+        <briefdescription>
+<para>Serialize an uint. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A uint </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="67" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="67" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1a6f00ef0ca5354471214894c2e21ff19b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_negint</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize_negint</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <defname>buffer_size</defname>
+        </param>
+        <briefdescription>
+<para>Serialize a negint. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A neging </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="84" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="84" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1ab4d54170870c473fe361d91740751487" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_bytestring</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize_bytestring</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <defname>buffer_size</defname>
+        </param>
+        <briefdescription>
+<para>Serialize a bytestring. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A bytestring </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="101" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="101" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1a23ba67d9759dc522924ff8ee6297babd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_string</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize_string</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <defname>buffer_size</defname>
+        </param>
+        <briefdescription>
+<para>Serialize a string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="135" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="135" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1ac8cc5befd865dd3a48ccd19730000bb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_array</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize_array</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <defname>buffer_size</defname>
+        </param>
+        <briefdescription>
+<para>Serialize an array. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="169" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="169" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1ad6b755769880739cf33e6bd5e5ba0733" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_map</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize_map</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <defname>buffer_size</defname>
+        </param>
+        <briefdescription>
+<para>Serialize a map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A map </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="205" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="205" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1a6b946d5f299822b6b0e6d187ed36f4fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_tag</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize_tag</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <defname>buffer_size</defname>
+        </param>
+        <briefdescription>
+<para>Serialize a tag. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="247" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="247" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="serialization_8c_1a31bacc1eadd9f671eec5554ae658aca6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_serialize_float_ctrl</definition>
+        <argsstring>(const cbor_item_t *item, unsigned char *buffer, size_t buffer_size)</argsstring>
+        <name>cbor_serialize_float_ctrl</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref></type>
+          <defname>buffer</defname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <defname>buffer_size</defname>
+        </param>
+        <briefdescription>
+<para>Serialize a. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A float or ctrl </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer to serialize to </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buffer_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the <computeroutput>buffer</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the result. 0 on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/serialization.c" line="261" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/serialization.c" bodystart="261" bodyend="278"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="serialization_8h" kindref="compound">serialization.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="encoding_8h" kindref="compound">encoding.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="arrays_8h" kindref="compound">cbor/arrays.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bytestrings_8h" kindref="compound">cbor/bytestrings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="floats__ctrls_8h" kindref="compound">cbor/floats_ctrls.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ints_8h" kindref="compound">cbor/ints.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="maps_8h" kindref="compound">cbor/maps.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="strings_8h" kindref="compound">cbor/strings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tags_8h" kindref="compound">cbor/tags.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="serialization_8h_1a2b99415a2c6f0d226116c707772e2fc0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a56d372b02323e8df3a37eba69acafd31" kindref="member">cbor_serialize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="common_8c_1ac2b9aba4cf07857524a0a520eabeef52" kindref="member">cbor_typeof</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6a2137d55d8028e37ff4319a633ef0634f" kindref="member">CBOR_TYPE_UINT</ref>:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ad0411e741dcb5352b9bc4198f0f18fbe" kindref="member">cbor_serialize_uint</ref>(item,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6ae140516103af792c8f2af84390acfdcd" kindref="member">CBOR_TYPE_NEGINT</ref>:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a6f00ef0ca5354471214894c2e21ff19b" kindref="member">cbor_serialize_negint</ref>(item,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6a70b9f0b5958c8d51f15ad7bb7c4af01d" kindref="member">CBOR_TYPE_BYTESTRING</ref>:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ab4d54170870c473fe361d91740751487" kindref="member">cbor_serialize_bytestring</ref>(item,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6ae05102a66420250eacd5f17b95d04443" kindref="member">CBOR_TYPE_STRING</ref>:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a23ba67d9759dc522924ff8ee6297babd" kindref="member">cbor_serialize_string</ref>(item,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6ae48b04b3538ade49d7eae9ee6b656103" kindref="member">CBOR_TYPE_ARRAY</ref>:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ac8cc5befd865dd3a48ccd19730000bb3" kindref="member">cbor_serialize_array</ref>(item,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6a057fc3133cb4465f9eb734acfd195db2" kindref="member">CBOR_TYPE_MAP</ref>:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ad6b755769880739cf33e6bd5e5ba0733" kindref="member">cbor_serialize_map</ref>(item,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6a16f0eaf29eeea66fe37ec1ed0fa45415" kindref="member">CBOR_TYPE_TAG</ref>:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a6b946d5f299822b6b0e6d187ed36f4fa" kindref="member">cbor_serialize_tag</ref>(item,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6a1276dcc4ac56df5fd7e0270344a6e57d" kindref="member">CBOR_TYPE_FLOAT_CTRL</ref>:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a31bacc1eadd9f671eec5554ae658aca6" kindref="member">cbor_serialize_float_ctrl</ref>(item,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="serialization_8h_1ab8a96a82216c07469a583eef3a3dd8d0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ae995c0fac946cf851f4b37899a2e59e7" kindref="member">cbor_serialize_alloc</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/>item,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/>buffer,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*<sp/>buffer_size)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>bfr_size<sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>bfr<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(bfr_size),<sp/>*<sp/>tmp_bfr;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bfr<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>written;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>waaay<sp/>too<sp/>optimistic<sp/>-<sp/>figure<sp/>out<sp/>something<sp/>smarter<sp/>(eventually)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((written<sp/>=<sp/><ref refid="serialization_8c_1a56d372b02323e8df3a37eba69acafd31" kindref="member">cbor_serialize</ref>(item,<sp/>bfr,<sp/>bfr_size))<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp_bfr<sp/>=<sp/><ref refid="common_8h_1a1e39038d9b8e9b3a1e6529c9ff6091b8" kindref="member">_CBOR_REALLOC</ref>(bfr,<sp/>bfr_size<sp/>*=<sp/>2);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmp_bfr<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="common_8h_1a1300043d7db8adf6ab67f7b787f14635" kindref="member">_CBOR_FREE</ref>(bfr);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bfr<sp/>=<sp/>tmp_bfr;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>*buffer<sp/>=<sp/>bfr;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>*buffer_size<sp/>=<sp/>bfr_size;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="serialization_8h_1a649fbb28229d58193a7eee96995929e0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ad0411e741dcb5352b9bc4198f0f18fbe" kindref="member">cbor_serialize_uint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a682a023f7012a5b66a57847e6f8d386f" kindref="member">cbor_isa_uint</ref>(item));</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="ints_8c_1a30bcfb58aa41d4c44bc2d5d6b7de105d" kindref="member">cbor_int_get_width</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57aaa167d7a4fac34f2bae123761b4b6fc8" kindref="member">CBOR_INT_8</ref>:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1a6c970c1c3fe2a753d76ad7343b18fc43" kindref="member">cbor_encode_uint8</ref>(<ref refid="ints_8c_1a2379bf36318e8e4faa7434c74d8553fb" kindref="member">cbor_get_uint8</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57a3a9caf604c45ce423b332e91f7370822" kindref="member">CBOR_INT_16</ref>:</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1a978187eb1d49113f35204e16638a0dfa" kindref="member">cbor_encode_uint16</ref>(<ref refid="ints_8c_1a06a0997aed16fe6aa540f57bf40ce400" kindref="member">cbor_get_uint16</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57ad429fc90ccfb94ec85996920fe115b51" kindref="member">CBOR_INT_32</ref>:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1abdc5b7670f02130ba5d0ffb01b25fab2" kindref="member">cbor_encode_uint32</ref>(<ref refid="ints_8c_1a0480e5b5849b757aa9416a4c1d51b36d" kindref="member">cbor_get_uint32</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57aafaef7945451a7f4d12298f12f8acb2d" kindref="member">CBOR_INT_64</ref>:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1a9bdbc2a0030ec8edd071a9036e7c17bb" kindref="member">cbor_encode_uint64</ref>(<ref refid="ints_8c_1a839ec2dc97dda1db54657cec50387a12" kindref="member">cbor_get_uint64</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="serialization_8h_1ad7eb1501bd8282c21675333759dc7291" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a6f00ef0ca5354471214894c2e21ff19b" kindref="member">cbor_serialize_negint</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a0ca5042e3807d2cc9c3d40f9266460dd" kindref="member">cbor_isa_negint</ref>(item));</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="ints_8c_1a30bcfb58aa41d4c44bc2d5d6b7de105d" kindref="member">cbor_int_get_width</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57aaa167d7a4fac34f2bae123761b4b6fc8" kindref="member">CBOR_INT_8</ref>:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1ac5f38c2536db32249b853d5f41ac91b3" kindref="member">cbor_encode_negint8</ref>(<ref refid="ints_8c_1a2379bf36318e8e4faa7434c74d8553fb" kindref="member">cbor_get_uint8</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57a3a9caf604c45ce423b332e91f7370822" kindref="member">CBOR_INT_16</ref>:</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1a000a6bd597e43b3b438a5659db183f40" kindref="member">cbor_encode_negint16</ref>(<ref refid="ints_8c_1a06a0997aed16fe6aa540f57bf40ce400" kindref="member">cbor_get_uint16</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57ad429fc90ccfb94ec85996920fe115b51" kindref="member">CBOR_INT_32</ref>:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1aaa7b2d79e956ca4ac9db8fc3d140d6d9" kindref="member">cbor_encode_negint32</ref>(<ref refid="ints_8c_1a0480e5b5849b757aa9416a4c1d51b36d" kindref="member">cbor_get_uint32</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57aafaef7945451a7f4d12298f12f8acb2d" kindref="member">CBOR_INT_64</ref>:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1a4553dcc867b95ecfd6eb0dae79f69d81" kindref="member">cbor_encode_negint64</ref>(<ref refid="ints_8c_1a839ec2dc97dda1db54657cec50387a12" kindref="member">cbor_get_uint64</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="serialization_8h_1aeff4847e92b05b329edd1135c60f4179" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ab4d54170870c473fe361d91740751487" kindref="member">cbor_serialize_bytestring</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1adedaf37527b8d8261e287a0001e5a190" kindref="member">cbor_isa_bytestring</ref>(item));</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="bytestrings_8c_1a368222dbbcea25e06469524e26587e2a" kindref="member">cbor_bytestring_is_definite</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length<sp/>=<sp/><ref refid="bytestrings_8c_1a7c15a63fdc3830707eac0877a261f1cd" kindref="member">cbor_bytestring_length</ref>(item);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1acb1b57ebb4156007ddca6d724b9f794a" kindref="member">cbor_encode_bytestring_start</ref>(length,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(written<sp/>&amp;&amp;<sp/>(buffer_size<sp/>-<sp/>written<sp/>&gt;=<sp/>length))<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(buffer<sp/>+<sp/>written,<sp/><ref refid="bytestrings_8c_1a2c9d6feda3d0f87782168fa817f83be6" kindref="member">cbor_bytestring_handle</ref>(item),<sp/>length);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written<sp/>+<sp/>length;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(<ref refid="bytestrings_8c_1a3a6c450f105bb18b6b56d20f0de4786a" kindref="member">cbor_bytestring_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>chunk_count<sp/>=<sp/><ref refid="bytestrings_8c_1ad02102832d452fd5a5cfa96272b1095d" kindref="member">cbor_bytestring_chunk_count</ref>(item);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1a72fd1996d81b30a81381707708aa186d" kindref="member">cbor_encode_indef_bytestring_start</ref>(buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**chunks<sp/>=<sp/><ref refid="bytestrings_8c_1a8ab6255d6f8f209149bdf794dffed849" kindref="member">cbor_bytestring_chunks_handle</ref>(item);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>chunk_count;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>chunk_written<sp/>=<sp/><ref refid="serialization_8c_1ab4d54170870c473fe361d91740751487" kindref="member">cbor_serialize_bytestring</ref>(chunks[i],<sp/>buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(chunk_written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>+=<sp/>chunk_written;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="encoding_8c_1ad7599c3f22138b063730b6f08637392c" kindref="member">cbor_encode_break</ref>(buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written)<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="serialization_8h_1a9fb1138391d20c1b81081e2a5f413c3d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a23ba67d9759dc522924ff8ee6297babd" kindref="member">cbor_serialize_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="strings_8c_1aa2778891e70dec4cd59c9a969294d4aa" kindref="member">cbor_string_is_definite</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length<sp/>=<sp/><ref refid="strings_8c_1aa0c17825f920ebf122bd7b9abede919f" kindref="member">cbor_string_length</ref>(item);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1abb8a85db156a80932399cce55a0694f6" kindref="member">cbor_encode_string_start</ref>(length,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(written<sp/>&amp;&amp;<sp/>(buffer_size<sp/>-<sp/>written<sp/>&gt;=<sp/>length))<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memcpy(buffer<sp/>+<sp/>written,<sp/><ref refid="strings_8c_1ae9e5da7bdf2a79fab7965caeff49d5bb" kindref="member">cbor_string_handle</ref>(item),<sp/>length);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written<sp/>+<sp/>length;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(<ref refid="strings_8c_1aa1a92438a04ae77beea9a17910805530" kindref="member">cbor_string_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>chunk_count<sp/>=<sp/><ref refid="strings_8c_1ad8062db21711a51ae520cc1e4f5fe5ab" kindref="member">cbor_string_chunk_count</ref>(item);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1ae5fc25aee8ee4bb8605e105227cb21f5" kindref="member">cbor_encode_indef_string_start</ref>(buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**chunks<sp/>=<sp/><ref refid="strings_8c_1a81d1160eed81b2a29b6c5e9ff6b9e02a" kindref="member">cbor_string_chunks_handle</ref>(item);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>chunk_count;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>chunk_written<sp/>=<sp/><ref refid="serialization_8c_1a23ba67d9759dc522924ff8ee6297babd" kindref="member">cbor_serialize_string</ref>(chunks[i],<sp/>buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(chunk_written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>+=<sp/>chunk_written;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="encoding_8c_1ad7599c3f22138b063730b6f08637392c" kindref="member">cbor_encode_break</ref>(buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written)<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169" refid="serialization_8h_1a53e7d680cf41ccda369802deaf6c1ba8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ac8cc5befd865dd3a48ccd19730000bb3" kindref="member">cbor_serialize_array</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a9ed0fa96105c211867c5032f2a5a8b20" kindref="member">cbor_isa_array</ref>(item));</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size<sp/>=<sp/><ref refid="arrays_8c_1a4f634a9a4bc834e4ea6ac43e94d51f84" kindref="member">cbor_array_size</ref>(item),</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**handle<sp/>=<sp/><ref refid="arrays_8c_1a8dd01f4a46f162fa4f06b7df7428128e" kindref="member">cbor_array_handle</ref>(item);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="arrays_8c_1ac2f1480c546a0268e8b046b365e58599" kindref="member">cbor_array_is_definite</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1a614462c893ad375d880178f490e4d15f" kindref="member">cbor_encode_array_start</ref>(size,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(<ref refid="arrays_8c_1a291a9f3ff12a2e2c58b2ca8b00280d40" kindref="member">cbor_array_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1a8794b7d67dc4b94c7191ba97518472a6" kindref="member">cbor_encode_indef_array_start</ref>(buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>item_written;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item_written<sp/>=<sp/><ref refid="serialization_8c_1a56d372b02323e8df3a37eba69acafd31" kindref="member">cbor_serialize</ref>(*(handle++),<sp/>buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item_written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>+=<sp/>item_written;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="arrays_8c_1ac2f1480c546a0268e8b046b365e58599" kindref="member">cbor_array_is_definite</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(<ref refid="arrays_8c_1a291a9f3ff12a2e2c58b2ca8b00280d40" kindref="member">cbor_array_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item_written<sp/>=<sp/><ref refid="encoding_8c_1ad7599c3f22138b063730b6f08637392c" kindref="member">cbor_encode_break</ref>(buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item_written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="serialization_8h_1a1c07f653f5aa66fadc82f24f556a162d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1ad6b755769880739cf33e6bd5e5ba0733" kindref="member">cbor_serialize_map</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1af0de041481b61922d0995b63f82d8ddd" kindref="member">cbor_isa_map</ref>(item));</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size<sp/>=<sp/><ref refid="maps_8c_1a1bbbee9c6f1eaa0ff4c19559fe109baf" kindref="member">cbor_map_size</ref>(item),</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcbor__pair" kindref="compound">cbor_pair</ref><sp/>*<sp/>handle<sp/>=<sp/><ref refid="maps_8c_1a4cadc8eb7ae7ff8d3f73482fb24455c9" kindref="member">cbor_map_handle</ref>(item);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="maps_8c_1a0dccaa76ac293bb5a11dbca6d16f6253" kindref="member">cbor_map_is_definite</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1a1dc2d5e72fc65fa52120bd9e20164277" kindref="member">cbor_encode_map_start</ref>(size,<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(<ref refid="maps_8c_1a941462383a3c8a6e3a60be9778cd1913" kindref="member">cbor_map_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1a56b2ad41ccc983fce2dbaae97beb760d" kindref="member">cbor_encode_indef_map_start</ref>(buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>item_written;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item_written<sp/>=<sp/><ref refid="serialization_8c_1a56d372b02323e8df3a37eba69acafd31" kindref="member">cbor_serialize</ref>(handle-&gt;<ref refid="structcbor__pair_1a5122c22ad7ef32b2c6ae0a413caca7a1" kindref="member">key</ref>,<sp/>buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item_written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>+=<sp/>item_written;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item_written<sp/>=<sp/><ref refid="serialization_8c_1a56d372b02323e8df3a37eba69acafd31" kindref="member">cbor_serialize</ref>((handle++)-&gt;<ref refid="structcbor__pair_1a44bbea9cc120de72fc4871a05dc8ec85" kindref="member">value</ref>,<sp/>buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item_written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>written<sp/>+=<sp/>item_written;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="maps_8c_1a0dccaa76ac293bb5a11dbca6d16f6253" kindref="member">cbor_map_is_definite</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(<ref refid="maps_8c_1a941462383a3c8a6e3a60be9778cd1913" kindref="member">cbor_map_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item_written<sp/>=<sp/><ref refid="encoding_8c_1ad7599c3f22138b063730b6f08637392c" kindref="member">cbor_encode_break</ref>(buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item_written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247" refid="serialization_8h_1ae67b7ceefe645e660df73bf7ea255668" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a6b946d5f299822b6b0e6d187ed36f4fa" kindref="member">cbor_serialize_tag</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a0d5054202c5ec9375e8daf5930087a61" kindref="member">cbor_isa_tag</ref>(item));</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>written<sp/>=<sp/><ref refid="encoding_8c_1a41bdb572cc73d9648f4c13e8465b1dcb" kindref="member">cbor_encode_tag</ref>(<ref refid="tags_8c_1a2746e6a37373e0950b646e8146ed63b6" kindref="member">cbor_tag_value</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>item_written<sp/>=<sp/><ref refid="serialization_8c_1a56d372b02323e8df3a37eba69acafd31" kindref="member">cbor_serialize</ref>(<ref refid="tags_8c_1a162852da1313269e9d7b07dd4b964111" kindref="member">cbor_tag_item</ref>(item),<sp/>buffer<sp/>+<sp/>written,<sp/>buffer_size<sp/>-<sp/>written);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item_written<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>written<sp/>+<sp/>item_written;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="serialization_8h_1ad232a99d06a972ca114a2fe753b90953" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="serialization_8c_1a31bacc1eadd9f671eec5554ae658aca6" kindref="member">cbor_serialize_float_ctrl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>buffer_size)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a983dec76e934c49ed6979226f9db4386" kindref="member">cbor_isa_float_ctrl</ref>(item));</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="floats__ctrls_8c_1a05778dc7349be636d47440f758ec96a6" kindref="member">cbor_float_get_width</ref>(item))<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7ac3c49d03756f116648957c5d996f48b4" kindref="member">CBOR_FLOAT_0</ref>:</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>CTRL<sp/>-<sp/>special<sp/>treatment<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1a1d955e4c1bb4a2e3977b7387c1fafe01" kindref="member">cbor_encode_ctrl</ref>(<ref refid="floats__ctrls_8c_1a9d15faa0a33797ce0b8a1a66d5773d88" kindref="member">cbor_ctrl_value</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7a6a044cc40003cef84432fe92780514e5" kindref="member">CBOR_FLOAT_16</ref>:</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1a6d25549fbb8a0e147f2d2454a1da0bfa" kindref="member">cbor_encode_half</ref>(<ref refid="floats__ctrls_8c_1aa85d79e0f060173a9dccdada2e551cf9" kindref="member">cbor_float_get_float2</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7a0b2ba87d2508e98e5f6fee7bf8beedd4" kindref="member">CBOR_FLOAT_32</ref>:</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1add2c3c8759e19e86cbf9ae31dd897ee1" kindref="member">cbor_encode_single</ref>(<ref refid="floats__ctrls_8c_1ad504d3d291810b0c39fc498be0bd2639" kindref="member">cbor_float_get_float4</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="data_8h_1ac80d3ecbbdc88d96a7396ac986ee47e7a792f18e66a6da153eb4f40a8f894c653" kindref="member">CBOR_FLOAT_64</ref>:</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="encoding_8c_1a772417a925ae556f40b6811d3fba7834" kindref="member">cbor_encode_double</ref>(<ref refid="floats__ctrls_8c_1a2f215940998d05730b23b7e0e7ad8ebe" kindref="member">cbor_float_get_float8</ref>(item),<sp/>buffer,<sp/>buffer_size);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Should<sp/>never<sp/>happen<sp/>-<sp/>make<sp/>the<sp/>compiler<sp/>happy<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/serialization.c"/>
+  </compounddef>
+</doxygen>

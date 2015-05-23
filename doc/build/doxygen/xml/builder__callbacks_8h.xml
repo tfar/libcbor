@@ -1,0 +1,625 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="builder__callbacks_8h" kind="file">
+    <compoundname>builder_callbacks.h</compoundname>
+    <includes refid="common_8h" local="yes">../common.h</includes>
+    <includes refid="callbacks_8h" local="yes">../callbacks.h</includes>
+    <includes refid="stack_8h" local="yes">stack.h</includes>
+    <includedby refid="builder__callbacks_8c" local="yes">src/cbor/internal/builder_callbacks.c</includedby>
+    <includedby refid="cbor_8c" local="yes">src/cbor.c</includedby>
+    <incdepgraph>
+      <node id="316">
+        <label>../callbacks.h</label>
+        <link refid="callbacks_8h"/>
+        <childnode refid="309" relation="include">
+        </childnode>
+      </node>
+      <node id="313">
+        <label>stdbool.h</label>
+      </node>
+      <node id="314">
+        <label>assert.h</label>
+      </node>
+      <node id="312">
+        <label>stdint.h</label>
+      </node>
+      <node id="310">
+        <label>stdlib.h</label>
+      </node>
+      <node id="309">
+        <label>../common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="311" relation="include">
+        </childnode>
+        <childnode refid="312" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+        <childnode refid="314" relation="include">
+        </childnode>
+        <childnode refid="315" relation="include">
+        </childnode>
+      </node>
+      <node id="311">
+        <label>stddef.h</label>
+      </node>
+      <node id="317">
+        <label>stack.h</label>
+        <link refid="stack_8h"/>
+        <childnode refid="309" relation="include">
+        </childnode>
+      </node>
+      <node id="308">
+        <label>src/cbor/internal/builder_callbacks.h</label>
+        <link refid="builder_callbacks.h"/>
+        <childnode refid="309" relation="include">
+        </childnode>
+        <childnode refid="316" relation="include">
+        </childnode>
+        <childnode refid="317" relation="include">
+        </childnode>
+      </node>
+      <node id="315">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="310" relation="include">
+        </childnode>
+        <childnode refid="311" relation="include">
+        </childnode>
+        <childnode refid="312" relation="include">
+        </childnode>
+        <childnode refid="313" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="320">
+        <label>src/cbor.c</label>
+        <link refid="cbor_8c"/>
+      </node>
+      <node id="319">
+        <label>src/cbor/internal/builder_callbacks.c</label>
+        <link refid="builder__callbacks_8c"/>
+      </node>
+      <node id="318">
+        <label>src/cbor/internal/builder_callbacks.h</label>
+        <link refid="builder_callbacks.h"/>
+        <childnode refid="319" relation="include">
+        </childnode>
+        <childnode refid="320" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct__cbor__decoder__context" prot="public">_cbor_decoder_context</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="builder__callbacks_8h_1a98b2405c0f8f7574df6f1b974d8e1e33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_uint8_callback</definition>
+        <argsstring>(void *, uint8_t)</argsstring>
+        <name>cbor_builder_uint8_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint8_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="29" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="86" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1ae480def467a853de4da395b83583c364" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_uint16_callback</definition>
+        <argsstring>(void *, uint16_t)</argsstring>
+        <name>cbor_builder_uint16_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint16_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="31" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="96" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a926c3b93cb1745fe7fa4bb0adf5896f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_uint32_callback</definition>
+        <argsstring>(void *, uint32_t)</argsstring>
+        <name>cbor_builder_uint32_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint32_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="33" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="106" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1afbff23673e4980d9bafd0a2b61934a33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_uint64_callback</definition>
+        <argsstring>(void *, uint64_t)</argsstring>
+        <name>cbor_builder_uint64_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint64_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="35" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="116" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a0d95d98def615e7f4ea10cb680d2fadd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_negint8_callback</definition>
+        <argsstring>(void *, uint8_t)</argsstring>
+        <name>cbor_builder_negint8_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint8_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="37" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="126" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a05a3b8a63bd44609664ba1480058aeef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_negint16_callback</definition>
+        <argsstring>(void *, uint16_t)</argsstring>
+        <name>cbor_builder_negint16_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint16_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="39" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="136" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1af2c80ac4543ac875b84b8eb8c619ce4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_negint32_callback</definition>
+        <argsstring>(void *, uint32_t)</argsstring>
+        <name>cbor_builder_negint32_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint32_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="41" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="145" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1aa92b23a8c36df6157fde447a58241f8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_negint64_callback</definition>
+        <argsstring>(void *, uint64_t)</argsstring>
+        <name>cbor_builder_negint64_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint64_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="43" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="155" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a0752a26117a4ac11a0b31969185774c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_string_callback</definition>
+        <argsstring>(void *, cbor_data, size_t)</argsstring>
+        <name>cbor_builder_string_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="45" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="206" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a6ad59b5991aeeb560d2984abc85f1240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_string_start_callback</definition>
+        <argsstring>(void *)</argsstring>
+        <name>cbor_builder_string_start_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="47" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="243" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1ae3487b745fc400f6ca145d09b475cc22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_byte_string_callback</definition>
+        <argsstring>(void *, cbor_data, size_t)</argsstring>
+        <name>cbor_builder_byte_string_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="49" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="165" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a50acadf2240a3b6badcb11e05aff3a47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_byte_string_start_callback</definition>
+        <argsstring>(void *)</argsstring>
+        <name>cbor_builder_byte_string_start_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="51" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="197" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a0840fe5d84881527b514d7d3049c3079" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_array_start_callback</definition>
+        <argsstring>(void *, size_t)</argsstring>
+        <name>cbor_builder_array_start_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="53" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="251" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a59c682fb50d074458ab1e12328aed401" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_indef_array_start_callback</definition>
+        <argsstring>(void *)</argsstring>
+        <name>cbor_builder_indef_array_start_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="55" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="263" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a683589f26de39eaa69e833084bc74279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_map_start_callback</definition>
+        <argsstring>(void *, size_t)</argsstring>
+        <name>cbor_builder_map_start_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="57" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="279" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a6110c00a85a88fc4e7edf6f91bea8f18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_indef_map_start_callback</definition>
+        <argsstring>(void *)</argsstring>
+        <name>cbor_builder_indef_map_start_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="59" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="271" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a22b27f58982df6e585ef19a215b0b796" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_tag_callback</definition>
+        <argsstring>(void *, uint64_t)</argsstring>
+        <name>cbor_builder_tag_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>uint64_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="61" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="353" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1ab5c0f9bbfa8796a80c4b1fb666593c28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_float2_callback</definition>
+        <argsstring>(void *, float)</argsstring>
+        <name>cbor_builder_float2_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>float</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="63" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="303" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a9603c2d5270f21afbefc0c3f15dc037b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_float4_callback</definition>
+        <argsstring>(void *, float)</argsstring>
+        <name>cbor_builder_float4_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>float</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="65" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="311" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a34ed1c906cb4d31432466d78cf644524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_float8_callback</definition>
+        <argsstring>(void *, double)</argsstring>
+        <name>cbor_builder_float8_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>double</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="67" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="320" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a5be99aad4fcaf9a86e2e583f3584fbd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_null_callback</definition>
+        <argsstring>(void *)</argsstring>
+        <name>cbor_builder_null_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="69" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="329" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a5eea26b61770e178e2c6b2ec17ecca59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_undefined_callback</definition>
+        <argsstring>(void *)</argsstring>
+        <name>cbor_builder_undefined_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="71" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="337" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1ab5d82f6055e7326f892be37e6b4b7916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_boolean_callback</definition>
+        <argsstring>(void *, bool)</argsstring>
+        <name>cbor_builder_boolean_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="73" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="345" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="builder__callbacks_8h_1a76daa00e402ba3b8b6c74dbbfc74b6ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_builder_indef_break_callback</definition>
+        <argsstring>(void *)</argsstring>
+        <name>cbor_builder_indef_break_callback</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h" line="75" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.c" bodystart="291" bodyend="301"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LIBCBOR_BUILDER_CALLBACKS_H</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>LIBCBOR_BUILDER_CALLBACKS_H</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../common.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../callbacks.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stack_8h" kindref="compound">stack.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="20" refid="struct__cbor__decoder__context" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__cbor__decoder__context" kindref="compound">_cbor_decoder_context</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="struct__cbor__decoder__context_1ada14322afd080c27f3ea76b3ba657505" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct__cbor__decoder__context_1ada14322afd080c27f3ea76b3ba657505" kindref="member">creation_failed</ref>;</highlight></codeline>
+<codeline lineno="24" refid="struct__cbor__decoder__context_1ae34e7cc9b435a63bc0e92c425279db84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct__cbor__decoder__context_1ae34e7cc9b435a63bc0e92c425279db84" kindref="member">syntax_error</ref>;</highlight></codeline>
+<codeline lineno="25" refid="struct__cbor__decoder__context_1ad4c1540245b6241bc7aa3f7ade2fbf5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="struct__cbor__decoder__context_1ad4c1540245b6241bc7aa3f7ade2fbf5a" kindref="member">root</ref>;</highlight></codeline>
+<codeline lineno="26" refid="struct__cbor__decoder__context_1af21635162948fc488da3c1625f1bc278" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__cbor__stack" kindref="compound">_cbor_stack</ref><sp/>*<ref refid="struct__cbor__decoder__context_1af21635162948fc488da3c1625f1bc278" kindref="member">stack</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a98b2405c0f8f7574df6f1b974d8e1e33" kindref="member">cbor_builder_uint8_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint8_t);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1ae480def467a853de4da395b83583c364" kindref="member">cbor_builder_uint16_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint16_t);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a926c3b93cb1745fe7fa4bb0adf5896f7" kindref="member">cbor_builder_uint32_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint32_t);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1afbff23673e4980d9bafd0a2b61934a33" kindref="member">cbor_builder_uint64_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint64_t);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a0d95d98def615e7f4ea10cb680d2fadd" kindref="member">cbor_builder_negint8_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint8_t);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a05a3b8a63bd44609664ba1480058aeef" kindref="member">cbor_builder_negint16_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint16_t);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1af2c80ac4543ac875b84b8eb8c619ce4a" kindref="member">cbor_builder_negint32_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint32_t);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1aa92b23a8c36df6157fde447a58241f8d" kindref="member">cbor_builder_negint64_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint64_t);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a0752a26117a4ac11a0b31969185774c9" kindref="member">cbor_builder_string_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a6ad59b5991aeeb560d2984abc85f1240" kindref="member">cbor_builder_string_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1ae3487b745fc400f6ca145d09b475cc22" kindref="member">cbor_builder_byte_string_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a50acadf2240a3b6badcb11e05aff3a47" kindref="member">cbor_builder_byte_string_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a0840fe5d84881527b514d7d3049c3079" kindref="member">cbor_builder_array_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a59c682fb50d074458ab1e12328aed401" kindref="member">cbor_builder_indef_array_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a683589f26de39eaa69e833084bc74279" kindref="member">cbor_builder_map_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a6110c00a85a88fc4e7edf6f91bea8f18" kindref="member">cbor_builder_indef_map_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a22b27f58982df6e585ef19a215b0b796" kindref="member">cbor_builder_tag_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>uint64_t);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1ab5c0f9bbfa8796a80c4b1fb666593c28" kindref="member">cbor_builder_float2_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a9603c2d5270f21afbefc0c3f15dc037b" kindref="member">cbor_builder_float4_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a34ed1c906cb4d31432466d78cf644524" kindref="member">cbor_builder_float8_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a5be99aad4fcaf9a86e2e583f3584fbd2" kindref="member">cbor_builder_null_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a5eea26b61770e178e2c6b2ec17ecca59" kindref="member">cbor_builder_undefined_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1ab5d82f6055e7326f892be37e6b4b7916" kindref="member">cbor_builder_boolean_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="builder__callbacks_8h_1a76daa00e402ba3b8b6c74dbbfc74b6ed" kindref="member">cbor_builder_indef_break_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//LIBCBOR_BUILDER_CALLBACKS_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/internal/builder_callbacks.h"/>
+  </compounddef>
+</doxygen>

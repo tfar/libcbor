@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Decoding &mdash; libcbor 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="libcbor 0.3.1 documentation" href="../index.html"/>
+        <link rel="up" title="API" href="../api.html"/>
+        <link rel="next" title="Encoding" href="encoding.html"/>
+        <link rel="prev" title="Memory management and reference counting" href="item_reference_counting.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> libcbor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#building-installing-libcbor">Building &amp; installing libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#linking-with-libcbor">Linking with libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#mingw-build-instructions">MinGW build instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using.html">Usage &amp; preliminaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#version-information">Version information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#headers-to-include">Headers to include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#using-libcbor">Using libcbor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="item_types.html">Types of items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#binary-queries">Binary queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#logical-queries">Logical queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="item_reference_counting.html">Memory management and reference counting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#using-custom-allocator">Using custom allocator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#reference-counting">Reference counting</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#associated-data-structures">Associated data structures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="encoding.html#type-specific-serializers">Type-specific serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_0_1.html">Types 0 &amp; 1 – Positive and negative integers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-0-positive-integers">Type 0 - positive integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-1-negative-integers">Type 1 - negative integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-0-1">Type 0 &amp; 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#building-new-items">Building new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#retrieving-values">Retrieving values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#dealing-with-width">Dealing with width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#dealing-with-signedness">Dealing with signedness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#creating-new-items">Creating new items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_2.html">Type 2 – Byte strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#streaming-indefinite-byte-strings">Streaming indefinite byte strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_3.html">Type 3 – UTF-8 strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#streaming-indefinite-strings">Streaming indefinite strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#utf-8-encoding-validation">UTF-8 encoding validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_4.html">Type 4 – Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#streaming-indefinite-arrays">Streaming indefinite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_5.html">Type 5 – Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#streaming-maps">Streaming maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_6.html">Type 6 – Semantic tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_7.html">Type 7 – Floats &amp; control tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../streaming.html">Streaming &amp; indefinite items</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#related-structures">Related structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#callback-types-definition">Callback types definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/encoding.html">Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#testing-for-memory-leaks">Testing for memory leaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#code-coverage">Code coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#fuzz-testing">Fuzz testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc_conformance.html">RFC conformance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#bytestring-length">Bytestring length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#half-precision-ieee-754-floats">&#8220;Half-precision&#8221; IEEE 754 floats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../internal.html">Internal mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#inspiration-related-projects">Inspiration &amp; related projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#general-notes-on-the-api-design">General notes on the API design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#coding-style">Coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#memory-layout">Memory layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#decoding">Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#next">Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id1">0.3.0 (2015-05-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">0.2.1 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">0.2.0 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">0.1.0 (2015-05-06)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development.html#development-dependencies">Development dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#building-cmocka">Building <em>cmocka</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#installing-sphinx">Installing <em>sphinx</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#live-preview-of-docs">Live preview of docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#testing-and-code-coverage">Testing and code coverage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libcbor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../api.html">API</a> &raquo;</li>
+      
+    <li>Decoding</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/decoding.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="decoding">
+<h1>Decoding<a class="headerlink" href="#decoding" title="Permalink to this headline">¶</a></h1>
+<p>The following diagram illustrates the relationship among different parts of libcbor from the decoding standpoint.</p>
+<div class="highlight-python"><div class="highlight"><pre>┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                              │
+│                                      Client application                                      │
+│                                                                                              │
+│                                                 ┌────────────────────────────────────────────┘
+│                                                 │                     ↕
+│                                                 │ ┌──────────────────────────────────────────┐
+│                                                 │ │                                          │
+│                                                 │ │          Manipulation routines           │
+│                                                 │ │                                          │
+│           ┌─────────────────────────────────────┘ └──────────────────────────────────────────┘
+│           │     ↑    ↑                  ↑                              ↑
+│           │     │    │    ┌─────────────╫──────────┬───────────────────┴─┐
+│           │     │   CDS   │             ║          │                     │
+│           │     │    │   PDS            ║         PDS                   PDS
+│           │     ↓    ↓    ↓             ↓          ↓                     ↓
+│           │ ┌─────────────────┐   ┌────────────────────┐   ┌────────────────────────────┐
+│           │ │                 │   │                    │   │                            │
+│           │ │  Custom driver  │ ↔ │  Streaming driver  │ ↔ │       Default driver       │ ↔ CD
+│           │ │                 │   │                    │   │                            │
+└───────────┘ └─────────────────┘   └────────────────────┘   └────────────────────────────┘
+      ↕                ↕                        ↕                           ↕
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                              │
+│                            Stateless event─driven decoder                                    │
+│                                                                                              │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
+
+              (PSD = Provided Data Structures, CDS = Custom Data Structures)
+</pre></div>
+</div>
+<p>This section will deal with the API that is labeled as the &#8220;Default driver&#8221; in the diagram. That is, routines that
+decode complete libcbor data items</p>
+<dl class="function">
+<dt id="_CPPv29cbor_load9cbor_data6size_tP16cbor_load_result">
+<span id="cbor_load__cbor_data.s.cbor_load_resultP"></span><span class="target" id="project0cbor_8h_1ae48d76b44e6de39a98ff3599d9acda8f"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_load</code><span class="sig-paren">(</span>cbor_data <em>source</em>, size_t <em>source_size</em>, <em class="property">struct</em> <a class="reference internal" href="#_CPPv216cbor_load_result" title="cbor_load_result">cbor_load_result</a> *<em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv29cbor_load9cbor_data6size_tP16cbor_load_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads data item from a buffer. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> CBOR item or <code class="docutils literal"><span class="pre">NULL</span></code> on failure. In that case, <code class="docutils literal"><span class="pre">result</span></code> contains location and description of the error. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">source</span></code> - <p>The buffer </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">source_size</span></code> - <p></p>
+</li>
+<li><code class="first docutils literal"><span class="pre">result[out]</span></code> - <p>Result indicator. <a class="reference internal" href="#project0data_8h_1a13ad43c61d917938e0ce26173e6b2eb6a711ecd32adcc030541f2cfb58f69856d"><span>CBOR_ERR_NONE</span></a> on success </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<div class="section" id="associated-data-structures">
+<h2>Associated data structures<a class="headerlink" href="#associated-data-structures" title="Permalink to this headline">¶</a></h2>
+<dl class="type">
+<dt id="_CPPv215cbor_error_code">
+<span id="cbor_error_code"></span><span class="target" id="project0data_8h_1a13ad43c61d917938e0ce26173e6b2eb6"></span><em class="property">enum </em><code class="descclassname"></code><code class="descname">cbor_error_code</code><a class="headerlink" href="#_CPPv215cbor_error_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possible decoding errors. </p>
+<p><em>Values:</em></p>
+<dl class="member">
+<dt id="_CPPv213CBOR_ERR_NONE">
+<span id="CBOR_ERR_NONE"></span><span class="target" id="project0data_8h_1a13ad43c61d917938e0ce26173e6b2eb6a711ecd32adcc030541f2cfb58f69856d"></span><code class="descname">CBOR_ERR_NONE</code><a class="headerlink" href="#_CPPv213CBOR_ERR_NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv222CBOR_ERR_NOTENOUGHDATA">
+<span id="CBOR_ERR_NOTENOUGHDATA"></span><span class="target" id="project0data_8h_1a13ad43c61d917938e0ce26173e6b2eb6acdd41b7dd2155b68a7e78108551bbd9a"></span><code class="descname">CBOR_ERR_NOTENOUGHDATA</code><a class="headerlink" href="#_CPPv222CBOR_ERR_NOTENOUGHDATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv215CBOR_ERR_NODATA">
+<span id="CBOR_ERR_NODATA"></span><span class="target" id="project0data_8h_1a13ad43c61d917938e0ce26173e6b2eb6a427a7d0fde29a84566e040d065cca6d1"></span><code class="descname">CBOR_ERR_NODATA</code><a class="headerlink" href="#_CPPv215CBOR_ERR_NODATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv220CBOR_ERR_MALFORMATED">
+<span id="CBOR_ERR_MALFORMATED"></span><span class="target" id="project0data_8h_1a13ad43c61d917938e0ce26173e6b2eb6af2783808f2e475f57583511ef5eb6ea7"></span><code class="descname">CBOR_ERR_MALFORMATED</code><a class="headerlink" href="#_CPPv220CBOR_ERR_MALFORMATED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv217CBOR_ERR_MEMERROR">
+<span id="CBOR_ERR_MEMERROR"></span><span class="target" id="project0data_8h_1a13ad43c61d917938e0ce26173e6b2eb6ae408fbed8924a3eeb005a8c6f79136cb"></span><code class="descname">CBOR_ERR_MEMERROR</code><a class="headerlink" href="#_CPPv217CBOR_ERR_MEMERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Memory error - item allocation failed. </p>
+<p>Is it too big for your allocator? </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv220CBOR_ERR_SYNTAXERROR">
+<span id="CBOR_ERR_SYNTAXERROR"></span><span class="target" id="project0data_8h_1a13ad43c61d917938e0ce26173e6b2eb6a001d313c68a4f7531026f63af3a755c7"></span><code class="descname">CBOR_ERR_SYNTAXERROR</code><a class="headerlink" href="#_CPPv220CBOR_ERR_SYNTAXERROR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stack parsing algorithm failed. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv216cbor_load_result">
+<span id="cbor_load_result"></span><span class="target" id="project0structcbor__load__result"></span><em class="property">struct </em><code class="descclassname"></code><code class="descname">cbor_load_result</code><a class="headerlink" href="#_CPPv216cbor_load_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>High-level decoding result. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N16cbor_load_result5errorE">
+<span id="cbor_load_result::error__cbor_error"></span><span class="target" id="project0structcbor__load__result_1af23777116487150fb1b06842fc57724f"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv210cbor_error" title="cbor_error">cbor_error</a> <code class="descname">error</code><a class="headerlink" href="#_CPPv2N16cbor_load_result5errorE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Error indicator. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N16cbor_load_result4readE">
+<span id="cbor_load_result::read__s"></span><span class="target" id="project0structcbor__load__result_1ac5d6290cac5893bd060f6759beef2b28"></span>size_t <code class="descname">read</code><a class="headerlink" href="#_CPPv2N16cbor_load_result4readE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of bytes read. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv210cbor_error">
+<span id="cbor_error"></span><span class="target" id="project0structcbor__error"></span><em class="property">struct </em><code class="descclassname"></code><code class="descname">cbor_error</code><a class="headerlink" href="#_CPPv210cbor_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>High-level decoding error. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv2N10cbor_error8positionE">
+<span id="cbor_error::position__s"></span><span class="target" id="project0structcbor__error_1a6bc04669e6fff45ad7a5e22ad5826d01"></span>size_t <code class="descname">position</code><a class="headerlink" href="#_CPPv2N10cbor_error8positionE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aproximate position. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv2N10cbor_error4codeE">
+<span id="cbor_error::code__cbor_error_code"></span><span class="target" id="project0structcbor__error_1a8674e7cac94b696eeea37db194026646"></span><a class="reference internal" href="#_CPPv215cbor_error_code" title="cbor_error_code">cbor_error_code</a> <code class="descname">code</code><a class="headerlink" href="#_CPPv2N10cbor_error4codeE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="encoding.html" class="btn btn-neutral float-right" title="Encoding" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="item_reference_counting.html" class="btn btn-neutral" title="Memory management and reference counting" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, 2015, Pavel Kalvoda.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

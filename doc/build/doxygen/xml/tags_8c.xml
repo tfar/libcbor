@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="tags_8c" kind="file">
+    <compoundname>tags.c</compoundname>
+    <includes refid="tags_8h" local="yes">tags.h</includes>
+    <incdepgraph>
+      <node id="547">
+        <label>stdbool.h</label>
+      </node>
+      <node id="548">
+        <label>assert.h</label>
+      </node>
+      <node id="546">
+        <label>stdint.h</label>
+      </node>
+      <node id="544">
+        <label>stdlib.h</label>
+      </node>
+      <node id="541">
+        <label>src/cbor/tags.c</label>
+        <link refid="tags.c"/>
+        <childnode refid="542" relation="include">
+        </childnode>
+      </node>
+      <node id="542">
+        <label>tags.h</label>
+        <link refid="tags_8h"/>
+        <childnode refid="543" relation="include">
+        </childnode>
+      </node>
+      <node id="543">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="544" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="549" relation="include">
+        </childnode>
+      </node>
+      <node id="545">
+        <label>stddef.h</label>
+      </node>
+      <node id="549">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="544" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="tags_8c_1a54d7cc5a88a8c28cfb41b1f476a6d1e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_tag</definition>
+        <argsstring>(uint64_t value)</argsstring>
+        <name>cbor_new_tag</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Create a new tag. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag value. Please consult the tag repository </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> tag. Item reference is <computeroutput>NULL</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/tags.c" line="10" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/tags.c" bodystart="10" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="tags_8c_1a162852da1313269e9d7b07dd4b964111" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_tag_item</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_tag_item</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Get the tagged item. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>incref</bold> the tagged item </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/tags.c" line="22" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/tags.c" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="tags_8c_1a2746e6a37373e0950b646e8146ed63b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t cbor_tag_value</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_tag_value</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Get tag value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The tag value. Please consult the tag repository </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/tags.c" line="28" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/tags.c" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="tags_8c_1a4e6dc4f4fda5889819713bd3957de3c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_tag_set_item</definition>
+        <argsstring>(cbor_item_t *item, cbor_item_t *tagged_item)</argsstring>
+        <name>cbor_tag_set_item</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>tagged_item</declname>
+        </param>
+        <briefdescription>
+<para>Set the tagged item. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tagged_item[incref]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The item to tag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/tags.c" line="34" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/tags.c" bodystart="34" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="tags_8c_1a44840e7f4b0225eebf3a366fafff8e96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_tag</definition>
+        <argsstring>(uint64_t value, cbor_item_t *item)</argsstring>
+        <name>cbor_build_tag</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Build a new tag. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[incref]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tagee </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tag value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> tag item </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/tags.c" line="41" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/tags.c" bodystart="41" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tags_8h" kindref="compound">tags.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="tags_8h_1a54d7cc5a88a8c28cfb41b1f476a6d1e6" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="tags_8c_1a54d7cc5a88a8c28cfb41b1f476a6d1e6" kindref="member">cbor_new_tag</ref>(uint64_t<sp/>value)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref>));</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>*item<sp/>=<sp/>(<ref refid="data_8h_1afdaa4bcbbdd295d719e39ce0b5519419" kindref="member">cbor_item_t</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structcbor__item__t_1a6bb24fe655f086c6aa9a66d427e09cca" kindref="member">refcount</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.type<sp/>=<sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6a16f0eaf29eeea66fe37ec1ed0fa45415" kindref="member">CBOR_TYPE_TAG</ref>,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.metadata<sp/>=<sp/>{.tag_metadata<sp/>=<sp/>{.value<sp/>=<sp/>value,<sp/>.tagged_item<sp/>=<sp/>NULL}},</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.data<sp/>=<sp/>NULL<sp/></highlight><highlight class="comment">/*<sp/>Never<sp/>used<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="tags_8h_1a162852da1313269e9d7b07dd4b964111" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="tags_8c_1a162852da1313269e9d7b07dd4b964111" kindref="member">cbor_tag_item</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a0d5054202c5ec9375e8daf5930087a61" kindref="member">cbor_isa_tag</ref>(item));</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a7cf72d7dbb3104bd14d0e4934646212f" kindref="member">tag_metadata</ref>.<ref refid="struct__cbor__tag__metadata_1ae275f5a8e0a72192d393f770db923907" kindref="member">tagged_item</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="tags_8h_1a2746e6a37373e0950b646e8146ed63b6" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="tags_8c_1a2746e6a37373e0950b646e8146ed63b6" kindref="member">cbor_tag_value</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a0d5054202c5ec9375e8daf5930087a61" kindref="member">cbor_isa_tag</ref>(item));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a7cf72d7dbb3104bd14d0e4934646212f" kindref="member">tag_metadata</ref>.<ref refid="struct__cbor__tag__metadata_1a23bcf332e94e901e5bc3b48aab0d89da" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="tags_8h_1a4e6dc4f4fda5889819713bd3957de3c6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="tags_8c_1a4e6dc4f4fda5889819713bd3957de3c6" kindref="member">cbor_tag_set_item</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*tagged_item)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a0d5054202c5ec9375e8daf5930087a61" kindref="member">cbor_isa_tag</ref>(item));</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="common_8c_1aa62e72f275c2f0fa604896bfed18e992" kindref="member">cbor_incref</ref>(tagged_item);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a7cf72d7dbb3104bd14d0e4934646212f" kindref="member">tag_metadata</ref>.<ref refid="struct__cbor__tag__metadata_1ae275f5a8e0a72192d393f770db923907" kindref="member">tagged_item</ref><sp/>=<sp/>tagged_item;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="tags_8h_1a44840e7f4b0225eebf3a366fafff8e96" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/><ref refid="tags_8c_1a44840e7f4b0225eebf3a366fafff8e96" kindref="member">cbor_build_tag</ref>(uint64_t<sp/>value,<sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/>item)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*res<sp/>=<sp/><ref refid="tags_8c_1a54d7cc5a88a8c28cfb41b1f476a6d1e6" kindref="member">cbor_new_tag</ref>(value);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="tags_8c_1a4e6dc4f4fda5889819713bd3957de3c6" kindref="member">cbor_tag_set_item</ref>(res,<sp/>item);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/tags.c"/>
+  </compounddef>
+</doxygen>

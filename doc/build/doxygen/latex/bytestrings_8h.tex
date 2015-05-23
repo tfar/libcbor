@@ -1,0 +1,300 @@
+\hypertarget{bytestrings_8h}{\section{src/cbor/bytestrings.h File Reference}
+\label{bytestrings_8h}\index{src/cbor/bytestrings.\-h@{src/cbor/bytestrings.\-h}}
+}
+{\ttfamily \#include \char`\"{}common.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{bytestrings_8h_a7c15a63fdc3830707eac0877a261f1cd}{cbor\-\_\-bytestring\-\_\-length} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Returns the length of the binary data. \end{DoxyCompactList}\item 
+bool \hyperlink{bytestrings_8h_a368222dbbcea25e06469524e26587e2a}{cbor\-\_\-bytestring\-\_\-is\-\_\-definite} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the byte string definite? \end{DoxyCompactList}\item 
+bool \hyperlink{bytestrings_8h_a3a6c450f105bb18b6b56d20f0de4786a}{cbor\-\_\-bytestring\-\_\-is\-\_\-indefinite} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the byte string indefinite? \end{DoxyCompactList}\item 
+\hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data} \hyperlink{bytestrings_8h_a05c09e147b0a244abc481b0b078ebcb9}{cbor\-\_\-bytestring\-\_\-handle} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the handle to the binary data. \end{DoxyCompactList}\item 
+void \hyperlink{bytestrings_8h_a94278dc5a388031c2805835aef005579}{cbor\-\_\-bytestring\-\_\-set\-\_\-handle} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data} restrict data, size\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em Set the handle to the binary data. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$$\ast$ \hyperlink{bytestrings_8h_a8ab6255d6f8f209149bdf794dffed849}{cbor\-\_\-bytestring\-\_\-chunks\-\_\-handle} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the handle to the array of chunks. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{bytestrings_8h_ad02102832d452fd5a5cfa96272b1095d}{cbor\-\_\-bytestring\-\_\-chunk\-\_\-count} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the number of chunks this string consist of. \end{DoxyCompactList}\item 
+bool \hyperlink{bytestrings_8h_a5dc8c27d6e7acfdd05fdc15c01e25b47}{cbor\-\_\-bytestring\-\_\-add\-\_\-chunk} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$chunk)
+\begin{DoxyCompactList}\small\item\em Appends a chunk to the bytestring. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{bytestrings_8h_a86fc646f4520b90c85a704d27b46e69e}{cbor\-\_\-new\-\_\-definite\-\_\-bytestring} ()
+\begin{DoxyCompactList}\small\item\em Creates a new definite byte string. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{bytestrings_8h_a6de9d6387e856c33d2ef8e8e9fdac0ac}{cbor\-\_\-new\-\_\-indefinite\-\_\-bytestring} ()
+\begin{DoxyCompactList}\small\item\em Creates a new indefinite byte string. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{bytestrings_8h_ab76bd5ff62831739cd9a8d7ec2768c1a}{cbor\-\_\-build\-\_\-bytestring} (\hyperlink{data_8h_a121c5944682215e742475f12f07c0a72}{cbor\-\_\-data} handle, size\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em Creates a new byte string and initializes it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{bytestrings_8h_ab76bd5ff62831739cd9a8d7ec2768c1a}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-build\-\_\-bytestring@{cbor\-\_\-build\-\_\-bytestring}}
+\index{cbor\-\_\-build\-\_\-bytestring@{cbor\-\_\-build\-\_\-bytestring}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-build\-\_\-bytestring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-build\-\_\-bytestring (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-data}}]{handle, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_ab76bd5ff62831739cd9a8d7ec2768c1a}
+
+
+Creates a new byte string and initializes it. 
+
+The {\ttfamily handle} will be copied to a newly allocated block
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Block of binary data \\
+\hline
+{\em length} & Length of {\ttfamily data} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\bfseries new} byte string with content {\ttfamily handle}. {\ttfamily N\-U\-L\-L} on malloc failure. 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a5dc8c27d6e7acfdd05fdc15c01e25b47}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-bytestring\-\_\-add\-\_\-chunk@{cbor\-\_\-bytestring\-\_\-add\-\_\-chunk}}
+\index{cbor\-\_\-bytestring\-\_\-add\-\_\-chunk@{cbor\-\_\-bytestring\-\_\-add\-\_\-chunk}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-bytestring\-\_\-add\-\_\-chunk}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-bytestring\-\_\-add\-\_\-chunk (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{chunk}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a5dc8c27d6e7acfdd05fdc15c01e25b47}
+
+
+Appends a chunk to the bytestring. 
+
+Indefinite byte strings only.
+
+May realloc the chunk storage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An indefinite byte string \\
+\hline
+{\em item\mbox{[}incref\mbox{]}} & A definite byte string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on realloc failure. In that case, the refcount of {\ttfamily chunk} is not increased and the {\ttfamily item} is left intact. 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_ad02102832d452fd5a5cfa96272b1095d}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-bytestring\-\_\-chunk\-\_\-count@{cbor\-\_\-bytestring\-\_\-chunk\-\_\-count}}
+\index{cbor\-\_\-bytestring\-\_\-chunk\-\_\-count@{cbor\-\_\-bytestring\-\_\-chunk\-\_\-count}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-bytestring\-\_\-chunk\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-bytestring\-\_\-chunk\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_ad02102832d452fd5a5cfa96272b1095d}
+
+
+Get the number of chunks this string consist of. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A indefinite bytestring \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The chunk count. 0 for freshly created items. 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a8ab6255d6f8f209149bdf794dffed849}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-bytestring\-\_\-chunks\-\_\-handle@{cbor\-\_\-bytestring\-\_\-chunks\-\_\-handle}}
+\index{cbor\-\_\-bytestring\-\_\-chunks\-\_\-handle@{cbor\-\_\-bytestring\-\_\-chunks\-\_\-handle}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-bytestring\-\_\-chunks\-\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$$\ast$ cbor\-\_\-bytestring\-\_\-chunks\-\_\-handle (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a8ab6255d6f8f209149bdf794dffed849}
+
+
+Get the handle to the array of chunks. 
+
+Manipulations with the memory block (e.\-g. sorting it) are allowed, but the validity and the number of chunks must be retained.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A indefinite byte string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array of \hyperlink{bytestrings_8h_ad02102832d452fd5a5cfa96272b1095d}{cbor\-\_\-bytestring\-\_\-chunk\-\_\-count} definite bytestrings 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a05c09e147b0a244abc481b0b078ebcb9}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-bytestring\-\_\-handle@{cbor\-\_\-bytestring\-\_\-handle}}
+\index{cbor\-\_\-bytestring\-\_\-handle@{cbor\-\_\-bytestring\-\_\-handle}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-bytestring\-\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-mutable\-\_\-data} cbor\-\_\-bytestring\-\_\-handle (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a05c09e147b0a244abc481b0b078ebcb9}
+
+
+Get the handle to the binary data. 
+
+Definite items only. Modifying the data is allowed. In that case, the caller takes responsibility for the effect on items this item might be a part of
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A definite byte string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The address of the binary data. {\ttfamily N\-U\-L\-L} if no data have been assigned yet. 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a368222dbbcea25e06469524e26587e2a}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-bytestring\-\_\-is\-\_\-definite@{cbor\-\_\-bytestring\-\_\-is\-\_\-definite}}
+\index{cbor\-\_\-bytestring\-\_\-is\-\_\-definite@{cbor\-\_\-bytestring\-\_\-is\-\_\-definite}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-bytestring\-\_\-is\-\_\-definite}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-bytestring\-\_\-is\-\_\-definite (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a368222dbbcea25e06469524e26587e2a}
+
+
+Is the byte string definite? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & a byte string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the byte string definite? 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a3a6c450f105bb18b6b56d20f0de4786a}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-bytestring\-\_\-is\-\_\-indefinite@{cbor\-\_\-bytestring\-\_\-is\-\_\-indefinite}}
+\index{cbor\-\_\-bytestring\-\_\-is\-\_\-indefinite@{cbor\-\_\-bytestring\-\_\-is\-\_\-indefinite}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-bytestring\-\_\-is\-\_\-indefinite}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-bytestring\-\_\-is\-\_\-indefinite (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a3a6c450f105bb18b6b56d20f0de4786a}
+
+
+Is the byte string indefinite? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & a byte string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the byte string indefinite? 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a7c15a63fdc3830707eac0877a261f1cd}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-bytestring\-\_\-length@{cbor\-\_\-bytestring\-\_\-length}}
+\index{cbor\-\_\-bytestring\-\_\-length@{cbor\-\_\-bytestring\-\_\-length}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-bytestring\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-bytestring\-\_\-length (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a7c15a63fdc3830707eac0877a261f1cd}
+
+
+Returns the length of the binary data. 
+
+For definite byte strings only
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & a definite bytestring \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of the binary data. Zero if no chunk has been attached yet 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a94278dc5a388031c2805835aef005579}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-bytestring\-\_\-set\-\_\-handle@{cbor\-\_\-bytestring\-\_\-set\-\_\-handle}}
+\index{cbor\-\_\-bytestring\-\_\-set\-\_\-handle@{cbor\-\_\-bytestring\-\_\-set\-\_\-handle}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-bytestring\-\_\-set\-\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-bytestring\-\_\-set\-\_\-handle (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data} restrict}]{data, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a94278dc5a388031c2805835aef005579}
+
+
+Set the handle to the binary data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A definite byte string \\
+\hline
+{\em data} & The memory block. The caller gives up the ownership of the block. libcbor will deallocate it when appropriate using its free function \\
+\hline
+{\em length} & Length of the data block \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a86fc646f4520b90c85a704d27b46e69e}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-new\-\_\-definite\-\_\-bytestring@{cbor\-\_\-new\-\_\-definite\-\_\-bytestring}}
+\index{cbor\-\_\-new\-\_\-definite\-\_\-bytestring@{cbor\-\_\-new\-\_\-definite\-\_\-bytestring}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-new\-\_\-definite\-\_\-bytestring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-new\-\_\-definite\-\_\-bytestring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a86fc646f4520b90c85a704d27b46e69e}
+
+
+Creates a new definite byte string. 
+
+The handle is initialized to {\ttfamily N\-U\-L\-L} and length to 0
+
+\begin{DoxyReturn}{Returns}
+{\bfseries new} definite bytestring. {\ttfamily N\-U\-L\-L} on malloc failure. 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file bytestrings.\-c.
+
+\hypertarget{bytestrings_8h_a6de9d6387e856c33d2ef8e8e9fdac0ac}{\index{bytestrings.\-h@{bytestrings.\-h}!cbor\-\_\-new\-\_\-indefinite\-\_\-bytestring@{cbor\-\_\-new\-\_\-indefinite\-\_\-bytestring}}
+\index{cbor\-\_\-new\-\_\-indefinite\-\_\-bytestring@{cbor\-\_\-new\-\_\-indefinite\-\_\-bytestring}!bytestrings.h@{bytestrings.\-h}}
+\subsubsection[{cbor\-\_\-new\-\_\-indefinite\-\_\-bytestring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-new\-\_\-indefinite\-\_\-bytestring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{bytestrings_8h_a6de9d6387e856c33d2ef8e8e9fdac0ac}
+
+
+Creates a new indefinite byte string. 
+
+The chunks array is initialized to {\ttfamily N\-U\-L\-L} and chunkcount to 0
+
+\begin{DoxyReturn}{Returns}
+{\bfseries new} indefinite bytestring. {\ttfamily N\-U\-L\-L} on malloc failure. 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file bytestrings.\-c.
+

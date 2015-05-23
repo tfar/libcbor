@@ -1,0 +1,756 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="encoding_8h" kind="file">
+    <compoundname>encoding.h</compoundname>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includedby refid="encoding_8c" local="yes">src/cbor/encoding.c</includedby>
+    <includedby refid="serialization_8c" local="yes">src/cbor/serialization.c</includedby>
+    <includedby refid="cbor_8h" local="yes">src/cbor.h</includedby>
+    <incdepgraph>
+      <node id="253">
+        <label>stdbool.h</label>
+      </node>
+      <node id="254">
+        <label>assert.h</label>
+      </node>
+      <node id="252">
+        <label>stdint.h</label>
+      </node>
+      <node id="250">
+        <label>stdlib.h</label>
+      </node>
+      <node id="249">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="250" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+        <childnode refid="254" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+      </node>
+      <node id="251">
+        <label>stddef.h</label>
+      </node>
+      <node id="248">
+        <label>src/cbor/encoding.h</label>
+        <link refid="encoding.h"/>
+        <childnode refid="249" relation="include">
+        </childnode>
+      </node>
+      <node id="255">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="250" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="260">
+        <label>src/cbor.c</label>
+        <link refid="cbor_8c"/>
+      </node>
+      <node id="259">
+        <label>src/cbor.h</label>
+        <link refid="cbor_8h"/>
+        <childnode refid="260" relation="include">
+        </childnode>
+      </node>
+      <node id="257">
+        <label>src/cbor/encoding.c</label>
+        <link refid="encoding_8c"/>
+      </node>
+      <node id="256">
+        <label>src/cbor/encoding.h</label>
+        <link refid="encoding.h"/>
+        <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="258" relation="include">
+        </childnode>
+        <childnode refid="259" relation="include">
+        </childnode>
+      </node>
+      <node id="258">
+        <label>src/cbor/serialization.c</label>
+        <link refid="serialization_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="encoding_8h_1afea0835d5129909ae6ccb4cbfc015970" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_uint8</definition>
+        <argsstring>(uint8_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_uint8</name>
+        <param>
+          <type>uint8_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+<para>Primitive encoder. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="25" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a56bfab261e1beaee3d41faf6463b04bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_uint16</definition>
+        <argsstring>(uint16_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_uint16</name>
+        <param>
+          <type>uint16_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="27" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a90ad4b026bc13f3807e4b89409773f0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_uint32</definition>
+        <argsstring>(uint32_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_uint32</name>
+        <param>
+          <type>uint32_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="29" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a4a235fd97a2a4d13ba6d3c4306c6a643" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_uint64</definition>
+        <argsstring>(uint64_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_uint64</name>
+        <param>
+          <type>uint64_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="31" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a7863aaacf5c10dbc7770010250525ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_uint</definition>
+        <argsstring>(uint64_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_uint</name>
+        <param>
+          <type>uint64_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="33" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1aa850f2be3940fbc309fc9f611ac2989b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_negint8</definition>
+        <argsstring>(uint8_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_negint8</name>
+        <param>
+          <type>uint8_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="35" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a0df96946a16ed6ab94d45adb7b1a14d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_negint16</definition>
+        <argsstring>(uint16_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_negint16</name>
+        <param>
+          <type>uint16_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="37" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1ac1854fff9cbe4be7fa08fd311d851922" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_negint32</definition>
+        <argsstring>(uint32_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_negint32</name>
+        <param>
+          <type>uint32_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="39" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a1d803ca867e14739665283bee5b66b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_negint64</definition>
+        <argsstring>(uint64_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_negint64</name>
+        <param>
+          <type>uint64_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="41" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a1cc1e5a1b1ee934291abcfef75626616" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_negint</definition>
+        <argsstring>(uint64_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_negint</name>
+        <param>
+          <type>uint64_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="43" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a2105cee299618a9598bc39f5ae215c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_bytestring_start</definition>
+        <argsstring>(size_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_bytestring_start</name>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="45" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a180ccc6318bf86af67bfbdd0955548df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_indef_bytestring_start</definition>
+        <argsstring>(unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_indef_bytestring_start</name>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="47" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a58f3f82978563d732a03d4b585a1a9ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_string_start</definition>
+        <argsstring>(size_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_string_start</name>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="49" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="81" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a743eaba2ad48bc23acbf567e1eb75eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_indef_string_start</definition>
+        <argsstring>(unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_indef_string_start</name>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="51" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a7cf3eb01b259b2e4ea9fddd4b1a37d9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_array_start</definition>
+        <argsstring>(size_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_array_start</name>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="53" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a12630f19ed6040b193ac79b66b3082a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_indef_array_start</definition>
+        <argsstring>(unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_indef_array_start</name>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="55" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a89ca7a5834e479190406de4fa886a975" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_map_start</definition>
+        <argsstring>(size_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_map_start</name>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="57" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a7c73f8226b908bc2e917e7d0fa3125c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_indef_map_start</definition>
+        <argsstring>(unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_indef_map_start</name>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="59" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a153f903a2763439d0be4dc13d8e01b81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_tag</definition>
+        <argsstring>(uint64_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_tag</name>
+        <param>
+          <type>uint64_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="61" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="111" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a9c298069fd256fe98007f8ebb2c3b7e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_bool</definition>
+        <argsstring>(bool, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_bool</name>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="63" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a01795a392b9945c416ee82f66ff5d50f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_null</definition>
+        <argsstring>(unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_null</name>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="65" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1ace6e55205c8e7fb624cb1f39d46f1479" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_undef</definition>
+        <argsstring>(unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_undef</name>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="67" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a570e080b214be14a3263494b3d5d19f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_half</definition>
+        <argsstring>(float, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_half</name>
+        <param>
+          <type>float</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="69" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="131" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a7ea12535f26f24032ea9e0975cac3cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_single</definition>
+        <argsstring>(float, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_single</name>
+        <param>
+          <type>float</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="71" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="155" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a63da011839918fac84a7bdef9f0f24f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_double</definition>
+        <argsstring>(double, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_double</name>
+        <param>
+          <type>double</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="73" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="161" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1aaefd57d48643806d1b5bc7ba304f9060" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_break</definition>
+        <argsstring>(unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_break</name>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="75" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="166" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="encoding_8h_1a9cfc3c3ca85e6acb7258cf0fb33b3543" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_encode_ctrl</definition>
+        <argsstring>(uint8_t, unsigned char *, size_t)</argsstring>
+        <name>cbor_encode_ctrl</name>
+        <param>
+          <type>uint8_t</type>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+        </param>
+        <param>
+          <type>size_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/encoding.h" line="77" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/encoding.c" bodystart="171" bodyend="174"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LIBCBOR_ENCODING_H</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>LIBCBOR_ENCODING_H</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="common_8h" kindref="compound">common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*<sp/>============================================================================</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*<sp/>Primitives<sp/>encoding</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">*<sp/>============================================================================</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1afea0835d5129909ae6ccb4cbfc015970" kindref="member">cbor_encode_uint8</ref>(uint8_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a56bfab261e1beaee3d41faf6463b04bf" kindref="member">cbor_encode_uint16</ref>(uint16_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a90ad4b026bc13f3807e4b89409773f0b" kindref="member">cbor_encode_uint32</ref>(uint32_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a4a235fd97a2a4d13ba6d3c4306c6a643" kindref="member">cbor_encode_uint64</ref>(uint64_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a7863aaacf5c10dbc7770010250525ed3" kindref="member">cbor_encode_uint</ref>(uint64_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1aa850f2be3940fbc309fc9f611ac2989b" kindref="member">cbor_encode_negint8</ref>(uint8_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a0df96946a16ed6ab94d45adb7b1a14d9" kindref="member">cbor_encode_negint16</ref>(uint16_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1ac1854fff9cbe4be7fa08fd311d851922" kindref="member">cbor_encode_negint32</ref>(uint32_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a1d803ca867e14739665283bee5b66b58" kindref="member">cbor_encode_negint64</ref>(uint64_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a1cc1e5a1b1ee934291abcfef75626616" kindref="member">cbor_encode_negint</ref>(uint64_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a2105cee299618a9598bc39f5ae215c0b" kindref="member">cbor_encode_bytestring_start</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a180ccc6318bf86af67bfbdd0955548df" kindref="member">cbor_encode_indef_bytestring_start</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a58f3f82978563d732a03d4b585a1a9ea" kindref="member">cbor_encode_string_start</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a743eaba2ad48bc23acbf567e1eb75eac" kindref="member">cbor_encode_indef_string_start</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a7cf3eb01b259b2e4ea9fddd4b1a37d9a" kindref="member">cbor_encode_array_start</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a12630f19ed6040b193ac79b66b3082a4" kindref="member">cbor_encode_indef_array_start</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a89ca7a5834e479190406de4fa886a975" kindref="member">cbor_encode_map_start</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a7c73f8226b908bc2e917e7d0fa3125c7" kindref="member">cbor_encode_indef_map_start</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a153f903a2763439d0be4dc13d8e01b81" kindref="member">cbor_encode_tag</ref>(uint64_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a9c298069fd256fe98007f8ebb2c3b7e4" kindref="member">cbor_encode_bool</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a01795a392b9945c416ee82f66ff5d50f" kindref="member">cbor_encode_null</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1ace6e55205c8e7fb624cb1f39d46f1479" kindref="member">cbor_encode_undef</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a570e080b214be14a3263494b3d5d19f2" kindref="member">cbor_encode_half</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a7ea12535f26f24032ea9e0975cac3cec" kindref="member">cbor_encode_single</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a63da011839918fac84a7bdef9f0f24f2" kindref="member">cbor_encode_double</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1aaefd57d48643806d1b5bc7ba304f9060" kindref="member">cbor_encode_break</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="encoding_8h_1a9cfc3c3ca85e6acb7258cf0fb33b3543" kindref="member">cbor_encode_ctrl</ref>(uint8_t,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//LIBCBOR_ENCODING_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/encoding.h"/>
+  </compounddef>
+</doxygen>

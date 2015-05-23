@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_3ebe94c85f6786bf802771098c1d09bb" kind="dir">
+    <compoundname>src/cbor/internal</compoundname>
+    <innerfile refid="builder__callbacks_8c">builder_callbacks.c</innerfile>
+    <innerfile refid="builder__callbacks_8h">builder_callbacks.h</innerfile>
+    <innerfile refid="encoders_8c">encoders.c</innerfile>
+    <innerfile refid="encoders_8h">encoders.h</innerfile>
+    <innerfile refid="loaders_8c">loaders.c</innerfile>
+    <innerfile refid="loaders_8h">loaders.h</innerfile>
+    <innerfile refid="stack_8c">stack.c</innerfile>
+    <innerfile refid="stack_8h">stack.h</innerfile>
+    <innerfile refid="unicode_8c">unicode.c</innerfile>
+    <innerfile refid="unicode_8h">unicode.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pjk/project/libcbor/src/cbor/internal/"/>
+  </compounddef>
+</doxygen>

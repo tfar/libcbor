@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>libcbor</title>
+    <detaileddescription>
+<para>This is the development reference of <ulink url="http://libcbor.org/">libcbor</ulink>. If you are looking for the user documentation, you should probably head to the <ulink url="http://libcbor.org/">homepage</ulink>.</para><para><heading level="1">Where to start</heading>
+</para><para>A couple of pointers for you to start with: <computeroutput>0x00000000</computeroutput>, <computeroutput>0xDEADBEEF</computeroutput>.</para><para>If you just want to peek under the hood, have a look at:<itemizedlist>
+<listitem><para><ref refid="common_8h" kindref="compound">src/cbor/common.h</ref></para></listitem><listitem><para><ref refid="encoding_8h" kindref="compound">src/cbor/encoding.h</ref></para></listitem><listitem><para><ref refid="cbor_8h" kindref="compound">src/cbor.h</ref></para></listitem></itemizedlist>
+</para><para>If you want to implement your own decoder or see how the default one is made:<itemizedlist>
+<listitem><para><ref refid="builder__callbacks_8h" kindref="compound">src/cbor/internal/builder_callbacks.h</ref></para></listitem><listitem><para><ref refid="stack_8h" kindref="compound">src/cbor/internal/stack.h</ref></para></listitem></itemizedlist>
+</para><para>For details on encoding and packing (could be useful when porting to exotic platforms):<itemizedlist>
+<listitem><para><ref refid="encoders_8h" kindref="compound">src/cbor/internal/encoders.h</ref></para></listitem><listitem><para><ref refid="loaders_8h" kindref="compound">src/cbor/internal/loaders.h</ref></para></listitem></itemizedlist>
+</para><para>Streaming driver:<itemizedlist>
+<listitem><para><ref refid="streaming_8h" kindref="compound">src/cbor/streaming.h</ref></para></listitem></itemizedlist>
+</para><para>Manipulation routines for particular types:<itemizedlist>
+<listitem><para><ref refid="ints_8h" kindref="compound">src/cbor/ints.h</ref></para></listitem><listitem><para><ref refid="bytestrings_8h" kindref="compound">src/cbor/bytestrings.h</ref></para></listitem><listitem><para><ref refid="strings_8h" kindref="compound">src/cbor/strings.h</ref></para></listitem><listitem><para><ref refid="arrays_8h" kindref="compound">src/cbor/arrays.h</ref></para></listitem><listitem><para><ref refid="maps_8h" kindref="compound">src/cbor/maps.h</ref></para></listitem><listitem><para><ref refid="tags_8h" kindref="compound">src/cbor/tags.h</ref></para></listitem><listitem><para><ref refid="floats__ctrls_8h" kindref="compound">src/cbor/floats_ctrls.h</ref></para></listitem></itemizedlist>
+</para><para><heading level="1">How to contribute</heading>
+</para><para>Please refer to <ulink url="https://github.com/PJK/libcbor">the repository</ulink> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

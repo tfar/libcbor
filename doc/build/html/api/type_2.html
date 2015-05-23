@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Type 2 – Byte strings &mdash; libcbor 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="libcbor 0.3.1 documentation" href="../index.html"/>
+        <link rel="up" title="API" href="../api.html"/>
+        <link rel="next" title="Type 3 – UTF-8 strings" href="type_3.html"/>
+        <link rel="prev" title="Types 0 &amp; 1 – Positive and negative integers" href="type_0_1.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> libcbor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#building-installing-libcbor">Building &amp; installing libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#linking-with-libcbor">Linking with libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#mingw-build-instructions">MinGW build instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using.html">Usage &amp; preliminaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#version-information">Version information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#headers-to-include">Headers to include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#using-libcbor">Using libcbor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="item_types.html">Types of items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#binary-queries">Binary queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#logical-queries">Logical queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="item_reference_counting.html">Memory management and reference counting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#using-custom-allocator">Using custom allocator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#reference-counting">Reference counting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="decoding.html#associated-data-structures">Associated data structures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="encoding.html#type-specific-serializers">Type-specific serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_0_1.html">Types 0 &amp; 1 – Positive and negative integers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-0-positive-integers">Type 0 - positive integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-1-negative-integers">Type 1 - negative integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-0-1">Type 0 &amp; 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#building-new-items">Building new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#retrieving-values">Retrieving values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#dealing-with-width">Dealing with width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#dealing-with-signedness">Dealing with signedness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#creating-new-items">Creating new items</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Type 2 – Byte strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#streaming-indefinite-byte-strings">Streaming indefinite byte strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_3.html">Type 3 – UTF-8 strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#streaming-indefinite-strings">Streaming indefinite strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#utf-8-encoding-validation">UTF-8 encoding validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_4.html">Type 4 – Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#streaming-indefinite-arrays">Streaming indefinite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_5.html">Type 5 – Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#streaming-maps">Streaming maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_6.html">Type 6 – Semantic tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_7.html">Type 7 – Floats &amp; control tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../streaming.html">Streaming &amp; indefinite items</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#related-structures">Related structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#callback-types-definition">Callback types definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/encoding.html">Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#testing-for-memory-leaks">Testing for memory leaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#code-coverage">Code coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#fuzz-testing">Fuzz testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc_conformance.html">RFC conformance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#bytestring-length">Bytestring length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#half-precision-ieee-754-floats">&#8220;Half-precision&#8221; IEEE 754 floats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../internal.html">Internal mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#inspiration-related-projects">Inspiration &amp; related projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#general-notes-on-the-api-design">General notes on the API design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#coding-style">Coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#memory-layout">Memory layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#decoding">Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#next">Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id1">0.3.0 (2015-05-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">0.2.1 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">0.2.0 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">0.1.0 (2015-05-06)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development.html#development-dependencies">Development dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#building-cmocka">Building <em>cmocka</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#installing-sphinx">Installing <em>sphinx</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#live-preview-of-docs">Live preview of docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#testing-and-code-coverage">Testing and code coverage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libcbor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../api.html">API</a> &raquo;</li>
+      
+    <li>Type 2 – Byte strings</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/type_2.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="type-2-byte-strings">
+<h1>Type 2 – Byte strings<a class="headerlink" href="#type-2-byte-strings" title="Permalink to this headline">¶</a></h1>
+<p>CBOR byte strings are just (ordered) series of bytes without further interpretation (unless there is a <a class="reference internal" href="type_6.html"><em>tag</em></a>). Byte string&#8217;s length may or may not be known during encoding. These two kinds of byte strings can be distinguished using <a class="reference internal" href="#_CPPv227cbor_bytestring_is_definitePK11cbor_item_t" title="cbor_bytestring_is_definite"><code class="xref cpp cpp-func docutils literal"><span class="pre">cbor_bytestring_is_definite()</span></code></a> and <a class="reference internal" href="#_CPPv229cbor_bytestring_is_indefinitePK11cbor_item_t" title="cbor_bytestring_is_indefinite"><code class="xref cpp cpp-func docutils literal"><span class="pre">cbor_bytestring_is_indefinite()</span></code></a> respectively.</p>
+<p>In case a byte string is indefinite, it is encoded as a series of definite byte strings. These are called &#8220;chunks&#8221;. For example, the encoded item</p>
+<div class="highlight-python"><div class="highlight"><pre>0xf5            Start indefinite byte string
+    0x41        Byte string (1B long)
+        0x00
+    0x41        Byte string (1B long)
+        0xff
+    0xff        &quot;Break&quot; control token
+</pre></div>
+</div>
+<p>represents two bytes, <code class="docutils literal"><span class="pre">0x00</span></code> and <code class="docutils literal"><span class="pre">0xff</span></code>. This on one hand enables streaming messages even before they are fully generated, but on the other hand it adds more complexity to the client code.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Corresponding <a class="reference internal" href="item_types.html#_CPPv29cbor_type" title="cbor_type"><code class="xref cpp cpp-type docutils literal"><span class="pre">cbor_type</span></code></a></td>
+<td><code class="docutils literal"><span class="pre">CBOR_TYPE_BYTESTRING</span></code></td>
+</tr>
+<tr class="row-even"><td>Number of allocations (definite)</td>
+<td>One plus any manipulations with the data</td>
+</tr>
+<tr class="row-odd"><td>Number of allocations (indefinite)</td>
+<td>One plus logarithmically many
+reallocations relative  to chunk count</td>
+</tr>
+<tr class="row-even"><td>Storage requirements (definite)</td>
+<td><code class="docutils literal"><span class="pre">sizeof(cbor_item_t)</span> <span class="pre">+</span> <span class="pre">length(handle)</span></code></td>
+</tr>
+<tr class="row-odd"><td>Storage requirements (indefinite)</td>
+<td><code class="docutils literal"><span class="pre">sizeof(cbor_item_t)</span> <span class="pre">*</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">chunk_count)</span> <span class="pre">+</span> <span class="pre">chunks</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="streaming-indefinite-byte-strings">
+<h2>Streaming indefinite byte strings<a class="headerlink" href="#streaming-indefinite-byte-strings" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to <a class="reference internal" href="../streaming.html"><em>Streaming &amp; indefinite items</em></a>.</p>
+</div>
+<div class="section" id="getting-metadata">
+<h2>Getting metadata<a class="headerlink" href="#getting-metadata" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv222cbor_bytestring_lengthPK11cbor_item_t">
+<span id="cbor_bytestring_length__cbor_item_tCP"></span><span class="target" id="project0bytestrings_8h_1a7c15a63fdc3830707eac0877a261f1cd"></span>size_t <code class="descclassname"></code><code class="descname">cbor_bytestring_length</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222cbor_bytestring_lengthPK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the length of the binary data. </p>
+<p>For definite byte strings only</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>length of the binary data. Zero if no chunk has been attached yet </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>a definite bytestring </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv227cbor_bytestring_is_definitePK11cbor_item_t">
+<span id="cbor_bytestring_is_definite__cbor_item_tCP"></span><span class="target" id="project0bytestrings_8h_1a368222dbbcea25e06469524e26587e2a"></span>bool <code class="descclassname"></code><code class="descname">cbor_bytestring_is_definite</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv227cbor_bytestring_is_definitePK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the byte string definite? </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Is the byte string definite? </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>a byte string </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv229cbor_bytestring_is_indefinitePK11cbor_item_t">
+<span id="cbor_bytestring_is_indefinite__cbor_item_tCP"></span><span class="target" id="project0bytestrings_8h_1a3a6c450f105bb18b6b56d20f0de4786a"></span>bool <code class="descclassname"></code><code class="descname">cbor_bytestring_is_indefinite</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv229cbor_bytestring_is_indefinitePK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the byte string indefinite? </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Is the byte string indefinite? </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>a byte string </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv227cbor_bytestring_chunk_countPK11cbor_item_t">
+<span id="cbor_bytestring_chunk_count__cbor_item_tCP"></span><span class="target" id="project0bytestrings_8h_1ad02102832d452fd5a5cfa96272b1095d"></span>size_t <code class="descclassname"></code><code class="descname">cbor_bytestring_chunk_count</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv227cbor_bytestring_chunk_countPK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of chunks this string consist of. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The chunk count. 0 for freshly created items. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A indefinite bytestring </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="reading-data">
+<h2>Reading data<a class="headerlink" href="#reading-data" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv222cbor_bytestring_handlePK11cbor_item_t">
+<span id="cbor_bytestring_handle__cbor_item_tCP"></span><span class="target" id="project0bytestrings_8h_1a05c09e147b0a244abc481b0b078ebcb9"></span>cbor_mutable_data <code class="descclassname"></code><code class="descname">cbor_bytestring_handle</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv222cbor_bytestring_handlePK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the handle to the binary data. </p>
+<p>Definite items only. Modifying the data is allowed. In that case, the caller takes responsibility for the effect on items this item might be a part of</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The address of the binary data. <code class="docutils literal"><span class="pre">NULL</span></code> if no data have been assigned yet. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A definite byte string </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv229cbor_bytestring_chunks_handlePK11cbor_item_t">
+<span id="cbor_bytestring_chunks_handle__cbor_item_tCP"></span><span class="target" id="project0bytestrings_8h_1a8ab6255d6f8f209149bdf794dffed849"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> **<code class="descclassname"></code><code class="descname">cbor_bytestring_chunks_handle</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv229cbor_bytestring_chunks_handlePK11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the handle to the array of chunks. </p>
+<p>Manipulations with the memory block (e.g. sorting it) are allowed, but the validity and the number of chunks must be retained.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>array of <a class="reference internal" href="#project0bytestrings_8h_1ad02102832d452fd5a5cfa96272b1095d"><span>cbor_bytestring_chunk_count</span></a> definite bytestrings </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A indefinite byte string </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="creating-new-items">
+<h2>Creating new items<a class="headerlink" href="#creating-new-items" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv228cbor_new_definite_bytestringv">
+<span id="cbor_new_definite_bytestring"></span><span class="target" id="project0bytestrings_8h_1a86fc646f4520b90c85a704d27b46e69e"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_definite_bytestring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv228cbor_new_definite_bytestringv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new definite byte string. </p>
+<p>The handle is initialized to <code class="docutils literal"><span class="pre">NULL</span></code> and length to 0</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> definite bytestring. <code class="docutils literal"><span class="pre">NULL</span></code> on malloc failure. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv230cbor_new_indefinite_bytestringv">
+<span id="cbor_new_indefinite_bytestring"></span><span class="target" id="project0bytestrings_8h_1a6de9d6387e856c33d2ef8e8e9fdac0ac"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_new_indefinite_bytestring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv230cbor_new_indefinite_bytestringv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new indefinite byte string. </p>
+<p>The chunks array is initialized to <code class="docutils literal"><span class="pre">NULL</span></code> and chunkcount to 0</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><strong>new</strong> indefinite bytestring. <code class="docutils literal"><span class="pre">NULL</span></code> on malloc failure. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="building-items">
+<h2>Building items<a class="headerlink" href="#building-items" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv221cbor_build_bytestring9cbor_data6size_t">
+<span id="cbor_build_bytestring__cbor_data.s"></span><span class="target" id="project0bytestrings_8h_1ab76bd5ff62831739cd9a8d7ec2768c1a"></span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<code class="descclassname"></code><code class="descname">cbor_build_bytestring</code><span class="sig-paren">(</span>cbor_data <em>handle</em>, size_t <em>length</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221cbor_build_bytestring9cbor_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new byte string and initializes it. </p>
+<p>The <code class="docutils literal"><span class="pre">handle</span></code> will be copied to a newly allocated block</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>A <strong>new</strong> byte string with content <code class="docutils literal"><span class="pre">handle</span></code>. <code class="docutils literal"><span class="pre">NULL</span></code> on malloc failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">handle</span></code> - <p>Block of binary data </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">length</span></code> - <p>Length of <code class="docutils literal"><span class="pre">data</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="manipulating-existing-items">
+<h2>Manipulating existing items<a class="headerlink" href="#manipulating-existing-items" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<span class="target" id="project0bytestrings_8h_1a94278dc5a388031c2805835aef005579"></span><code class="descname">void cbor_bytestring_set_handle(cbor_item_t  * item, cbor_mutable_data  restrict data, size_t length)</code></dt>
+<dd><p>Set the handle to the binary data. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A definite byte string </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">data</span></code> - <p>The memory block. The caller gives up the ownership of the block. libcbor will deallocate it when appropriate using its free function </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">length</span></code> - <p>Length of the data block </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv225cbor_bytestring_add_chunkP11cbor_item_tP11cbor_item_t">
+<span id="cbor_bytestring_add_chunk__cbor_item_tP.cbor_item_tP"></span><span class="target" id="project0bytestrings_8h_1a5dc8c27d6e7acfdd05fdc15c01e25b47"></span>bool <code class="descclassname"></code><code class="descname">cbor_bytestring_add_chunk</code><span class="sig-paren">(</span><a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>chunk</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225cbor_bytestring_add_chunkP11cbor_item_tP11cbor_item_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends a chunk to the bytestring. </p>
+<p>Indefinite byte strings only.</p>
+<p>May realloc the chunk storage.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>true on success, false on realloc failure. In that case, the refcount of <code class="docutils literal"><span class="pre">chunk</span></code> is not increased and the <code class="docutils literal"><span class="pre">item</span></code> is left intact. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>An indefinite byte string </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">item[incref]</span></code> - <p>A definite byte string </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="type_3.html" class="btn btn-neutral float-right" title="Type 3 – UTF-8 strings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="type_0_1.html" class="btn btn-neutral" title="Types 0 &amp; 1 – Positive and negative integers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, 2015, Pavel Kalvoda.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

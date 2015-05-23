@@ -1,0 +1,342 @@
+\hypertarget{structcbor__callbacks}{\section{cbor\-\_\-callbacks Struct Reference}
+\label{structcbor__callbacks}\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}}
+}
+
+
+Callback bundle -- passed to the decoder.  
+
+
+
+
+{\ttfamily \#include $<$callbacks.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{callbacks_8h_a2b9b84ad36e0fc4d1498413d8497899e}{cbor\-\_\-int8\-\_\-callback} \hyperlink{structcbor__callbacks_af2d69429c9bc71edf55b6f4f1dbb76d1}{uint8}
+\begin{DoxyCompactList}\small\item\em Unsigned int. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a663bfb4b82d31d5eeeffc6db48b487c6}{cbor\-\_\-int16\-\_\-callback} \hyperlink{structcbor__callbacks_a3eb2039fa03bd534d6be0ed10d0c98be}{uint16}
+\begin{DoxyCompactList}\small\item\em Unsigned int. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a3c9d3bfd7f55faa430ba58ce9ebf9cfe}{cbor\-\_\-int32\-\_\-callback} \hyperlink{structcbor__callbacks_af2501b53c0150c4d3244a039b3232bf1}{uint32}
+\begin{DoxyCompactList}\small\item\em Unsigned int. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a1ba7b7117064e3b6d13c1a1414b325b1}{cbor\-\_\-int64\-\_\-callback} \hyperlink{structcbor__callbacks_a2b0328261726fba55f663f55f954d56b}{uint64}
+\begin{DoxyCompactList}\small\item\em Unsigned int. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a1ba7b7117064e3b6d13c1a1414b325b1}{cbor\-\_\-int64\-\_\-callback} \hyperlink{structcbor__callbacks_ac0a4f4915ecb9924132c60c7fe7d93fe}{negint64}
+\begin{DoxyCompactList}\small\item\em Negative int. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a3c9d3bfd7f55faa430ba58ce9ebf9cfe}{cbor\-\_\-int32\-\_\-callback} \hyperlink{structcbor__callbacks_a26e8c4f53af47eaaf8928b86fb92a44f}{negint32}
+\begin{DoxyCompactList}\small\item\em Negative int. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a663bfb4b82d31d5eeeffc6db48b487c6}{cbor\-\_\-int16\-\_\-callback} \hyperlink{structcbor__callbacks_a0e47df73a7ecf894ab75e04a1cc83dc7}{negint16}
+\begin{DoxyCompactList}\small\item\em Negative int. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a2b9b84ad36e0fc4d1498413d8497899e}{cbor\-\_\-int8\-\_\-callback} \hyperlink{structcbor__callbacks_aae703108db340c2df1af0154b23b9631}{negint8}
+\begin{DoxyCompactList}\small\item\em Negative int. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a414becb6eeb6a2c4fcb4d657b17d3113}{cbor\-\_\-simple\-\_\-callback} \hyperlink{structcbor__callbacks_adf65a04d2423dcdd73cec4a261ccb6aa}{byte\-\_\-string\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Definite byte string. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a39ac73691a2cbc95aac02b088851ff88}{cbor\-\_\-string\-\_\-callback} \hyperlink{structcbor__callbacks_a0c2528e2b1d6df97053168d24e53e278}{byte\-\_\-string}
+\begin{DoxyCompactList}\small\item\em Indefinite byte string start. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a39ac73691a2cbc95aac02b088851ff88}{cbor\-\_\-string\-\_\-callback} \hyperlink{structcbor__callbacks_a18144e8cc29b3562f071188c3d9086eb}{string}
+\begin{DoxyCompactList}\small\item\em Definite string. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a414becb6eeb6a2c4fcb4d657b17d3113}{cbor\-\_\-simple\-\_\-callback} \hyperlink{structcbor__callbacks_ac5a3ff3cd57f469460c13598d14eb2eb}{string\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Indefinite string start. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a414becb6eeb6a2c4fcb4d657b17d3113}{cbor\-\_\-simple\-\_\-callback} \hyperlink{structcbor__callbacks_a5831fd6bd9372b04a8f65db1e1967713}{indef\-\_\-array\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Definite array. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a1760fbd902567c34cb788b6d891ec8df}{cbor\-\_\-collection\-\_\-callback} \hyperlink{structcbor__callbacks_affebd3296749cdc0d564a3b9cae7a4e4}{array\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Indefinite array. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a414becb6eeb6a2c4fcb4d657b17d3113}{cbor\-\_\-simple\-\_\-callback} \hyperlink{structcbor__callbacks_ab989b168f43559f404d87508bdd0ddc8}{indef\-\_\-map\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Definite map. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a1760fbd902567c34cb788b6d891ec8df}{cbor\-\_\-collection\-\_\-callback} \hyperlink{structcbor__callbacks_ac833a2232c624936d7444612e47e8a20}{map\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Indefinite map. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a1ba7b7117064e3b6d13c1a1414b325b1}{cbor\-\_\-int64\-\_\-callback} \hyperlink{structcbor__callbacks_ab5a727d5b11a7f2558cf811908f92e70}{tag}
+\begin{DoxyCompactList}\small\item\em Tags. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a70c40374bfa3cc289a975e8d3d31eb74}{cbor\-\_\-float\-\_\-callback} \hyperlink{structcbor__callbacks_ab1f4ab3a5bf0cf2a6418b8cb28877652}{float2}
+\begin{DoxyCompactList}\small\item\em Half float. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_af46757188a6212506a8fc73a1d098ae7}{cbor\-\_\-double\-\_\-callback} \hyperlink{structcbor__callbacks_a5a80bae7d106e7cf61d27cd710251e4a}{float8}
+\begin{DoxyCompactList}\small\item\em Single float. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a70c40374bfa3cc289a975e8d3d31eb74}{cbor\-\_\-float\-\_\-callback} \hyperlink{structcbor__callbacks_a3e0e5094fdfbc527f9a2ca300d65b7df}{float4}
+\begin{DoxyCompactList}\small\item\em Double float. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a414becb6eeb6a2c4fcb4d657b17d3113}{cbor\-\_\-simple\-\_\-callback} \hyperlink{structcbor__callbacks_af9b30de5bef7bf76e8e34bdd95434f98}{undefined}
+\begin{DoxyCompactList}\small\item\em Undef. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a414becb6eeb6a2c4fcb4d657b17d3113}{cbor\-\_\-simple\-\_\-callback} \hyperlink{structcbor__callbacks_a7483f952b13db66abd893082a204859d}{null}
+\begin{DoxyCompactList}\small\item\em Null. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a86190658d37fb499ff8e30f0a85a19bc}{cbor\-\_\-bool\-\_\-callback} \hyperlink{structcbor__callbacks_a458321ece8c64be2c37b96f78bbdfb8c}{boolean}
+\begin{DoxyCompactList}\small\item\em Bool. \end{DoxyCompactList}\item 
+\hyperlink{callbacks_8h_a414becb6eeb6a2c4fcb4d657b17d3113}{cbor\-\_\-simple\-\_\-callback} \hyperlink{structcbor__callbacks_abc0516d80611473d2527bf5faea393d8}{indef\-\_\-break}
+\begin{DoxyCompactList}\small\item\em Indefinite item break. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callback bundle -- passed to the decoder. 
+
+Definition at line 48 of file callbacks.\-h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{structcbor__callbacks_affebd3296749cdc0d564a3b9cae7a4e4}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!array\-\_\-start@{array\-\_\-start}}
+\index{array\-\_\-start@{array\-\_\-start}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{array\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-collection\-\_\-callback} cbor\-\_\-callbacks\-::array\-\_\-start}}\label{structcbor__callbacks_affebd3296749cdc0d564a3b9cae7a4e4}
+
+
+Indefinite array. 
+
+
+
+Definition at line 80 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a458321ece8c64be2c37b96f78bbdfb8c}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!boolean@{boolean}}
+\index{boolean@{boolean}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{boolean}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-bool\-\_\-callback} cbor\-\_\-callbacks\-::boolean}}\label{structcbor__callbacks_a458321ece8c64be2c37b96f78bbdfb8c}
+
+
+Bool. 
+
+
+
+Definition at line 101 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a0c2528e2b1d6df97053168d24e53e278}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!byte\-\_\-string@{byte\-\_\-string}}
+\index{byte\-\_\-string@{byte\-\_\-string}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{byte\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-string\-\_\-callback} cbor\-\_\-callbacks\-::byte\-\_\-string}}\label{structcbor__callbacks_a0c2528e2b1d6df97053168d24e53e278}
+
+
+Indefinite byte string start. 
+
+
+
+Definition at line 70 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_adf65a04d2423dcdd73cec4a261ccb6aa}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!byte\-\_\-string\-\_\-start@{byte\-\_\-string\-\_\-start}}
+\index{byte\-\_\-string\-\_\-start@{byte\-\_\-string\-\_\-start}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{byte\-\_\-string\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-simple\-\_\-callback} cbor\-\_\-callbacks\-::byte\-\_\-string\-\_\-start}}\label{structcbor__callbacks_adf65a04d2423dcdd73cec4a261ccb6aa}
+
+
+Definite byte string. 
+
+
+
+Definition at line 68 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_ab1f4ab3a5bf0cf2a6418b8cb28877652}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!float2@{float2}}
+\index{float2@{float2}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{float2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-float\-\_\-callback} cbor\-\_\-callbacks\-::float2}}\label{structcbor__callbacks_ab1f4ab3a5bf0cf2a6418b8cb28877652}
+
+
+Half float. 
+
+
+
+Definition at line 91 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a3e0e5094fdfbc527f9a2ca300d65b7df}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!float4@{float4}}
+\index{float4@{float4}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{float4}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-float\-\_\-callback} cbor\-\_\-callbacks\-::float4}}\label{structcbor__callbacks_a3e0e5094fdfbc527f9a2ca300d65b7df}
+
+
+Double float. 
+
+
+
+Definition at line 95 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a5a80bae7d106e7cf61d27cd710251e4a}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!float8@{float8}}
+\index{float8@{float8}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{float8}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-double\-\_\-callback} cbor\-\_\-callbacks\-::float8}}\label{structcbor__callbacks_a5a80bae7d106e7cf61d27cd710251e4a}
+
+
+Single float. 
+
+
+
+Definition at line 93 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a5831fd6bd9372b04a8f65db1e1967713}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!indef\-\_\-array\-\_\-start@{indef\-\_\-array\-\_\-start}}
+\index{indef\-\_\-array\-\_\-start@{indef\-\_\-array\-\_\-start}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{indef\-\_\-array\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-simple\-\_\-callback} cbor\-\_\-callbacks\-::indef\-\_\-array\-\_\-start}}\label{structcbor__callbacks_a5831fd6bd9372b04a8f65db1e1967713}
+
+
+Definite array. 
+
+
+
+Definition at line 78 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_abc0516d80611473d2527bf5faea393d8}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!indef\-\_\-break@{indef\-\_\-break}}
+\index{indef\-\_\-break@{indef\-\_\-break}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{indef\-\_\-break}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-simple\-\_\-callback} cbor\-\_\-callbacks\-::indef\-\_\-break}}\label{structcbor__callbacks_abc0516d80611473d2527bf5faea393d8}
+
+
+Indefinite item break. 
+
+
+
+Definition at line 104 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_ab989b168f43559f404d87508bdd0ddc8}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!indef\-\_\-map\-\_\-start@{indef\-\_\-map\-\_\-start}}
+\index{indef\-\_\-map\-\_\-start@{indef\-\_\-map\-\_\-start}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{indef\-\_\-map\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-simple\-\_\-callback} cbor\-\_\-callbacks\-::indef\-\_\-map\-\_\-start}}\label{structcbor__callbacks_ab989b168f43559f404d87508bdd0ddc8}
+
+
+Definite map. 
+
+
+
+Definition at line 83 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_ac833a2232c624936d7444612e47e8a20}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!map\-\_\-start@{map\-\_\-start}}
+\index{map\-\_\-start@{map\-\_\-start}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{map\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-collection\-\_\-callback} cbor\-\_\-callbacks\-::map\-\_\-start}}\label{structcbor__callbacks_ac833a2232c624936d7444612e47e8a20}
+
+
+Indefinite map. 
+
+
+
+Definition at line 85 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a0e47df73a7ecf894ab75e04a1cc83dc7}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!negint16@{negint16}}
+\index{negint16@{negint16}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{negint16}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int16\-\_\-callback} cbor\-\_\-callbacks\-::negint16}}\label{structcbor__callbacks_a0e47df73a7ecf894ab75e04a1cc83dc7}
+
+
+Negative int. 
+
+
+
+Definition at line 63 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a26e8c4f53af47eaaf8928b86fb92a44f}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!negint32@{negint32}}
+\index{negint32@{negint32}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{negint32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int32\-\_\-callback} cbor\-\_\-callbacks\-::negint32}}\label{structcbor__callbacks_a26e8c4f53af47eaaf8928b86fb92a44f}
+
+
+Negative int. 
+
+
+
+Definition at line 61 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_ac0a4f4915ecb9924132c60c7fe7d93fe}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!negint64@{negint64}}
+\index{negint64@{negint64}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{negint64}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int64\-\_\-callback} cbor\-\_\-callbacks\-::negint64}}\label{structcbor__callbacks_ac0a4f4915ecb9924132c60c7fe7d93fe}
+
+
+Negative int. 
+
+
+
+Definition at line 59 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_aae703108db340c2df1af0154b23b9631}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!negint8@{negint8}}
+\index{negint8@{negint8}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{negint8}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int8\-\_\-callback} cbor\-\_\-callbacks\-::negint8}}\label{structcbor__callbacks_aae703108db340c2df1af0154b23b9631}
+
+
+Negative int. 
+
+
+
+Definition at line 65 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a7483f952b13db66abd893082a204859d}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!null@{null}}
+\index{null@{null}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{null}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-simple\-\_\-callback} cbor\-\_\-callbacks\-::null}}\label{structcbor__callbacks_a7483f952b13db66abd893082a204859d}
+
+
+Null. 
+
+
+
+Definition at line 99 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a18144e8cc29b3562f071188c3d9086eb}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!string@{string}}
+\index{string@{string}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{string}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-string\-\_\-callback} cbor\-\_\-callbacks\-::string}}\label{structcbor__callbacks_a18144e8cc29b3562f071188c3d9086eb}
+
+
+Definite string. 
+
+
+
+Definition at line 73 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_ac5a3ff3cd57f469460c13598d14eb2eb}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!string\-\_\-start@{string\-\_\-start}}
+\index{string\-\_\-start@{string\-\_\-start}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{string\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-simple\-\_\-callback} cbor\-\_\-callbacks\-::string\-\_\-start}}\label{structcbor__callbacks_ac5a3ff3cd57f469460c13598d14eb2eb}
+
+
+Indefinite string start. 
+
+
+
+Definition at line 75 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_ab5a727d5b11a7f2558cf811908f92e70}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!tag@{tag}}
+\index{tag@{tag}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int64\-\_\-callback} cbor\-\_\-callbacks\-::tag}}\label{structcbor__callbacks_ab5a727d5b11a7f2558cf811908f92e70}
+
+
+Tags. 
+
+
+
+Definition at line 88 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a3eb2039fa03bd534d6be0ed10d0c98be}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!uint16@{uint16}}
+\index{uint16@{uint16}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{uint16}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int16\-\_\-callback} cbor\-\_\-callbacks\-::uint16}}\label{structcbor__callbacks_a3eb2039fa03bd534d6be0ed10d0c98be}
+
+
+Unsigned int. 
+
+
+
+Definition at line 52 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_af2501b53c0150c4d3244a039b3232bf1}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!uint32@{uint32}}
+\index{uint32@{uint32}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{uint32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int32\-\_\-callback} cbor\-\_\-callbacks\-::uint32}}\label{structcbor__callbacks_af2501b53c0150c4d3244a039b3232bf1}
+
+
+Unsigned int. 
+
+
+
+Definition at line 54 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_a2b0328261726fba55f663f55f954d56b}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!uint64@{uint64}}
+\index{uint64@{uint64}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{uint64}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int64\-\_\-callback} cbor\-\_\-callbacks\-::uint64}}\label{structcbor__callbacks_a2b0328261726fba55f663f55f954d56b}
+
+
+Unsigned int. 
+
+
+
+Definition at line 56 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_af2d69429c9bc71edf55b6f4f1dbb76d1}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!uint8@{uint8}}
+\index{uint8@{uint8}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{uint8}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-int8\-\_\-callback} cbor\-\_\-callbacks\-::uint8}}\label{structcbor__callbacks_af2d69429c9bc71edf55b6f4f1dbb76d1}
+
+
+Unsigned int. 
+
+
+
+Definition at line 50 of file callbacks.\-h.
+
+\hypertarget{structcbor__callbacks_af9b30de5bef7bf76e8e34bdd95434f98}{\index{cbor\-\_\-callbacks@{cbor\-\_\-callbacks}!undefined@{undefined}}
+\index{undefined@{undefined}!cbor_callbacks@{cbor\-\_\-callbacks}}
+\subsubsection[{undefined}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-simple\-\_\-callback} cbor\-\_\-callbacks\-::undefined}}\label{structcbor__callbacks_af9b30de5bef7bf76e8e34bdd95434f98}
+
+
+Undef. 
+
+
+
+Definition at line 97 of file callbacks.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/cbor/\hyperlink{callbacks_8h}{callbacks.\-h}\end{DoxyCompactItemize}

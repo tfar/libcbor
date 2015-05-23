@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Encoding &mdash; libcbor 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="libcbor 0.3.1 documentation" href="../index.html"/>
+        <link rel="up" title="API" href="../api.html"/>
+        <link rel="next" title="Types 0 &amp; 1 – Positive and negative integers" href="type_0_1.html"/>
+        <link rel="prev" title="Decoding" href="decoding.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> libcbor
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#building-installing-libcbor">Building &amp; installing libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#linking-with-libcbor">Linking with libcbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#mingw-build-instructions">MinGW build instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using.html">Usage &amp; preliminaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#version-information">Version information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#headers-to-include">Headers to include</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using.html#using-libcbor">Using libcbor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="item_types.html">Types of items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#binary-queries">Binary queries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_types.html#logical-queries">Logical queries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="item_reference_counting.html">Memory management and reference counting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#using-custom-allocator">Using custom allocator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item_reference_counting.html#reference-counting">Reference counting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="decoding.html#associated-data-structures">Associated data structures</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#type-specific-serializers">Type-specific serializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_0_1.html">Types 0 &amp; 1 – Positive and negative integers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-0-positive-integers">Type 0 - positive integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-1-negative-integers">Type 1 - negative integers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#type-0-1">Type 0 &amp; 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#building-new-items">Building new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#retrieving-values">Retrieving values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#dealing-with-width">Dealing with width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#dealing-with-signedness">Dealing with signedness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_0_1.html#creating-new-items">Creating new items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_2.html">Type 2 – Byte strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#streaming-indefinite-byte-strings">Streaming indefinite byte strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_2.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_3.html">Type 3 – UTF-8 strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#streaming-indefinite-strings">Streaming indefinite strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#utf-8-encoding-validation">UTF-8 encoding validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_3.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_4.html">Type 4 – Arrays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#streaming-indefinite-arrays">Streaming indefinite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_4.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_5.html">Type 5 – Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#streaming-maps">Streaming maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_5.html#modifying-items">Modifying items</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="type_6.html">Type 6 – Semantic tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_7.html">Type 7 – Floats &amp; control tokens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#getting-metadata">Getting metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#reading-data">Reading data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#creating-new-items">Creating new items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#building-items">Building items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_7.html#manipulating-existing-items">Manipulating existing items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../streaming.html">Streaming &amp; indefinite items</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/decoding.html">Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#related-structures">Related structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../streaming/decoding.html#callback-types-definition">Callback types definition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming/encoding.html">Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tests.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#testing-for-memory-leaks">Testing for memory leaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#code-coverage">Code coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tests.html#fuzz-testing">Fuzz testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rfc_conformance.html">RFC conformance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#bytestring-length">Bytestring length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfc_conformance.html#half-precision-ieee-754-floats">&#8220;Half-precision&#8221; IEEE 754 floats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../internal.html">Internal mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#terminology">Terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#conventions">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#inspiration-related-projects">Inspiration &amp; related projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#general-notes-on-the-api-design">General notes on the API design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#coding-style">Coding style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#memory-layout">Memory layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../internal.html#decoding">Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#next">Next</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id1">0.3.0 (2015-05-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">0.2.1 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">0.2.0 (2015-05-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">0.1.0 (2015-05-06)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../development.html#development-dependencies">Development dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#building-cmocka">Building <em>cmocka</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#installing-sphinx">Installing <em>sphinx</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#live-preview-of-docs">Live preview of docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development.html#testing-and-code-coverage">Testing and code coverage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libcbor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../api.html">API</a> &raquo;</li>
+      
+    <li>Encoding</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/encoding.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="encoding">
+<h1>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">¶</a></h1>
+<p>The easiest way to encode data items is using the <a class="reference internal" href="#_CPPv214cbor_serializePK11cbor_item_t17cbor_mutable_data6size_t" title="cbor_serialize"><code class="xref cpp cpp-func docutils literal"><span class="pre">cbor_serialize()</span></code></a> or <a class="reference internal" href="#_CPPv220cbor_serialize_allocPK11cbor_item_tP17cbor_mutable_dataP6size_t" title="cbor_serialize_alloc"><code class="xref cpp cpp-func docutils literal"><span class="pre">cbor_serialize_alloc()</span></code></a> functions:</p>
+<dl class="function">
+<dt id="_CPPv214cbor_serializePK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1a2b99415a2c6f0d226116c707772e2fc0"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, cbor_mutable_data <em>buffer</em>, size_t <em>buffer_size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214cbor_serializePK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize the given item. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A data item </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv220cbor_serialize_allocPK11cbor_item_tP17cbor_mutable_dataP6size_t">
+<span id="cbor_serialize_alloc__cbor_item_tCP.cbor_mutable_dataP.sP"></span><span class="target" id="project0serialization_8h_1ab8a96a82216c07469a583eef3a3dd8d0"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_alloc</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *<em>item</em>, cbor_mutable_data *<em>buffer</em>, size_t *<em>buffer_size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220cbor_serialize_allocPK11cbor_item_tP17cbor_mutable_dataP6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize the given item, allocating buffers as needed. </p>
+<p><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is your responsibility to free the buffer using an appropriate <code class="docutils literal"><span class="pre">free</span></code> implementation.</p>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure, in which case <code class="docutils literal"><span class="pre">buffer</span></code> is <code class="docutils literal"><span class="pre">NULL</span></code>. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A data item </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer[out]</span></code> - <p>Buffer containing the result </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size[out]</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<div class="section" id="type-specific-serializers">
+<h2>Type-specific serializers<a class="headerlink" href="#type-specific-serializers" title="Permalink to this headline">¶</a></h2>
+<p>In case you know the type of the item you want to serialize beforehand, you can use one
+of the type-specific serializers.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unless compiled in debug mode, these do not verify the type. Passing an incorrect item will result in an undefined behavior.</p>
+</div>
+<dl class="function">
+<dt id="_CPPv219cbor_serialize_uintPK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize_uint__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1a649fbb28229d58193a7eee96995929e0"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_uint</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *, cbor_mutable_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219cbor_serialize_uintPK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize an uint. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A uint </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv221cbor_serialize_negintPK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize_negint__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1ad7eb1501bd8282c21675333759dc7291"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_negint</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *, cbor_mutable_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221cbor_serialize_negintPK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize a negint. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A neging </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv225cbor_serialize_bytestringPK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize_bytestring__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1aeff4847e92b05b329edd1135c60f4179"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_bytestring</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *, cbor_mutable_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225cbor_serialize_bytestringPK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize a bytestring. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A bytestring </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv221cbor_serialize_stringPK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize_string__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1a9fb1138391d20c1b81081e2a5f413c3d"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_string</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *, cbor_mutable_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv221cbor_serialize_stringPK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize a string. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A string </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv220cbor_serialize_arrayPK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize_array__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1a53e7d680cf41ccda369802deaf6c1ba8"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_array</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *, cbor_mutable_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220cbor_serialize_arrayPK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize an array. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>An array </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv218cbor_serialize_mapPK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize_map__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1a1c07f653f5aa66fadc82f24f556a162d"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_map</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *, cbor_mutable_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218cbor_serialize_mapPK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize a map. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A map </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv218cbor_serialize_tagPK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize_tag__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1ae67b7ceefe645e660df73bf7ea255668"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_tag</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *, cbor_mutable_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218cbor_serialize_tagPK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize a tag. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A tag </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv225cbor_serialize_float_ctrlPK11cbor_item_t17cbor_mutable_data6size_t">
+<span id="cbor_serialize_float_ctrl__cbor_item_tCP.cbor_mutable_data.s"></span><span class="target" id="project0serialization_8h_1ad232a99d06a972ca114a2fe753b90953"></span>size_t <code class="descclassname"></code><code class="descname">cbor_serialize_float_ctrl</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../internal.html#_CPPv211cbor_item_t" title="cbor_item_t">cbor_item_t</a> *, cbor_mutable_data, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv225cbor_serialize_float_ctrlPK11cbor_item_t17cbor_mutable_data6size_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize a. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>Length of the result. 0 on failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">item[borrow]</span></code> - <p>A float or ctrl </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer</span></code> - <p>Buffer to serialize to </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">buffer_size</span></code> - <p>Size of the <code class="docutils literal"><span class="pre">buffer</span></code> </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="type_0_1.html" class="btn btn-neutral float-right" title="Types 0 &amp; 1 – Positive and negative integers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="decoding.html" class="btn btn-neutral" title="Decoding" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, 2015, Pavel Kalvoda.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
