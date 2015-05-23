@@ -48,6 +48,5 @@ var searchData=
   ['_5fcbor_5funicode_5fok',['_CBOR_UNICODE_OK',['../unicode_8h.html#a5f58283b505b6cc8a5646516ae20831faf42cbfe1ac853288773814920e16318c',1,'unicode.h']]],
   ['_5fcbor_5funicode_5fstatus',['_cbor_unicode_status',['../struct__cbor__unicode__status.html',1,'']]],
   ['_5fcbor_5funicode_5fstatus_5ferror',['_cbor_unicode_status_error',['../unicode_8h.html#a5f58283b505b6cc8a5646516ae20831f',1,'unicode.h']]],
-  ['_5fstatic_5fassert',['_Static_assert',['../common_8h.html#a05d90b84a6e08c6d056ec34e7c7c47ee',1,'common.h']]],
   ['_5fval',['_val',['../callbacks_8c.html#aa71dda9f35e8d5245180dd90eb8604ba',1,'callbacks.c']]]
 ];

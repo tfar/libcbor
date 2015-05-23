@@ -21,6 +21,5 @@ var searchData=
   ['_5fcbor_5fstack_5fpop',['_cbor_stack_pop',['../stack_8c.html#a6541672c7a6bcc55e6645cff2a5ab005',1,'_cbor_stack_pop(struct _cbor_stack *stack):&#160;stack.c'],['../stack_8h.html#a7ef944b8c6581c73fe7fbf678aa09f4c',1,'_cbor_stack_pop(struct _cbor_stack *):&#160;stack.c']]],
   ['_5fcbor_5fstack_5fpush',['_cbor_stack_push',['../stack_8c.html#abb0f169980a61710ee2b83ac90df3442',1,'_cbor_stack_push(struct _cbor_stack *stack, cbor_item_t *item, size_t subitems):&#160;stack.c'],['../stack_8h.html#a76e5fdb5e3c5b6a35e928ee9e9310568',1,'_cbor_stack_push(struct _cbor_stack *, cbor_item_t *, size_t):&#160;stack.c']]],
   ['_5fcbor_5funicode_5fcodepoint_5fcount',['_cbor_unicode_codepoint_count',['../unicode_8c.html#ade9ebfe3d9b9bfad4c9fd5c158d519a8',1,'_cbor_unicode_codepoint_count(cbor_data source, size_t source_length, struct _cbor_unicode_status *status):&#160;unicode.c'],['../unicode_8h.html#ade9ebfe3d9b9bfad4c9fd5c158d519a8',1,'_cbor_unicode_codepoint_count(cbor_data source, size_t source_length, struct _cbor_unicode_status *status):&#160;unicode.c']]],
-  ['_5fcbor_5funicode_5fdecode',['_cbor_unicode_decode',['../unicode_8c.html#aea748174291fa35e154c69e7669f199b',1,'unicode.c']]],
-  ['_5fstatic_5fassert',['_Static_assert',['../common_8h.html#a05d90b84a6e08c6d056ec34e7c7c47ee',1,'common.h']]]
+  ['_5fcbor_5funicode_5fdecode',['_cbor_unicode_decode',['../unicode_8c.html#aea748174291fa35e154c69e7669f199b',1,'unicode.c']]]
 ];

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -120,9 +120,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab76bd5ff62831739cd9a8d7ec2768c1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bytestrings_8c.html#ab76bd5ff62831739cd9a8d7ec2768c1a">cbor_build_bytestring</a> (<a class="el" href="data_8h.html#a121c5944682215e742475f12f07c0a72">cbor_data</a> handle, size_t length)</td></tr>
 <tr class="memdesc:ab76bd5ff62831739cd9a8d7ec2768c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new byte string and initializes it.  <a href="#ab76bd5ff62831739cd9a8d7ec2768c1a">More...</a><br/></td></tr>
 <tr class="separator:ab76bd5ff62831739cd9a8d7ec2768c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff91be77264b593eede7daaed9033f28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bytestrings_8c.html#aff91be77264b593eede7daaed9033f28">cbor_bytestring_set_handle</a> (<a class="el" href="structcbor__item__t.html">cbor_item_t</a> *item, unsigned char *data, size_t length)</td></tr>
-<tr class="memdesc:aff91be77264b593eede7daaed9033f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the handle to the binary data.  <a href="#aff91be77264b593eede7daaed9033f28">More...</a><br/></td></tr>
-<tr class="separator:aff91be77264b593eede7daaed9033f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72db2cf518b194c1bca878ad5d4e48a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bytestrings_8c.html#a72db2cf518b194c1bca878ad5d4e48a1">cbor_bytestring_set_handle</a> (<a class="el" href="structcbor__item__t.html">cbor_item_t</a> *item, unsigned char *restrict data, size_t length)</td></tr>
+<tr class="memdesc:a72db2cf518b194c1bca878ad5d4e48a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the handle to the binary data.  <a href="#a72db2cf518b194c1bca878ad5d4e48a1">More...</a><br/></td></tr>
+<tr class="separator:a72db2cf518b194c1bca878ad5d4e48a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ab6255d6f8f209149bdf794dffed849"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bytestrings_8c.html#a8ab6255d6f8f209149bdf794dffed849">cbor_bytestring_chunks_handle</a> (const <a class="el" href="structcbor__item__t.html">cbor_item_t</a> *item)</td></tr>
 <tr class="memdesc:a8ab6255d6f8f209149bdf794dffed849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the handle to the array of chunks.  <a href="#a8ab6255d6f8f209149bdf794dffed849">More...</a><br/></td></tr>
 <tr class="separator:a8ab6255d6f8f209149bdf794dffed849"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -378,7 +378,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aff91be77264b593eede7daaed9033f28"></a>
+<a class="anchor" id="a72db2cf518b194c1bca878ad5d4e48a1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -391,7 +391,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="data_8h.html#aabb40e458ece40477e134a69c76693e8">cbor_mutable_data</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#aabb40e458ece40477e134a69c76693e8">cbor_mutable_data</a> restrict&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -467,7 +467,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

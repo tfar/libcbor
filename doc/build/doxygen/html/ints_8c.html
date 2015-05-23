@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -158,8 +158,128 @@ Functions</h2></td></tr>
 <tr class="memitem:adff4351ebc5bb6f69d8a2ea0c9439fc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ints_8c.html#adff4351ebc5bb6f69d8a2ea0c9439fc5">cbor_build_uint64</a> (uint64_t value)</td></tr>
 <tr class="memdesc:adff4351ebc5bb6f69d8a2ea0c9439fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new positive integer.  <a href="#adff4351ebc5bb6f69d8a2ea0c9439fc5">More...</a><br/></td></tr>
 <tr class="separator:adff4351ebc5bb6f69d8a2ea0c9439fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28553eb079f8778babebf869e33f27a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ints_8c.html#a28553eb079f8778babebf869e33f27a2">cbor_build_negint8</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a28553eb079f8778babebf869e33f27a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new negative integer.  <a href="#a28553eb079f8778babebf869e33f27a2">More...</a><br/></td></tr>
+<tr class="separator:a28553eb079f8778babebf869e33f27a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40a5af0998889c6550ceb0914b2cd9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ints_8c.html#ae40a5af0998889c6550ceb0914b2cd9b">cbor_build_negint16</a> (uint16_t value)</td></tr>
+<tr class="memdesc:ae40a5af0998889c6550ceb0914b2cd9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new negative integer.  <a href="#ae40a5af0998889c6550ceb0914b2cd9b">More...</a><br/></td></tr>
+<tr class="separator:ae40a5af0998889c6550ceb0914b2cd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d8b500ae33d4fc0262de4830382529"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ints_8c.html#a35d8b500ae33d4fc0262de4830382529">cbor_build_negint32</a> (uint32_t value)</td></tr>
+<tr class="memdesc:a35d8b500ae33d4fc0262de4830382529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new negative integer.  <a href="#a35d8b500ae33d4fc0262de4830382529">More...</a><br/></td></tr>
+<tr class="separator:a35d8b500ae33d4fc0262de4830382529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae24074614ece5da3024a536093d21678"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ints_8c.html#ae24074614ece5da3024a536093d21678">cbor_build_negint64</a> (uint64_t value)</td></tr>
+<tr class="memdesc:ae24074614ece5da3024a536093d21678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new negative integer.  <a href="#ae24074614ece5da3024a536093d21678">More...</a><br/></td></tr>
+<tr class="separator:ae24074614ece5da3024a536093d21678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ae40a5af0998889c6550ceb0914b2cd9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_negint16 </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new negative integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b>new</b> negative integer </dd></dl>
+
+<p>Definition at line <a class="el" href="ints_8c_source.html#l00185">185</a> of file <a class="el" href="ints_8c_source.html">ints.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a35d8b500ae33d4fc0262de4830382529"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_negint32 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new negative integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b>new</b> negative integer </dd></dl>
+
+<p>Definition at line <a class="el" href="ints_8c_source.html#l00193">193</a> of file <a class="el" href="ints_8c_source.html">ints.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae24074614ece5da3024a536093d21678"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_negint64 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new negative integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b>new</b> negative integer </dd></dl>
+
+<p>Definition at line <a class="el" href="ints_8c_source.html#l00201">201</a> of file <a class="el" href="ints_8c_source.html">ints.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a28553eb079f8778babebf869e33f27a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_negint8 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new negative integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b>new</b> negative integer </dd></dl>
+
+<p>Definition at line <a class="el" href="ints_8c_source.html#l00177">177</a> of file <a class="el" href="ints_8c_source.html">ints.c</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a88f05c625ad9fa182bc95c9c97f87dda"></a>
 <div class="memitem">
 <div class="memproto">
@@ -719,7 +839,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -110,17 +110,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="allocators_8c.html#a994f4145360ef0bfa3c48e59a5ca7186">_cbor_free</a> = custom_free;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="ttc" id="allocators_8c_html_a3218c24af00a3efeaecb1716c8f5a289"><div class="ttname"><a href="allocators_8c.html#a3218c24af00a3efeaecb1716c8f5a289">_cbor_malloc</a></div><div class="ttdeci">_cbor_malloc_t _cbor_malloc</div><div class="ttdef"><b>Definition:</b> <a href="allocators_8c_source.html#l00010">allocators.c:10</a></div></div>
-<div class="ttc" id="common_8h_html_a85a71755bd7dc24658b1769f77636758"><div class="ttname"><a href="common_8h.html#a85a71755bd7dc24658b1769f77636758">_cbor_realloc_t</a></div><div class="ttdeci">void *(* _cbor_realloc_t)(void *, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00062">common.h:62</a></div></div>
+<div class="ttc" id="common_8h_html_a85a71755bd7dc24658b1769f77636758"><div class="ttname"><a href="common_8h.html#a85a71755bd7dc24658b1769f77636758">_cbor_realloc_t</a></div><div class="ttdeci">void *(* _cbor_realloc_t)(void *, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00051">common.h:51</a></div></div>
 <div class="ttc" id="allocators_8c_html_a84ecc1fc92c3812ab6ced693f2c6254c"><div class="ttname"><a href="allocators_8c.html#a84ecc1fc92c3812ab6ced693f2c6254c">_cbor_realloc</a></div><div class="ttdeci">_cbor_realloc_t _cbor_realloc</div><div class="ttdef"><b>Definition:</b> <a href="allocators_8c_source.html#l00011">allocators.c:11</a></div></div>
 <div class="ttc" id="common_8h_html"><div class="ttname"><a href="common_8h.html">common.h</a></div></div>
 <div class="ttc" id="allocators_8c_html_a3f9f1d527374dbb4b48ef3fafa92e0bf"><div class="ttname"><a href="allocators_8c.html#a3f9f1d527374dbb4b48ef3fafa92e0bf">cbor_set_allocs</a></div><div class="ttdeci">void cbor_set_allocs(_cbor_malloc_t custom_malloc, _cbor_realloc_t custom_realloc, _cbor_free_t custom_free)</div><div class="ttdoc">Sets the memory management routines to use. </div><div class="ttdef"><b>Definition:</b> <a href="allocators_8c_source.html#l00014">allocators.c:14</a></div></div>
-<div class="ttc" id="common_8h_html_ad43a5d91c73c87d1a978273286e7c2be"><div class="ttname"><a href="common_8h.html#ad43a5d91c73c87d1a978273286e7c2be">_cbor_malloc_t</a></div><div class="ttdeci">void *(* _cbor_malloc_t)(size_t)</div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00061">common.h:61</a></div></div>
-<div class="ttc" id="common_8h_html_a39d0619c44bc7b3565a3c435e191cb14"><div class="ttname"><a href="common_8h.html#a39d0619c44bc7b3565a3c435e191cb14">_cbor_free_t</a></div><div class="ttdeci">void(* _cbor_free_t)(void *)</div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00063">common.h:63</a></div></div>
+<div class="ttc" id="common_8h_html_ad43a5d91c73c87d1a978273286e7c2be"><div class="ttname"><a href="common_8h.html#ad43a5d91c73c87d1a978273286e7c2be">_cbor_malloc_t</a></div><div class="ttdeci">void *(* _cbor_malloc_t)(size_t)</div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00050">common.h:50</a></div></div>
+<div class="ttc" id="common_8h_html_a39d0619c44bc7b3565a3c435e191cb14"><div class="ttname"><a href="common_8h.html#a39d0619c44bc7b3565a3c435e191cb14">_cbor_free_t</a></div><div class="ttdeci">void(* _cbor_free_t)(void *)</div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00052">common.h:52</a></div></div>
 <div class="ttc" id="allocators_8c_html_a994f4145360ef0bfa3c48e59a5ca7186"><div class="ttname"><a href="allocators_8c.html#a994f4145360ef0bfa3c48e59a5ca7186">_cbor_free</a></div><div class="ttdeci">_cbor_free_t _cbor_free</div><div class="ttdef"><b>Definition:</b> <a href="allocators_8c_source.html#l00012">allocators.c:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

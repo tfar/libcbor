@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -152,16 +152,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<a class="code" href="structcbor__item__t.html">cbor_item_t</a> *<a class="code" href="ints_8h.html#adff4351ebc5bb6f69d8a2ea0c9439fc5">cbor_build_uint64</a>(uint64_t value);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif //LIBCBOR_INTS_H</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<a class="code" href="structcbor__item__t.html">cbor_item_t</a> *<a class="code" href="ints_8h.html#a28553eb079f8778babebf869e33f27a2">cbor_build_negint8</a>(uint8_t value);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<a class="code" href="structcbor__item__t.html">cbor_item_t</a> *<a class="code" href="ints_8h.html#ae40a5af0998889c6550ceb0914b2cd9b">cbor_build_negint16</a>(uint16_t value);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<a class="code" href="structcbor__item__t.html">cbor_item_t</a> *<a class="code" href="ints_8h.html#a35d8b500ae33d4fc0262de4830382529">cbor_build_negint32</a>(uint32_t value);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<a class="code" href="structcbor__item__t.html">cbor_item_t</a> *<a class="code" href="ints_8h.html#ae24074614ece5da3024a536093d21678">cbor_build_negint64</a>(uint64_t value);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#endif //LIBCBOR_INTS_H</span></div>
 <div class="ttc" id="ints_8h_html_a9cf9db24315a0e622746a546cc112467"><div class="ttname"><a href="ints_8h.html#a9cf9db24315a0e622746a546cc112467">cbor_new_int32</a></div><div class="ttdeci">cbor_item_t * cbor_new_int32()</div><div class="ttdoc">Allocates new integer with 4B width. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00121">ints.c:121</a></div></div>
 <div class="ttc" id="ints_8h_html_aed6a5a44245b8447a768c95e351c2c0c"><div class="ttname"><a href="ints_8h.html#aed6a5a44245b8447a768c95e351c2c0c">cbor_mark_uint</a></div><div class="ttdeci">void cbor_mark_uint(cbor_item_t *item)</div><div class="ttdoc">Marks the integer item as a positive integer. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00085">ints.c:85</a></div></div>
 <div class="ttc" id="ints_8h_html_a30bcfb58aa41d4c44bc2d5d6b7de105d"><div class="ttname"><a href="ints_8h.html#a30bcfb58aa41d4c44bc2d5d6b7de105d">cbor_int_get_width</a></div><div class="ttdeci">cbor_int_width cbor_int_get_width(const cbor_item_t *item)</div><div class="ttdoc">Queries the integer width. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00010">ints.c:10</a></div></div>
+<div class="ttc" id="ints_8h_html_ae24074614ece5da3024a536093d21678"><div class="ttname"><a href="ints_8h.html#ae24074614ece5da3024a536093d21678">cbor_build_negint64</a></div><div class="ttdeci">cbor_item_t * cbor_build_negint64(uint64_t value)</div><div class="ttdoc">Constructs a new negative integer. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00201">ints.c:201</a></div></div>
 <div class="ttc" id="ints_8h_html_ab863f47b9de930c5d014e0dbb5523d9d"><div class="ttname"><a href="ints_8h.html#ab863f47b9de930c5d014e0dbb5523d9d">cbor_new_int64</a></div><div class="ttdeci">cbor_item_t * cbor_new_int64()</div><div class="ttdoc">Allocates new integer with 8B width. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00133">ints.c:133</a></div></div>
+<div class="ttc" id="ints_8h_html_ae40a5af0998889c6550ceb0914b2cd9b"><div class="ttname"><a href="ints_8h.html#ae40a5af0998889c6550ceb0914b2cd9b">cbor_build_negint16</a></div><div class="ttdeci">cbor_item_t * cbor_build_negint16(uint16_t value)</div><div class="ttdoc">Constructs a new negative integer. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00185">ints.c:185</a></div></div>
 <div class="ttc" id="ints_8h_html_a06a0997aed16fe6aa540f57bf40ce400"><div class="ttname"><a href="ints_8h.html#a06a0997aed16fe6aa540f57bf40ce400">cbor_get_uint16</a></div><div class="ttdeci">uint16_t cbor_get_uint16(const cbor_item_t *item)</div><div class="ttdoc">Extracts the integer value. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00023">ints.c:23</a></div></div>
+<div class="ttc" id="ints_8h_html_a35d8b500ae33d4fc0262de4830382529"><div class="ttname"><a href="ints_8h.html#a35d8b500ae33d4fc0262de4830382529">cbor_build_negint32</a></div><div class="ttdeci">cbor_item_t * cbor_build_negint32(uint32_t value)</div><div class="ttdoc">Constructs a new negative integer. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00193">ints.c:193</a></div></div>
 <div class="ttc" id="ints_8h_html_a0480e5b5849b757aa9416a4c1d51b36d"><div class="ttname"><a href="ints_8h.html#a0480e5b5849b757aa9416a4c1d51b36d">cbor_get_uint32</a></div><div class="ttdeci">uint32_t cbor_get_uint32(const cbor_item_t *item)</div><div class="ttdoc">Extracts the integer value. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00030">ints.c:30</a></div></div>
 <div class="ttc" id="ints_8h_html_aacf93e9a8a2c4217d5cd84207b957cba"><div class="ttname"><a href="ints_8h.html#aacf93e9a8a2c4217d5cd84207b957cba">cbor_get_int</a></div><div class="ttdeci">uint64_t cbor_get_int(const cbor_item_t *item)</div><div class="ttdoc">Extracts the integer value. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00044">ints.c:44</a></div></div>
 <div class="ttc" id="ints_8h_html_a6ef24d3e2636c02de092fdfc337276b1"><div class="ttname"><a href="ints_8h.html#a6ef24d3e2636c02de092fdfc337276b1">cbor_mark_negint</a></div><div class="ttdeci">void cbor_mark_negint(cbor_item_t *item)</div><div class="ttdoc">Marks the integer item as a negative integer. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00091">ints.c:91</a></div></div>
@@ -177,13 +190,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="ints_8h_html_af82a3961109f2a36324157e218680016"><div class="ttname"><a href="ints_8h.html#af82a3961109f2a36324157e218680016">cbor_set_uint64</a></div><div class="ttdeci">void cbor_set_uint64(cbor_item_t *item, uint64_t value)</div><div class="ttdoc">Assigns the integer value. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00078">ints.c:78</a></div></div>
 <div class="ttc" id="ints_8h_html_a88f05c625ad9fa182bc95c9c97f87dda"><div class="ttname"><a href="ints_8h.html#a88f05c625ad9fa182bc95c9c97f87dda">cbor_build_uint16</a></div><div class="ttdeci">cbor_item_t * cbor_build_uint16(uint16_t value)</div><div class="ttdoc">Constructs a new positive integer. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00153">ints.c:153</a></div></div>
 <div class="ttc" id="common_8h_html"><div class="ttname"><a href="common_8h.html">common.h</a></div></div>
-<div class="ttc" id="structcbor__item__t_html"><div class="ttname"><a href="structcbor__item__t.html">cbor_item_t</a></div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00135">data.h:135</a></div></div>
+<div class="ttc" id="structcbor__item__t_html"><div class="ttname"><a href="structcbor__item__t.html">cbor_item_t</a></div><div class="ttdoc">The item handle. </div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00149">data.h:149</a></div></div>
+<div class="ttc" id="ints_8h_html_a28553eb079f8778babebf869e33f27a2"><div class="ttname"><a href="ints_8h.html#a28553eb079f8778babebf869e33f27a2">cbor_build_negint8</a></div><div class="ttdeci">cbor_item_t * cbor_build_negint8(uint8_t value)</div><div class="ttdoc">Constructs a new negative integer. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00177">ints.c:177</a></div></div>
 <div class="ttc" id="ints_8h_html_ad4d9f92f14c640544386e6655283052d"><div class="ttname"><a href="ints_8h.html#ad4d9f92f14c640544386e6655283052d">cbor_build_uint8</a></div><div class="ttdeci">cbor_item_t * cbor_build_uint8(uint8_t value)</div><div class="ttdoc">Constructs a new positive integer. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00145">ints.c:145</a></div></div>
 <div class="ttc" id="ints_8h_html_a2379bf36318e8e4faa7434c74d8553fb"><div class="ttname"><a href="ints_8h.html#a2379bf36318e8e4faa7434c74d8553fb">cbor_get_uint8</a></div><div class="ttdeci">uint8_t cbor_get_uint8(const cbor_item_t *item)</div><div class="ttdoc">Extracts the integer value. </div><div class="ttdef"><b>Definition:</b> <a href="ints_8c_source.html#l00016">ints.c:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

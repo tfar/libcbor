@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -108,9 +108,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Macros</h2></td></tr>
 <tr class="memitem:a87cea1eae78853449c65c11d87517835"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a87cea1eae78853449c65c11d87517835">CBOR_MAJOR_VERSION</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a87cea1eae78853449c65c11d87517835"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51fa4aa55e8743a687862f87ba574069"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a51fa4aa55e8743a687862f87ba574069">CBOR_MINOR_VERSION</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memitem:a51fa4aa55e8743a687862f87ba574069"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a51fa4aa55e8743a687862f87ba574069">CBOR_MINOR_VERSION</a>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a51fa4aa55e8743a687862f87ba574069"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2c19f68c53e5fa55957cbf1e65e1448"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#af2c19f68c53e5fa55957cbf1e65e1448">CBOR_PATCH_VERSION</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:af2c19f68c53e5fa55957cbf1e65e1448"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#af2c19f68c53e5fa55957cbf1e65e1448">CBOR_PATCH_VERSION</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:af2c19f68c53e5fa55957cbf1e65e1448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a956e417f98370dd1a96e4dac2e0ed7dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a956e417f98370dd1a96e4dac2e0ed7dd">CBOR_VERSION</a>&#160;&#160;&#160;<a class="el" href="common_8h.html#ae45fd01d870751555ae09a0257f40eb2">TO_STR</a>(<a class="el" href="common_8h.html#a87cea1eae78853449c65c11d87517835">CBOR_MAJOR_VERSION</a>) &quot;.&quot; <a class="el" href="common_8h.html#ae45fd01d870751555ae09a0257f40eb2">TO_STR</a>(<a class="el" href="common_8h.html#a51fa4aa55e8743a687862f87ba574069">CBOR_MINOR_VERSION</a>) &quot;.&quot; <a class="el" href="common_8h.html#ae45fd01d870751555ae09a0257f40eb2">TO_STR</a>(<a class="el" href="common_8h.html#af2c19f68c53e5fa55957cbf1e65e1448">CBOR_PATCH_VERSION</a>)</td></tr>
 <tr class="separator:a956e417f98370dd1a96e4dac2e0ed7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,8 +140,6 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a05d90b84a6e08c6d056ec34e7c7c47ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a05d90b84a6e08c6d056ec34e7c7c47ee">_Static_assert</a> (sizeof(size_t) &gt;=8,&quot;size_t must be at least 64 bits&quot;)</td></tr>
-<tr class="separator:a05d90b84a6e08c6d056ec34e7c7c47ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f9f1d527374dbb4b48ef3fafa92e0bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a3f9f1d527374dbb4b48ef3fafa92e0bf">cbor_set_allocs</a> (<a class="el" href="common_8h.html#ad43a5d91c73c87d1a978273286e7c2be">_cbor_malloc_t</a> custom_malloc, <a class="el" href="common_8h.html#a85a71755bd7dc24658b1769f77636758">_cbor_realloc_t</a> custom_realloc, <a class="el" href="common_8h.html#a39d0619c44bc7b3565a3c435e191cb14">_cbor_free_t</a> custom_free)</td></tr>
 <tr class="memdesc:a3f9f1d527374dbb4b48ef3fafa92e0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the memory management routines to use.  <a href="#a3f9f1d527374dbb4b48ef3fafa92e0bf">More...</a><br/></td></tr>
 <tr class="separator:a3f9f1d527374dbb4b48ef3fafa92e0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,7 +221,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00086">86</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00075">75</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -237,7 +235,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00084">84</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00073">73</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -251,7 +249,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00085">85</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00074">74</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -288,7 +286,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CBOR_MINOR_VERSION&#160;&#160;&#160;2</td>
+          <td class="memname">#define CBOR_MINOR_VERSION&#160;&#160;&#160;3</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -302,7 +300,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CBOR_PATCH_VERSION&#160;&#160;&#160;0</td>
+          <td class="memname">#define CBOR_PATCH_VERSION&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -349,7 +347,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00053">53</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00042">42</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -367,7 +365,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00057">57</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00046">46</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -385,7 +383,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00056">56</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00045">45</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -400,7 +398,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00063">63</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00052">52</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -414,7 +412,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00061">61</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00050">50</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -428,37 +426,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00062">62</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00051">51</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a05d90b84a6e08c6d056ec34e7c7c47ee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">_Static_assert </td>
-          <td>(</td>
-          <td class="paramtype">sizeof(size_t) &gt;=&#160;</td>
-          <td class="paramname"><em>8</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&quot;size_t must be at least 64 bits&quot;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="aa10ebec46eddc9312ec46a0898b5d196"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1180,7 +1152,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

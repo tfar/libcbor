@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -113,9 +113,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af12871b50ba25f756fa1bfacd1fca12a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="data_8h.html#aabb40e458ece40477e134a69c76693e8">cbor_mutable_data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8h.html#af12871b50ba25f756fa1bfacd1fca12a">cbor_string_handle</a> (const <a class="el" href="structcbor__item__t.html">cbor_item_t</a> *item)</td></tr>
 <tr class="memdesc:af12871b50ba25f756fa1bfacd1fca12a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the handle to the underlying string.  <a href="#af12871b50ba25f756fa1bfacd1fca12a">More...</a><br/></td></tr>
 <tr class="separator:af12871b50ba25f756fa1bfacd1fca12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11a3305c243bc801f693ec647fa95a84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8h.html#a11a3305c243bc801f693ec647fa95a84">cbor_string_set_handle</a> (<a class="el" href="structcbor__item__t.html">cbor_item_t</a> *item, <a class="el" href="data_8h.html#aabb40e458ece40477e134a69c76693e8">cbor_mutable_data</a> data, size_t length)</td></tr>
-<tr class="memdesc:a11a3305c243bc801f693ec647fa95a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the handle to the underlying string.  <a href="#a11a3305c243bc801f693ec647fa95a84">More...</a><br/></td></tr>
-<tr class="separator:a11a3305c243bc801f693ec647fa95a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63144f38c51889b0aad8e8b7f5ed9fc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8h.html#a63144f38c51889b0aad8e8b7f5ed9fc9">cbor_string_set_handle</a> (<a class="el" href="structcbor__item__t.html">cbor_item_t</a> *item, <a class="el" href="data_8h.html#aabb40e458ece40477e134a69c76693e8">cbor_mutable_data</a> restrict data, size_t length)</td></tr>
+<tr class="memdesc:a63144f38c51889b0aad8e8b7f5ed9fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the handle to the underlying string.  <a href="#a63144f38c51889b0aad8e8b7f5ed9fc9">More...</a><br/></td></tr>
+<tr class="separator:a63144f38c51889b0aad8e8b7f5ed9fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d1160eed81b2a29b6c5e9ff6b9e02a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8h.html#a81d1160eed81b2a29b6c5e9ff6b9e02a">cbor_string_chunks_handle</a> (const <a class="el" href="structcbor__item__t.html">cbor_item_t</a> *item)</td></tr>
 <tr class="memdesc:a81d1160eed81b2a29b6c5e9ff6b9e02a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the handle to the array of chunks.  <a href="#a81d1160eed81b2a29b6c5e9ff6b9e02a">More...</a><br/></td></tr>
 <tr class="separator:a81d1160eed81b2a29b6c5e9ff6b9e02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,6 +134,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a61a9388aca4fc7ee5355eb92a6d56536"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8h.html#a61a9388aca4fc7ee5355eb92a6d56536">cbor_build_string</a> (const char *val)</td></tr>
 <tr class="memdesc:a61a9388aca4fc7ee5355eb92a6d56536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string and initializes it.  <a href="#a61a9388aca4fc7ee5355eb92a6d56536">More...</a><br/></td></tr>
 <tr class="separator:a61a9388aca4fc7ee5355eb92a6d56536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f8c53bb33641408921c388bf539b0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="strings_8h.html#a26f8c53bb33641408921c388bf539b0c">cbor_build_stringn</a> (const char *val, size_t length)</td></tr>
+<tr class="memdesc:a26f8c53bb33641408921c388bf539b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string and initializes it.  <a href="#a26f8c53bb33641408921c388bf539b0c">More...</a><br/></td></tr>
+<tr class="separator:a26f8c53bb33641408921c388bf539b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a61a9388aca4fc7ee5355eb92a6d56536"></a>
@@ -151,7 +154,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new string and initializes it. </p>
-<p>The <code>handle</code> will be copied to a newly allocated block</p>
+<p>The <code>val</code> will be copied to a newly allocated block</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">val</td><td>A null-terminated UTF-8 string </td></tr>
@@ -161,6 +164,44 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <b>new</b> string with content <code>handle</code>. <code>NULL</code> on malloc failure. </dd></dl>
 
 <p>Definition at line <a class="el" href="strings_8c_source.html#l00039">39</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26f8c53bb33641408921c388bf539b0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_stringn </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new string and initializes it. </p>
+<p>The <code>handle</code> will be copied to a newly allocated block</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>A UTF-8 string, at least <code>length</code> long (excluding the null byte) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <b>new</b> string with content <code>handle</code>. <code>NULL</code> on malloc failure. </dd></dl>
+
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00049">49</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
@@ -242,7 +283,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success. false on realloc failure. In that case, the refcount of <code>chunk</code> is not increased and the <code>item</code> is left intact. </dd></dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00072">72</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00081">81</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
@@ -269,7 +310,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The chunk count. 0 for freshly created items. </dd></dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00064">64</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00073">73</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
@@ -297,7 +338,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>array of <a class="el" href="strings_8h.html#ad8062db21711a51ae520cc1e4f5fe5ab" title="Get the number of chunks this string consist of. ">cbor_string_chunk_count</a> definite strings </dd></dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00057">57</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00066">66</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
@@ -325,7 +366,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of codepoints in this string </dd></dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00103">103</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00112">112</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
@@ -353,7 +394,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The address of the underlying string. <code>NULL</code> if no data have been assigned yet. </dd></dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00097">97</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00106">106</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
@@ -380,7 +421,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Is the string definite? </dd></dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00109">109</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00118">118</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
@@ -407,7 +448,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Is the string indefinite? </dd></dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00115">115</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00124">124</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
@@ -435,11 +476,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>length of the string. Zero if no chunk has been attached yet </dd></dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00091">91</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00100">100</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a11a3305c243bc801f693ec647fa95a84"></a>
+<a class="anchor" id="a63144f38c51889b0aad8e8b7f5ed9fc9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -452,7 +493,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="data_8h.html#aabb40e458ece40477e134a69c76693e8">cbor_mutable_data</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#aabb40e458ece40477e134a69c76693e8">cbor_mutable_data</a> restrict&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -481,14 +522,14 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="strings_8c_source.html#l00049">49</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
+<p>Definition at line <a class="el" href="strings_8c_source.html#l00058">58</a> of file <a class="el" href="strings_8c_source.html">strings.c</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

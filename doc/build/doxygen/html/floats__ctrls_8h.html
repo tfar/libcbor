@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -155,6 +155,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ac0c984ec79209ad710dd960ca9566f16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floats__ctrls_8h.html#ac0c984ec79209ad710dd960ca9566f16">cbor_ctrl_is_bool</a> (const <a class="el" href="structcbor__item__t.html">cbor_item_t</a> *item)</td></tr>
 <tr class="memdesc:ac0c984ec79209ad710dd960ca9566f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this ctrl item a boolean?  <a href="#ac0c984ec79209ad710dd960ca9566f16">More...</a><br/></td></tr>
 <tr class="separator:ac0c984ec79209ad710dd960ca9566f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9884b85abd0c0637a4377168d034260f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floats__ctrls_8h.html#a9884b85abd0c0637a4377168d034260f">cbor_build_float2</a> (float value)</td></tr>
+<tr class="memdesc:a9884b85abd0c0637a4377168d034260f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new float.  <a href="#a9884b85abd0c0637a4377168d034260f">More...</a><br/></td></tr>
+<tr class="separator:a9884b85abd0c0637a4377168d034260f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3e9757ac809b6df56f1095a87bfdad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floats__ctrls_8h.html#a1e3e9757ac809b6df56f1095a87bfdad">cbor_build_float4</a> (float value)</td></tr>
+<tr class="memdesc:a1e3e9757ac809b6df56f1095a87bfdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new float.  <a href="#a1e3e9757ac809b6df56f1095a87bfdad">More...</a><br/></td></tr>
+<tr class="separator:a1e3e9757ac809b6df56f1095a87bfdad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0e4103cf703b5c3e856956f5a2fb96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floats__ctrls_8h.html#aad0e4103cf703b5c3e856956f5a2fb96">cbor_build_float8</a> (double value)</td></tr>
+<tr class="memdesc:aad0e4103cf703b5c3e856956f5a2fb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new float.  <a href="#aad0e4103cf703b5c3e856956f5a2fb96">More...</a><br/></td></tr>
+<tr class="separator:aad0e4103cf703b5c3e856956f5a2fb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31b0a42b2dd7f29efe42385bd4a58f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcbor__item__t.html">cbor_item_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floats__ctrls_8h.html#af31b0a42b2dd7f29efe42385bd4a58f1">cbor_build_ctrl</a> (uint8_t value)</td></tr>
+<tr class="memdesc:af31b0a42b2dd7f29efe42385bd4a58f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a ctrl item.  <a href="#af31b0a42b2dd7f29efe42385bd4a58f1">More...</a><br/></td></tr>
+<tr class="separator:af31b0a42b2dd7f29efe42385bd4a58f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a5218f8557e64441e9085f6b9478bfd06"></a>
@@ -181,6 +193,114 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><b>new</b> boolen ctrl item </dd></dl>
 
 <p>Definition at line <a class="el" href="floats__ctrls_8c_source.html#l00160">160</a> of file <a class="el" href="floats__ctrls_8c_source.html">floats_ctrls.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af31b0a42b2dd7f29efe42385bd4a58f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_ctrl </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a ctrl item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b>new</b> ctrl item </dd></dl>
+
+<p>Definition at line <a class="el" href="floats__ctrls_8c_source.html#l00186">186</a> of file <a class="el" href="floats__ctrls_8c_source.html">floats_ctrls.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9884b85abd0c0637a4377168d034260f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_float2 </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b>new</b> float </dd></dl>
+
+<p>Definition at line <a class="el" href="floats__ctrls_8c_source.html#l00165">165</a> of file <a class="el" href="floats__ctrls_8c_source.html">floats_ctrls.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e3e9757ac809b6df56f1095a87bfdad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_float4 </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b>new</b> float </dd></dl>
+
+<p>Definition at line <a class="el" href="floats__ctrls_8c_source.html#l00172">172</a> of file <a class="el" href="floats__ctrls_8c_source.html">floats_ctrls.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad0e4103cf703b5c3e856956f5a2fb96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcbor__item__t.html">cbor_item_t</a>* cbor_build_float8 </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b>new</b> float </dd></dl>
+
+<p>Definition at line <a class="el" href="floats__ctrls_8c_source.html#l00179">179</a> of file <a class="el" href="floats__ctrls_8c_source.html">floats_ctrls.c</a>.</p>
 
 </div>
 </div>
@@ -681,7 +801,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -90,22 +90,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>The item handle.  
+ <a href="structcbor__item__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="data_8h_source.html">data.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a7d97fa5cdf027ca0499c37ec19acf843"><td class="memItemLeft" align="right" valign="top">union <a class="el" href="unioncbor__item__metadata.html">cbor_item_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcbor__item__t.html#a7d97fa5cdf027ca0499c37ec19acf843">metadata</a></td></tr>
+<tr class="memdesc:a7d97fa5cdf027ca0499c37ec19acf843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discriminated by type.  <a href="#a7d97fa5cdf027ca0499c37ec19acf843">More...</a><br/></td></tr>
 <tr class="separator:a7d97fa5cdf027ca0499c37ec19acf843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bb24fe655f086c6aa9a66d427e09cca"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcbor__item__t.html#a6bb24fe655f086c6aa9a66d427e09cca">refcount</a></td></tr>
+<tr class="memdesc:a6bb24fe655f086c6aa9a66d427e09cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference count - initialize to 0.  <a href="#a6bb24fe655f086c6aa9a66d427e09cca">More...</a><br/></td></tr>
 <tr class="separator:a6bb24fe655f086c6aa9a66d427e09cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6743a75cf89e1b455ddf3198ff98842a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="data_8h.html#a3a931b40fc31b51cccfd1bc3dc5fc5d6">cbor_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcbor__item__t.html#a6743a75cf89e1b455ddf3198ff98842a">type</a></td></tr>
+<tr class="memdesc:a6743a75cf89e1b455ddf3198ff98842a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Major type discriminator.  <a href="#a6743a75cf89e1b455ddf3198ff98842a">More...</a><br/></td></tr>
 <tr class="separator:a6743a75cf89e1b455ddf3198ff98842a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c6dde1dbef5aad748c49786352eef44"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcbor__item__t.html#a5c6dde1dbef5aad748c49786352eef44">data</a></td></tr>
+<tr class="memdesc:a5c6dde1dbef5aad748c49786352eef44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw data block - interpretation depends on metadata.  <a href="#a5c6dde1dbef5aad748c49786352eef44">More...</a><br/></td></tr>
 <tr class="separator:a5c6dde1dbef5aad748c49786352eef44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="data_8h_source.html#l00135">135</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
+<div class="textblock"><p>The item handle. </p>
+
+<p>Definition at line <a class="el" href="data_8h_source.html#l00149">149</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a5c6dde1dbef5aad748c49786352eef44"></a>
 <div class="memitem">
@@ -117,7 +125,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8h_source.html#l00139">139</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
+<p>Raw data block - interpretation depends on metadata. </p>
+
+<p>Definition at line <a class="el" href="data_8h_source.html#l00157">157</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
 
 </div>
 </div>
@@ -131,7 +141,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8h_source.html#l00136">136</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
+<p>Discriminated by type. </p>
+
+<p>Definition at line <a class="el" href="data_8h_source.html#l00151">151</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
 
 </div>
 </div>
@@ -145,7 +157,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8h_source.html#l00137">137</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
+<p>Reference count - initialize to 0. </p>
+
+<p>Definition at line <a class="el" href="data_8h_source.html#l00153">153</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
 
 </div>
 </div>
@@ -159,7 +173,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8h_source.html#l00138">138</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
+<p>Major type discriminator. </p>
+
+<p>Definition at line <a class="el" href="data_8h_source.html#l00155">155</a> of file <a class="el" href="data_8h_source.html">data.h</a>.</p>
 
 </div>
 </div>
@@ -169,7 +185,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

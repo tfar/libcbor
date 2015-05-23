@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcbor
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
    <div id="projectbrief">libcbor is a C library for parsing and generating CBOR, the general-purpose schema-less binary data format.</div>
   </td>
@@ -80,33 +80,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">libcbor Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://travis-ci.org/PJK/libcbor">![Build Status](https://travis-ci.org/PJK/libcbor.svg?branch=master)</a> <a href="https://readthedocs.org/projects/libcbor/?badge=latest">![Documentation Status](https://readthedocs.org/projects/libcbor/badge/?version=latest)</a></p>
-<p><b>libcbor</b> is a C library for parsing and generating <a href="http://tools.ietf.org/html/rfc7049">CBOR</a>, the general-purpose schema-less binary data format.</p>
-<h2>Main features</h2>
+<div class="textblock"><p>This is the development reference of <a href="http://libcbor.org/">libcbor</a>. If you are looking for the user documentation, you should probably head to the <a href="http://libcbor.org/">homepage</a>.</p>
+<h1>Where to start</h1>
+<p>A couple of pointers for you to start with: <code>0x00000000</code>, <code>0xDEADBEEF</code>.</p>
+<p>If you just want to peek under the hood, have a look at:</p>
 <ul>
-<li>Complete RFC conformance</li>
-<li>Robust C11 implementation</li>
-<li>Layered architecture offers both control and convenience</li>
-<li>Flexible memory management</li>
-<li>Proper handling of UTF-8</li>
-<li>Full support for streams &amp; incremental processing</li>
-<li>Extensive documentation and test suite</li>
-<li>No runtime dependencies, small footprint</li>
+<li><a class="el" href="common_8h.html">src/cbor/common.h</a></li>
+<li><a class="el" href="encoding_8h.html">src/cbor/encoding.h</a></li>
+<li><a class="el" href="cbor_8h.html">src/cbor.h</a></li>
 </ul>
-<h2>Documentation</h2>
-<p>Get the latest documentation at <a href="http://libcbor.readthedocs.org/">libcbor.readthedocs.org</a></p>
-<h2>Contributions</h2>
-<p>All bug reports and contributions are welcome. Please see <a href="https://github.com/PJK/libcbor">https://github.com/PJK/libcbor</a> for more info.</p>
-<h2>License</h2>
-<p>The MIT License (MIT)</p>
-<p>Copyright (c) Pavel Kalvoda, 2014, 2015</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </p>
+<p>If you want to implement your own decoder or see how the default one is made:</p>
+<ul>
+<li><a class="el" href="builder__callbacks_8h.html">src/cbor/internal/builder_callbacks.h</a></li>
+<li><a class="el" href="stack_8h.html">src/cbor/internal/stack.h</a></li>
+</ul>
+<p>For details on encoding and packing (could be useful when porting to exotic platforms):</p>
+<ul>
+<li><a class="el" href="encoders_8h.html">src/cbor/internal/encoders.h</a></li>
+<li><a class="el" href="loaders_8h.html">src/cbor/internal/loaders.h</a></li>
+</ul>
+<p>Streaming driver:</p>
+<ul>
+<li><a class="el" href="streaming_8h.html">src/cbor/streaming.h</a></li>
+</ul>
+<p>Manipulation routines for particular types:</p>
+<ul>
+<li><a class="el" href="ints_8h.html">src/cbor/ints.h</a></li>
+<li><a class="el" href="bytestrings_8h.html">src/cbor/bytestrings.h</a></li>
+<li><a class="el" href="strings_8h.html">src/cbor/strings.h</a></li>
+<li><a class="el" href="arrays_8h.html">src/cbor/arrays.h</a></li>
+<li><a class="el" href="maps_8h.html">src/cbor/maps.h</a></li>
+<li><a class="el" href="tags_8h.html">src/cbor/tags.h</a></li>
+<li><a class="el" href="floats__ctrls_8h.html">src/cbor/floats_ctrls.h</a></li>
+</ul>
+<h1>How to contribute</h1>
+<p>Please refer to <a href="https://github.com/PJK/libcbor">the repository</a> </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 18 2015 04:42:54 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat May 23 2015 19:45:04 for libcbor by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
