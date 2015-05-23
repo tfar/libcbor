@@ -1,0 +1,567 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="arrays_8c" kind="file">
+    <compoundname>arrays.c</compoundname>
+    <includes local="no">string.h</includes>
+    <includes refid="arrays_8h" local="yes">arrays.h</includes>
+    <incdepgraph>
+      <node id="63">
+        <label>stdbool.h</label>
+      </node>
+      <node id="64">
+        <label>assert.h</label>
+      </node>
+      <node id="62">
+        <label>stdint.h</label>
+      </node>
+      <node id="60">
+        <label>stdlib.h</label>
+      </node>
+      <node id="59">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>stddef.h</label>
+      </node>
+      <node id="57">
+        <label>string.h</label>
+      </node>
+      <node id="56">
+        <label>src/cbor/arrays.c</label>
+        <link refid="arrays.c"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>arrays.h</label>
+        <link refid="arrays_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="arrays_8c_1a4f634a9a4bc834e4ea6ac43e94d51f84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_array_size</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_array_size</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Get the number of members. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of members </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="11" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="11" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1a5da97cca271f81f55809c39fad6078b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_array_allocated</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_array_allocated</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Get the size of the allocated storage. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The size of the allocated storage (number of items) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="17" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1a1573139e26cf5b5acc4b0ed861291069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_array_get</definition>
+        <argsstring>(const cbor_item_t *item, size_t index)</argsstring>
+        <name>cbor_array_get</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Get item by index. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>incref</bold> The item, or <computeroutput>NULL</computeroutput> in case of boundary violation </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="24" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1a382cc2dc480ebb9c7951eb3235be89b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cbor_array_set</definition>
+        <argsstring>(cbor_item_t *item, size_t index, cbor_item_t *value)</argsstring>
+        <name>cbor_array_set</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set item by index. </para>        </briefdescription>
+        <detaileddescription>
+<para>Creating arrays with holes is not possible</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value[incref]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The item to assign </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false on allocation failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="29" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="29" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1a44020515090bbbe91249aff0016ab8e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cbor_array_replace</definition>
+        <argsstring>(cbor_item_t *item, size_t index, cbor_item_t *value)</argsstring>
+        <name>cbor_array_replace</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Replace item at an index. </para>        </briefdescription>
+        <detaileddescription>
+<para>The item being replace will be <ref refid="common_8h_1aa10ebec46eddc9312ec46a0898b5d196" kindref="member">cbor_decref</ref> &apos;ed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value[incref]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The item to assign </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false on allocation failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="41" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="41" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1abb1c1c9731a2195857dc471f2a6f60f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cbor_array_push</definition>
+        <argsstring>(cbor_item_t *array, cbor_item_t *pushee)</argsstring>
+        <name>cbor_array_push</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>pushee</declname>
+        </param>
+        <briefdescription>
+<para>Append to the end. </para>        </briefdescription>
+        <detaileddescription>
+<para>For indefinite items, storage may be realloacted. For definite items, only the preallocated capacity is available.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pushee[incref]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The item to push </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="51" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="51" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1ac2f1480c546a0268e8b046b365e58599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cbor_array_is_definite</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_array_is_definite</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Is the array definite? </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Is the array definite? </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="80" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="80" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1a291a9f3ff12a2e2c58b2ca8b00280d40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cbor_array_is_indefinite</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_array_is_indefinite</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Is the array indefinite? </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Is the array indefinite? </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="86" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1a8dd01f4a46f162fa4f06b7df7428128e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> **</type>
+        <definition>cbor_item_t** cbor_array_handle</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_array_handle</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Get the array contents. </para>        </briefdescription>
+        <detaileddescription>
+<para>The items may be reordered and modified as long as references remain consistent.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="arrays_8h_1a4f634a9a4bc834e4ea6ac43e94d51f84" kindref="member">cbor_array_size</ref> items </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="92" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1a93d7c18019000d5e206a81a4cca70631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_definite_array</definition>
+        <argsstring>(size_t size)</argsstring>
+        <name>cbor_new_definite_array</name>
+        <param>
+          <type>const size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Create new definite array. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of slots to preallocate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> array or <computeroutput>NULL</computeroutput> upon malloc failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="98" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="98" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="arrays_8c_1aaec916ccc6f19782b6aef5ec1da2cc26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_indefinite_array</definition>
+        <argsstring>()</argsstring>
+        <name>cbor_new_indefinite_array</name>
+        <briefdescription>
+<para>Create new indefinite array. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><bold>new</bold> array or <computeroutput>NULL</computeroutput> upon malloc failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/arrays.c" line="129" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/arrays.c" bodystart="129" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="arrays_8h" kindref="compound">arrays.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="arrays_8h_1a4f634a9a4bc834e4ea6ac43e94d51f84" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1a4f634a9a4bc834e4ea6ac43e94d51f84" kindref="member">cbor_array_size</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a9ed0fa96105c211867c5032f2a5a8b20" kindref="member">cbor_isa_array</ref>(item));</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a51c4b86bb4e0313193df52d1320f9237" kindref="member">array_metadata</ref>.<ref refid="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" kindref="member">end_ptr</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="arrays_8h_1a5da97cca271f81f55809c39fad6078b0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1a5da97cca271f81f55809c39fad6078b0" kindref="member">cbor_array_allocated</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/>item)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a9ed0fa96105c211867c5032f2a5a8b20" kindref="member">cbor_isa_array</ref>(item));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a51c4b86bb4e0313193df52d1320f9237" kindref="member">array_metadata</ref>.<ref refid="struct__cbor__array__metadata_1ad59631add7d960a0777686c8cc0fd46a" kindref="member">allocated</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="arrays_8h_1a1573139e26cf5b5acc4b0ed861291069" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/><ref refid="arrays_8c_1a1573139e26cf5b5acc4b0ed861291069" kindref="member">cbor_array_get</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/>item,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="common_8c_1aa62e72f275c2f0fa604896bfed18e992" kindref="member">cbor_incref</ref>(((<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**)<sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>)[index]);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="arrays_8h_1a382cc2dc480ebb9c7951eb3235be89b4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1a382cc2dc480ebb9c7951eb3235be89b4" kindref="member">cbor_array_set</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/>item,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index,<sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/><ref refid="structcbor__pair_1a44bbea9cc120de72fc4871a05dc8ec85" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>==<sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a51c4b86bb4e0313193df52d1320f9237" kindref="member">array_metadata</ref>.<ref refid="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" kindref="member">end_ptr</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1abb1c1c9731a2195857dc471f2a6f60f5" kindref="member">cbor_array_push</ref>(item,<sp/>value);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>&lt;<sp/>item-&gt;metadata.array_metadata.end_ptr)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1a44020515090bbbe91249aff0016ab8e5" kindref="member">cbor_array_replace</ref>(item,<sp/>index,<sp/>value);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="arrays_8h_1a44020515090bbbe91249aff0016ab8e5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1a44020515090bbbe91249aff0016ab8e5" kindref="member">cbor_array_replace</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/>item,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>index,<sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<sp/><ref refid="structcbor__pair_1a44bbea9cc120de72fc4871a05dc8ec85" kindref="member">value</ref>)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>&gt;=<sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a51c4b86bb4e0313193df52d1320f9237" kindref="member">array_metadata</ref>.<ref refid="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" kindref="member">end_ptr</ref>)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>cannot<sp/>use<sp/>cbor_array_get<sp/>as<sp/>that<sp/>would<sp/>increase<sp/>the<sp/>refcount<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="common_8c_1a4ed20937cc091bc1f481d53787fe306b" kindref="member">cbor_intermediate_decref</ref>(((<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**)<sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>)[index]);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>((<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**)<sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>)[index]<sp/>=<sp/><ref refid="common_8c_1aa62e72f275c2f0fa604896bfed18e992" kindref="member">cbor_incref</ref>(value);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="arrays_8h_1abb1c1c9731a2195857dc471f2a6f60f5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1abb1c1c9731a2195857dc471f2a6f60f5" kindref="member">cbor_array_push</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*array,<sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*pushee)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a9ed0fa96105c211867c5032f2a5a8b20" kindref="member">cbor_isa_array</ref>(array));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__cbor__array__metadata" kindref="compound">_cbor_array_metadata</ref><sp/>*metadata<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__cbor__array__metadata" kindref="compound">_cbor_array_metadata</ref><sp/>*)<sp/>&amp;array-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**data<sp/>=<sp/>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**)<sp/>array-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="arrays_8c_1ac2f1480c546a0268e8b046b365e58599" kindref="member">cbor_array_is_definite</ref>(array))<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Do<sp/>not<sp/>reallocate<sp/>definite<sp/>arrays<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(metadata-&gt;<ref refid="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" kindref="member">end_ptr</ref><sp/>&gt;=<sp/>metadata-&gt;<ref refid="struct__cbor__array__metadata_1ad59631add7d960a0777686c8cc0fd46a" kindref="member">allocated</ref>)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[metadata-&gt;<ref refid="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" kindref="member">end_ptr</ref>++]<sp/>=<sp/>pushee;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Exponential<sp/>realloc<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(metadata-&gt;<ref refid="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" kindref="member">end_ptr</ref><sp/>&gt;=<sp/>metadata-&gt;<ref refid="struct__cbor__array__metadata_1ad59631add7d960a0777686c8cc0fd46a" kindref="member">allocated</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>new_allocation<sp/>=<sp/>(size_t)(CBOR_BUFFER_GROWTH<sp/>*<sp/>(metadata-&gt;<ref refid="struct__cbor__array__metadata_1ad59631add7d960a0777686c8cc0fd46a" kindref="member">allocated</ref>));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_allocation<sp/>=<sp/>new_allocation<sp/>?<sp/>new_allocation<sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>new_data<sp/>=<sp/><ref refid="common_8h_1a1e39038d9b8e9b3a1e6529c9ff6091b8" kindref="member">_CBOR_REALLOC</ref>(array-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_allocation<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*));</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(new_data<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>array-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref><sp/>=<sp/>new_data;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>metadata-&gt;<ref refid="struct__cbor__array__metadata_1ad59631add7d960a0777686c8cc0fd46a" kindref="member">allocated</ref><sp/>=<sp/>new_allocation;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**)array-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>)[metadata-&gt;<ref refid="struct__cbor__array__metadata_1a388742d0b665ba1775ad89858f3049cb" kindref="member">end_ptr</ref>++]<sp/>=<sp/>pushee;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="common_8c_1aa62e72f275c2f0fa604896bfed18e992" kindref="member">cbor_incref</ref>(pushee);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="arrays_8h_1ac2f1480c546a0268e8b046b365e58599" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1ac2f1480c546a0268e8b046b365e58599" kindref="member">cbor_array_is_definite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a9ed0fa96105c211867c5032f2a5a8b20" kindref="member">cbor_isa_array</ref>(item));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a51c4b86bb4e0313193df52d1320f9237" kindref="member">array_metadata</ref>.<ref refid="struct__cbor__array__metadata_1a0c376239d3aafcfe64ee7c74fd422f37" kindref="member">type</ref><sp/>==<sp/><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589a051b0d1fe7ef7ccfc3824110b797429e" kindref="member">_CBOR_METADATA_DEFINITE</ref>;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="arrays_8h_1a291a9f3ff12a2e2c58b2ca8b00280d40" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="arrays_8c_1a291a9f3ff12a2e2c58b2ca8b00280d40" kindref="member">cbor_array_is_indefinite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a9ed0fa96105c211867c5032f2a5a8b20" kindref="member">cbor_isa_array</ref>(item));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a51c4b86bb4e0313193df52d1320f9237" kindref="member">array_metadata</ref>.<ref refid="struct__cbor__array__metadata_1a0c376239d3aafcfe64ee7c74fd422f37" kindref="member">type</ref><sp/>==<sp/><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589ae598476995d503b404ccf78c21ab79ef" kindref="member">_CBOR_METADATA_INDEFINITE</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="arrays_8h_1a8dd01f4a46f162fa4f06b7df7428128e" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**<ref refid="arrays_8c_1a8dd01f4a46f162fa4f06b7df7428128e" kindref="member">cbor_array_handle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a9ed0fa96105c211867c5032f2a5a8b20" kindref="member">cbor_isa_array</ref>(item));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**)<sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="arrays_8h_1a8869f0890cae880934fa793e6ba2bc62" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="arrays_8c_1a93d7c18019000d5e206a81a4cca70631" kindref="member">cbor_new_definite_array</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref>));</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**<sp/>data<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*)<sp/>*<sp/>size);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="common_8h_1a1300043d7db8adf6ab67f7b787f14635" kindref="member">_CBOR_FREE</ref>(item);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data[i]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>*item<sp/>=<sp/>(<ref refid="data_8h_1afdaa4bcbbdd295d719e39ce0b5519419" kindref="member">cbor_item_t</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structcbor__item__t_1a6bb24fe655f086c6aa9a66d427e09cca" kindref="member">refcount</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.type<sp/>=<sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6ae48b04b3538ade49d7eae9ee6b656103" kindref="member">CBOR_TYPE_ARRAY</ref>,</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.metadata<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.array_metadata<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.type<sp/>=<sp/><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589a051b0d1fe7ef7ccfc3824110b797429e" kindref="member">_CBOR_METADATA_DEFINITE</ref>,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.allocated<sp/>=<sp/>size,</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.end_ptr<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.data<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)data</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="arrays_8h_1aaec916ccc6f19782b6aef5ec1da2cc26" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="arrays_8c_1aaec916ccc6f19782b6aef5ec1da2cc26" kindref="member">cbor_new_indefinite_array</ref>()</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref>));</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(item<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>*item<sp/>=<sp/>(<ref refid="data_8h_1afdaa4bcbbdd295d719e39ce0b5519419" kindref="member">cbor_item_t</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structcbor__item__t_1a6bb24fe655f086c6aa9a66d427e09cca" kindref="member">refcount</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.type<sp/>=<sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6ae48b04b3538ade49d7eae9ee6b656103" kindref="member">CBOR_TYPE_ARRAY</ref>,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.metadata<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.array_metadata<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.type<sp/>=<sp/><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589ae598476995d503b404ccf78c21ab79ef" kindref="member">_CBOR_METADATA_INDEFINITE</ref>,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.allocated<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.end_ptr<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.data<sp/>=<sp/>NULL<sp/></highlight><highlight class="comment">/*<sp/>Can<sp/>be<sp/>safely<sp/>realloc-ed<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/arrays.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,64 @@
+\hypertarget{unicode_8c}{\section{src/cbor/internal/unicode.c File Reference}
+\label{unicode_8c}\index{src/cbor/internal/unicode.\-c@{src/cbor/internal/unicode.\-c}}
+}
+{\ttfamily \#include \char`\"{}unicode.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{unicode_8c_a82b09bd7c24e408c73e16db56b8db6cf}{U\-T\-F8\-\_\-\-A\-C\-C\-E\-P\-T}~0
+\item 
+\#define \hyperlink{unicode_8c_a2e385a04dd7c4529414ab34a75a4f9ef}{U\-T\-F8\-\_\-\-R\-E\-J\-E\-C\-T}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{unicode_8c_aea748174291fa35e154c69e7669f199b}{\-\_\-cbor\-\_\-unicode\-\_\-decode} (uint32\-\_\-t $\ast$state, uint32\-\_\-t $\ast$codep, uint32\-\_\-t byte)
+\item 
+size\-\_\-t \hyperlink{unicode_8c_ade9ebfe3d9b9bfad4c9fd5c158d519a8}{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count} (\hyperlink{data_8h_a121c5944682215e742475f12f07c0a72}{cbor\-\_\-data} source, size\-\_\-t source\-\_\-length, struct \hyperlink{struct__cbor__unicode__status}{\-\_\-cbor\-\_\-unicode\-\_\-status} $\ast$status)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{unicode_8c_a82b09bd7c24e408c73e16db56b8db6cf}{\index{unicode.\-c@{unicode.\-c}!U\-T\-F8\-\_\-\-A\-C\-C\-E\-P\-T@{U\-T\-F8\-\_\-\-A\-C\-C\-E\-P\-T}}
+\index{U\-T\-F8\-\_\-\-A\-C\-C\-E\-P\-T@{U\-T\-F8\-\_\-\-A\-C\-C\-E\-P\-T}!unicode.c@{unicode.\-c}}
+\subsubsection[{U\-T\-F8\-\_\-\-A\-C\-C\-E\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-T\-F8\-\_\-\-A\-C\-C\-E\-P\-T~0}}\label{unicode_8c_a82b09bd7c24e408c73e16db56b8db6cf}
+
+
+Definition at line 10 of file unicode.\-c.
+
+\hypertarget{unicode_8c_a2e385a04dd7c4529414ab34a75a4f9ef}{\index{unicode.\-c@{unicode.\-c}!U\-T\-F8\-\_\-\-R\-E\-J\-E\-C\-T@{U\-T\-F8\-\_\-\-R\-E\-J\-E\-C\-T}}
+\index{U\-T\-F8\-\_\-\-R\-E\-J\-E\-C\-T@{U\-T\-F8\-\_\-\-R\-E\-J\-E\-C\-T}!unicode.c@{unicode.\-c}}
+\subsubsection[{U\-T\-F8\-\_\-\-R\-E\-J\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-T\-F8\-\_\-\-R\-E\-J\-E\-C\-T~1}}\label{unicode_8c_a2e385a04dd7c4529414ab34a75a4f9ef}
+
+
+Definition at line 11 of file unicode.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{unicode_8c_ade9ebfe3d9b9bfad4c9fd5c158d519a8}{\index{unicode.\-c@{unicode.\-c}!\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count@{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count}}
+\index{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count@{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count}!unicode.c@{unicode.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t \-\_\-cbor\-\_\-unicode\-\_\-codepoint\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-data}}]{source, }
+\item[{size\-\_\-t}]{source\-\_\-length, }
+\item[{struct {\bf \-\_\-cbor\-\_\-unicode\-\_\-status} $\ast$}]{status}
+\end{DoxyParamCaption}
+)}}\label{unicode_8c_ade9ebfe3d9b9bfad4c9fd5c158d519a8}
+
+
+Definition at line 43 of file unicode.\-c.
+
+\hypertarget{unicode_8c_aea748174291fa35e154c69e7669f199b}{\index{unicode.\-c@{unicode.\-c}!\-\_\-cbor\-\_\-unicode\-\_\-decode@{\-\_\-cbor\-\_\-unicode\-\_\-decode}}
+\index{\-\_\-cbor\-\_\-unicode\-\_\-decode@{\-\_\-cbor\-\_\-unicode\-\_\-decode}!unicode.c@{unicode.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-unicode\-\_\-decode}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t \-\_\-cbor\-\_\-unicode\-\_\-decode (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t $\ast$}]{state, }
+\item[{uint32\-\_\-t $\ast$}]{codep, }
+\item[{uint32\-\_\-t}]{byte}
+\end{DoxyParamCaption}
+)}}\label{unicode_8c_aea748174291fa35e154c69e7669f199b}
+
+
+Definition at line 32 of file unicode.\-c.
+

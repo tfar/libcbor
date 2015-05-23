@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="callbacks_8c" kind="file">
+    <compoundname>callbacks.c</compoundname>
+    <includes refid="callbacks_8h" local="yes">callbacks.h</includes>
+    <incdepgraph>
+      <node id="108">
+        <label>src/cbor/callbacks.c</label>
+        <link refid="callbacks.c"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>callbacks.h</label>
+        <link refid="callbacks_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>stdbool.h</label>
+      </node>
+      <node id="115">
+        <label>assert.h</label>
+      </node>
+      <node id="113">
+        <label>stdint.h</label>
+      </node>
+      <node id="111">
+        <label>stdlib.h</label>
+      </node>
+      <node id="110">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>stddef.h</label>
+      </node>
+      <node id="116">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" prot="public" static="no">
+        <name>CBOR_DUMMY_CALLBACK</name>
+        <initializer>{ }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="10" column="9" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.c" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" prot="public" static="no" mutable="no">
+        <type>void uint16_t _val <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t _val <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint16_t _val <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t _val <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void <ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_data _val</definition>
+        <argsstring></argsstring>
+        <name>_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="32" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="callbacks_8c_1a73203a882651bcfad8eb467b1ada96c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_null_uint8_callback</definition>
+        <argsstring>(void *_ctx, uint8_t _val) CBOR_DUMMY_CALLBACK void cbor_null_uint16_callback(void *_ctx</argsstring>
+        <name>cbor_null_uint8_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>_val</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1a61c9fd047bdc64620dd259dba203cc24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void cbor_null_uint32_callback</definition>
+        <argsstring>(void *_ctx, uint32_t _val) CBOR_DUMMY_CALLBACK void cbor_null_uint64_callback(void *_ctx</argsstring>
+        <name>cbor_null_uint32_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>_val</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="16" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1ad35f12380284de27c7f93076e3702806" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_null_negint8_callback</definition>
+        <argsstring>(void *_ctx, uint8_t _val) CBOR_DUMMY_CALLBACK void cbor_null_negint16_callback(void *_ctx</argsstring>
+        <name>cbor_null_negint8_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>_val</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1a252badae1d7dc5a1db1ceeb036647508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void uint16_t _val CBOR_DUMMY_CALLBACK void cbor_null_negint32_callback</definition>
+        <argsstring>(void *_ctx, uint32_t _val) CBOR_DUMMY_CALLBACK void cbor_null_negint64_callback(void *_ctx</argsstring>
+        <name>cbor_null_negint32_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>_val</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1a062fd4e961f5b71971059ec422a987cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_null_string_callback</definition>
+        <argsstring>(void *_ctx, cbor_data _val, size_t _val2) CBOR_DUMMY_CALLBACK void cbor_null_string_start_callback(void *_ctx) CBOR_DUMMY_CALLBACK void cbor_null_byte_string_callback(void *_ctx</argsstring>
+        <name>cbor_null_string_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+          <declname>_val</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>_val2</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="28" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1a26fcc93e4f4da0dc21274e4e2bfab1ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void <ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref> size_t _val2 <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_data size_t _val2 CBOR_DUMMY_CALLBACK void cbor_null_byte_string_start_callback</definition>
+        <argsstring>(void *_ctx) CBOR_DUMMY_CALLBACK void cbor_null_array_start_callback(void *_ctx</argsstring>
+        <name>cbor_null_byte_string_start_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="34" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1a84a4ba287d0575538148d91754e8bc42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void <ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref> size_t _val2 <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void size_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_data size_t _val2 CBOR_DUMMY_CALLBACK void size_t _val CBOR_DUMMY_CALLBACK void cbor_null_indef_array_start_callback</definition>
+        <argsstring>(void *_ctx) CBOR_DUMMY_CALLBACK void cbor_null_map_start_callback(void *_ctx</argsstring>
+        <name>cbor_null_indef_array_start_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1a5479bf604bfa859c9688d4ecff610c10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void <ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref> size_t _val2 <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void size_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void size_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_data size_t _val2 CBOR_DUMMY_CALLBACK void size_t _val CBOR_DUMMY_CALLBACK void size_t _val CBOR_DUMMY_CALLBACK void cbor_null_indef_map_start_callback</definition>
+        <argsstring>(void *_ctx) CBOR_DUMMY_CALLBACK void cbor_null_tag_callback(void *_ctx</argsstring>
+        <name>cbor_null_indef_map_start_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1a179a4e1677a83ac36eb37fed183ef866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void <ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref> size_t _val2 <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void size_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void size_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_data size_t _val2 CBOR_DUMMY_CALLBACK void size_t _val CBOR_DUMMY_CALLBACK void size_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_null_float2_callback</definition>
+        <argsstring>(void *_ctx, float _val) CBOR_DUMMY_CALLBACK void cbor_null_float4_callback(void *_ctx</argsstring>
+        <name>cbor_null_float2_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>_val</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="callbacks_8c_1a1171a863a08151f1a98024b4dc9d4943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint16_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void <ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref> size_t _val2 <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void size_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void size_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void uint64_t <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void float <ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref> <ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref> void</type>
+        <definition>void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void uint16_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void cbor_data size_t _val2 CBOR_DUMMY_CALLBACK void size_t _val CBOR_DUMMY_CALLBACK void size_t _val CBOR_DUMMY_CALLBACK void uint64_t _val CBOR_DUMMY_CALLBACK void float _val CBOR_DUMMY_CALLBACK void cbor_null_float8_callback</definition>
+        <argsstring>(void *_ctx, double _val) CBOR_DUMMY_CALLBACK void cbor_null_null_callback(void *_ctx) CBOR_DUMMY_CALLBACK void cbor_null_undefined_callback(void *_ctx) CBOR_DUMMY_CALLBACK void cbor_null_boolean_callback(void *_ctx</argsstring>
+        <name>cbor_null_float8_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>_ctx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_val</declname>
+        </param>
+        <briefdescription>
+<para>Dummy callback implementation - does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c" line="50" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="callbacks_8h" kindref="compound">callbacks.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CBOR_DUMMY_CALLBACK<sp/>{<sp/>}</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a73203a882651bcfad8eb467b1ada96c2" kindref="member">cbor_null_uint8_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint8_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1a09b8d67e3d55d7d6afcc9973b1e42046" kindref="member">cbor_null_uint16_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint16_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a61c9fd047bdc64620dd259dba203cc24" kindref="member">cbor_null_uint32_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint32_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1a01d918d5d4b04af8d317665db5b789e5" kindref="member">cbor_null_uint64_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint64_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1ad35f12380284de27c7f93076e3702806" kindref="member">cbor_null_negint8_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint8_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1a19c9d5992861f55fb1fc177ea6f66434" kindref="member">cbor_null_negint16_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint16_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a252badae1d7dc5a1db1ceeb036647508" kindref="member">cbor_null_negint32_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint32_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1af1bf4531715583b2745ee3d5f68f366b" kindref="member">cbor_null_negint64_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint64_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a062fd4e961f5b71971059ec422a987cc" kindref="member">cbor_null_string_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>_val2)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1ace4cd7b785a8240068f10d9705ced958" kindref="member">cbor_null_string_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1a0ff7bd8646c081a0240641aa4715690d" kindref="member">cbor_null_byte_string_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>_val2)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a26fcc93e4f4da0dc21274e4e2bfab1ed" kindref="member">cbor_null_byte_string_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1a354a9b4e2cea96d248c959fba6d7be95" kindref="member">cbor_null_array_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a84a4ba287d0575538148d91754e8bc42" kindref="member">cbor_null_indef_array_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1ad4a2d5d88a19c0a4aa5cbdd46126e010" kindref="member">cbor_null_map_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a5479bf604bfa859c9688d4ecff610c10" kindref="member">cbor_null_indef_map_start_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1ad89b715cbf487fd4d87699baf8e31aac" kindref="member">cbor_null_tag_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/>uint64_t<sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a179a4e1677a83ac36eb37fed183ef866" kindref="member">cbor_null_float2_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1a272e354db18ada5dab0093257f6c8d93" kindref="member">cbor_null_float4_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1a1171a863a08151f1a98024b4dc9d4943" kindref="member">cbor_null_float8_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1aedd685c8fed8c76105a534e503d4817f" kindref="member">cbor_null_null_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1a116576ea4ac4ed7a8bf2d66178438fdc" kindref="member">cbor_null_undefined_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1a5c228e25d2c179a6fca5437deb28337f" kindref="member">cbor_null_boolean_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="callbacks_8c_1aa71dda9f35e8d5245180dd90eb8604ba" kindref="member">_val</ref>)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="callbacks_8h_1afa6c7a0c96f9359a9fe7e4d08b8ffbf6" kindref="member">cbor_null_indef_break_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_ctx)<sp/><ref refid="callbacks_8c_1a600badad1d123dd9fb8d74d5f2a29a5e" kindref="member">CBOR_DUMMY_CALLBACK</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/callbacks.c"/>
+  </compounddef>
+</doxygen>

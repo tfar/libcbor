@@ -1,0 +1,79 @@
+\hypertarget{allocators_8c}{\section{src/allocators.c File Reference}
+\label{allocators_8c}\index{src/allocators.\-c@{src/allocators.\-c}}
+}
+{\ttfamily \#include \char`\"{}cbor/common.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{allocators_8c_a3f9f1d527374dbb4b48ef3fafa92e0bf}{cbor\-\_\-set\-\_\-allocs} (\hyperlink{common_8h_ad43a5d91c73c87d1a978273286e7c2be}{\-\_\-cbor\-\_\-malloc\-\_\-t} custom\-\_\-malloc, \hyperlink{common_8h_a85a71755bd7dc24658b1769f77636758}{\-\_\-cbor\-\_\-realloc\-\_\-t} custom\-\_\-realloc, \hyperlink{common_8h_a39d0619c44bc7b3565a3c435e191cb14}{\-\_\-cbor\-\_\-free\-\_\-t} custom\-\_\-free)
+\begin{DoxyCompactList}\small\item\em Sets the memory management routines to use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common_8h_ad43a5d91c73c87d1a978273286e7c2be}{\-\_\-cbor\-\_\-malloc\-\_\-t} \hyperlink{allocators_8c_a3218c24af00a3efeaecb1716c8f5a289}{\-\_\-cbor\-\_\-malloc} = malloc
+\item 
+\hyperlink{common_8h_a85a71755bd7dc24658b1769f77636758}{\-\_\-cbor\-\_\-realloc\-\_\-t} \hyperlink{allocators_8c_a84ecc1fc92c3812ab6ced693f2c6254c}{\-\_\-cbor\-\_\-realloc} = realloc
+\item 
+\hyperlink{common_8h_a39d0619c44bc7b3565a3c435e191cb14}{\-\_\-cbor\-\_\-free\-\_\-t} \hyperlink{allocators_8c_a994f4145360ef0bfa3c48e59a5ca7186}{\-\_\-cbor\-\_\-free} = free
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{allocators_8c_a3f9f1d527374dbb4b48ef3fafa92e0bf}{\index{allocators.\-c@{allocators.\-c}!cbor\-\_\-set\-\_\-allocs@{cbor\-\_\-set\-\_\-allocs}}
+\index{cbor\-\_\-set\-\_\-allocs@{cbor\-\_\-set\-\_\-allocs}!allocators.c@{allocators.\-c}}
+\subsubsection[{cbor\-\_\-set\-\_\-allocs}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-set\-\_\-allocs (
+\begin{DoxyParamCaption}
+\item[{{\bf \-\_\-cbor\-\_\-malloc\-\_\-t}}]{custom\-\_\-malloc, }
+\item[{{\bf \-\_\-cbor\-\_\-realloc\-\_\-t}}]{custom\-\_\-realloc, }
+\item[{{\bf \-\_\-cbor\-\_\-free\-\_\-t}}]{custom\-\_\-free}
+\end{DoxyParamCaption}
+)}}\label{allocators_8c_a3f9f1d527374dbb4b48ef3fafa92e0bf}
+
+
+Sets the memory management routines to use. 
+
+Only available when C\-B\-O\-R\-\_\-\-C\-U\-S\-T\-O\-M\-\_\-\-A\-L\-L\-O\-C is defined
+
+\begin{DoxyVerb}embed:rst:leading-asterisk
+* .. warning:: This function modifies the global state and should therefore be used accordingly. Changing the memory handlers while allocated items exist will result in a ``free``/``malloc`` mismatch. This function is not thread safe with respect to both itself and all the other *libcbor* functions that work with the heap.
+* .. note:: `realloc` implementation must correctly support `NULL` reallocation
+* \end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em custom\-\_\-malloc} & malloc implementation \\
+\hline
+{\em custom\-\_\-realloc} & realloc implementation \\
+\hline
+{\em custom\-\_\-free} & free implementation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file allocators.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{allocators_8c_a994f4145360ef0bfa3c48e59a5ca7186}{\index{allocators.\-c@{allocators.\-c}!\-\_\-cbor\-\_\-free@{\-\_\-cbor\-\_\-free}}
+\index{\-\_\-cbor\-\_\-free@{\-\_\-cbor\-\_\-free}!allocators.c@{allocators.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-\_\-cbor\-\_\-free\-\_\-t} \-\_\-cbor\-\_\-free = free}}\label{allocators_8c_a994f4145360ef0bfa3c48e59a5ca7186}
+
+
+Definition at line 12 of file allocators.\-c.
+
+\hypertarget{allocators_8c_a3218c24af00a3efeaecb1716c8f5a289}{\index{allocators.\-c@{allocators.\-c}!\-\_\-cbor\-\_\-malloc@{\-\_\-cbor\-\_\-malloc}}
+\index{\-\_\-cbor\-\_\-malloc@{\-\_\-cbor\-\_\-malloc}!allocators.c@{allocators.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-malloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-\_\-cbor\-\_\-malloc\-\_\-t} \-\_\-cbor\-\_\-malloc = malloc}}\label{allocators_8c_a3218c24af00a3efeaecb1716c8f5a289}
+
+
+Definition at line 10 of file allocators.\-c.
+
+\hypertarget{allocators_8c_a84ecc1fc92c3812ab6ced693f2c6254c}{\index{allocators.\-c@{allocators.\-c}!\-\_\-cbor\-\_\-realloc@{\-\_\-cbor\-\_\-realloc}}
+\index{\-\_\-cbor\-\_\-realloc@{\-\_\-cbor\-\_\-realloc}!allocators.c@{allocators.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-realloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-\_\-cbor\-\_\-realloc\-\_\-t} \-\_\-cbor\-\_\-realloc = realloc}}\label{allocators_8c_a84ecc1fc92c3812ab6ced693f2c6254c}
+
+
+Definition at line 11 of file allocators.\-c.
+

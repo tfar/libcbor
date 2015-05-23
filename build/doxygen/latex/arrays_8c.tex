@@ -1,0 +1,307 @@
+\hypertarget{arrays_8c}{\section{src/cbor/arrays.c File Reference}
+\label{arrays_8c}\index{src/cbor/arrays.\-c@{src/cbor/arrays.\-c}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arrays.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{arrays_8c_a4f634a9a4bc834e4ea6ac43e94d51f84}{cbor\-\_\-array\-\_\-size} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the number of members. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{arrays_8c_a5da97cca271f81f55809c39fad6078b0}{cbor\-\_\-array\-\_\-allocated} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the size of the allocated storage. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{arrays_8c_a1573139e26cf5b5acc4b0ed861291069}{cbor\-\_\-array\-\_\-get} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, size\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Get item by index. \end{DoxyCompactList}\item 
+bool \hyperlink{arrays_8c_a382cc2dc480ebb9c7951eb3235be89b4}{cbor\-\_\-array\-\_\-set} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, size\-\_\-t index, \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Set item by index. \end{DoxyCompactList}\item 
+bool \hyperlink{arrays_8c_a44020515090bbbe91249aff0016ab8e5}{cbor\-\_\-array\-\_\-replace} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, size\-\_\-t index, \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Replace item at an index. \end{DoxyCompactList}\item 
+bool \hyperlink{arrays_8c_abb1c1c9731a2195857dc471f2a6f60f5}{cbor\-\_\-array\-\_\-push} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$array, \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$pushee)
+\begin{DoxyCompactList}\small\item\em Append to the end. \end{DoxyCompactList}\item 
+bool \hyperlink{arrays_8c_ac2f1480c546a0268e8b046b365e58599}{cbor\-\_\-array\-\_\-is\-\_\-definite} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the array definite? \end{DoxyCompactList}\item 
+bool \hyperlink{arrays_8c_a291a9f3ff12a2e2c58b2ca8b00280d40}{cbor\-\_\-array\-\_\-is\-\_\-indefinite} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the array indefinite? \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$$\ast$ \hyperlink{arrays_8c_a8dd01f4a46f162fa4f06b7df7428128e}{cbor\-\_\-array\-\_\-handle} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the array contents. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{arrays_8c_a93d7c18019000d5e206a81a4cca70631}{cbor\-\_\-new\-\_\-definite\-\_\-array} (size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Create new definite array. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{arrays_8c_aaec916ccc6f19782b6aef5ec1da2cc26}{cbor\-\_\-new\-\_\-indefinite\-\_\-array} ()
+\begin{DoxyCompactList}\small\item\em Create new indefinite array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{arrays_8c_a5da97cca271f81f55809c39fad6078b0}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-allocated@{cbor\-\_\-array\-\_\-allocated}}
+\index{cbor\-\_\-array\-\_\-allocated@{cbor\-\_\-array\-\_\-allocated}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-allocated}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-array\-\_\-allocated (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_a5da97cca271f81f55809c39fad6078b0}
+
+
+Get the size of the allocated storage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the allocated storage (number of items) 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file arrays.\-c.
+
+\hypertarget{arrays_8c_a1573139e26cf5b5acc4b0ed861291069}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-get@{cbor\-\_\-array\-\_\-get}}
+\index{cbor\-\_\-array\-\_\-get@{cbor\-\_\-array\-\_\-get}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-array\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_a1573139e26cf5b5acc4b0ed861291069}
+
+
+Get item by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+{\em index} & The index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries incref} The item, or {\ttfamily N\-U\-L\-L} in case of boundary violation 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file arrays.\-c.
+
+\hypertarget{arrays_8c_a8dd01f4a46f162fa4f06b7df7428128e}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-handle@{cbor\-\_\-array\-\_\-handle}}
+\index{cbor\-\_\-array\-\_\-handle@{cbor\-\_\-array\-\_\-handle}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$$\ast$ cbor\-\_\-array\-\_\-handle (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_a8dd01f4a46f162fa4f06b7df7428128e}
+
+
+Get the array contents. 
+
+The items may be reordered and modified as long as references remain consistent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{arrays_8h_a4f634a9a4bc834e4ea6ac43e94d51f84}{cbor\-\_\-array\-\_\-size} items 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file arrays.\-c.
+
+\hypertarget{arrays_8c_ac2f1480c546a0268e8b046b365e58599}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-is\-\_\-definite@{cbor\-\_\-array\-\_\-is\-\_\-definite}}
+\index{cbor\-\_\-array\-\_\-is\-\_\-definite@{cbor\-\_\-array\-\_\-is\-\_\-definite}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-is\-\_\-definite}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-array\-\_\-is\-\_\-definite (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_ac2f1480c546a0268e8b046b365e58599}
+
+
+Is the array definite? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the array definite? 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file arrays.\-c.
+
+\hypertarget{arrays_8c_a291a9f3ff12a2e2c58b2ca8b00280d40}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-is\-\_\-indefinite@{cbor\-\_\-array\-\_\-is\-\_\-indefinite}}
+\index{cbor\-\_\-array\-\_\-is\-\_\-indefinite@{cbor\-\_\-array\-\_\-is\-\_\-indefinite}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-is\-\_\-indefinite}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-array\-\_\-is\-\_\-indefinite (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_a291a9f3ff12a2e2c58b2ca8b00280d40}
+
+
+Is the array indefinite? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the array indefinite? 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file arrays.\-c.
+
+\hypertarget{arrays_8c_abb1c1c9731a2195857dc471f2a6f60f5}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-push@{cbor\-\_\-array\-\_\-push}}
+\index{cbor\-\_\-array\-\_\-push@{cbor\-\_\-array\-\_\-push}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-push}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-array\-\_\-push (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{array, }
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{pushee}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_abb1c1c9731a2195857dc471f2a6f60f5}
+
+
+Append to the end. 
+
+For indefinite items, storage may be realloacted. For definite items, only the preallocated capacity is available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+{\em pushee\mbox{[}incref\mbox{]}} & The item to push \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file arrays.\-c.
+
+\hypertarget{arrays_8c_a44020515090bbbe91249aff0016ab8e5}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-replace@{cbor\-\_\-array\-\_\-replace}}
+\index{cbor\-\_\-array\-\_\-replace@{cbor\-\_\-array\-\_\-replace}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-replace}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-array\-\_\-replace (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{size\-\_\-t}]{index, }
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_a44020515090bbbe91249aff0016ab8e5}
+
+
+Replace item at an index. 
+
+The item being replace will be \hyperlink{common_8h_aa10ebec46eddc9312ec46a0898b5d196}{cbor\-\_\-decref} 'ed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+{\em value\mbox{[}incref\mbox{]}} & The item to assign \\
+\hline
+{\em index} & The index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on allocation failure. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file arrays.\-c.
+
+\hypertarget{arrays_8c_a382cc2dc480ebb9c7951eb3235be89b4}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-set@{cbor\-\_\-array\-\_\-set}}
+\index{cbor\-\_\-array\-\_\-set@{cbor\-\_\-array\-\_\-set}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-array\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{size\-\_\-t}]{index, }
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_a382cc2dc480ebb9c7951eb3235be89b4}
+
+
+Set item by index. 
+
+Creating arrays with holes is not possible
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+{\em value\mbox{[}incref\mbox{]}} & The item to assign \\
+\hline
+{\em index} & The index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on allocation failure. 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file arrays.\-c.
+
+\hypertarget{arrays_8c_a4f634a9a4bc834e4ea6ac43e94d51f84}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-array\-\_\-size@{cbor\-\_\-array\-\_\-size}}
+\index{cbor\-\_\-array\-\_\-size@{cbor\-\_\-array\-\_\-size}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-array\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-array\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_a4f634a9a4bc834e4ea6ac43e94d51f84}
+
+
+Get the number of members. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of members 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file arrays.\-c.
+
+\hypertarget{arrays_8c_a93d7c18019000d5e206a81a4cca70631}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-new\-\_\-definite\-\_\-array@{cbor\-\_\-new\-\_\-definite\-\_\-array}}
+\index{cbor\-\_\-new\-\_\-definite\-\_\-array@{cbor\-\_\-new\-\_\-definite\-\_\-array}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-new\-\_\-definite\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-new\-\_\-definite\-\_\-array (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_a93d7c18019000d5e206a81a4cca70631}
+
+
+Create new definite array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Number of slots to preallocate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries new} array or {\ttfamily N\-U\-L\-L} upon malloc failure 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file arrays.\-c.
+
+\hypertarget{arrays_8c_aaec916ccc6f19782b6aef5ec1da2cc26}{\index{arrays.\-c@{arrays.\-c}!cbor\-\_\-new\-\_\-indefinite\-\_\-array@{cbor\-\_\-new\-\_\-indefinite\-\_\-array}}
+\index{cbor\-\_\-new\-\_\-indefinite\-\_\-array@{cbor\-\_\-new\-\_\-indefinite\-\_\-array}!arrays.c@{arrays.\-c}}
+\subsubsection[{cbor\-\_\-new\-\_\-indefinite\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-new\-\_\-indefinite\-\_\-array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{arrays_8c_aaec916ccc6f19782b6aef5ec1da2cc26}
+
+
+Create new indefinite array. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries new} array or {\ttfamily N\-U\-L\-L} upon malloc failure 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file arrays.\-c.
+

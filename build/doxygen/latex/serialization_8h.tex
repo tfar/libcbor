@@ -1,0 +1,325 @@
+\hypertarget{serialization_8h}{\section{src/cbor/serialization.h File Reference}
+\label{serialization_8h}\index{src/cbor/serialization.\-h@{src/cbor/serialization.\-h}}
+}
+{\ttfamily \#include \char`\"{}common.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{serialization_8h_a2b99415a2c6f0d226116c707772e2fc0}{cbor\-\_\-serialize} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data} buffer, size\-\_\-t buffer\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Serialize the given item. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_ab8a96a82216c07469a583eef3a3dd8d0}{cbor\-\_\-serialize\-\_\-alloc} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data} $\ast$buffer, size\-\_\-t $\ast$buffer\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Serialize the given item, allocating buffers as needed. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_a649fbb28229d58193a7eee96995929e0}{cbor\-\_\-serialize\-\_\-uint} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data}, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Serialize an uint. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_ad7eb1501bd8282c21675333759dc7291}{cbor\-\_\-serialize\-\_\-negint} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data}, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Serialize a negint. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_aeff4847e92b05b329edd1135c60f4179}{cbor\-\_\-serialize\-\_\-bytestring} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data}, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Serialize a bytestring. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_a9fb1138391d20c1b81081e2a5f413c3d}{cbor\-\_\-serialize\-\_\-string} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data}, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Serialize a string. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_a53e7d680cf41ccda369802deaf6c1ba8}{cbor\-\_\-serialize\-\_\-array} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data}, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Serialize an array. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_a1c07f653f5aa66fadc82f24f556a162d}{cbor\-\_\-serialize\-\_\-map} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data}, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Serialize a map. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_ae67b7ceefe645e660df73bf7ea255668}{cbor\-\_\-serialize\-\_\-tag} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data}, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Serialize a tag. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{serialization_8h_ad232a99d06a972ca114a2fe753b90953}{cbor\-\_\-serialize\-\_\-float\-\_\-ctrl} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, \hyperlink{data_8h_aabb40e458ece40477e134a69c76693e8}{cbor\-\_\-mutable\-\_\-data}, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Serialize a. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{serialization_8h_a2b99415a2c6f0d226116c707772e2fc0}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize@{cbor\-\_\-serialize}}
+\index{cbor\-\_\-serialize@{cbor\-\_\-serialize}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{buffer, }
+\item[{size\-\_\-t}]{buffer\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_a2b99415a2c6f0d226116c707772e2fc0}
+
+
+Serialize the given item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A data item \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file serialization.\-c.
+
+\hypertarget{serialization_8h_ab8a96a82216c07469a583eef3a3dd8d0}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-alloc@{cbor\-\_\-serialize\-\_\-alloc}}
+\index{cbor\-\_\-serialize\-\_\-alloc@{cbor\-\_\-serialize\-\_\-alloc}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-alloc (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data} $\ast$}]{buffer, }
+\item[{size\-\_\-t $\ast$}]{buffer\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_ab8a96a82216c07469a583eef3a3dd8d0}
+
+
+Serialize the given item, allocating buffers as needed. 
+
+\begin{DoxyVerb}embed:rst:leading-asterisk
+* .. warning:: It is your responsibility to free the buffer using an appropriate ``free`` implementation.
+* \end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A data item \\
+\hline
+{\em buffer\mbox{[}out\mbox{]}} & Buffer containing the result \\
+\hline
+{\em buffer\-\_\-size\mbox{[}out\mbox{]}} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure, in which case {\ttfamily buffer} is {\ttfamily N\-U\-L\-L}. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file serialization.\-c.
+
+\hypertarget{serialization_8h_a53e7d680cf41ccda369802deaf6c1ba8}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-array@{cbor\-\_\-serialize\-\_\-array}}
+\index{cbor\-\_\-serialize\-\_\-array@{cbor\-\_\-serialize\-\_\-array}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-array (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_a53e7d680cf41ccda369802deaf6c1ba8}
+
+
+Serialize an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & An array \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file serialization.\-c.
+
+\hypertarget{serialization_8h_aeff4847e92b05b329edd1135c60f4179}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-bytestring@{cbor\-\_\-serialize\-\_\-bytestring}}
+\index{cbor\-\_\-serialize\-\_\-bytestring@{cbor\-\_\-serialize\-\_\-bytestring}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-bytestring}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-bytestring (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_aeff4847e92b05b329edd1135c60f4179}
+
+
+Serialize a bytestring. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A bytestring \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file serialization.\-c.
+
+\hypertarget{serialization_8h_ad232a99d06a972ca114a2fe753b90953}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-float\-\_\-ctrl@{cbor\-\_\-serialize\-\_\-float\-\_\-ctrl}}
+\index{cbor\-\_\-serialize\-\_\-float\-\_\-ctrl@{cbor\-\_\-serialize\-\_\-float\-\_\-ctrl}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-float\-\_\-ctrl}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-float\-\_\-ctrl (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_ad232a99d06a972ca114a2fe753b90953}
+
+
+Serialize a. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A float or ctrl \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 261 of file serialization.\-c.
+
+\hypertarget{serialization_8h_a1c07f653f5aa66fadc82f24f556a162d}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-map@{cbor\-\_\-serialize\-\_\-map}}
+\index{cbor\-\_\-serialize\-\_\-map@{cbor\-\_\-serialize\-\_\-map}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-map (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_a1c07f653f5aa66fadc82f24f556a162d}
+
+
+Serialize a map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A map \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 205 of file serialization.\-c.
+
+\hypertarget{serialization_8h_ad7eb1501bd8282c21675333759dc7291}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-negint@{cbor\-\_\-serialize\-\_\-negint}}
+\index{cbor\-\_\-serialize\-\_\-negint@{cbor\-\_\-serialize\-\_\-negint}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-negint}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-negint (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_ad7eb1501bd8282c21675333759dc7291}
+
+
+Serialize a negint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A neging \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file serialization.\-c.
+
+\hypertarget{serialization_8h_a9fb1138391d20c1b81081e2a5f413c3d}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-string@{cbor\-\_\-serialize\-\_\-string}}
+\index{cbor\-\_\-serialize\-\_\-string@{cbor\-\_\-serialize\-\_\-string}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_a9fb1138391d20c1b81081e2a5f413c3d}
+
+
+Serialize a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A string \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file serialization.\-c.
+
+\hypertarget{serialization_8h_ae67b7ceefe645e660df73bf7ea255668}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-tag@{cbor\-\_\-serialize\-\_\-tag}}
+\index{cbor\-\_\-serialize\-\_\-tag@{cbor\-\_\-serialize\-\_\-tag}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-tag (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_ae67b7ceefe645e660df73bf7ea255668}
+
+
+Serialize a tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A tag \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 247 of file serialization.\-c.
+
+\hypertarget{serialization_8h_a649fbb28229d58193a7eee96995929e0}{\index{serialization.\-h@{serialization.\-h}!cbor\-\_\-serialize\-\_\-uint@{cbor\-\_\-serialize\-\_\-uint}}
+\index{cbor\-\_\-serialize\-\_\-uint@{cbor\-\_\-serialize\-\_\-uint}!serialization.h@{serialization.\-h}}
+\subsubsection[{cbor\-\_\-serialize\-\_\-uint}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-serialize\-\_\-uint (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-mutable\-\_\-data}}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{serialization_8h_a649fbb28229d58193a7eee96995929e0}
+
+
+Serialize an uint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & A uint \\
+\hline
+{\em buffer} & Buffer to serialize to \\
+\hline
+{\em buffer\-\_\-size} & Size of the {\ttfamily buffer} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the result. 0 on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file serialization.\-c.
+

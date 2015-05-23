@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="loaders_8c" kind="file">
+    <compoundname>loaders.c</compoundname>
+    <includes refid="loaders_8h" local="yes">loaders.h</includes>
+    <includes local="no">math.h</includes>
+    <incdepgraph>
+      <node id="348">
+        <label>stdbool.h</label>
+      </node>
+      <node id="349">
+        <label>assert.h</label>
+      </node>
+      <node id="347">
+        <label>stdint.h</label>
+      </node>
+      <node id="345">
+        <label>stdlib.h</label>
+      </node>
+      <node id="344">
+        <label>../common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+        <childnode refid="348" relation="include">
+        </childnode>
+        <childnode refid="349" relation="include">
+        </childnode>
+        <childnode refid="350" relation="include">
+        </childnode>
+      </node>
+      <node id="346">
+        <label>stddef.h</label>
+      </node>
+      <node id="342">
+        <label>src/cbor/internal/loaders.c</label>
+        <link refid="loaders.c"/>
+        <childnode refid="343" relation="include">
+        </childnode>
+        <childnode refid="351" relation="include">
+        </childnode>
+      </node>
+      <node id="343">
+        <label>loaders.h</label>
+        <link refid="loaders_8h"/>
+        <childnode refid="344" relation="include">
+        </childnode>
+      </node>
+      <node id="351">
+        <label>math.h</label>
+      </node>
+      <node id="350">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="345" relation="include">
+        </childnode>
+        <childnode refid="346" relation="include">
+        </childnode>
+        <childnode refid="347" relation="include">
+        </childnode>
+        <childnode refid="348" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="loaders_8c_1a0fdc6fe49d3e76c9ed558321df1decef" prot="public" static="no">
+        <name>IS_BIG_ENDIAN</name>
+        <initializer>(*(uint16_t *)&quot;\0\xff&quot; &lt; 0x100)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="15" column="9" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="loaders_8c_1af0b29efb9dbbd26f3dd99df74382e9c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t _cbor_load_uint8</definition>
+        <argsstring>(cbor_data source)</argsstring>
+        <name>_cbor_load_uint8</name>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="18" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8c_1a82cc3a9e9028cc2ea560d1538804acc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t _cbor_load_uint16</definition>
+        <argsstring>(const unsigned char *source)</argsstring>
+        <name>_cbor_load_uint16</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="23" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="23" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8c_1a356f0cc63df1addf4a3b1d6ee92ea3f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t _cbor_load_uint32</definition>
+        <argsstring>(const unsigned char *source)</argsstring>
+        <name>_cbor_load_uint32</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="37" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="37" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8c_1ad1fd77b3d9b7c9369095012ae2ed9b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t _cbor_load_uint64</definition>
+        <argsstring>(const unsigned char *source)</argsstring>
+        <name>_cbor_load_uint64</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="53" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="53" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8c_1a8d5adcea9a5b6f265fe6bb5cbd62e5c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float _cbor_decode_half</definition>
+        <argsstring>(unsigned char *halfp)</argsstring>
+        <name>_cbor_decode_half</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>halfp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="74" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="74" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8c_1a771bf852840eee864b888ca85d99dfad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double _cbor_load_half</definition>
+        <argsstring>(cbor_data source)</argsstring>
+        <name>_cbor_load_half</name>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="86" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8c_1aa812443c86ee5c127379009f0a760030" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float _cbor_load_float</definition>
+        <argsstring>(cbor_data source)</argsstring>
+        <name>_cbor_load_float</name>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="92" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="loaders_8c_1a552b4d5d5cc7c3753d48325fb6889f1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double _cbor_load_double</definition>
+        <argsstring>(cbor_data source)</argsstring>
+        <name>_cbor_load_double</name>
+        <param>
+          <type><ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" line="98" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/loaders.c" bodystart="98" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="loaders_8h" kindref="compound">loaders.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_ENDIAN_H</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;endian.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="comment">//<sp/>Props<sp/>to<sp/>http://esr.ibiblio.org/?p=5095</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="loaders_8c_1a0fdc6fe49d3e76c9ed558321df1decef" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IS_BIG_ENDIAN<sp/>(*(uint16_t<sp/>*)&quot;\0\xff&quot;<sp/>&lt;<sp/>0x100)</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="loaders_8h_1a04bc096a04750b219adf060c4fa9496a" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="loaders_8c_1af0b29efb9dbbd26f3dd99df74382e9c9" kindref="member">_cbor_load_uint8</ref>(<ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/>source)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(uint8_t)<sp/>*source;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="loaders_8h_1a82cc3a9e9028cc2ea560d1538804acc7" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="loaders_8c_1a82cc3a9e9028cc2ea560d1538804acc7" kindref="member">_cbor_load_uint16</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_ENDIAN_H</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>be16toh(*(uint16_t<sp/>*)<sp/>source);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>IS_BIG_ENDIAN</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*(uint16_t<sp/>*)<sp/>source;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#else</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((uint16_t)<sp/>*(source<sp/>+<sp/>0)<sp/>&lt;&lt;<sp/>8)<sp/>+</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(uint8_t)<sp/>*(source<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="loaders_8h_1a356f0cc63df1addf4a3b1d6ee92ea3f6" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="loaders_8c_1a356f0cc63df1addf4a3b1d6ee92ea3f6" kindref="member">_cbor_load_uint32</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_ENDIAN_H</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>be32toh(*(uint32_t<sp/>*)<sp/>source);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>IS_BIG_ENDIAN</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*(uint16_t<sp/>*)<sp/>source;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#else</highlight></codeline>
+<codeline lineno="45"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((uint32_t)<sp/>*(source<sp/>+<sp/>0)<sp/>&lt;&lt;<sp/>0x18)<sp/>+</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)<sp/>*(source<sp/>+<sp/>1)<sp/>&lt;&lt;<sp/>0x10)<sp/>+</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint16_t)<sp/>*(source<sp/>+<sp/>2)<sp/>&lt;&lt;<sp/>0x08)<sp/>+</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(uint8_t)<sp/>*(source<sp/>+<sp/>3);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="loaders_8h_1ad1fd77b3d9b7c9369095012ae2ed9b33" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="loaders_8c_1ad1fd77b3d9b7c9369095012ae2ed9b33" kindref="member">_cbor_load_uint64</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_ENDIAN_H</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>be64toh(*(uint64_t<sp/>*)<sp/>source);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>IS_BIG_ENDIAN</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*(uint64_t<sp/>*)<sp/>source;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#else</highlight></codeline>
+<codeline lineno="61"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((uint64_t)<sp/>*(source<sp/>+<sp/>0)<sp/>&lt;&lt;<sp/>0x38)<sp/>+</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint64_t)<sp/>*(source<sp/>+<sp/>1)<sp/>&lt;&lt;<sp/>0x30)<sp/>+</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint64_t)<sp/>*(source<sp/>+<sp/>2)<sp/>&lt;&lt;<sp/>0x28)<sp/>+</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint64_t)<sp/>*(source<sp/>+<sp/>3)<sp/>&lt;&lt;<sp/>0x20)<sp/>+</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)<sp/>*(source<sp/>+<sp/>4)<sp/>&lt;&lt;<sp/>0x18)<sp/>+</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint32_t)<sp/>*(source<sp/>+<sp/>5)<sp/>&lt;&lt;<sp/>0x10)<sp/>+</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint16_t)<sp/>*(source<sp/>+<sp/>6)<sp/>&lt;&lt;<sp/>0x08)<sp/>+</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(uint8_t)<sp/>*(source<sp/>+<sp/>7);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>As<sp/>per<sp/>http://tools.ietf.org/html/rfc7049#appendix-D<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="loaders_8c_1a8d5adcea9a5b6f265fe6bb5cbd62e5c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="loaders_8c_1a8d5adcea9a5b6f265fe6bb5cbd62e5c2" kindref="member">_cbor_decode_half</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*halfp)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>half<sp/>=<sp/>(halfp[0]<sp/>&lt;&lt;<sp/>8)<sp/>+<sp/>halfp[1];</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exp<sp/>=<sp/>(half<sp/>&gt;&gt;<sp/>10)<sp/>&amp;<sp/>0x1f;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mant<sp/>=<sp/>half<sp/>&amp;<sp/>0x3ff;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(exp<sp/>==<sp/>0)<sp/>val<sp/>=<sp/>ldexp(mant,<sp/>-24);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(exp<sp/>!=<sp/>31)<sp/>val<sp/>=<sp/>ldexp(mant<sp/>+<sp/>1024,<sp/>exp<sp/>-<sp/>25);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>val<sp/>=<sp/>mant<sp/>==<sp/>0<sp/>?<sp/>INFINITY<sp/>:<sp/>NAN;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<sp/>(half<sp/>&amp;<sp/>0x8000<sp/>?<sp/>-val<sp/>:<sp/>val);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="loaders_8h_1a771bf852840eee864b888ca85d99dfad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="loaders_8c_1a771bf852840eee864b888ca85d99dfad" kindref="member">_cbor_load_half</ref>(<ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/>source)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Discard<sp/>const<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="loaders_8c_1a8d5adcea9a5b6f265fe6bb5cbd62e5c2" kindref="member">_cbor_decode_half</ref>((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>source);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="loaders_8h_1aa812443c86ee5c127379009f0a760030" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="loaders_8c_1aa812443c86ee5c127379009f0a760030" kindref="member">_cbor_load_float</ref>(<ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/>source)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="union__cbor__float__helper" kindref="compound">_cbor_float_helper</ref><sp/>helper<sp/>=<sp/>{.<ref refid="union__cbor__float__helper_1a28a0047ea6592730009da39772638a76" kindref="member">as_uint</ref><sp/>=<sp/><ref refid="loaders_8c_1a356f0cc63df1addf4a3b1d6ee92ea3f6" kindref="member">_cbor_load_uint32</ref>(source)};</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>helper.<ref refid="union__cbor__float__helper_1ae3a184f0f46ee8d87e6cb8e126e440a2" kindref="member">as_float</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="loaders_8h_1a552b4d5d5cc7c3753d48325fb6889f1d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="loaders_8c_1a552b4d5d5cc7c3753d48325fb6889f1d" kindref="member">_cbor_load_double</ref>(<ref refid="data_8h_1a121c5944682215e742475f12f07c0a72" kindref="member">cbor_data</ref><sp/>source)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="union__cbor__double__helper" kindref="compound">_cbor_double_helper</ref><sp/>helper<sp/>=<sp/>{.<ref refid="union__cbor__double__helper_1a247647c22dd8248e513c37b0b339b856" kindref="member">as_uint</ref><sp/>=<sp/><ref refid="loaders_8c_1ad1fd77b3d9b7c9369095012ae2ed9b33" kindref="member">_cbor_load_uint64</ref>(source)};</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>helper.<ref refid="union__cbor__double__helper_1a51f93c8fae90168e51b1be0517e1ada0" kindref="member">as_double</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/internal/loaders.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,105 @@
+\hypertarget{encoders_8c}{\section{src/cbor/internal/encoders.c File Reference}
+\label{encoders_8c}\index{src/cbor/internal/encoders.\-c@{src/cbor/internal/encoders.\-c}}
+}
+{\ttfamily \#include \char`\"{}encoders.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{encoders_8c_a0fdc6fe49d3e76c9ed558321df1decef}{I\-S\-\_\-\-B\-I\-G\-\_\-\-E\-N\-D\-I\-A\-N}~($\ast$(uint16\-\_\-t $\ast$)\char`\"{}\textbackslash{}0\textbackslash{}xff\char`\"{} $<$ 0x100)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\-\_\-t \hyperlink{encoders_8c_a32eb27ea8f535e166b40c7be50ab8eb1}{\-\_\-cbor\-\_\-encode\-\_\-uint8} (uint8\-\_\-t value, unsigned char $\ast$buffer, size\-\_\-t buffer\-\_\-size, uint8\-\_\-t offset)
+\item 
+size\-\_\-t \hyperlink{encoders_8c_a18c7f670aae9fa3f03a2ba58e6590c43}{\-\_\-cbor\-\_\-encode\-\_\-uint16} (uint16\-\_\-t value, unsigned char $\ast$buffer, size\-\_\-t buffer\-\_\-size, uint8\-\_\-t offset)
+\item 
+size\-\_\-t \hyperlink{encoders_8c_a58efe8377be9b98013828ed27752e212}{\-\_\-cbor\-\_\-encode\-\_\-uint32} (uint32\-\_\-t value, unsigned char $\ast$buffer, size\-\_\-t buffer\-\_\-size, uint8\-\_\-t offset)
+\item 
+size\-\_\-t \hyperlink{encoders_8c_a6770d92d21edd8100cfd48ab443fc566}{\-\_\-cbor\-\_\-encode\-\_\-uint64} (uint64\-\_\-t value, unsigned char $\ast$buffer, size\-\_\-t buffer\-\_\-size, uint8\-\_\-t offset)
+\item 
+size\-\_\-t \hyperlink{encoders_8c_ad0b03bdce1727977d8c8307e2a91590a}{\-\_\-cbor\-\_\-encode\-\_\-uint} (uint64\-\_\-t value, unsigned char $\ast$buffer, size\-\_\-t buffer\-\_\-size, uint8\-\_\-t offset)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{encoders_8c_a0fdc6fe49d3e76c9ed558321df1decef}{\index{encoders.\-c@{encoders.\-c}!I\-S\-\_\-\-B\-I\-G\-\_\-\-E\-N\-D\-I\-A\-N@{I\-S\-\_\-\-B\-I\-G\-\_\-\-E\-N\-D\-I\-A\-N}}
+\index{I\-S\-\_\-\-B\-I\-G\-\_\-\-E\-N\-D\-I\-A\-N@{I\-S\-\_\-\-B\-I\-G\-\_\-\-E\-N\-D\-I\-A\-N}!encoders.c@{encoders.\-c}}
+\subsubsection[{I\-S\-\_\-\-B\-I\-G\-\_\-\-E\-N\-D\-I\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-B\-I\-G\-\_\-\-E\-N\-D\-I\-A\-N~($\ast$(uint16\-\_\-t $\ast$)\char`\"{}\textbackslash{}0\textbackslash{}xff\char`\"{} $<$ 0x100)}}\label{encoders_8c_a0fdc6fe49d3e76c9ed558321df1decef}
+
+
+Definition at line 14 of file encoders.\-c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{encoders_8c_ad0b03bdce1727977d8c8307e2a91590a}{\index{encoders.\-c@{encoders.\-c}!\-\_\-cbor\-\_\-encode\-\_\-uint@{\-\_\-cbor\-\_\-encode\-\_\-uint}}
+\index{\-\_\-cbor\-\_\-encode\-\_\-uint@{\-\_\-cbor\-\_\-encode\-\_\-uint}!encoders.c@{encoders.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-encode\-\_\-uint}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t \-\_\-cbor\-\_\-encode\-\_\-uint (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{value, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{buffer\-\_\-size, }
+\item[{uint8\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)}}\label{encoders_8c_ad0b03bdce1727977d8c8307e2a91590a}
+
+
+Definition at line 105 of file encoders.\-c.
+
+\hypertarget{encoders_8c_a18c7f670aae9fa3f03a2ba58e6590c43}{\index{encoders.\-c@{encoders.\-c}!\-\_\-cbor\-\_\-encode\-\_\-uint16@{\-\_\-cbor\-\_\-encode\-\_\-uint16}}
+\index{\-\_\-cbor\-\_\-encode\-\_\-uint16@{\-\_\-cbor\-\_\-encode\-\_\-uint16}!encoders.c@{encoders.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-encode\-\_\-uint16}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t \-\_\-cbor\-\_\-encode\-\_\-uint16 (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{value, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{buffer\-\_\-size, }
+\item[{uint8\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)}}\label{encoders_8c_a18c7f670aae9fa3f03a2ba58e6590c43}
+
+
+Definition at line 34 of file encoders.\-c.
+
+\hypertarget{encoders_8c_a58efe8377be9b98013828ed27752e212}{\index{encoders.\-c@{encoders.\-c}!\-\_\-cbor\-\_\-encode\-\_\-uint32@{\-\_\-cbor\-\_\-encode\-\_\-uint32}}
+\index{\-\_\-cbor\-\_\-encode\-\_\-uint32@{\-\_\-cbor\-\_\-encode\-\_\-uint32}!encoders.c@{encoders.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-encode\-\_\-uint32}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t \-\_\-cbor\-\_\-encode\-\_\-uint32 (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{value, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{buffer\-\_\-size, }
+\item[{uint8\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)}}\label{encoders_8c_a58efe8377be9b98013828ed27752e212}
+
+
+Definition at line 55 of file encoders.\-c.
+
+\hypertarget{encoders_8c_a6770d92d21edd8100cfd48ab443fc566}{\index{encoders.\-c@{encoders.\-c}!\-\_\-cbor\-\_\-encode\-\_\-uint64@{\-\_\-cbor\-\_\-encode\-\_\-uint64}}
+\index{\-\_\-cbor\-\_\-encode\-\_\-uint64@{\-\_\-cbor\-\_\-encode\-\_\-uint64}!encoders.c@{encoders.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-encode\-\_\-uint64}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t \-\_\-cbor\-\_\-encode\-\_\-uint64 (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{value, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{buffer\-\_\-size, }
+\item[{uint8\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)}}\label{encoders_8c_a6770d92d21edd8100cfd48ab443fc566}
+
+
+Definition at line 78 of file encoders.\-c.
+
+\hypertarget{encoders_8c_a32eb27ea8f535e166b40c7be50ab8eb1}{\index{encoders.\-c@{encoders.\-c}!\-\_\-cbor\-\_\-encode\-\_\-uint8@{\-\_\-cbor\-\_\-encode\-\_\-uint8}}
+\index{\-\_\-cbor\-\_\-encode\-\_\-uint8@{\-\_\-cbor\-\_\-encode\-\_\-uint8}!encoders.c@{encoders.\-c}}
+\subsubsection[{\-\_\-cbor\-\_\-encode\-\_\-uint8}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t \-\_\-cbor\-\_\-encode\-\_\-uint8 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{value, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{buffer\-\_\-size, }
+\item[{uint8\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)}}\label{encoders_8c_a32eb27ea8f535e166b40c7be50ab8eb1}
+
+
+Definition at line 17 of file encoders.\-c.
+

@@ -1,0 +1,558 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="strings_8c" kind="file">
+    <compoundname>strings.c</compoundname>
+    <includes local="no">string.h</includes>
+    <includes refid="strings_8h" local="yes">strings.h</includes>
+    <incdepgraph>
+      <node id="522">
+        <label>stdbool.h</label>
+      </node>
+      <node id="523">
+        <label>assert.h</label>
+      </node>
+      <node id="521">
+        <label>stdint.h</label>
+      </node>
+      <node id="519">
+        <label>stdlib.h</label>
+      </node>
+      <node id="518">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+      </node>
+      <node id="515">
+        <label>src/cbor/strings.c</label>
+        <link refid="strings.c"/>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+      </node>
+      <node id="517">
+        <label>strings.h</label>
+        <link refid="strings_8h"/>
+        <childnode refid="518" relation="include">
+        </childnode>
+      </node>
+      <node id="520">
+        <label>stddef.h</label>
+      </node>
+      <node id="516">
+        <label>string.h</label>
+      </node>
+      <node id="524">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="strings_8c_1a6e2516983e412b9d22fd1fccbeded632" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_definite_string</definition>
+        <argsstring>()</argsstring>
+        <name>cbor_new_definite_string</name>
+        <briefdescription>
+<para>Creates a new definite string. </para>        </briefdescription>
+        <detaileddescription>
+<para>The handle is initialized to <computeroutput>NULL</computeroutput> and length to 0</para><para><simplesect kind="return"><para><bold>new</bold> definite string. <computeroutput>NULL</computeroutput> on malloc failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="11" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="11" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1a226f91c7bfd6be9b0a52cdc6f0b17741" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_indefinite_string</definition>
+        <argsstring>()</argsstring>
+        <name>cbor_new_indefinite_string</name>
+        <briefdescription>
+<para>Creates a new indefinite string. </para>        </briefdescription>
+        <detaileddescription>
+<para>The chunks array is initialized to <computeroutput>NULL</computeroutput> and chunkcount to 0</para><para><simplesect kind="return"><para><bold>new</bold> indefinite string. <computeroutput>NULL</computeroutput> on malloc failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="22" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="22" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1a61a9388aca4fc7ee5355eb92a6d56536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_string</definition>
+        <argsstring>(const char *val)</argsstring>
+        <name>cbor_build_string</name>
+        <param>
+          <type>const char *</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new string and initializes it. </para>        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput>val</computeroutput> will be copied to a newly allocated block</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A null-terminated UTF-8 string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <bold>new</bold> string with content <computeroutput>handle</computeroutput>. <computeroutput>NULL</computeroutput> on malloc failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="39" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="39" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1a26f8c53bb33641408921c388bf539b0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_stringn</definition>
+        <argsstring>(const char *val, size_t length)</argsstring>
+        <name>cbor_build_stringn</name>
+        <param>
+          <type>const char *</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new string and initializes it. </para>        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput>handle</computeroutput> will be copied to a newly allocated block</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A UTF-8 string, at least <computeroutput>length</computeroutput> long (excluding the null byte) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <bold>new</bold> string with content <computeroutput>handle</computeroutput>. <computeroutput>NULL</computeroutput> on malloc failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="49" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="49" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1a13a1bf6b6fe2dcfc1baf81fd868d0561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_string_set_handle</definition>
+        <argsstring>(cbor_item_t *item, unsigned char *restrict data, size_t length)</argsstring>
+        <name>cbor_string_set_handle</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type><ref refid="data_8h_1aabb40e458ece40477e134a69c76693e8" kindref="member">cbor_mutable_data</ref> restrict</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Set the handle to the underlying string. </para>        </briefdescription>
+        <detaileddescription>
+<para><verbatim>embed:rst:leading-asterisk
+* .. warning:: Using a pointer to a stack allocated constant is a common mistake. Lifetime of the string will expire when it goes out of scope and the CBOR item will be left inconsistent.
+* </verbatim></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A definite string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The memory block. The caller gives up the ownership of the block. libcbor will deallocate it when appropriate using its free function </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the data block </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="58" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="58" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1a81d1160eed81b2a29b6c5e9ff6b9e02a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> **</type>
+        <definition>cbor_item_t** cbor_string_chunks_handle</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_string_chunks_handle</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Get the handle to the array of chunks. </para>        </briefdescription>
+        <detaileddescription>
+<para>Manipulations with the memory block (e.g. sorting it) are allowed, but the validity and the number of chunks must be retained.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A indefinite string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>array of <ref refid="strings_8h_1ad8062db21711a51ae520cc1e4f5fe5ab" kindref="member">cbor_string_chunk_count</ref> definite strings </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="66" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="66" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1ad8062db21711a51ae520cc1e4f5fe5ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_string_chunk_count</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_string_chunk_count</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Get the number of chunks this string consist of. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A indefinite string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The chunk count. 0 for freshly created items. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="73" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="73" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1a634462c7237298a196413cd62d7d1877" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cbor_string_add_chunk</definition>
+        <argsstring>(cbor_item_t *item, cbor_item_t *chunk)</argsstring>
+        <name>cbor_string_add_chunk</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>chunk</declname>
+        </param>
+        <briefdescription>
+<para>Appends a chunk to the string. </para>        </briefdescription>
+        <detaileddescription>
+<para>Indefinite strings only.</para><para>May realloc the chunk storage.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An indefinite string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>item[incref]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A definite string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true on success. false on realloc failure. In that case, the refcount of <computeroutput>chunk</computeroutput> is not increased and the <computeroutput>item</computeroutput> is left intact. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="81" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="81" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1aa0c17825f920ebf122bd7b9abede919f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_string_length</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_string_length</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Returns the length of the underlying string. </para>        </briefdescription>
+        <detaileddescription>
+<para>For definite strings only</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a definite string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>length of the string. Zero if no chunk has been attached yet </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="100" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="100" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1ae9e5da7bdf2a79fab7965caeff49d5bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* cbor_string_handle</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_string_handle</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Get the handle to the underlying string. </para>        </briefdescription>
+        <detaileddescription>
+<para>Definite items only. Modifying the data is allowed. In that case, the caller takes responsibility for the effect on items this item might be a part of</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A definite string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The address of the underlying string. <computeroutput>NULL</computeroutput> if no data have been assigned yet. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="106" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="106" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1a90c1cf7781f7ef1f3549f497abd259ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t cbor_string_codepoint_count</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_string_codepoint_count</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>The number of codepoints in this string. </para>        </briefdescription>
+        <detaileddescription>
+<para>Might differ from length if there are multibyte ones</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of codepoints in this string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="112" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="112" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1aa2778891e70dec4cd59c9a969294d4aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cbor_string_is_definite</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_string_is_definite</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Is the string definite? </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Is the string definite? </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="118" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="118" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="strings_8c_1aa1a92438a04ae77beea9a17910805530" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool cbor_string_is_indefinite</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_string_is_indefinite</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Is the string indefinite? </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Is the string indefinite? </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/strings.c" line="124" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/strings.c" bodystart="124" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="strings_8h" kindref="compound">strings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="strings_8h_1a6e2516983e412b9d22fd1fccbeded632" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="strings_8c_1a6e2516983e412b9d22fd1fccbeded632" kindref="member">cbor_new_definite_string</ref>()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref>));</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>*item<sp/>=<sp/>(<ref refid="data_8h_1afdaa4bcbbdd295d719e39ce0b5519419" kindref="member">cbor_item_t</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structcbor__item__t_1a6bb24fe655f086c6aa9a66d427e09cca" kindref="member">refcount</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.type<sp/>=<sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6ae05102a66420250eacd5f17b95d04443" kindref="member">CBOR_TYPE_STRING</ref>,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.metadata<sp/>=<sp/>{.string_metadata<sp/>=<sp/>{<ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589a051b0d1fe7ef7ccfc3824110b797429e" kindref="member">_CBOR_METADATA_DEFINITE</ref>,<sp/>0}}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="strings_8h_1a226f91c7bfd6be9b0a52cdc6f0b17741" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="strings_8c_1a226f91c7bfd6be9b0a52cdc6f0b17741" kindref="member">cbor_new_indefinite_string</ref>()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref>));</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>*item<sp/>=<sp/>(<ref refid="data_8h_1afdaa4bcbbdd295d719e39ce0b5519419" kindref="member">cbor_item_t</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structcbor__item__t_1a6bb24fe655f086c6aa9a66d427e09cca" kindref="member">refcount</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.type<sp/>=<sp/><ref refid="data_8h_1a3a931b40fc31b51cccfd1bc3dc5fc5d6ae05102a66420250eacd5f17b95d04443" kindref="member">CBOR_TYPE_STRING</ref>,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.metadata<sp/>=<sp/>{.string_metadata<sp/>=<sp/>{.type<sp/>=<sp/><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589ae598476995d503b404ccf78c21ab79ef" kindref="member">_CBOR_METADATA_INDEFINITE</ref>,<sp/>.length<sp/>=<sp/>0}},</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.data<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structcbor__indefinite__string__data" kindref="compound">cbor_indefinite_string_data</ref>))</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>*((</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcbor__indefinite__string__data" kindref="compound">cbor_indefinite_string_data</ref><sp/>*)<sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>)<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcbor__indefinite__string__data" kindref="compound">cbor_indefinite_string_data</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.chunk_count<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.chunk_capacity<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.chunks<sp/>=<sp/>NULL,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="strings_8h_1a61a9388aca4fc7ee5355eb92a6d56536" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="strings_8c_1a61a9388aca4fc7ee5355eb92a6d56536" kindref="member">cbor_build_string</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*val)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item<sp/>=<sp/><ref refid="strings_8c_1a6e2516983e412b9d22fd1fccbeded632" kindref="member">cbor_new_definite_string</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len<sp/>=<sp/>strlen(val);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>handle<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(len);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(handle,<sp/>val,<sp/>len);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="strings_8c_1a13a1bf6b6fe2dcfc1baf81fd868d0561" kindref="member">cbor_string_set_handle</ref>(item,<sp/>handle,<sp/>len);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="strings_8h_1a26f8c53bb33641408921c388bf539b0c" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="strings_8c_1a26f8c53bb33641408921c388bf539b0c" kindref="member">cbor_build_stringn</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*val,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item<sp/>=<sp/><ref refid="strings_8c_1a6e2516983e412b9d22fd1fccbeded632" kindref="member">cbor_new_definite_string</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>handle<sp/>=<sp/><ref refid="common_8h_1a07a781e9212fad361b0f59f7fc921057" kindref="member">_CBOR_MALLOC</ref>(length);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(handle,<sp/>val,<sp/>length);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="strings_8c_1a13a1bf6b6fe2dcfc1baf81fd868d0561" kindref="member">cbor_string_set_handle</ref>(item,<sp/>handle,<sp/>length);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="strings_8h_1a63144f38c51889b0aad8e8b7f5ed9fc9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="strings_8c_1a13a1bf6b6fe2dcfc1baf81fd868d0561" kindref="member">cbor_string_set_handle</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>restrict<sp/>data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="strings_8c_1aa2778891e70dec4cd59c9a969294d4aa" kindref="member">cbor_string_is_definite</ref>(item));</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref><sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a753eccc4105c3861dd40f50681ff18df" kindref="member">string_metadata</ref>.<ref refid="struct__cbor__string__metadata_1a558805df7c655cfaf3c289bc536ff96e" kindref="member">length</ref><sp/>=<sp/>length;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="strings_8h_1a81d1160eed81b2a29b6c5e9ff6b9e02a" refkind="member"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**<ref refid="strings_8c_1a81d1160eed81b2a29b6c5e9ff6b9e02a" kindref="member">cbor_string_chunks_handle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="strings_8c_1aa1a92438a04ae77beea9a17910805530" kindref="member">cbor_string_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structcbor__indefinite__string__data" kindref="compound">cbor_indefinite_string_data</ref><sp/>*)<sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>)-&gt;chunks;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="strings_8h_1ad8062db21711a51ae520cc1e4f5fe5ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="strings_8c_1ad8062db21711a51ae520cc1e4f5fe5ab" kindref="member">cbor_string_chunk_count</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="strings_8c_1aa1a92438a04ae77beea9a17910805530" kindref="member">cbor_string_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structcbor__indefinite__string__data" kindref="compound">cbor_indefinite_string_data</ref><sp/>*)<sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>)-&gt;chunk_count;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="strings_8h_1a634462c7237298a196413cd62d7d1877" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="strings_8c_1a634462c7237298a196413cd62d7d1877" kindref="member">cbor_string_add_chunk</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*chunk)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="strings_8c_1aa1a92438a04ae77beea9a17910805530" kindref="member">cbor_string_is_indefinite</ref>(item));</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcbor__indefinite__string__data" kindref="compound">cbor_indefinite_string_data</ref><sp/>*data<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcbor__indefinite__string__data" kindref="compound">cbor_indefinite_string_data</ref><sp/>*)<sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(data-&gt;<ref refid="structcbor__indefinite__string__data_1a86c3abce37287c14985b5f2a0d1935d7" kindref="member">chunk_count</ref><sp/>==<sp/>data-&gt;<ref refid="structcbor__indefinite__string__data_1a4f07710bcaa663d2babf652fc9984412" kindref="member">chunk_capacity</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>need<sp/>more<sp/>space<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structcbor__indefinite__string__data_1a4f07710bcaa663d2babf652fc9984412" kindref="member">chunk_capacity</ref><sp/>=<sp/>data-&gt;<ref refid="structcbor__indefinite__string__data_1a4f07710bcaa663d2babf652fc9984412" kindref="member">chunk_capacity</ref><sp/>==<sp/>0<sp/>?<sp/>1<sp/>:<sp/>(size_t)(CBOR_BUFFER_GROWTH<sp/>*<sp/>(data-&gt;<ref refid="structcbor__indefinite__string__data_1a4f07710bcaa663d2babf652fc9984412" kindref="member">chunk_capacity</ref>));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>**new_chunks_data<sp/>=</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="common_8h_1a1e39038d9b8e9b3a1e6529c9ff6091b8" kindref="member">_CBOR_REALLOC</ref>(data-&gt;<ref refid="structcbor__indefinite__string__data_1ac34c0d9bd1447f53149878128e19a414" kindref="member">chunks</ref>,<sp/>data-&gt;<ref refid="structcbor__indefinite__string__data_1a4f07710bcaa663d2babf652fc9984412" kindref="member">chunk_capacity</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*));</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(new_chunks_data<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structcbor__indefinite__string__data_1ac34c0d9bd1447f53149878128e19a414" kindref="member">chunks</ref><sp/>=<sp/>new_chunks_data;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structcbor__indefinite__string__data_1ac34c0d9bd1447f53149878128e19a414" kindref="member">chunks</ref>[data-&gt;<ref refid="structcbor__indefinite__string__data_1a86c3abce37287c14985b5f2a0d1935d7" kindref="member">chunk_count</ref>++]<sp/>=<sp/><ref refid="common_8c_1aa62e72f275c2f0fa604896bfed18e992" kindref="member">cbor_incref</ref>(chunk);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="strings_8h_1aa0c17825f920ebf122bd7b9abede919f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="strings_8c_1aa0c17825f920ebf122bd7b9abede919f" kindref="member">cbor_string_length</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a753eccc4105c3861dd40f50681ff18df" kindref="member">string_metadata</ref>.<ref refid="struct__cbor__string__metadata_1a558805df7c655cfaf3c289bc536ff96e" kindref="member">length</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="strings_8h_1af12871b50ba25f756fa1bfacd1fca12a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="strings_8c_1ae9e5da7bdf2a79fab7965caeff49d5bb" kindref="member">cbor_string_handle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a5c6dde1dbef5aad748c49786352eef44" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="strings_8h_1a90c1cf7781f7ef1f3549f497abd259ef" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="strings_8c_1a90c1cf7781f7ef1f3549f497abd259ef" kindref="member">cbor_string_codepoint_count</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a753eccc4105c3861dd40f50681ff18df" kindref="member">string_metadata</ref>.<ref refid="struct__cbor__string__metadata_1a07f2e49bd1cd40ba2277ae6d7a9b6d5d" kindref="member">codepoint_count</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="strings_8h_1aa2778891e70dec4cd59c9a969294d4aa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="strings_8c_1aa2778891e70dec4cd59c9a969294d4aa" kindref="member">cbor_string_is_definite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(<ref refid="common_8c_1a02edd93bb8eab83bc2b8f8bf5d7d1335" kindref="member">cbor_isa_string</ref>(item));</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>item-&gt;<ref refid="structcbor__item__t_1a7d97fa5cdf027ca0499c37ec19acf843" kindref="member">metadata</ref>.<ref refid="unioncbor__item__metadata_1a753eccc4105c3861dd40f50681ff18df" kindref="member">string_metadata</ref>.<ref refid="struct__cbor__string__metadata_1afcfdf5e250b677a7e88c5b9c1919bc1a" kindref="member">type</ref><sp/>==<sp/><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589a051b0d1fe7ef7ccfc3824110b797429e" kindref="member">_CBOR_METADATA_DEFINITE</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="strings_8h_1aa1a92438a04ae77beea9a17910805530" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="strings_8c_1aa1a92438a04ae77beea9a17910805530" kindref="member">cbor_string_is_indefinite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!<ref refid="strings_8c_1aa2778891e70dec4cd59c9a969294d4aa" kindref="member">cbor_string_is_definite</ref>(item);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/strings.c"/>
+  </compounddef>
+</doxygen>

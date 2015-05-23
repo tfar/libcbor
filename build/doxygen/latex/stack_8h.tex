@@ -1,0 +1,58 @@
+\hypertarget{stack_8h}{\section{src/cbor/internal/stack.h File Reference}
+\label{stack_8h}\index{src/cbor/internal/stack.\-h@{src/cbor/internal/stack.\-h}}
+}
+{\ttfamily \#include \char`\"{}../common.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__cbor__stack__record}{\-\_\-cbor\-\_\-stack\-\_\-record}
+\begin{DoxyCompactList}\small\item\em Simple stack record for the parser. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__cbor__stack}{\-\_\-cbor\-\_\-stack}
+\begin{DoxyCompactList}\small\item\em Stack handle -\/ contents and size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__cbor__stack}{\-\_\-cbor\-\_\-stack} \hyperlink{stack_8h_a7702383747257f1df9c3ceda9fb9da58}{\-\_\-cbor\-\_\-stack\-\_\-init} ()
+\item 
+void \hyperlink{stack_8h_a7ef944b8c6581c73fe7fbf678aa09f4c}{\-\_\-cbor\-\_\-stack\-\_\-pop} (struct \hyperlink{struct__cbor__stack}{\-\_\-cbor\-\_\-stack} $\ast$)
+\item 
+struct \hyperlink{struct__cbor__stack__record}{\-\_\-cbor\-\_\-stack\-\_\-record} $\ast$ \hyperlink{stack_8h_a76e5fdb5e3c5b6a35e928ee9e9310568}{\-\_\-cbor\-\_\-stack\-\_\-push} (struct \hyperlink{struct__cbor__stack}{\-\_\-cbor\-\_\-stack} $\ast$, \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$, size\-\_\-t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{stack_8h_a7702383747257f1df9c3ceda9fb9da58}{\index{stack.\-h@{stack.\-h}!\-\_\-cbor\-\_\-stack\-\_\-init@{\-\_\-cbor\-\_\-stack\-\_\-init}}
+\index{\-\_\-cbor\-\_\-stack\-\_\-init@{\-\_\-cbor\-\_\-stack\-\_\-init}!stack.h@{stack.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-stack\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-\_\-cbor\-\_\-stack} \-\_\-cbor\-\_\-stack\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{stack_8h_a7702383747257f1df9c3ceda9fb9da58}
+
+
+Definition at line 10 of file stack.\-c.
+
+\hypertarget{stack_8h_a7ef944b8c6581c73fe7fbf678aa09f4c}{\index{stack.\-h@{stack.\-h}!\-\_\-cbor\-\_\-stack\-\_\-pop@{\-\_\-cbor\-\_\-stack\-\_\-pop}}
+\index{\-\_\-cbor\-\_\-stack\-\_\-pop@{\-\_\-cbor\-\_\-stack\-\_\-pop}!stack.h@{stack.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-stack\-\_\-pop}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-cbor\-\_\-stack\-\_\-pop (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-\_\-cbor\-\_\-stack} $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{stack_8h_a7ef944b8c6581c73fe7fbf678aa09f4c}
+
+
+Definition at line 15 of file stack.\-c.
+
+\hypertarget{stack_8h_a76e5fdb5e3c5b6a35e928ee9e9310568}{\index{stack.\-h@{stack.\-h}!\-\_\-cbor\-\_\-stack\-\_\-push@{\-\_\-cbor\-\_\-stack\-\_\-push}}
+\index{\-\_\-cbor\-\_\-stack\-\_\-push@{\-\_\-cbor\-\_\-stack\-\_\-push}!stack.h@{stack.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-stack\-\_\-push}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf \-\_\-cbor\-\_\-stack\-\_\-record}$\ast$ \-\_\-cbor\-\_\-stack\-\_\-push (
+\begin{DoxyParamCaption}
+\item[{struct {\bf \-\_\-cbor\-\_\-stack} $\ast$}]{, }
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}}\label{stack_8h_a76e5fdb5e3c5b6a35e928ee9e9310568}
+
+
+Definition at line 23 of file stack.\-c.
+

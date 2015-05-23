@@ -1,0 +1,805 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="ints_8h" kind="file">
+    <compoundname>ints.h</compoundname>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includedby refid="common_8c" local="yes">src/cbor/common.c</includedby>
+    <includedby refid="builder__callbacks_8c" local="yes">src/cbor/internal/builder_callbacks.c</includedby>
+    <includedby refid="ints_8c" local="yes">src/cbor/ints.c</includedby>
+    <includedby refid="serialization_8c" local="yes">src/cbor/serialization.c</includedby>
+    <includedby refid="cbor_8h" local="yes">src/cbor.h</includedby>
+    <incdepgraph>
+      <node id="424">
+        <label>stdbool.h</label>
+      </node>
+      <node id="425">
+        <label>assert.h</label>
+      </node>
+      <node id="423">
+        <label>stdint.h</label>
+      </node>
+      <node id="421">
+        <label>stdlib.h</label>
+      </node>
+      <node id="419">
+        <label>src/cbor/ints.h</label>
+        <link refid="ints.h"/>
+        <childnode refid="420" relation="include">
+        </childnode>
+      </node>
+      <node id="420">
+        <label>common.h</label>
+        <link refid="common_8h"/>
+        <childnode refid="421" relation="include">
+        </childnode>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="426" relation="include">
+        </childnode>
+      </node>
+      <node id="422">
+        <label>stddef.h</label>
+      </node>
+      <node id="426">
+        <label>data.h</label>
+        <link refid="data_8h"/>
+        <childnode refid="421" relation="include">
+        </childnode>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="430">
+        <label>src/cbor/ints.c</label>
+        <link refid="ints_8c"/>
+      </node>
+      <node id="427">
+        <label>src/cbor/ints.h</label>
+        <link refid="ints.h"/>
+        <childnode refid="428" relation="include">
+        </childnode>
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="430" relation="include">
+        </childnode>
+        <childnode refid="431" relation="include">
+        </childnode>
+        <childnode refid="432" relation="include">
+        </childnode>
+      </node>
+      <node id="428">
+        <label>src/cbor/common.c</label>
+        <link refid="common_8c"/>
+      </node>
+      <node id="433">
+        <label>src/cbor.c</label>
+        <link refid="cbor_8c"/>
+      </node>
+      <node id="432">
+        <label>src/cbor.h</label>
+        <link refid="cbor_8h"/>
+        <childnode refid="433" relation="include">
+        </childnode>
+      </node>
+      <node id="429">
+        <label>src/cbor/internal/builder_callbacks.c</label>
+        <link refid="builder__callbacks_8c"/>
+      </node>
+      <node id="431">
+        <label>src/cbor/serialization.c</label>
+        <link refid="serialization_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ints_8h_1a2379bf36318e8e4faa7434c74d8553fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t cbor_get_uint8</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_get_uint8</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="28" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="16" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a06a0997aed16fe6aa540f57bf40ce400" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t cbor_get_uint16</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_get_uint16</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="35" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a0480e5b5849b757aa9416a4c1d51b36d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t cbor_get_uint32</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_get_uint32</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="42" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="30" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a839ec2dc97dda1db54657cec50387a12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t cbor_get_uint64</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_get_uint64</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="49" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="37" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1aacf93e9a8a2c4217d5cd84207b957cba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t cbor_get_int</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_get_int</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value, extended to <computeroutput>uint64_t</computeroutput> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="56" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="44" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a62e9cd557438c1a5b8cf9a29c1f64baa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_set_uint8</definition>
+        <argsstring>(cbor_item_t *item, uint8_t value)</argsstring>
+        <name>cbor_set_uint8</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Assigns the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer item </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to assign. For negative integer, the logical value is <computeroutput>-value - 1</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="63" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a13b3dff419830b59c77ee18d4c03f6eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_set_uint16</definition>
+        <argsstring>(cbor_item_t *item, uint16_t value)</argsstring>
+        <name>cbor_set_uint16</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Assigns the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer item </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to assign. For negative integer, the logical value is <computeroutput>-value - 1</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="70" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a2db697fb733dcbdbbef8714fd182a185" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_set_uint32</definition>
+        <argsstring>(cbor_item_t *item, uint32_t value)</argsstring>
+        <name>cbor_set_uint32</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Assigns the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer item </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to assign. For negative integer, the logical value is <computeroutput>-value - 1</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="77" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="71" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1af82a3961109f2a36324157e218680016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_set_uint64</definition>
+        <argsstring>(cbor_item_t *item, uint64_t value)</argsstring>
+        <name>cbor_set_uint64</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Assigns the integer value. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer item </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to assign. For negative integer, the logical value is <computeroutput>-value - 1</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="84" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="78" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a30bcfb58aa41d4c44bc2d5d6b7de105d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57" kindref="member">cbor_int_width</ref></type>
+        <definition>cbor_int_width cbor_int_get_width</definition>
+        <argsstring>(const cbor_item_t *item)</argsstring>
+        <name>cbor_int_get_width</name>
+        <param>
+          <type>const <ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Queries the integer width. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer item </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the width </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="91" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="10" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1aed6a5a44245b8447a768c95e351c2c0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_mark_uint</definition>
+        <argsstring>(cbor_item_t *item)</argsstring>
+        <name>cbor_mark_uint</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Marks the integer item as a positive integer. </para>        </briefdescription>
+        <detaileddescription>
+<para>The data value is not changed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer item </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="99" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a6ef24d3e2636c02de092fdfc337276b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cbor_mark_negint</definition>
+        <argsstring>(cbor_item_t *item)</argsstring>
+        <name>cbor_mark_negint</name>
+        <param>
+          <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Marks the integer item as a negative integer. </para>        </briefdescription>
+        <detaileddescription>
+<para>The data value is not changed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item[borrow]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>positive or negative integer item </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="107" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="91" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1ae4562e1314b122ae89712dbf0c48c14c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_int8</definition>
+        <argsstring>()</argsstring>
+        <name>cbor_new_int8</name>
+        <briefdescription>
+<para>Allocates new integer with 1B width. </para>        </briefdescription>
+        <detaileddescription>
+<para>The width cannot be changed once allocated</para><para><simplesect kind="return"><para><bold>new</bold> positive integer. The value is not initialized. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="115" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="97" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a68f71f9574e0085f02a27bd0f58d4b55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_int16</definition>
+        <argsstring>()</argsstring>
+        <name>cbor_new_int16</name>
+        <briefdescription>
+<para>Allocates new integer with 2B width. </para>        </briefdescription>
+        <detaileddescription>
+<para>The width cannot be changed once allocated</para><para><simplesect kind="return"><para><bold>new</bold> positive integer. The value is not initialized. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="123" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="109" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a9cf9db24315a0e622746a546cc112467" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_int32</definition>
+        <argsstring>()</argsstring>
+        <name>cbor_new_int32</name>
+        <briefdescription>
+<para>Allocates new integer with 4B width. </para>        </briefdescription>
+        <detaileddescription>
+<para>The width cannot be changed once allocated</para><para><simplesect kind="return"><para><bold>new</bold> positive integer. The value is not initialized. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="131" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="121" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1ab863f47b9de930c5d014e0dbb5523d9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_new_int64</definition>
+        <argsstring>()</argsstring>
+        <name>cbor_new_int64</name>
+        <briefdescription>
+<para>Allocates new integer with 8B width. </para>        </briefdescription>
+        <detaileddescription>
+<para>The width cannot be changed once allocated</para><para><simplesect kind="return"><para><bold>new</bold> positive integer. The value is not initialized. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="139" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="133" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1ad4d9f92f14c640544386e6655283052d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_uint8</definition>
+        <argsstring>(uint8_t value)</argsstring>
+        <name>cbor_build_uint8</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new positive integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> positive integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="146" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="145" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a88f05c625ad9fa182bc95c9c97f87dda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_uint16</definition>
+        <argsstring>(uint16_t value)</argsstring>
+        <name>cbor_build_uint16</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new positive integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> positive integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="153" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="153" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1afcefa3190eeeff1e5ed0b5217761ad5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_uint32</definition>
+        <argsstring>(uint32_t value)</argsstring>
+        <name>cbor_build_uint32</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new positive integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> positive integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="160" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="161" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1adff4351ebc5bb6f69d8a2ea0c9439fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_uint64</definition>
+        <argsstring>(uint64_t value)</argsstring>
+        <name>cbor_build_uint64</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new positive integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> positive integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="167" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="169" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a28553eb079f8778babebf869e33f27a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_negint8</definition>
+        <argsstring>(uint8_t value)</argsstring>
+        <name>cbor_build_negint8</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new negative integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> negative integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="174" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="177" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1ae40a5af0998889c6550ceb0914b2cd9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_negint16</definition>
+        <argsstring>(uint16_t value)</argsstring>
+        <name>cbor_build_negint16</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new negative integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> negative integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="181" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="185" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1a35d8b500ae33d4fc0262de4830382529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_negint32</definition>
+        <argsstring>(uint32_t value)</argsstring>
+        <name>cbor_build_negint32</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new negative integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> negative integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="188" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="193" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="ints_8h_1ae24074614ece5da3024a536093d21678" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* cbor_build_negint64</definition>
+        <argsstring>(uint64_t value)</argsstring>
+        <name>cbor_build_negint64</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new negative integer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the value to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><bold>new</bold> negative integer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/ints.h" line="195" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/ints.c" bodystart="201" bodyend="207"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014-2015<sp/>Pavel<sp/>Kalvoda<sp/>&lt;me@pavelkalvoda.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>libcbor<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>LICENSE<sp/>for<sp/>details.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LIBCBOR_INTS_H</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>LIBCBOR_INTS_H</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="common_8h" kindref="compound">common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*<sp/>============================================================================</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*<sp/>Integer<sp/>(uints<sp/>and<sp/>negints)<sp/>manipulation</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*<sp/>============================================================================</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">uint8_t<sp/><ref refid="ints_8h_1a2379bf36318e8e4faa7434c74d8553fb" kindref="member">cbor_get_uint8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">uint16_t<sp/><ref refid="ints_8h_1a06a0997aed16fe6aa540f57bf40ce400" kindref="member">cbor_get_uint16</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">uint32_t<sp/><ref refid="ints_8h_1a0480e5b5849b757aa9416a4c1d51b36d" kindref="member">cbor_get_uint32</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">uint64_t<sp/><ref refid="ints_8h_1a839ec2dc97dda1db54657cec50387a12" kindref="member">cbor_get_uint64</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">uint64_t<sp/><ref refid="ints_8h_1aacf93e9a8a2c4217d5cd84207b957cba" kindref="member">cbor_get_int</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ints_8h_1a62e9cd557438c1a5b8cf9a29c1f64baa" kindref="member">cbor_set_uint8</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/>uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ints_8h_1a13b3dff419830b59c77ee18d4c03f6eb" kindref="member">cbor_set_uint16</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/>uint16_t<sp/>value);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ints_8h_1a2db697fb733dcbdbbef8714fd182a185" kindref="member">cbor_set_uint32</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/>uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ints_8h_1af82a3961109f2a36324157e218680016" kindref="member">cbor_set_uint64</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item,<sp/>uint64_t<sp/>value);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="data_8h_1ae0fc9740f108f0f0078b93712b061e57" kindref="member">cbor_int_width</ref><sp/><ref refid="ints_8h_1a30bcfb58aa41d4c44bc2d5d6b7de105d" kindref="member">cbor_int_get_width</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ints_8h_1aed6a5a44245b8447a768c95e351c2c0c" kindref="member">cbor_mark_uint</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="ints_8h_1a6ef24d3e2636c02de092fdfc337276b1" kindref="member">cbor_mark_negint</ref>(<ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1ae4562e1314b122ae89712dbf0c48c14c" kindref="member">cbor_new_int8</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1a68f71f9574e0085f02a27bd0f58d4b55" kindref="member">cbor_new_int16</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1a9cf9db24315a0e622746a546cc112467" kindref="member">cbor_new_int32</ref>();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1ab863f47b9de930c5d014e0dbb5523d9d" kindref="member">cbor_new_int64</ref>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1ad4d9f92f14c640544386e6655283052d" kindref="member">cbor_build_uint8</ref>(uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1a88f05c625ad9fa182bc95c9c97f87dda" kindref="member">cbor_build_uint16</ref>(uint16_t<sp/>value);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1afcefa3190eeeff1e5ed0b5217761ad5a" kindref="member">cbor_build_uint32</ref>(uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1adff4351ebc5bb6f69d8a2ea0c9439fc5" kindref="member">cbor_build_uint64</ref>(uint64_t<sp/>value);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1a28553eb079f8778babebf869e33f27a2" kindref="member">cbor_build_negint8</ref>(uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1ae40a5af0998889c6550ceb0914b2cd9b" kindref="member">cbor_build_negint16</ref>(uint16_t<sp/>value);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1a35d8b500ae33d4fc0262de4830382529" kindref="member">cbor_build_negint32</ref>(uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref><sp/>*<ref refid="ints_8h_1ae24074614ece5da3024a536093d21678" kindref="member">cbor_build_negint64</ref>(uint64_t<sp/>value);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="200"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="202"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//LIBCBOR_INTS_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/pjk/project/libcbor/src/cbor/ints.h"/>
+  </compounddef>
+</doxygen>

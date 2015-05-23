@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_cb565ba51d82ea933604984cbab6233d" kind="dir">
+    <compoundname>src/cbor</compoundname>
+    <innerdir refid="dir_3ebe94c85f6786bf802771098c1d09bb">src/cbor/internal</innerdir>
+    <innerfile refid="arrays_8c">arrays.c</innerfile>
+    <innerfile refid="arrays_8h">arrays.h</innerfile>
+    <innerfile refid="bytestrings_8c">bytestrings.c</innerfile>
+    <innerfile refid="bytestrings_8h">bytestrings.h</innerfile>
+    <innerfile refid="callbacks_8c">callbacks.c</innerfile>
+    <innerfile refid="callbacks_8h">callbacks.h</innerfile>
+    <innerfile refid="common_8c">common.c</innerfile>
+    <innerfile refid="common_8h">common.h</innerfile>
+    <innerfile refid="data_8h">data.h</innerfile>
+    <innerfile refid="encoding_8c">encoding.c</innerfile>
+    <innerfile refid="encoding_8h">encoding.h</innerfile>
+    <innerfile refid="floats__ctrls_8c">floats_ctrls.c</innerfile>
+    <innerfile refid="floats__ctrls_8h">floats_ctrls.h</innerfile>
+    <innerfile refid="ints_8c">ints.c</innerfile>
+    <innerfile refid="ints_8h">ints.h</innerfile>
+    <innerfile refid="maps_8c">maps.c</innerfile>
+    <innerfile refid="maps_8h">maps.h</innerfile>
+    <innerfile refid="serialization_8c">serialization.c</innerfile>
+    <innerfile refid="serialization_8h">serialization.h</innerfile>
+    <innerfile refid="streaming_8c">streaming.c</innerfile>
+    <innerfile refid="streaming_8h">streaming.h</innerfile>
+    <innerfile refid="strings_8c">strings.c</innerfile>
+    <innerfile refid="strings_8h">strings.h</innerfile>
+    <innerfile refid="tags_8c">tags.c</innerfile>
+    <innerfile refid="tags_8h">tags.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pjk/project/libcbor/src/cbor/"/>
+  </compounddef>
+</doxygen>

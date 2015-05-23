@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="struct__cbor__stack__record" kind="struct" prot="public">
+    <compoundname>_cbor_stack_record</compoundname>
+    <includes refid="stack_8h" local="no">stack.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cbor__stack__record_1aca7db1e610ee0983b0e24e081ee3e5dd" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct__cbor__stack__record" kindref="compound">_cbor_stack_record</ref> *</type>
+        <definition>struct _cbor_stack_record* _cbor_stack_record::lower</definition>
+        <argsstring></argsstring>
+        <name>lower</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/stack.h" line="19" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/stack.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cbor__stack__record_1a1a1d4be830fa1e0d9c5369cddccce47e" prot="public" static="no" mutable="no">
+        <type><ref refid="structcbor__item__t" kindref="compound">cbor_item_t</ref> *</type>
+        <definition>cbor_item_t* _cbor_stack_record::item</definition>
+        <argsstring></argsstring>
+        <name>item</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/stack.h" line="20" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/stack.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cbor__stack__record_1a9b69c0ea00da449b080343a97c026cef" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t _cbor_stack_record::subitems</definition>
+        <argsstring></argsstring>
+        <name>subitems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/internal/stack.h" line="21" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/stack.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Simple stack record for the parser. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="42">
+        <label>cbor_item_metadata</label>
+        <link refid="unioncbor__item__metadata"/>
+        <childnode refid="43" relation="usage">
+          <edgelabel>bytestring_metadata</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>map_metadata</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>array_metadata</edgelabel>
+        </childnode>
+        <childnode refid="46" relation="usage">
+          <edgelabel>int_metadata</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>float_ctrl_metadata</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>string_metadata</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>tag_metadata</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>_cbor_string_metadata</label>
+        <link refid="struct__cbor__string__metadata"/>
+      </node>
+      <node id="49">
+        <label>_cbor_tag_metadata</label>
+        <link refid="struct__cbor__tag__metadata"/>
+        <childnode refid="41" relation="usage">
+          <edgelabel>tagged_item</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>cbor_item_t</label>
+        <link refid="structcbor__item__t"/>
+        <childnode refid="42" relation="usage">
+          <edgelabel>metadata</edgelabel>
+        </childnode>
+      </node>
+      <node id="44">
+        <label>_cbor_map_metadata</label>
+        <link refid="struct__cbor__map__metadata"/>
+      </node>
+      <node id="45">
+        <label>_cbor_array_metadata</label>
+        <link refid="struct__cbor__array__metadata"/>
+      </node>
+      <node id="47">
+        <label>_cbor_float_ctrl_metadata</label>
+        <link refid="struct__cbor__float__ctrl__metadata"/>
+      </node>
+      <node id="40">
+        <label>_cbor_stack_record</label>
+        <link refid="struct__cbor__stack__record"/>
+        <childnode refid="40" relation="usage">
+          <edgelabel>lower</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>item</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>_cbor_bytestring_metadata</label>
+        <link refid="struct__cbor__bytestring__metadata"/>
+      </node>
+      <node id="46">
+        <label>_cbor_int_metadata</label>
+        <link refid="struct__cbor__int__metadata"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/pjk/project/libcbor/src/cbor/internal/stack.h" line="18" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/internal/stack.h" bodystart="18" bodyend="22"/>
+    <listofallmembers>
+      <member refid="struct__cbor__stack__record_1a1a1d4be830fa1e0d9c5369cddccce47e" prot="public" virt="non-virtual"><scope>_cbor_stack_record</scope><name>item</name></member>
+      <member refid="struct__cbor__stack__record_1aca7db1e610ee0983b0e24e081ee3e5dd" prot="public" virt="non-virtual"><scope>_cbor_stack_record</scope><name>lower</name></member>
+      <member refid="struct__cbor__stack__record_1a9b69c0ea00da449b080343a97c026cef" prot="public" virt="non-virtual"><scope>_cbor_stack_record</scope><name>subitems</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

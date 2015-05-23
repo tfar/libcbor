@@ -1,0 +1,726 @@
+\hypertarget{common_8h}{\section{src/cbor/common.h File Reference}
+\label{common_8h}\index{src/cbor/common.\-h@{src/cbor/common.\-h}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}data.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{common_8h_a87cea1eae78853449c65c11d87517835}{C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~0
+\item 
+\#define \hyperlink{common_8h_a51fa4aa55e8743a687862f87ba574069}{C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~3
+\item 
+\#define \hyperlink{common_8h_af2c19f68c53e5fa55957cbf1e65e1448}{C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N}~1
+\item 
+\#define \hyperlink{common_8h_a956e417f98370dd1a96e4dac2e0ed7dd}{C\-B\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~\hyperlink{common_8h_ae45fd01d870751555ae09a0257f40eb2}{T\-O\-\_\-\-S\-T\-R}(\hyperlink{common_8h_a87cea1eae78853449c65c11d87517835}{C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}) \char`\"{}.\char`\"{} \hyperlink{common_8h_ae45fd01d870751555ae09a0257f40eb2}{T\-O\-\_\-\-S\-T\-R}(\hyperlink{common_8h_a51fa4aa55e8743a687862f87ba574069}{C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}) \char`\"{}.\char`\"{} \hyperlink{common_8h_ae45fd01d870751555ae09a0257f40eb2}{T\-O\-\_\-\-S\-T\-R}(\hyperlink{common_8h_af2c19f68c53e5fa55957cbf1e65e1448}{C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N})
+\item 
+\#define \hyperlink{common_8h_ac61efb646fdd1936ac0ce32829f947b8}{C\-B\-O\-R\-\_\-\-H\-E\-X\-\_\-\-V\-E\-R\-S\-I\-O\-N}~((\hyperlink{common_8h_a87cea1eae78853449c65c11d87517835}{C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N} $<$$<$ 16) $\vert$ (\hyperlink{common_8h_a51fa4aa55e8743a687862f87ba574069}{C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N} $<$$<$ 8) $\vert$ \hyperlink{common_8h_af2c19f68c53e5fa55957cbf1e65e1448}{C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N})
+\item 
+\#define \hyperlink{common_8h_a7377cc956f5c81538f0fbf0a0492a539}{debug\-\_\-print}(fmt,...)~do \{\} while (0)
+\item 
+\#define \hyperlink{common_8h_a4576b20b5200a67aa939a1ce7fc27bd9}{T\-O\-\_\-\-S\-T\-R\-\_\-}(x)~\#x
+\item 
+\#define \hyperlink{common_8h_ae45fd01d870751555ae09a0257f40eb2}{T\-O\-\_\-\-S\-T\-R}(x)~\hyperlink{common_8h_a4576b20b5200a67aa939a1ce7fc27bd9}{T\-O\-\_\-\-S\-T\-R\-\_\-}(x) /$\ast$ enables proper double expansion $\ast$/
+\item 
+\#define \hyperlink{common_8h_a07a781e9212fad361b0f59f7fc921057}{\-\_\-\-C\-B\-O\-R\-\_\-\-M\-A\-L\-L\-O\-C}~\hyperlink{common_8h_a3218c24af00a3efeaecb1716c8f5a289}{\-\_\-cbor\-\_\-malloc}
+\item 
+\#define \hyperlink{common_8h_a1e39038d9b8e9b3a1e6529c9ff6091b8}{\-\_\-\-C\-B\-O\-R\-\_\-\-R\-E\-A\-L\-L\-O\-C}~\hyperlink{common_8h_a84ecc1fc92c3812ab6ced693f2c6254c}{\-\_\-cbor\-\_\-realloc}
+\item 
+\#define \hyperlink{common_8h_a1300043d7db8adf6ab67f7b787f14635}{\-\_\-\-C\-B\-O\-R\-\_\-\-F\-R\-E\-E}~\hyperlink{common_8h_a994f4145360ef0bfa3c48e59a5ca7186}{\-\_\-cbor\-\_\-free}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$($\ast$ \hyperlink{common_8h_ad43a5d91c73c87d1a978273286e7c2be}{\-\_\-cbor\-\_\-malloc\-\_\-t} )(size\-\_\-t)
+\item 
+typedef void $\ast$($\ast$ \hyperlink{common_8h_a85a71755bd7dc24658b1769f77636758}{\-\_\-cbor\-\_\-realloc\-\_\-t} )(void $\ast$, size\-\_\-t)
+\item 
+typedef void($\ast$ \hyperlink{common_8h_a39d0619c44bc7b3565a3c435e191cb14}{\-\_\-cbor\-\_\-free\-\_\-t} )(void $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{common_8h_a3f9f1d527374dbb4b48ef3fafa92e0bf}{cbor\-\_\-set\-\_\-allocs} (\hyperlink{common_8h_ad43a5d91c73c87d1a978273286e7c2be}{\-\_\-cbor\-\_\-malloc\-\_\-t} custom\-\_\-malloc, \hyperlink{common_8h_a85a71755bd7dc24658b1769f77636758}{\-\_\-cbor\-\_\-realloc\-\_\-t} custom\-\_\-realloc, \hyperlink{common_8h_a39d0619c44bc7b3565a3c435e191cb14}{\-\_\-cbor\-\_\-free\-\_\-t} custom\-\_\-free)
+\begin{DoxyCompactList}\small\item\em Sets the memory management routines to use. \end{DoxyCompactList}\item 
+\hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6}{cbor\-\_\-type} \hyperlink{common_8h_ac2b9aba4cf07857524a0a520eabeef52}{cbor\-\_\-typeof} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the type of the item. \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a682a023f7012a5b66a57847e6f8d386f}{cbor\-\_\-isa\-\_\-uint} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does the item have the appropriate major type? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a0ca5042e3807d2cc9c3d40f9266460dd}{cbor\-\_\-isa\-\_\-negint} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does the item have the appropriate major type? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_adedaf37527b8d8261e287a0001e5a190}{cbor\-\_\-isa\-\_\-bytestring} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does the item have the appropriate major type? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a02edd93bb8eab83bc2b8f8bf5d7d1335}{cbor\-\_\-isa\-\_\-string} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does the item have the appropriate major type? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a9ed0fa96105c211867c5032f2a5a8b20}{cbor\-\_\-isa\-\_\-array} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does the item have the appropriate major type? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_af0de041481b61922d0995b63f82d8ddd}{cbor\-\_\-isa\-\_\-map} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does the item have the appropriate major type? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a0d5054202c5ec9375e8daf5930087a61}{cbor\-\_\-isa\-\_\-tag} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does the item have the appropriate major type? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a983dec76e934c49ed6979226f9db4386}{cbor\-\_\-isa\-\_\-float\-\_\-ctrl} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does the item have the appropriate major type? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a4e705f34221ba434756a4a1f8e3325e6}{cbor\-\_\-is\-\_\-int} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the item an integer, either positive or negative? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a4dde28c548375aa954f1cad15b3739aa}{cbor\-\_\-is\-\_\-float} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the item an a floating point number? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_a5618a3689e31829f4f84da008e20798e}{cbor\-\_\-is\-\_\-bool} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Is the item an a boolean? \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_ad1f5efac647b4d9c437c4441d1177e01}{cbor\-\_\-is\-\_\-null} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does this item represent {\ttfamily null} \end{DoxyCompactList}\item 
+bool \hyperlink{common_8h_afb7eb76a2953224c96d194640f3092e3}{cbor\-\_\-is\-\_\-undef} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Does this item represent {\ttfamily undefined} \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{common_8h_aa62e72f275c2f0fa604896bfed18e992}{cbor\-\_\-incref} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Increases the reference count by one. \end{DoxyCompactList}\item 
+void \hyperlink{common_8h_aa10ebec46eddc9312ec46a0898b5d196}{cbor\-\_\-decref} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$$\ast$item)
+\begin{DoxyCompactList}\small\item\em Decreases the reference count by one, deallocating the item if needed. \end{DoxyCompactList}\item 
+void \hyperlink{common_8h_a4ed20937cc091bc1f481d53787fe306b}{cbor\-\_\-intermediate\-\_\-decref} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Decreases the reference count by one, deallocating the item if needed. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{common_8h_ab27dda20ad909cebaee1b2f43e676f2c}{cbor\-\_\-refcount} (const \hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Get the reference count. \end{DoxyCompactList}\item 
+\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$ \hyperlink{common_8h_a327dce45c1cb680953555290dba8e35b}{cbor\-\_\-move} (\hyperlink{structcbor__item__t}{cbor\-\_\-item\-\_\-t} $\ast$item)
+\begin{DoxyCompactList}\small\item\em Provide C\-P\-P-\/like move construct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common_8h_ad43a5d91c73c87d1a978273286e7c2be}{\-\_\-cbor\-\_\-malloc\-\_\-t} \hyperlink{common_8h_a3218c24af00a3efeaecb1716c8f5a289}{\-\_\-cbor\-\_\-malloc}
+\item 
+\hyperlink{common_8h_a85a71755bd7dc24658b1769f77636758}{\-\_\-cbor\-\_\-realloc\-\_\-t} \hyperlink{common_8h_a84ecc1fc92c3812ab6ced693f2c6254c}{\-\_\-cbor\-\_\-realloc}
+\item 
+\hyperlink{common_8h_a39d0619c44bc7b3565a3c435e191cb14}{\-\_\-cbor\-\_\-free\-\_\-t} \hyperlink{common_8h_a994f4145360ef0bfa3c48e59a5ca7186}{\-\_\-cbor\-\_\-free}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{common_8h_a1300043d7db8adf6ab67f7b787f14635}{\index{common.\-h@{common.\-h}!\-\_\-\-C\-B\-O\-R\-\_\-\-F\-R\-E\-E@{\-\_\-\-C\-B\-O\-R\-\_\-\-F\-R\-E\-E}}
+\index{\-\_\-\-C\-B\-O\-R\-\_\-\-F\-R\-E\-E@{\-\_\-\-C\-B\-O\-R\-\_\-\-F\-R\-E\-E}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-\-C\-B\-O\-R\-\_\-\-F\-R\-E\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-C\-B\-O\-R\-\_\-\-F\-R\-E\-E~{\bf \-\_\-cbor\-\_\-free}}}\label{common_8h_a1300043d7db8adf6ab67f7b787f14635}
+
+
+Definition at line 75 of file common.\-h.
+
+\hypertarget{common_8h_a07a781e9212fad361b0f59f7fc921057}{\index{common.\-h@{common.\-h}!\-\_\-\-C\-B\-O\-R\-\_\-\-M\-A\-L\-L\-O\-C@{\-\_\-\-C\-B\-O\-R\-\_\-\-M\-A\-L\-L\-O\-C}}
+\index{\-\_\-\-C\-B\-O\-R\-\_\-\-M\-A\-L\-L\-O\-C@{\-\_\-\-C\-B\-O\-R\-\_\-\-M\-A\-L\-L\-O\-C}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-\-C\-B\-O\-R\-\_\-\-M\-A\-L\-L\-O\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-C\-B\-O\-R\-\_\-\-M\-A\-L\-L\-O\-C~{\bf \-\_\-cbor\-\_\-malloc}}}\label{common_8h_a07a781e9212fad361b0f59f7fc921057}
+
+
+Definition at line 73 of file common.\-h.
+
+\hypertarget{common_8h_a1e39038d9b8e9b3a1e6529c9ff6091b8}{\index{common.\-h@{common.\-h}!\-\_\-\-C\-B\-O\-R\-\_\-\-R\-E\-A\-L\-L\-O\-C@{\-\_\-\-C\-B\-O\-R\-\_\-\-R\-E\-A\-L\-L\-O\-C}}
+\index{\-\_\-\-C\-B\-O\-R\-\_\-\-R\-E\-A\-L\-L\-O\-C@{\-\_\-\-C\-B\-O\-R\-\_\-\-R\-E\-A\-L\-L\-O\-C}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-\-C\-B\-O\-R\-\_\-\-R\-E\-A\-L\-L\-O\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-C\-B\-O\-R\-\_\-\-R\-E\-A\-L\-L\-O\-C~{\bf \-\_\-cbor\-\_\-realloc}}}\label{common_8h_a1e39038d9b8e9b3a1e6529c9ff6091b8}
+
+
+Definition at line 74 of file common.\-h.
+
+\hypertarget{common_8h_ac61efb646fdd1936ac0ce32829f947b8}{\index{common.\-h@{common.\-h}!C\-B\-O\-R\-\_\-\-H\-E\-X\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-H\-E\-X\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{C\-B\-O\-R\-\_\-\-H\-E\-X\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-H\-E\-X\-\_\-\-V\-E\-R\-S\-I\-O\-N}!common.h@{common.\-h}}
+\subsubsection[{C\-B\-O\-R\-\_\-\-H\-E\-X\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-B\-O\-R\-\_\-\-H\-E\-X\-\_\-\-V\-E\-R\-S\-I\-O\-N~(({\bf C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N} $<$$<$ 16) $\vert$ ({\bf C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N} $<$$<$ 8) $\vert$ {\bf C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N})}}\label{common_8h_ac61efb646fdd1936ac0ce32829f947b8}
+
+
+Definition at line 32 of file common.\-h.
+
+\hypertarget{common_8h_a87cea1eae78853449c65c11d87517835}{\index{common.\-h@{common.\-h}!C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!common.h@{common.\-h}}
+\subsubsection[{C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~0}}\label{common_8h_a87cea1eae78853449c65c11d87517835}
+
+
+Definition at line 22 of file common.\-h.
+
+\hypertarget{common_8h_a51fa4aa55e8743a687862f87ba574069}{\index{common.\-h@{common.\-h}!C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!common.h@{common.\-h}}
+\subsubsection[{C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~3}}\label{common_8h_a51fa4aa55e8743a687862f87ba574069}
+
+
+Definition at line 23 of file common.\-h.
+
+\hypertarget{common_8h_af2c19f68c53e5fa55957cbf1e65e1448}{\index{common.\-h@{common.\-h}!C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N}!common.h@{common.\-h}}
+\subsubsection[{C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N~1}}\label{common_8h_af2c19f68c53e5fa55957cbf1e65e1448}
+
+
+Definition at line 24 of file common.\-h.
+
+\hypertarget{common_8h_a956e417f98370dd1a96e4dac2e0ed7dd}{\index{common.\-h@{common.\-h}!C\-B\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{C\-B\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{C\-B\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!common.h@{common.\-h}}
+\subsubsection[{C\-B\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-B\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~{\bf T\-O\-\_\-\-S\-T\-R}({\bf C\-B\-O\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}) \char`\"{}.\char`\"{} {\bf T\-O\-\_\-\-S\-T\-R}({\bf C\-B\-O\-R\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}) \char`\"{}.\char`\"{} {\bf T\-O\-\_\-\-S\-T\-R}({\bf C\-B\-O\-R\-\_\-\-P\-A\-T\-C\-H\-\_\-\-V\-E\-R\-S\-I\-O\-N})}}\label{common_8h_a956e417f98370dd1a96e4dac2e0ed7dd}
+
+
+Definition at line 30 of file common.\-h.
+
+\hypertarget{common_8h_a7377cc956f5c81538f0fbf0a0492a539}{\index{common.\-h@{common.\-h}!debug\-\_\-print@{debug\-\_\-print}}
+\index{debug\-\_\-print@{debug\-\_\-print}!common.h@{common.\-h}}
+\subsubsection[{debug\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}\#define debug\-\_\-print(
+\begin{DoxyParamCaption}
+\item[{}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do \{\} while (0)}}\label{common_8h_a7377cc956f5c81538f0fbf0a0492a539}
+
+
+Definition at line 42 of file common.\-h.
+
+\hypertarget{common_8h_ae45fd01d870751555ae09a0257f40eb2}{\index{common.\-h@{common.\-h}!T\-O\-\_\-\-S\-T\-R@{T\-O\-\_\-\-S\-T\-R}}
+\index{T\-O\-\_\-\-S\-T\-R@{T\-O\-\_\-\-S\-T\-R}!common.h@{common.\-h}}
+\subsubsection[{T\-O\-\_\-\-S\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-\_\-\-S\-T\-R(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf T\-O\-\_\-\-S\-T\-R\-\_\-}(x) /$\ast$ enables proper double expansion $\ast$/}}\label{common_8h_ae45fd01d870751555ae09a0257f40eb2}
+
+
+Definition at line 46 of file common.\-h.
+
+\hypertarget{common_8h_a4576b20b5200a67aa939a1ce7fc27bd9}{\index{common.\-h@{common.\-h}!T\-O\-\_\-\-S\-T\-R\-\_\-@{T\-O\-\_\-\-S\-T\-R\-\_\-}}
+\index{T\-O\-\_\-\-S\-T\-R\-\_\-@{T\-O\-\_\-\-S\-T\-R\-\_\-}!common.h@{common.\-h}}
+\subsubsection[{T\-O\-\_\-\-S\-T\-R\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-\_\-\-S\-T\-R\-\_\-(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\#x}}\label{common_8h_a4576b20b5200a67aa939a1ce7fc27bd9}
+
+
+Definition at line 45 of file common.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{common_8h_a39d0619c44bc7b3565a3c435e191cb14}{\index{common.\-h@{common.\-h}!\-\_\-cbor\-\_\-free\-\_\-t@{\-\_\-cbor\-\_\-free\-\_\-t}}
+\index{\-\_\-cbor\-\_\-free\-\_\-t@{\-\_\-cbor\-\_\-free\-\_\-t}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-free\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$  \-\_\-cbor\-\_\-free\-\_\-t)(void $\ast$)}}\label{common_8h_a39d0619c44bc7b3565a3c435e191cb14}
+
+
+Definition at line 52 of file common.\-h.
+
+\hypertarget{common_8h_ad43a5d91c73c87d1a978273286e7c2be}{\index{common.\-h@{common.\-h}!\-\_\-cbor\-\_\-malloc\-\_\-t@{\-\_\-cbor\-\_\-malloc\-\_\-t}}
+\index{\-\_\-cbor\-\_\-malloc\-\_\-t@{\-\_\-cbor\-\_\-malloc\-\_\-t}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-malloc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$($\ast$  \-\_\-cbor\-\_\-malloc\-\_\-t)(size\-\_\-t)}}\label{common_8h_ad43a5d91c73c87d1a978273286e7c2be}
+
+
+Definition at line 50 of file common.\-h.
+
+\hypertarget{common_8h_a85a71755bd7dc24658b1769f77636758}{\index{common.\-h@{common.\-h}!\-\_\-cbor\-\_\-realloc\-\_\-t@{\-\_\-cbor\-\_\-realloc\-\_\-t}}
+\index{\-\_\-cbor\-\_\-realloc\-\_\-t@{\-\_\-cbor\-\_\-realloc\-\_\-t}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-realloc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$($\ast$  \-\_\-cbor\-\_\-realloc\-\_\-t)(void $\ast$, size\-\_\-t)}}\label{common_8h_a85a71755bd7dc24658b1769f77636758}
+
+
+Definition at line 51 of file common.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{common_8h_aa10ebec46eddc9312ec46a0898b5d196}{\index{common.\-h@{common.\-h}!cbor\-\_\-decref@{cbor\-\_\-decref}}
+\index{cbor\-\_\-decref@{cbor\-\_\-decref}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-decref}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-decref (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$$\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{common_8h_aa10ebec46eddc9312ec46a0898b5d196}
+
+
+Decreases the reference count by one, deallocating the item if needed. 
+
+In case the item is deallocated, the reference count of any dependent items is adjusted accordingly in a recursive manner.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}take\mbox{]}} & the item. Set to {\ttfamily N\-U\-L\-L} if deallocated \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file common.\-c.
+
+\hypertarget{common_8h_aa62e72f275c2f0fa604896bfed18e992}{\index{common.\-h@{common.\-h}!cbor\-\_\-incref@{cbor\-\_\-incref}}
+\index{cbor\-\_\-incref@{cbor\-\_\-incref}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-incref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-incref (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{common_8h_aa62e72f275c2f0fa604896bfed18e992}
+
+
+Increases the reference count by one. 
+
+No dependent items are affected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}incref\mbox{]}} & item the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input reference 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file common.\-c.
+
+\hypertarget{common_8h_a4ed20937cc091bc1f481d53787fe306b}{\index{common.\-h@{common.\-h}!cbor\-\_\-intermediate\-\_\-decref@{cbor\-\_\-intermediate\-\_\-decref}}
+\index{cbor\-\_\-intermediate\-\_\-decref@{cbor\-\_\-intermediate\-\_\-decref}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-intermediate\-\_\-decref}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-intermediate\-\_\-decref (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{common_8h_a4ed20937cc091bc1f481d53787fe306b}
+
+
+Decreases the reference count by one, deallocating the item if needed. 
+
+Convenience wrapper for \hyperlink{common_8h_aa10ebec46eddc9312ec46a0898b5d196}{cbor\-\_\-decref} when its set-\/to-\/null behavior is not needed
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}take\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file common.\-c.
+
+\hypertarget{common_8h_a5618a3689e31829f4f84da008e20798e}{\index{common.\-h@{common.\-h}!cbor\-\_\-is\-\_\-bool@{cbor\-\_\-is\-\_\-bool}}
+\index{cbor\-\_\-is\-\_\-bool@{cbor\-\_\-is\-\_\-bool}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-is\-\_\-bool}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-is\-\_\-bool (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_a5618a3689e31829f4f84da008e20798e}
+
+
+Is the item an a boolean? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item a boolean? 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file common.\-c.
+
+\hypertarget{common_8h_a4dde28c548375aa954f1cad15b3739aa}{\index{common.\-h@{common.\-h}!cbor\-\_\-is\-\_\-float@{cbor\-\_\-is\-\_\-float}}
+\index{cbor\-\_\-is\-\_\-float@{cbor\-\_\-is\-\_\-float}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-is\-\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-is\-\_\-float (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{common_8h_a4dde28c548375aa954f1cad15b3739aa}
+
+
+Is the item an a floating point number? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item a floating point number? 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file common.\-c.
+
+\hypertarget{common_8h_a4e705f34221ba434756a4a1f8e3325e6}{\index{common.\-h@{common.\-h}!cbor\-\_\-is\-\_\-int@{cbor\-\_\-is\-\_\-int}}
+\index{cbor\-\_\-is\-\_\-int@{cbor\-\_\-is\-\_\-int}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-is\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-is\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_a4e705f34221ba434756a4a1f8e3325e6}
+
+
+Is the item an integer, either positive or negative? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item an integer, either positive or negative? 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file common.\-c.
+
+\hypertarget{common_8h_ad1f5efac647b4d9c437c4441d1177e01}{\index{common.\-h@{common.\-h}!cbor\-\_\-is\-\_\-null@{cbor\-\_\-is\-\_\-null}}
+\index{cbor\-\_\-is\-\_\-null@{cbor\-\_\-is\-\_\-null}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-is\-\_\-null}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-is\-\_\-null (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_ad1f5efac647b4d9c437c4441d1177e01}
+
+
+Does this item represent {\ttfamily null} 
+
+\begin{DoxyVerb}embed:rst:leading-asterisk
+* .. warning:: This is in no way related to the value of the pointer. Passing a null pointer will most likely result in a crash.
+* \end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item (C\-B\-O\-R logical) null? 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file common.\-c.
+
+\hypertarget{common_8h_afb7eb76a2953224c96d194640f3092e3}{\index{common.\-h@{common.\-h}!cbor\-\_\-is\-\_\-undef@{cbor\-\_\-is\-\_\-undef}}
+\index{cbor\-\_\-is\-\_\-undef@{cbor\-\_\-is\-\_\-undef}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-is\-\_\-undef}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-is\-\_\-undef (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_afb7eb76a2953224c96d194640f3092e3}
+
+
+Does this item represent {\ttfamily undefined} 
+
+\begin{DoxyVerb}embed:rst:leading-asterisk
+* .. warning:: Care must be taken to distinguish nulls and undefined values in C.
+* \end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item (C\-B\-O\-R logical) undefined? 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file common.\-c.
+
+\hypertarget{common_8h_a9ed0fa96105c211867c5032f2a5a8b20}{\index{common.\-h@{common.\-h}!cbor\-\_\-isa\-\_\-array@{cbor\-\_\-isa\-\_\-array}}
+\index{cbor\-\_\-isa\-\_\-array@{cbor\-\_\-isa\-\_\-array}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-isa\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-isa\-\_\-array (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_a9ed0fa96105c211867c5032f2a5a8b20}
+
+
+Does the item have the appropriate major type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item an \hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6ae48b04b3538ade49d7eae9ee6b656103}{C\-B\-O\-R\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-R\-R\-A\-Y}? 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file common.\-c.
+
+\hypertarget{common_8h_adedaf37527b8d8261e287a0001e5a190}{\index{common.\-h@{common.\-h}!cbor\-\_\-isa\-\_\-bytestring@{cbor\-\_\-isa\-\_\-bytestring}}
+\index{cbor\-\_\-isa\-\_\-bytestring@{cbor\-\_\-isa\-\_\-bytestring}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-isa\-\_\-bytestring}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-isa\-\_\-bytestring (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_adedaf37527b8d8261e287a0001e5a190}
+
+
+Does the item have the appropriate major type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item a \hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6a70b9f0b5958c8d51f15ad7bb7c4af01d}{C\-B\-O\-R\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-Y\-T\-E\-S\-T\-R\-I\-N\-G}? 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file common.\-c.
+
+\hypertarget{common_8h_a983dec76e934c49ed6979226f9db4386}{\index{common.\-h@{common.\-h}!cbor\-\_\-isa\-\_\-float\-\_\-ctrl@{cbor\-\_\-isa\-\_\-float\-\_\-ctrl}}
+\index{cbor\-\_\-isa\-\_\-float\-\_\-ctrl@{cbor\-\_\-isa\-\_\-float\-\_\-ctrl}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-isa\-\_\-float\-\_\-ctrl}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-isa\-\_\-float\-\_\-ctrl (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_a983dec76e934c49ed6979226f9db4386}
+
+
+Does the item have the appropriate major type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item a \hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6a1276dcc4ac56df5fd7e0270344a6e57d}{C\-B\-O\-R\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-A\-T\-\_\-\-C\-T\-R\-L}? 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file common.\-c.
+
+\hypertarget{common_8h_af0de041481b61922d0995b63f82d8ddd}{\index{common.\-h@{common.\-h}!cbor\-\_\-isa\-\_\-map@{cbor\-\_\-isa\-\_\-map}}
+\index{cbor\-\_\-isa\-\_\-map@{cbor\-\_\-isa\-\_\-map}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-isa\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-isa\-\_\-map (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_af0de041481b61922d0995b63f82d8ddd}
+
+
+Does the item have the appropriate major type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item a \hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6a057fc3133cb4465f9eb734acfd195db2}{C\-B\-O\-R\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-P}? 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file common.\-c.
+
+\hypertarget{common_8h_a0ca5042e3807d2cc9c3d40f9266460dd}{\index{common.\-h@{common.\-h}!cbor\-\_\-isa\-\_\-negint@{cbor\-\_\-isa\-\_\-negint}}
+\index{cbor\-\_\-isa\-\_\-negint@{cbor\-\_\-isa\-\_\-negint}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-isa\-\_\-negint}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-isa\-\_\-negint (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_a0ca5042e3807d2cc9c3d40f9266460dd}
+
+
+Does the item have the appropriate major type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item a \hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6ae140516103af792c8f2af84390acfdcd}{C\-B\-O\-R\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-E\-G\-I\-N\-T}? 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file common.\-c.
+
+\hypertarget{common_8h_a02edd93bb8eab83bc2b8f8bf5d7d1335}{\index{common.\-h@{common.\-h}!cbor\-\_\-isa\-\_\-string@{cbor\-\_\-isa\-\_\-string}}
+\index{cbor\-\_\-isa\-\_\-string@{cbor\-\_\-isa\-\_\-string}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-isa\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-isa\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_a02edd93bb8eab83bc2b8f8bf5d7d1335}
+
+
+Does the item have the appropriate major type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item a \hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6ae05102a66420250eacd5f17b95d04443}{C\-B\-O\-R\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-R\-I\-N\-G}? 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file common.\-c.
+
+\hypertarget{common_8h_a0d5054202c5ec9375e8daf5930087a61}{\index{common.\-h@{common.\-h}!cbor\-\_\-isa\-\_\-tag@{cbor\-\_\-isa\-\_\-tag}}
+\index{cbor\-\_\-isa\-\_\-tag@{cbor\-\_\-isa\-\_\-tag}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-isa\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-isa\-\_\-tag (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_a0d5054202c5ec9375e8daf5930087a61}
+
+
+Does the item have the appropriate major type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item a \hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6a16f0eaf29eeea66fe37ec1ed0fa45415}{C\-B\-O\-R\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-G}? 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file common.\-c.
+
+\hypertarget{common_8h_a682a023f7012a5b66a57847e6f8d386f}{\index{common.\-h@{common.\-h}!cbor\-\_\-isa\-\_\-uint@{cbor\-\_\-isa\-\_\-uint}}
+\index{cbor\-\_\-isa\-\_\-uint@{cbor\-\_\-isa\-\_\-uint}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-isa\-\_\-uint}]{\setlength{\rightskip}{0pt plus 5cm}bool cbor\-\_\-isa\-\_\-uint (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_a682a023f7012a5b66a57847e6f8d386f}
+
+
+Does the item have the appropriate major type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is the item an \hyperlink{data_8h_a3a931b40fc31b51cccfd1bc3dc5fc5d6a2137d55d8028e37ff4319a633ef0634f}{C\-B\-O\-R\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-I\-N\-T}? 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file common.\-c.
+
+\hypertarget{common_8h_a327dce45c1cb680953555290dba8e35b}{\index{common.\-h@{common.\-h}!cbor\-\_\-move@{cbor\-\_\-move}}
+\index{cbor\-\_\-move@{cbor\-\_\-move}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-move}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-item\-\_\-t}$\ast$ cbor\-\_\-move (
+\begin{DoxyParamCaption}
+\item[{{\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{common_8h_a327dce45c1cb680953555290dba8e35b}
+
+
+Provide C\-P\-P-\/like move construct. 
+
+Decreases the reference count by one, but does not deallocate the item even if it reach zero. This is useful for passing intermediate values to functions that increase reference count, Should only be used with functions that {\ttfamily incref} their arguments. \begin{DoxyVerb}embed:rst:leading-asterisk
+* .. warning:: If the item is moved without correctly increasing the reference count afterwards, the memory will be leaked.
+* \end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}take\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the item with reference count decreased by one 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file common.\-c.
+
+\hypertarget{common_8h_ab27dda20ad909cebaee1b2f43e676f2c}{\index{common.\-h@{common.\-h}!cbor\-\_\-refcount@{cbor\-\_\-refcount}}
+\index{cbor\-\_\-refcount@{cbor\-\_\-refcount}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-refcount}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cbor\-\_\-refcount (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)}}\label{common_8h_ab27dda20ad909cebaee1b2f43e676f2c}
+
+
+Get the reference count. 
+
+\begin{DoxyVerb}embed:rst:leading-asterisk
+* .. warning:: This does *not* account for transitive references.
+* \end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & the item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reference count 
+\end{DoxyReturn}
+
+
+Definition at line 179 of file common.\-c.
+
+\hypertarget{common_8h_a3f9f1d527374dbb4b48ef3fafa92e0bf}{\index{common.\-h@{common.\-h}!cbor\-\_\-set\-\_\-allocs@{cbor\-\_\-set\-\_\-allocs}}
+\index{cbor\-\_\-set\-\_\-allocs@{cbor\-\_\-set\-\_\-allocs}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-set\-\_\-allocs}]{\setlength{\rightskip}{0pt plus 5cm}void cbor\-\_\-set\-\_\-allocs (
+\begin{DoxyParamCaption}
+\item[{{\bf \-\_\-cbor\-\_\-malloc\-\_\-t}}]{custom\-\_\-malloc, }
+\item[{{\bf \-\_\-cbor\-\_\-realloc\-\_\-t}}]{custom\-\_\-realloc, }
+\item[{{\bf \-\_\-cbor\-\_\-free\-\_\-t}}]{custom\-\_\-free}
+\end{DoxyParamCaption}
+)}}\label{common_8h_a3f9f1d527374dbb4b48ef3fafa92e0bf}
+
+
+Sets the memory management routines to use. 
+
+Only available when C\-B\-O\-R\-\_\-\-C\-U\-S\-T\-O\-M\-\_\-\-A\-L\-L\-O\-C is defined
+
+\begin{DoxyVerb}embed:rst:leading-asterisk
+* .. warning:: This function modifies the global state and should therefore be used accordingly. Changing the memory handlers while allocated items exist will result in a ``free``/``malloc`` mismatch. This function is not thread safe with respect to both itself and all the other *libcbor* functions that work with the heap.
+* .. note:: `realloc` implementation must correctly support `NULL` reallocation
+* \end{DoxyVerb}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em custom\-\_\-malloc} & malloc implementation \\
+\hline
+{\em custom\-\_\-realloc} & realloc implementation \\
+\hline
+{\em custom\-\_\-free} & free implementation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file allocators.\-c.
+
+\hypertarget{common_8h_ac2b9aba4cf07857524a0a520eabeef52}{\index{common.\-h@{common.\-h}!cbor\-\_\-typeof@{cbor\-\_\-typeof}}
+\index{cbor\-\_\-typeof@{cbor\-\_\-typeof}!common.h@{common.\-h}}
+\subsubsection[{cbor\-\_\-typeof}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cbor\-\_\-type} cbor\-\_\-typeof (
+\begin{DoxyParamCaption}
+\item[{const {\bf cbor\-\_\-item\-\_\-t} $\ast$}]{item}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{common_8h_ac2b9aba4cf07857524a0a520eabeef52}
+
+
+Get the type of the item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\mbox{[}borrow\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The type 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file common.\-c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{common_8h_a994f4145360ef0bfa3c48e59a5ca7186}{\index{common.\-h@{common.\-h}!\-\_\-cbor\-\_\-free@{\-\_\-cbor\-\_\-free}}
+\index{\-\_\-cbor\-\_\-free@{\-\_\-cbor\-\_\-free}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-\_\-cbor\-\_\-free\-\_\-t} \-\_\-cbor\-\_\-free}}\label{common_8h_a994f4145360ef0bfa3c48e59a5ca7186}
+
+
+Definition at line 12 of file allocators.\-c.
+
+\hypertarget{common_8h_a3218c24af00a3efeaecb1716c8f5a289}{\index{common.\-h@{common.\-h}!\-\_\-cbor\-\_\-malloc@{\-\_\-cbor\-\_\-malloc}}
+\index{\-\_\-cbor\-\_\-malloc@{\-\_\-cbor\-\_\-malloc}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-malloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-\_\-cbor\-\_\-malloc\-\_\-t} \-\_\-cbor\-\_\-malloc}}\label{common_8h_a3218c24af00a3efeaecb1716c8f5a289}
+
+
+Definition at line 10 of file allocators.\-c.
+
+\hypertarget{common_8h_a84ecc1fc92c3812ab6ced693f2c6254c}{\index{common.\-h@{common.\-h}!\-\_\-cbor\-\_\-realloc@{\-\_\-cbor\-\_\-realloc}}
+\index{\-\_\-cbor\-\_\-realloc@{\-\_\-cbor\-\_\-realloc}!common.h@{common.\-h}}
+\subsubsection[{\-\_\-cbor\-\_\-realloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-\_\-cbor\-\_\-realloc\-\_\-t} \-\_\-cbor\-\_\-realloc}}\label{common_8h_a84ecc1fc92c3812ab6ced693f2c6254c}
+
+
+Definition at line 11 of file allocators.\-c.
+

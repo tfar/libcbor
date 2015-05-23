@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="struct__cbor__string__metadata" kind="struct" prot="public">
+    <compoundname>_cbor_string_metadata</compoundname>
+    <includes refid="data_8h" local="no">data.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__cbor__string__metadata_1a558805df7c655cfaf3c289bc536ff96e" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t _cbor_string_metadata::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="89" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cbor__string__metadata_1a07f2e49bd1cd40ba2277ae6d7a9b6d5d" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t _cbor_string_metadata::codepoint_count</definition>
+        <argsstring></argsstring>
+        <name>codepoint_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="90" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__cbor__string__metadata_1afcfdf5e250b677a7e88c5b9c1919bc1a" prot="public" static="no" mutable="no">
+        <type><ref refid="data_8h_1a3cdab5e05cf46846e98b43cf77985589" kindref="member">_cbor_dst_metadata</ref></type>
+        <definition>_cbor_dst_metadata _cbor_string_metadata::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="91" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Strings specific metadata. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pjk/project/libcbor/src/cbor/data.h" line="88" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/data.h" bodystart="88" bodyend="92"/>
+    <listofallmembers>
+      <member refid="struct__cbor__string__metadata_1a07f2e49bd1cd40ba2277ae6d7a9b6d5d" prot="public" virt="non-virtual"><scope>_cbor_string_metadata</scope><name>codepoint_count</name></member>
+      <member refid="struct__cbor__string__metadata_1a558805df7c655cfaf3c289bc536ff96e" prot="public" virt="non-virtual"><scope>_cbor_string_metadata</scope><name>length</name></member>
+      <member refid="struct__cbor__string__metadata_1afcfdf5e250b677a7e88c5b9c1919bc1a" prot="public" virt="non-virtual"><scope>_cbor_string_metadata</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="structcbor__callbacks" kind="struct" prot="public">
+    <compoundname>cbor_callbacks</compoundname>
+    <includes refid="callbacks_8h" local="no">callbacks.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcbor__callbacks_1af2d69429c9bc71edf55b6f4f1dbb76d1" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a2b9b84ad36e0fc4d1498413d8497899e" kindref="member">cbor_int8_callback</ref></type>
+        <definition>cbor_int8_callback cbor_callbacks::uint8</definition>
+        <argsstring></argsstring>
+        <name>uint8</name>
+        <briefdescription>
+<para>Unsigned int. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="50" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a3eb2039fa03bd534d6be0ed10d0c98be" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a663bfb4b82d31d5eeeffc6db48b487c6" kindref="member">cbor_int16_callback</ref></type>
+        <definition>cbor_int16_callback cbor_callbacks::uint16</definition>
+        <argsstring></argsstring>
+        <name>uint16</name>
+        <briefdescription>
+<para>Unsigned int. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="52" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1af2501b53c0150c4d3244a039b3232bf1" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a3c9d3bfd7f55faa430ba58ce9ebf9cfe" kindref="member">cbor_int32_callback</ref></type>
+        <definition>cbor_int32_callback cbor_callbacks::uint32</definition>
+        <argsstring></argsstring>
+        <name>uint32</name>
+        <briefdescription>
+<para>Unsigned int. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="54" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a2b0328261726fba55f663f55f954d56b" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a1ba7b7117064e3b6d13c1a1414b325b1" kindref="member">cbor_int64_callback</ref></type>
+        <definition>cbor_int64_callback cbor_callbacks::uint64</definition>
+        <argsstring></argsstring>
+        <name>uint64</name>
+        <briefdescription>
+<para>Unsigned int. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="56" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1ac0a4f4915ecb9924132c60c7fe7d93fe" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a1ba7b7117064e3b6d13c1a1414b325b1" kindref="member">cbor_int64_callback</ref></type>
+        <definition>cbor_int64_callback cbor_callbacks::negint64</definition>
+        <argsstring></argsstring>
+        <name>negint64</name>
+        <briefdescription>
+<para>Negative int. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="59" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a26e8c4f53af47eaaf8928b86fb92a44f" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a3c9d3bfd7f55faa430ba58ce9ebf9cfe" kindref="member">cbor_int32_callback</ref></type>
+        <definition>cbor_int32_callback cbor_callbacks::negint32</definition>
+        <argsstring></argsstring>
+        <name>negint32</name>
+        <briefdescription>
+<para>Negative int. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="61" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a0e47df73a7ecf894ab75e04a1cc83dc7" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a663bfb4b82d31d5eeeffc6db48b487c6" kindref="member">cbor_int16_callback</ref></type>
+        <definition>cbor_int16_callback cbor_callbacks::negint16</definition>
+        <argsstring></argsstring>
+        <name>negint16</name>
+        <briefdescription>
+<para>Negative int. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="63" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1aae703108db340c2df1af0154b23b9631" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a2b9b84ad36e0fc4d1498413d8497899e" kindref="member">cbor_int8_callback</ref></type>
+        <definition>cbor_int8_callback cbor_callbacks::negint8</definition>
+        <argsstring></argsstring>
+        <name>negint8</name>
+        <briefdescription>
+<para>Negative int. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="65" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1adf65a04d2423dcdd73cec4a261ccb6aa" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a414becb6eeb6a2c4fcb4d657b17d3113" kindref="member">cbor_simple_callback</ref></type>
+        <definition>cbor_simple_callback cbor_callbacks::byte_string_start</definition>
+        <argsstring></argsstring>
+        <name>byte_string_start</name>
+        <briefdescription>
+<para>Definite byte string. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="68" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a0c2528e2b1d6df97053168d24e53e278" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a39ac73691a2cbc95aac02b088851ff88" kindref="member">cbor_string_callback</ref></type>
+        <definition>cbor_string_callback cbor_callbacks::byte_string</definition>
+        <argsstring></argsstring>
+        <name>byte_string</name>
+        <briefdescription>
+<para>Indefinite byte string start. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="70" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a18144e8cc29b3562f071188c3d9086eb" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a39ac73691a2cbc95aac02b088851ff88" kindref="member">cbor_string_callback</ref></type>
+        <definition>cbor_string_callback cbor_callbacks::string</definition>
+        <argsstring></argsstring>
+        <name>string</name>
+        <briefdescription>
+<para>Definite string. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="73" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1ac5a3ff3cd57f469460c13598d14eb2eb" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a414becb6eeb6a2c4fcb4d657b17d3113" kindref="member">cbor_simple_callback</ref></type>
+        <definition>cbor_simple_callback cbor_callbacks::string_start</definition>
+        <argsstring></argsstring>
+        <name>string_start</name>
+        <briefdescription>
+<para>Indefinite string start. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="75" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a5831fd6bd9372b04a8f65db1e1967713" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a414becb6eeb6a2c4fcb4d657b17d3113" kindref="member">cbor_simple_callback</ref></type>
+        <definition>cbor_simple_callback cbor_callbacks::indef_array_start</definition>
+        <argsstring></argsstring>
+        <name>indef_array_start</name>
+        <briefdescription>
+<para>Definite array. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="78" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1affebd3296749cdc0d564a3b9cae7a4e4" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a1760fbd902567c34cb788b6d891ec8df" kindref="member">cbor_collection_callback</ref></type>
+        <definition>cbor_collection_callback cbor_callbacks::array_start</definition>
+        <argsstring></argsstring>
+        <name>array_start</name>
+        <briefdescription>
+<para>Indefinite array. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="80" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1ab989b168f43559f404d87508bdd0ddc8" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a414becb6eeb6a2c4fcb4d657b17d3113" kindref="member">cbor_simple_callback</ref></type>
+        <definition>cbor_simple_callback cbor_callbacks::indef_map_start</definition>
+        <argsstring></argsstring>
+        <name>indef_map_start</name>
+        <briefdescription>
+<para>Definite map. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="83" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1ac833a2232c624936d7444612e47e8a20" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a1760fbd902567c34cb788b6d891ec8df" kindref="member">cbor_collection_callback</ref></type>
+        <definition>cbor_collection_callback cbor_callbacks::map_start</definition>
+        <argsstring></argsstring>
+        <name>map_start</name>
+        <briefdescription>
+<para>Indefinite map. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="85" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1ab5a727d5b11a7f2558cf811908f92e70" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a1ba7b7117064e3b6d13c1a1414b325b1" kindref="member">cbor_int64_callback</ref></type>
+        <definition>cbor_int64_callback cbor_callbacks::tag</definition>
+        <argsstring></argsstring>
+        <name>tag</name>
+        <briefdescription>
+<para>Tags. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="88" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1ab1f4ab3a5bf0cf2a6418b8cb28877652" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a70c40374bfa3cc289a975e8d3d31eb74" kindref="member">cbor_float_callback</ref></type>
+        <definition>cbor_float_callback cbor_callbacks::float2</definition>
+        <argsstring></argsstring>
+        <name>float2</name>
+        <briefdescription>
+<para>Half float. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="91" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a5a80bae7d106e7cf61d27cd710251e4a" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1af46757188a6212506a8fc73a1d098ae7" kindref="member">cbor_double_callback</ref></type>
+        <definition>cbor_double_callback cbor_callbacks::float8</definition>
+        <argsstring></argsstring>
+        <name>float8</name>
+        <briefdescription>
+<para>Single float. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="93" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a3e0e5094fdfbc527f9a2ca300d65b7df" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a70c40374bfa3cc289a975e8d3d31eb74" kindref="member">cbor_float_callback</ref></type>
+        <definition>cbor_float_callback cbor_callbacks::float4</definition>
+        <argsstring></argsstring>
+        <name>float4</name>
+        <briefdescription>
+<para>Double float. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="95" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1af9b30de5bef7bf76e8e34bdd95434f98" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a414becb6eeb6a2c4fcb4d657b17d3113" kindref="member">cbor_simple_callback</ref></type>
+        <definition>cbor_simple_callback cbor_callbacks::undefined</definition>
+        <argsstring></argsstring>
+        <name>undefined</name>
+        <briefdescription>
+<para>Undef. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="97" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a7483f952b13db66abd893082a204859d" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a414becb6eeb6a2c4fcb4d657b17d3113" kindref="member">cbor_simple_callback</ref></type>
+        <definition>cbor_simple_callback cbor_callbacks::null</definition>
+        <argsstring></argsstring>
+        <name>null</name>
+        <briefdescription>
+<para>Null. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="99" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1a458321ece8c64be2c37b96f78bbdfb8c" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a86190658d37fb499ff8e30f0a85a19bc" kindref="member">cbor_bool_callback</ref></type>
+        <definition>cbor_bool_callback cbor_callbacks::boolean</definition>
+        <argsstring></argsstring>
+        <name>boolean</name>
+        <briefdescription>
+<para>Bool. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="101" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcbor__callbacks_1abc0516d80611473d2527bf5faea393d8" prot="public" static="no" mutable="no">
+        <type><ref refid="callbacks_8h_1a414becb6eeb6a2c4fcb4d657b17d3113" kindref="member">cbor_simple_callback</ref></type>
+        <definition>cbor_simple_callback cbor_callbacks::indef_break</definition>
+        <argsstring></argsstring>
+        <name>indef_break</name>
+        <briefdescription>
+<para>Indefinite item break. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="104" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Callback bundle <ndash/> passed to the decoder. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/pjk/project/libcbor/src/cbor/callbacks.h" line="48" column="1" bodyfile="/home/pjk/project/libcbor/src/cbor/callbacks.h" bodystart="48" bodyend="105"/>
+    <listofallmembers>
+      <member refid="structcbor__callbacks_1affebd3296749cdc0d564a3b9cae7a4e4" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>array_start</name></member>
+      <member refid="structcbor__callbacks_1a458321ece8c64be2c37b96f78bbdfb8c" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>boolean</name></member>
+      <member refid="structcbor__callbacks_1a0c2528e2b1d6df97053168d24e53e278" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>byte_string</name></member>
+      <member refid="structcbor__callbacks_1adf65a04d2423dcdd73cec4a261ccb6aa" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>byte_string_start</name></member>
+      <member refid="structcbor__callbacks_1ab1f4ab3a5bf0cf2a6418b8cb28877652" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>float2</name></member>
+      <member refid="structcbor__callbacks_1a3e0e5094fdfbc527f9a2ca300d65b7df" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>float4</name></member>
+      <member refid="structcbor__callbacks_1a5a80bae7d106e7cf61d27cd710251e4a" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>float8</name></member>
+      <member refid="structcbor__callbacks_1a5831fd6bd9372b04a8f65db1e1967713" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>indef_array_start</name></member>
+      <member refid="structcbor__callbacks_1abc0516d80611473d2527bf5faea393d8" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>indef_break</name></member>
+      <member refid="structcbor__callbacks_1ab989b168f43559f404d87508bdd0ddc8" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>indef_map_start</name></member>
+      <member refid="structcbor__callbacks_1ac833a2232c624936d7444612e47e8a20" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>map_start</name></member>
+      <member refid="structcbor__callbacks_1a0e47df73a7ecf894ab75e04a1cc83dc7" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>negint16</name></member>
+      <member refid="structcbor__callbacks_1a26e8c4f53af47eaaf8928b86fb92a44f" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>negint32</name></member>
+      <member refid="structcbor__callbacks_1ac0a4f4915ecb9924132c60c7fe7d93fe" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>negint64</name></member>
+      <member refid="structcbor__callbacks_1aae703108db340c2df1af0154b23b9631" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>negint8</name></member>
+      <member refid="structcbor__callbacks_1a7483f952b13db66abd893082a204859d" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>null</name></member>
+      <member refid="structcbor__callbacks_1a18144e8cc29b3562f071188c3d9086eb" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>string</name></member>
+      <member refid="structcbor__callbacks_1ac5a3ff3cd57f469460c13598d14eb2eb" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>string_start</name></member>
+      <member refid="structcbor__callbacks_1ab5a727d5b11a7f2558cf811908f92e70" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>tag</name></member>
+      <member refid="structcbor__callbacks_1a3eb2039fa03bd534d6be0ed10d0c98be" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>uint16</name></member>
+      <member refid="structcbor__callbacks_1af2501b53c0150c4d3244a039b3232bf1" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>uint32</name></member>
+      <member refid="structcbor__callbacks_1a2b0328261726fba55f663f55f954d56b" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>uint64</name></member>
+      <member refid="structcbor__callbacks_1af2d69429c9bc71edf55b6f4f1dbb76d1" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>uint8</name></member>
+      <member refid="structcbor__callbacks_1af9b30de5bef7bf76e8e34bdd95434f98" prot="public" virt="non-virtual"><scope>cbor_callbacks</scope><name>undefined</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

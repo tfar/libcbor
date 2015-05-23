@@ -1,0 +1,44 @@
+This is the development reference of \href{http://libcbor.org/}{\tt libcbor}. If you are looking for the user documentation, you should probably head to the \href{http://libcbor.org/}{\tt homepage}.
+
+\section*{Where to start}
+
+A couple of pointers for you to start with\-: {\ttfamily 0x00000000}, {\ttfamily 0x\-D\-E\-A\-D\-B\-E\-E\-F}.
+
+If you just want to peek under the hood, have a look at\-:
+\begin{DoxyItemize}
+\item \hyperlink{common_8h}{src/cbor/common.\-h}
+\item \hyperlink{encoding_8h}{src/cbor/encoding.\-h}
+\item \hyperlink{cbor_8h}{src/cbor.\-h}
+\end{DoxyItemize}
+
+If you want to implement your own decoder or see how the default one is made\-:
+\begin{DoxyItemize}
+\item \hyperlink{builder__callbacks_8h}{src/cbor/internal/builder\-\_\-callbacks.\-h}
+\item \hyperlink{stack_8h}{src/cbor/internal/stack.\-h}
+\end{DoxyItemize}
+
+For details on encoding and packing (could be useful when porting to exotic platforms)\-:
+\begin{DoxyItemize}
+\item \hyperlink{encoders_8h}{src/cbor/internal/encoders.\-h}
+\item \hyperlink{loaders_8h}{src/cbor/internal/loaders.\-h}
+\end{DoxyItemize}
+
+Streaming driver\-:
+\begin{DoxyItemize}
+\item \hyperlink{streaming_8h}{src/cbor/streaming.\-h}
+\end{DoxyItemize}
+
+Manipulation routines for particular types\-:
+\begin{DoxyItemize}
+\item \hyperlink{ints_8h}{src/cbor/ints.\-h}
+\item \hyperlink{bytestrings_8h}{src/cbor/bytestrings.\-h}
+\item \hyperlink{strings_8h}{src/cbor/strings.\-h}
+\item \hyperlink{arrays_8h}{src/cbor/arrays.\-h}
+\item \hyperlink{maps_8h}{src/cbor/maps.\-h}
+\item \hyperlink{tags_8h}{src/cbor/tags.\-h}
+\item \hyperlink{floats__ctrls_8h}{src/cbor/floats\-\_\-ctrls.\-h}
+\end{DoxyItemize}
+
+\section*{How to contribute}
+
+Please refer to \href{https://github.com/PJK/libcbor}{\tt the repository} 
