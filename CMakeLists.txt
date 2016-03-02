@@ -10,12 +10,12 @@ SET(CBOR_VERSION ${CBOR_VERSION_MAJOR}.${CBOR_VERSION_MINOR}.${CBOR_VERSION_PATC
 set(CMAKE_SKIP_INSTALL_ALL_DEPENDENCY true)
 include(CheckIncludeFiles)
 
-check_include_files(endian.h HAVE_ENDIAN_H)
-if(HAVE_ENDIAN_H)
-    # BSD source needed or else GNU-y extensions will not be visible
-    add_definitions(-D_BSD_SOURCE=1)
-    add_definitions(-DHAVE_ENDIAN_H=1)
-endif()
+#check_include_files(endian.h HAVE_ENDIAN_H)
+#if(HAVE_ENDIAN_H)
+#    # BSD source needed or else GNU-y extensions will not be visible
+#    add_definitions(-D_BSD_SOURCE=1)
+#    add_definitions(-DHAVE_ENDIAN_H=1)
+#endif()
 
 SET(CPACK_GENERATOR "DEB" "TGZ" "RPM")
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
@@ -28,7 +28,7 @@ SET(CPACK_PACKAGE_VERSION_PATCH CBOR_VERSION_PATCH)
 include(CPack)
 
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0 -Wall -pedantic -g -ggdb -DDEBUG=true")
-set(CMAKE_C_FLAGS_RELEASE "-O3 -flto -Wall -pedantic -DNDEBUG")
+set(CMAKE_C_FLAGS_RELEASE "-O3 -Wall -pedantic -DNDEBUG")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
 
 set(CMAKE_EXE_LINKER_FLAGS_DEBUG "-g")
